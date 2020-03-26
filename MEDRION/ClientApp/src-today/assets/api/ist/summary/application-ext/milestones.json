@@ -1,0 +1,26 @@
+[
+    {
+      "milestone": 1,
+      "milestone_title": "Patient Recruitment",
+      "current_start_date_of_study": "1-Feb-2020",
+      "current_end_date_of_study": "18-Mar-2020",
+      "current_end_date_of_study__1": "22-Mar-2020",
+      "id": 1
+    },
+    {
+      "milestone": 2,
+      "milestone_title": "Study Center's Initiation",
+      "current_start_date_of_study": "25-Mar-2020",
+      "current_end_date_of_study": "26-Mar-2020",
+      "current_end_date_of_study__1": "27-Mar-2020",
+      "id": 2
+    },
+    {
+      "milestone": 3,
+      "milestone_title": "Secondary Objective ( c ) is achieved",
+      "current_start_date_of_study": "26-Mar-2020",
+      "current_end_date_of_study": "25-May-2022",
+      "current_end_date_of_study__1": "26-May-2022",
+      "id": 3
+    }
+  ]

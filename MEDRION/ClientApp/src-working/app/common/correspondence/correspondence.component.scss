@@ -1,0 +1,36 @@
+.heading-font{
+    margin-bottom: 0px;    
+    padding-left: 10px;
+    color: #6e6e6e;
+}
+.small-font{
+    margin-bottom: 0px;
+    font-size: 12px;
+    padding-left: 10px;
+}
+.mail-row{
+    margin-bottom: 5px;
+    box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.01), 0 1px 5px 0 rgba(0, 0, 0, 0.13);
+    cursor: pointer;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    width: calc(100% + 15px);
+}
+.selected {
+    background: #4c6a82;
+    color: #fff !important;
+}
+.selected > .heading-font{
+    color: #fff !important;
+}
+.mb-0{
+    margin-bottom : 0px;
+}
+.small-text{
+    font-size:15px;
+    font-weight:bold;
+}
+.attachment{
+    position: absolute;
+    right: 11px;
+}

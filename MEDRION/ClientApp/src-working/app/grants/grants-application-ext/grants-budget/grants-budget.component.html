@@ -1,0 +1,41 @@
+<div class="row">
+   <div class="col-3">
+       <mdb-breadcrumb customClass="black-text lighten-4 custom-breadcrumb"
+           style="font-size:13px;text-transform:uppercase;">
+           <mdb-breadcrumb-item>Budget
+           </mdb-breadcrumb-item>
+       </mdb-breadcrumb>
+   </div>
+   <div class="col-9">
+       <app-operations-bar [operations]="operations" [enableOperations]="selectedRow?true:false"
+           (callbackOperation)="onCallbackOperation($event)"></app-operations-bar>
+   </div>
+ </div>
+
+<div class="budget-list border mt-1 mb-2 grey lighten-5">
+   <div class="b-list-item">
+      <span>Total Fees</span>
+      <strong>1020 USD</strong>
+   </div>
+   <div class="b-list-item">
+      <span>Requested Amount</span>
+      <strong>1020 USD</strong>
+   </div>
+   <div class="b-list-item">
+      <span>Allocated Amount</span>
+      <strong>1000 USD</strong>
+   </div>
+   <div class="b-list-item">
+      <span>Expenditure Amount</span>
+      <strong>800 USD</strong>
+   </div>
+   <div class="b-list-item">
+      <span>Balance Amount</span>
+      <strong>400 USD</strong>
+   </div>
+</div>
+
+<app-client-grid [columnDefs]="columnDefs" [rowData]="rowData" (setGridApi)="onSetGridApi($event)" [operations]="operations" 
+(callbackOperation)="onCallbackOperation($event)" [advanceSearch]="advanceSearch" 
+  (selectionChanged)="onSelectionChanged($event)" (rowDoubleClicked)="onRowDoubleClicked($event)">
+</app-client-grid>

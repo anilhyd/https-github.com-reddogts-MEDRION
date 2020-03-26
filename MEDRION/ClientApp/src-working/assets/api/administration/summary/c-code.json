@@ -1,0 +1,44 @@
+[
+    {
+      "id": 1,
+      "module_name": "IST",
+      "feature_name": "Application",
+      "enabled": "Yes",
+      "format": "IST-{YYYY}-{COUNTER}"
+    },
+    {
+      "id": 2,
+      "module_name": "EAP",
+      "feature_name": "Application",
+      "enabled": "Yes",
+      "format": "EAP-{YYYY}-{COUNTER}"
+    },
+    {
+      "id": 3,
+      "module_name": "GRANTS",
+      "feature_name": "Application",
+      "enabled": "Yes",
+      "format": "GRANTS-{YYYY}-{COUNTER}"
+    },
+    {
+      "id": 4,
+      "module_name": "IST",
+      "feature_name": "Registration",
+      "enabled": "Yes",
+      "format": "ISTREGN-{COUNTER}"
+    },
+    {
+      "id": 5,
+      "module_name": "EAP",
+      "feature_name": "Registration",
+      "enabled": "Yes",
+      "format": "EAPREGN-{COUNTER}"
+    },
+    {
+      "id": 6,
+      "module_name": "GRANTS",
+      "feature_name": "Registration",
+      "enabled": "Yes",
+      "format": "GRANTREGN-{COUNTER}"
+    }
+  ]

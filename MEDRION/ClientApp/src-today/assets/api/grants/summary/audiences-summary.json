@@ -1,0 +1,52 @@
+[
+    {
+      "audience_group": "Physicians",
+      "speciality": "General",
+      "category_of_credit": "ACCP",
+      "hours_for_category": 8,
+      "learners_expected": 15,
+      "expected_learners": 15,
+      "learners_expectd_credit": 12,
+      "id": 1
+    },
+    {
+      "audience_group": "Medical Directors",
+      "speciality": "Pulmonolgy",
+      "category_of_credit": "AAFP",
+      "hours_for_category": 8,
+      "learners_expected": 5,
+      "expected_learners": 3,
+      "learners_expectd_credit": 3,
+      "id": 2
+    },
+    {
+      "audience_group": "Nurses/Nurse",
+      "speciality": "General",
+      "category_of_credit": "AAN",
+      "hours_for_category": 8,
+      "learners_expected": 50,
+      "expected_learners": 40,
+      "learners_expectd_credit": 35,
+      "id": 3
+    },
+    {
+      "audience_group": "Practitioners",
+      "speciality": "Pulmonology",
+      "category_of_credit": "ACCP",
+      "hours_for_category": 8,
+      "learners_expected": 25,
+      "expected_learners": 25,
+      "learners_expectd_credit": 22,
+      "id": 4
+    },
+    {
+      "audience_group": "Residents",
+      "speciality": "General",
+      "category_of_credit": "-",
+      "hours_for_category": 0,
+      "learners_expected": 150,
+      "expected_learners": 100,
+      "learners_expectd_credit": "-",
+      "id": 4
+    }
+  ]

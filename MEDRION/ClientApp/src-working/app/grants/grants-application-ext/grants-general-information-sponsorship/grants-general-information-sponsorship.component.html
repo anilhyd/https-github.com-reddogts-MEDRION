@@ -1,0 +1,240 @@
+<form [formGroup]="generalInformationSponsorshipForm">
+  <div class="row">
+    <div class="col-3">
+      <mdb-breadcrumb customClass="black-text lighten-4 custom-breadcrumb"
+        style="font-size:13px;text-transform:uppercase;">
+        <mdb-breadcrumb-item>General Information (Sponsorship)
+        </mdb-breadcrumb-item>
+      </mdb-breadcrumb>
+    </div>
+    <div class="col-9">
+      <app-operations-bar [operations]="operations" [enableOperations]="generalInformationSponsorshipForm.valid?true:false"
+        (callbackOperation)="onCallbackOperation($event)"></app-operations-bar>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.area_of_focus">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.area_of_focus?.required"
+        [options]="AreaOfFocusOptions" formControlName="area_of_focus"
+        required="{{formFields?.area_of_focus?.required}}"></mdb-select>
+        <label for="area_of_focus"><span *ngIf="formFields?.area_of_focus?.required" class="red-text">*</span>
+          Area of Focus</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.program_title">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.program_title?.required"
+        maxlength="{{formFields?.program_title?.maxLength}}" class="form-control" formControlName="program_title"
+        id="dynmcId1" mdbInput required="{{formFields?.program_title?.required}}">
+        <label for="dynmcId1"><span *ngIf="formFields?.program_title?.required" class="red-text">*</span>
+          Program Title</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.detailed_purpose">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.detailed_purpose?.required"
+        [options]="chooseoptions" formControlName="detailed_purpose"
+        required="{{formFields?.detailed_purpose?.required}}"></mdb-select>
+        <label for="detailed_purpose"><span *ngIf="formFields?.detailed_purpose?.required" class="red-text">*</span>
+          Detailed Purpose</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-xs-12" *ngIf="formFields?.healthcare_professionals_attending">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.healthcare_professionals_attending?.required"
+        [options]="yesNoOptions" formControlName="healthcare_professionals_attending"
+        required="{{formFields?.healthcare_professionals_attending?.required}}"></mdb-select>
+        <label for="healthcare_professionals_attending"><span *ngIf="formFields?.healthcare_professionals_attending?.required" class="red-text">*</span>
+          Will there be healthcare professionals attending?</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-xs-12" *ngIf="formFields?.requested_spncership_level">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.requested_spncership_level?.required"
+        [options]="SpncershipLevelOptions" formControlName="requested_spncership_level"
+        required="{{formFields?.requested_spncership_level?.required}}"></mdb-select>
+        <label for="requested_spncership_level"><span *ngIf="formFields?.requested_spncership_level?.required" class="red-text">*</span>
+          Requested Spncership Level</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-xs-12" *ngIf="formFields?.other_sponcership_tires_available">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.other_sponcership_tires_available?.required"
+        [options]="yesNoOptions" formControlName="other_sponcership_tires_available"
+        required="{{formFields?.other_sponcership_tires_available?.required}}"></mdb-select>
+        <label for="other_sponcership_tires_available"><span *ngIf="formFields?.other_sponcership_tires_available?.required" class="red-text">*</span>
+          Are other sponcership tires available?</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-xs-12" *ngIf="formFields?.funding_decision_needed_by_date">
+      <div class="md-form">
+        <mdb-date-picker [inline]="true" name="funding_decision_needed_by_date" [options]="myDatePickerOptions"
+        [label]="'Funding Decision Needed by Date &#40;This date must be at least 0 days from today&#44;s&#41;'" formControlName="funding_decision_needed_by_date"
+        required="{{formFields?.funding_decision_needed_by_date?.required}}"></mdb-date-picker>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.requested_amount">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.requested_amount?.required"
+        maxlength="{{formFields?.requested_amount?.maxLength}}" class="form-control" formControlName="requested_amount"
+        id="requested_amount" mdbInput required="{{formFields?.requested_amount?.required}}">
+        <label for="requested_amount"><span *ngIf="formFields?.requested_amount?.required" class="red-text">*</span>
+          Requested Amount</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.how_much_tax_is_deductible">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.how_much_tax_is_deductible?.required"
+        maxlength="{{formFields?.how_much_tax_is_deductible?.maxLength}}" class="form-control" formControlName="how_much_tax_is_deductible"
+        id="how_much_tax_is_deductible" mdbInput required="{{formFields?.how_much_tax_is_deductible?.required}}">
+        <label for="how_much_tax_is_deductible"><span *ngIf="formFields?.how_much_tax_is_deductible?.required" class="red-text">*</span>
+          How much Tax is deductible?</label>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.total_program_budget_amount">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.total_program_budget_amount?.required"
+        maxlength="{{formFields?.total_program_budget_amount?.maxLength}}" class="form-control" formControlName="total_program_budget_amount"
+        id="dynmcId4" mdbInput required="{{formFields?.total_program_budget_amount?.required}}">
+        <label for="dynmcId4"><span *ngIf="formFields?.total_program_budget_amount?.required" class="red-text">*</span>
+          Total Program Budget Amount</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-xs-12" *ngIf="formFields?.other_financial_support_being_sought">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.other_financial_support_being_sought?.required"
+        [options]="yesNoOptions" formControlName="other_financial_support_being_sought"
+        required="{{formFields?.other_financial_support_being_sought?.required}}"></mdb-select>
+        <label for="other_financial_support_being_sought"><span *ngIf="formFields?.other_financial_support_being_sought?.required" class="red-text">*</span>
+          Is other financial support being sought for this program?</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-xs-12" *ngIf="formFields?.approximate_percentage_of_your_organisation">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.approximate_percentage_of_your_organisation?.required"
+        [options]="approximatePercentageOptions" formControlName="approximate_percentage_of_your_organisation"
+        required="{{formFields?.approximate_percentage_of_your_organisation?.required}}"></mdb-select>
+        <label for="approximate_percentage_of_your_organisation"><span *ngIf="formFields?.approximate_percentage_of_your_organisation?.required" class="red-text">*</span>
+          Please choose the approximate percentage of your Organisation/Institution's total annual budget that this request would represent</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-xs-12" *ngIf="formFields?.program_fund_be_used_for_political">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.program_fund_be_used_for_political?.required"
+        [options]="yesNoOptions" formControlName="program_fund_be_used_for_political"
+        required="{{formFields?.program_fund_be_used_for_political?.required}}"></mdb-select>
+        <label for="program_fund_be_used_for_political"><span *ngIf="formFields?.program_fund_be_used_for_political?.required" class="red-text">*</span>
+          Will part of the program fund be used for political or lobbying activities?</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-xs-12" *ngIf="formFields?.program_fund_be_used_for_co_payments">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.program_fund_be_used_for_co_payments?.required"
+        [options]="chooseoptions" formControlName="program_fund_be_used_for_co_payments"
+        required="{{formFields?.program_fund_be_used_for_co_payments?.required}}"></mdb-select>
+        <label for="program_fund_be_used_for_co_payments"><span *ngIf="formFields?.program_fund_be_used_for_co_payments?.required" class="red-text">*</span>
+          Will part of the program fund be used for co-payments?</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-xs-12" *ngIf="formFields?.program_fund_be_used_for_any_other_activities">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.program_fund_be_used_for_any_other_activities?.required"
+        [options]="yesNoOptions" formControlName="program_fund_be_used_for_any_other_activities"
+        required="{{formFields?.program_fund_be_used_for_any_other_activities?.required}}"></mdb-select>
+        <label for="program_fund_be_used_for_any_other_activities"><span *ngIf="formFields?.program_fund_be_used_for_any_other_activities?.required" class="red-text">*</span>
+          Will part of the program fund be used for any other activities?</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-xs-12" *ngIf="formFields?.program_fund_be_used_for_meals_for_hcps">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.program_fund_be_used_for_meals_for_hcps?.required"
+        [options]="yesNoOptions" formControlName="program_fund_be_used_for_meals_for_hcps"
+        required="{{formFields?.program_fund_be_used_for_meals_for_hcps?.required}}"></mdb-select>
+        <label for="program_fund_be_used_for_meals_for_hcps"><span *ngIf="formFields?.program_fund_be_used_for_meals_for_hcps?.required" class="red-text">*</span>
+          Will part of the program fund be used for meals for HCPs?</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-xs-12" *ngIf="formFields?.event_being_sponsored_accredited">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.event_being_sponsored_accredited?.required"
+        [options]="yesNoOptions" formControlName="event_being_sponsored_accredited"
+        required="{{formFields?.event_being_sponsored_accredited?.required}}"></mdb-select>
+        <label for="event_being_sponsored_accredited"><span *ngIf="formFields?.event_being_sponsored_accredited?.required" class="red-text">*</span>
+          Is the event being sponsored accredited?</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-xs-12" *ngIf="formFields?.held_this_program_previously">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.held_this_program_previously?.required"
+        [options]="yesNoOptions" formControlName="held_this_program_previously"
+        required="{{formFields?.held_this_program_previously?.required}}"></mdb-select>
+        <label for="held_this_program_previously"><span *ngIf="formFields?.held_this_program_previously?.required" class="red-text">*</span>
+          Have you held this program previously?</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-xs-12" *ngIf="formFields?.has_previously_supported_this_program">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.has_previously_supported_this_program?.required"
+        [options]="yesNoOptions" formControlName="has_previously_supported_this_program"
+        required="{{formFields?.has_previously_supported_this_program?.required}}"></mdb-select>
+        <label for="has_previously_supported_this_program"><span *ngIf="formFields?.has_previously_supported_this_program?.required" class="red-text">*</span>
+          Has &lt;company name&gt; previously supported this program?</label>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+
+  <div class="row mb-4">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.contact_person">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.contact_person?.required"
+        maxlength="{{formFields?.contact_person?.maxLength}}" class="form-control" formControlName="contact_person"
+        id="dynmcId5" mdbInput required="{{formFields?.contact_person?.required}}">
+        <label for="dynmcId52"><span *ngIf="formFields?.contact_person?.required" class="red-text">*</span>
+          Contact Person</label>
+      </div>
+    </div>
+  </div>
+</form>

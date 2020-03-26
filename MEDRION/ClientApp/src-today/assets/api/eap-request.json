@@ -1,0 +1,30 @@
+{
+    "requestId":"1",
+    "phsy_name":"Mathew Leuis",
+    "study_sponsered":"Study Sponser Details",
+    "title": "Required for purpose of testing a special drug X for a patient and going through the clinical trails",
+    "required_type":"Type XYZ",
+    "review_status":"ongoing",
+    "last_updated_review":"3 months ago",
+    "requests": [
+        {"name":"Program Info", "id":"program_info"},
+        {"name":"Study Team - Team", "id":"study_team_team"},
+        {"name":"Study Team - Org Setup", "id":"study_team_org_setup"},
+        {"name":"Institutional Review Board", "id":"institutional_review_board"},
+        {"name":"Patient Information", "id":"patient_information"},
+        {"name":"All Requests", "id":"all_requests"},
+        {"name":"Study Reports", "id":"study_reports"},
+        {"name":"Amendments", "id":"amendments"}
+    ]
+}
+
+
+
+
+
+
+ 
+
+
+
+

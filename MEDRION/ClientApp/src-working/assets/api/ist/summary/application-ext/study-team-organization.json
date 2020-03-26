@@ -1,0 +1,58 @@
+[
+    {
+      "name_of_organisation": "Green Hill Medical Center",
+      "city": "San Antonio",
+      "organisation_type": "Hospital",
+      "phone_number": "(210) 253-9766",
+      "other_phone_number": "(210) 257-0471",
+      "id": 1
+    },
+    {
+      "name_of_organisation": "Green Hill Medical Center",
+      "city": "Dallas",
+      "organisation_type": "Hospital",
+      "phone_number": "(210) 253-9767",
+      "other_phone_number": "(220) 357-0472",
+      "id": 2
+    },
+    {
+      "name_of_organisation": "Green Hill Medical Center",
+      "city": "Houston",
+      "organisation_type": "Hospital",
+      "phone_number": "(210) 253-9768",
+      "other_phone_number": "(230) 254-0473",
+      "id": 3
+    },
+    {
+      "name_of_organisation": "Green Hill Medical Center",
+      "city": "Cameron",
+      "organisation_type": "Hospital",
+      "phone_number": "(210) 253-9769",
+      "other_phone_number": "(221) 256-0474",
+      "id": 4
+    },
+    {
+      "name_of_organisation": "Freeman Hospital Center",
+      "city": "Houston",
+      "organisation_type": "Non-Governmental Organisation",
+      "phone_number": "(210) 255-1679",
+      "other_phone_number": "(410) 251-0981",
+      "id": 5
+    },
+    {
+      "name_of_organisation": "Freeman Hospital Center",
+      "city": "Cameron",
+      "organisation_type": "Non-Governmental Organisation",
+      "phone_number": "(210) 255-1680",
+      "other_phone_number": "(230) 258-0982",
+      "id": 6
+    },
+    {
+      "name_of_organisation": "Freeman Hospital Center",
+      "city": "San Antonio",
+      "organisation_type": "Non-Governmental Organisation",
+      "phone_number": "(210) 255-1681",
+      "other_phone_number": "(210) 259-0983",
+      "id": 7
+    }
+  ]

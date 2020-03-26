@@ -1,0 +1,38 @@
+[
+    {
+      "name": "Exemestane",
+      "strength_units": "25mg",
+      "therapeutic_area": "Oncology,",
+      "no_of_approvals": 2,
+      "status": "active",
+      "id": 1,
+      "code": "PR-001"
+    },
+    {
+      "name": "Radium-223 dichloride",
+      "strength_units": "10mg",
+      "therapeutic_area": "Pulmonology,",
+      "no_of_approvals": 3,
+      "status": "active",
+      "id": 2,
+      "code": "PR-002"
+    },
+    {
+      "name": "Super Drug",
+      "strength_units": "180ml",
+      "therapeutic_area": "Cardiology,",
+      "no_of_approvals": 1,
+      "status": "active",
+      "id": 3,
+      "code": "PR-003"
+    },
+    {
+      "name": "Wonder Drug",
+      "strength_units": "250mg",
+      "therapeutic_area": "Neurology",
+      "no_of_approvals": 2,
+      "status": "active",
+      "id": 4,
+      "code": "PR-004"
+    }
+  ]

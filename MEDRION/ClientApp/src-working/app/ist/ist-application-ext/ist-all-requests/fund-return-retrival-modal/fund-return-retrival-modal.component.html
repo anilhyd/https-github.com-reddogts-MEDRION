@@ -1,0 +1,46 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true">×</span>
+      </button>
+      <h4 class="modal-title w-100 text-center" id="myModalLabel">Retrival Request</h4>
+  </div>
+
+  <div class="modal-body">
+    <form [formGroup]="fundRetrivalRequestForm">
+        <div class="clearfix" *ngIf="formFields?.return_amount">
+        <div class="md-form">
+          <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.return_amount?.required"
+            maxlength="{{formFields?.return_amount?.maxLength}}" class="form-control" formControlName="return_amount"
+            id="return_amount" mdbInput required="{{formFields?.return_amount?.required}}">
+          <label for="return_amount"><span *ngIf="formFields?.return_amount?.required" class="red-text">*</span>
+            Return Amount (USD)</label>
+        </div>
+      </div>
+      <p>Bank Details: (Pharma Company)</p>
+        <div class="address-text">
+          <p><em>Accound Holder First Name, <br>Accound Holder Last Name, <br>Bank Name: DCB Bank, <br>Bank Number- HDC2015115, <br>Bank Account Number - 35416878 <br>Bank Location - NY</em></p>
+        </div>
+        <div  class="clearfix" *ngIf="formFields?.notes">
+          <div class="md-form">
+            <textarea mdbValidate [validateSuccess]="false" [validateError]="formFields?.notes?.required"
+              maxlength="{{formFields?.notes?.maxLength}}" class="form-control full-width" formControlName="notes"
+              id="notes" mdbInput required="{{formFields?.notes?.required}}"></textarea>
+            <label for="notes"><span *ngIf="formFields?.notes?.required" class="red-text">*</span>
+              Notes</label>
+          </div>
+        </div>
+    </form>
+  </div>
+
+
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light"  (click)="modalRef.hide()" 
+       [disabled]="fundRetrivalRequestForm.invalid"
+        mdbWavesEffect>Submit</button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+        (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+</div>
+</div>

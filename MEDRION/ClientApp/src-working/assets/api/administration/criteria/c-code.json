@@ -1,0 +1,135 @@
+{
+    "formFields": {
+        
+        "no_of_parts":{ "type":"dropdown", "required":true, "maxLength":100, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "seperator":{ "type":"dropdown", "required":true, "maxLength":100, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "parts_information_one":{
+            "type":"formGroup-label",
+            "formFields":{
+                "type":{
+                    "type":"dropdown",
+                    "required":true,
+                    "maxLength": 100,
+                    "validationMessage":"Field is either empty or incorrect"
+                },
+                "value":{
+                    "type":"number",
+                    "required":true,
+                    "maxLength": 50,
+                    "parretn": null,
+                    "validationMessage":"Field is either empty or incorrect"
+                }
+            }
+        },
+        "parts_information_two":{
+            "type":"formGroup-label",
+            "formFields":{
+                "type":{
+                    "type":"dropdown",
+                    "required":true,
+                    "maxLength": 100,
+                    "validationMessage":"Field is either empty or incorrect"
+                },
+                "value":{
+                    "type":"dropdown",
+                    "required":true,
+                    "maxLength": 50,
+                    "parretn": null,
+                    "validationMessage":"Field is either empty or incorrect"
+                }
+            }
+        },
+        "parts_information_three":{
+            "type":"formGroup-label",
+            "formFields":{
+                "type":{
+                    "type":"dropdown",
+                    "required":true,
+                    "maxLength": 100,
+                    "validationMessage":"Field is either empty or incorrect"
+                },
+                "value":{
+                    "type":"number",
+                    "required":true,
+                    "maxLength": 50,
+                    "parretn": null,
+                    "validationMessage":"Field is either empty or incorrect"
+                },
+                "format":{
+                    "type":"dropdown",
+                    "required":true,
+                    "maxLength": 50,
+                    "parretn": null,
+                    "validationMessage":"Field is either empty or incorrect"
+                },
+                "counter_reset_frequency":{
+                    "type":"dropdown",
+                    "required":true,
+                    "maxLength": 50,
+                    "parretn": null,
+                    "validationMessage":"Field is either empty or incorrect"
+                }
+            }
+        }
+        
+    },
+
+    "columnDefs": [
+        {
+            "headerName": "Module Name",
+            "field": "module_name",
+            "sort": "asc"            
+        },
+        {
+            "headerName": "Feature Name",
+            "field": "feature_name"
+        },
+        {
+            "headerName": "Enabled?",
+            "field": "enabled"
+        },
+        {
+            "headerName": "Format",
+            "field": "format"
+        }
+        
+    ],
+    "operations": [ 
+        {
+            "name": "Inactive",
+            "id": "inactive"
+        },
+        {
+            "name": "Active",
+            "id": "active"
+        },
+        {
+            "name": "Set Format",
+            "id": "setFormat"
+        }
+    ],
+    "advanceSearch": 
+        {
+            "fields": [
+                {
+                    "label": "Module Name",
+                    "field": "module_name",
+                    "type": "text"
+                },
+                {
+                    "label": "Feature Name",
+                    "field": "feature_name",
+                    "type": "dropdown"
+                },
+                {
+                    "label": "Enabled",
+                    "field": "enabled",
+                    "type": "dropdown",
+                    "options": [
+                        { "value": "Yes", "label": "Yes." },
+                        { "value": "No", "label": "No." }
+                    ]
+                }
+            ]
+        }
+}

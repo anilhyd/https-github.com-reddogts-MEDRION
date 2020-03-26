@@ -1,0 +1,41 @@
+.login-logo{
+    width: auto;
+    height: auto;
+    position: relative;
+    left: 126px;
+    top: 11px;
+}
+.total-bg{
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    height: 100%;
+    width: 100%;
+    background-repeat: round;
+    background-image: url('../../../assets/images/bg.png');
+}
+.pt-10{
+    padding-top: 10em;
+}
+.login-card{
+    margin: auto;
+    width: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+.left-half{
+    background: #fff;
+    padding: 15px;
+}
+.right-half{
+    background: rgb(41,110,212);
+    padding: 15px;
+}
+.box{
+    box-shadow: 2px 2px 4px 1px #676767;
+}
+.bg-white{
+    background: #fff;
+}

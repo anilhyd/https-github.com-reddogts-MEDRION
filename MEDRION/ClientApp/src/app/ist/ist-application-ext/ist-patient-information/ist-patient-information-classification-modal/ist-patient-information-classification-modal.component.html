@@ -1,0 +1,210 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">Add Classification</h4>
+  </div>
+  <p class="modal-second-title">
+    <mdb-icon far icon="lightbulb" class="amber-text" size="lg"></mdb-icon> Allows to enter the new classification
+    details comprising the multiple test results
+  </p>
+  <div class="modal-body">
+    <form [formGroup]="addClassificationForm">
+      <div class="row">
+        <div class="col-6">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.classification_type?.required" [options]="classificationTypesOptions"
+              formControlName="classification_type" required="{{formFields?.classification_type?.required}}">
+            </mdb-select>
+            <label for="classification_type"><span *ngIf="formFields?.classification_type?.required"
+                class="red-text">*</span>
+              Classification Type</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="file-field mt-2">
+            <file-upload></file-upload>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="md-form">
+            <textarea mdbValidate [validateSuccess]="false" [validateError]="formFields?.notes?.required"
+              maxlength="{{formFields?.notes?.maxLength}}" class="md-textarea form-control" formControlName="notes"
+              id="notes" mdbInput required="{{formFields?.notes?.required}}"></textarea>
+            <label for="notes"><span *ngIf="formFields?.notes?.required" class="red-text">*</span>
+              <mdb-icon far icon="sticky-note"></mdb-icon> Notes
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <button type="button" size="sm" mdbBtn color="amber" class="relative waves-light ml-0"
+            mdbWavesEffect>Add</button>
+        </div>
+        <div class="row">
+          <div formGroupName="test_details">
+            <div class="col-12 md-form custom-head">
+
+              <mdb-accordion [multiple]="true">
+                <mdb-accordion-item [collapsed]="false">
+                  <mdb-accordion-item-head>Test Name (1)</mdb-accordion-item-head>
+                  <mdb-accordion-item-body>
+                    <div class="row">
+                      <div class="col-8">
+                        <div class="md-form">
+                          <input type="text" mdbValidate [validateSuccess]="false"
+                            [validateError]="formFields?.test_details?.test_name?.required"
+                            maxlength="{{formFields?.test_details?.test_name?.maxLength}}" class="form-control"
+                            formControlName="test_name" id="test_name" mdbInput
+                            required="{{formFields?.test_details?.test_name?.required}}">
+                          <label for="test_name"><span *ngIf="formFields?.test_details?.test_name?.required" class="red-text">*</span>
+                            Test Name</label>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="md-form">
+                          <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions"
+                            [label]="'Estimated Start Date'" formControlName="date"
+                            required="{{formFields?.test_details?.date?.required}}">
+                          </mdb-date-picker>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-3 pr-0">
+                        <div class="md-form">
+                          <input type="text" mdbValidate [validateSuccess]="false"
+                            [validateError]="formFields?.test_details?.result?.required" maxlength="{{formFields?.test_details?.result?.maxLength}}"
+                            class="form-control" formControlName="result" id="result" mdbInput
+                            required="{{formFields?.test_details?.result?.required}}">
+                          <label for="result"><span *ngIf="formFields?.test_details?.result?.required" class="red-text">*</span>
+                            Result</label>
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="md-form">
+                          <mdb-select mdbValidate [validateSuccess]="false"
+                            [validateError]="formFields?.test_details?.result_units?.required" [options]="deliveryTypeOptions"
+                            formControlName="result_units" required="{{formFields?.test_details?.result_units?.required}}">
+                          </mdb-select>
+                          <label for="result_units"><span *ngIf="formFields?.test_details?.result_units?.required"
+                              class="red-text">*</span>
+                            Units</label>
+                        </div>
+                      </div>
+                      <div class="col-3 pr-0">
+                        <div class="md-form">
+                          <input type="text" mdbValidate [validateSuccess]="false"
+                            [validateError]="formFields?.test_details?.normal_range?.required"
+                            maxlength="{{formFields?.test_details?.normal_range?.maxLength}}" class="form-control"
+                            formControlName="normal_range" id="normal_range" mdbInput
+                            required="{{formFields?.test_details?.normal_range?.required}}">
+                          <label for="normal_range"><span *ngIf="formFields?.test_details?.normal_range?.required"
+                              class="red-text">*</span>
+                            Normal Range</label>
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="md-form">
+                          <mdb-select mdbValidate [validateSuccess]="false"
+                            [validateError]="formFields?.test_details?.normal_range_units?.required" [options]="deliveryTypeOptions"
+                            formControlName="normal_range_units"
+                            required="{{formFields?.test_details?.normal_range_units?.required}}">
+                          </mdb-select>
+                          <label for="normal_range_units"><span *ngIf="formFields?.test_details?.normal_range_units?.required"
+                              class="red-text">*</span>
+                            Units</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="md-form">
+                          <textarea mdbValidate [validateSuccess]="false"
+                            [validateError]="formFields?.test_details?.comments?.required"
+                            maxlength="{{formFields?.test_details?.comments?.maxLength}}" class="md-textarea form-control"
+                            formControlName="comments" id="comments" mdbInput
+                            required="{{formFields?.test_details?.comments?.required}}"></textarea>
+                          <label for="comments"><span *ngIf="formFields?.test_details?.comments?.required" class="red-text">*</span>
+                            Comments</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-6">
+
+                      </div>
+                      <div class="col-6 text-right">
+                        <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+                          (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+                        <button type="button" size="sm" mdbBtn color="light" class="relative waves-light"
+                          mdbWavesEffect>Ok</button>
+                      </div>
+                    </div>
+                  </mdb-accordion-item-body>
+                </mdb-accordion-item>
+
+                <mdb-accordion-item [collapsed]="true">
+                  <mdb-accordion-item-head>Test Name (2)</mdb-accordion-item-head>
+                  <mdb-accordion-item-body>
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                    wolf
+                    moon officia aute,
+                    non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
+                    moon
+                    tempor, sunt
+                    aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
+                    keffiyeh
+                    helvetica, craft
+                    beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                    Leggings occaecat
+                    craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+                    accusamus
+                    labore sustainable
+                    VHS.
+                  </mdb-accordion-item-body>
+                </mdb-accordion-item>
+
+                <mdb-accordion-item [collapsed]="true">
+                  <mdb-accordion-item-head>Test Name (3)</mdb-accordion-item-head>
+                  <mdb-accordion-item-body>
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                    wolf
+                    moon officia aute,
+                    non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
+                    moon
+                    tempor, sunt
+                    aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
+                    keffiyeh
+                    helvetica, craft
+                    beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                    Leggings occaecat
+                    craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+                    accusamus
+                    labore sustainable
+                    VHS.
+                  </mdb-accordion-item-body>
+                </mdb-accordion-item>
+              </mdb-accordion>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()"
+      [disabled]="addClassificationForm.invalid" mdbWavesEffect>Save</button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+  </div>
+</div>

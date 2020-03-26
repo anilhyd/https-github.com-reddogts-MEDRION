@@ -1,0 +1,190 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h5 class="modal-title w-100" id="myModalLabel">{{heading}} Product</h5>
+  </div>
+
+  <div class="modal-body">
+    <form [formGroup]="productViewForm">
+
+      <div class="row">
+
+        <div class="col-sm-3" *ngIf="formFields?.code">
+          <div class="md-form">
+            <input type="text" mdbValidate maxlength="{{formFields?.code?.maxLength}}" [validateSuccess]="false"
+              [validateError]="formFields?.code?.required" class="form-control" formControlName="code" id="code"
+              required="{{formFields?.code?.required}}" mdbInput>
+            <label for="code"><span *ngIf="formFields?.code?.required" class="red-text">*</span> Code </label>
+          </div>
+        </div>
+
+        <div class="col-sm-9" *ngIf="formFields?.name">
+          <div class="md-form">
+            <input type="text" mdbValidate maxlength="{{formFields?.name?.maxLength}}" [validateSuccess]="false"
+              [validateError]="formFields?.name?.required" class="form-control" formControlName="name" id="name"
+              required="{{formFields?.name?.required}}" mdbInput>
+            <label for="name"><span *ngIf="formFields?.name?.required" class="red-text">*</span> Name </label>
+          </div>
+        </div>
+
+        <div class="col-sm-3" *ngIf="formFields?.dosage_formulation">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.dosage_formulation?.required"
+              [options]="dosageFormulationOptions" formControlName="dosage_formulation" id="dosage_formulation"
+              required="{{formFields?.dosage_formulation?.required}}">
+            </mdb-select>
+            <label for="dosage_formulation"><span *ngIf="formFields?.dosage_formulation?.required"
+                class="red-text">*</span> Dosage Formulation</label>
+          </div>
+
+        </div>
+        <div class="col-sm-2" *ngIf="formFields?.strength">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.strength?.required"
+              maxlength="{{formFields?.strength?.maxLength}}" class="form-control" formControlName="strength"
+              id="strength" required="{{formFields?.strength?.required}}" mdbInput>
+            <label for="strength"><span *ngIf="formFields?.strength?.required" class="red-text">*</span>
+              Strength</label>
+          </div>
+        </div>
+        <div class="col-sm-2" *ngIf="formFields?.units">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.units?.required"
+              [options]="strengthAndUnitsOptions" formControlName="units" id="units" required="{{formFields?.units?.required}}">
+            </mdb-select>
+            <label for="units"><span *ngIf="formFields?.units?.required" class="red-text">*</span> Units</label>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-sm-3" *ngIf="formFields?.therapeutic_area">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.therapeutic_area?.required"
+              [options]="theraputicAreaOptions" formControlName="therapeutic_area" id="therapeutic_area"
+              required="{{formFields?.therapeutic_area?.required}}">
+            </mdb-select>
+            <label for="therapeutic_area"><span *ngIf="formFields?.therapeutic_area?.required" class="red-text">*</span>
+              Therapuetic Area</label>
+          </div>
+        </div>
+        <div class="col-sm-3" *ngIf="formFields?.program">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.program?.required"
+              [options]="optionsSelect" formControlName="program" id="program"
+              required="{{formFields?.program?.required}}">
+            </mdb-select>
+            <label for="program"><span *ngIf="formFields?.program?.required" class="red-text">*</span> Program</label>
+          </div>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6" *ngIf="formFields?.company_drug_code">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.company_drug_code?.required"
+              maxlength="{{formFields?.company_drug_code?.maxLength}}" class="form-control"
+              formControlName="company_drug_code" id="company_drug_code"
+              required="{{formFields?.company_drug_code?.required}}" mdbInput>
+            <label for="company_drug_code"><span *ngIf="formFields?.company_drug_code?.required"
+                class="red-text">*</span> Company Drug Code</label>
+          </div>
+        </div>
+        <div class="col-sm-6" *ngIf="formFields?.product_code">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.product_code?.required" maxlength="{{formFields?.product_code?.maxLength}}"
+              class="form-control" formControlName="product_code" id="product_code"
+              required="{{formFields?.product_code?.required}}" mdbInput>
+            <label for="product_code"><span *ngIf="formFields?.product_code?.required" class="red-text">*</span> Product
+              Code</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="md-form mt-0">
+          <div class="col-sm-12">
+            <h6 class="dark-grey-text mb-2 mt-1"><strong class="card-header-text">Attached Documents </strong> <button
+                size="sm" type="button" mdbBtn color="light" (click)="addDocuments($event)"
+                mdbWavesEffect>Add</button></h6>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 custom-head">
+          <mdb-accordion [multiple]="true">
+            <mdb-accordion-item>
+              <mdb-accordion-item-head >Trade Name Approval <mdb-icon style="right: 64px;position: absolute;" title="Edit" (click)="addDocuments($event)" far icon="edit"></mdb-icon><mdb-icon style="right: 40px;position: absolute;" far icon="trash-alt"></mdb-icon>
+              </mdb-accordion-item-head>
+              <mdb-accordion-item-body class="border-left border-right">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <p class="mb-0 mt-3">Trade name</p>
+                      <p class="font-weight-bold mt-1">ABC Company</p>
+                      <!-- <div class="md-form">
+                        <input type="text"class="form-control" id="trade_name" placeholder="ABC Company" mdbInput>
+                        <label for="trade_name">
+                          Trade name</label>
+                      </div> -->
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="mb-0 mt-3">Market Authorization Holder</p>
+                        <p class="font-weight-bold mt-1">ABC Authorization</p>
+                      <!-- <div class="md-form">
+                        <input type="text" class="form-control" id="market_authorization_holder" placeholder="ABC Authorization" mdbInput>
+                        <label for="market_authorization_holder">
+                          Market Authorization Holder</label>
+                      </div> -->
+                    </div>
+                  </div>
+                  <h6 class="md-form">Country Authorizations (4)</h6>
+              </mdb-accordion-item-body>
+            </mdb-accordion-item>
+
+            <mdb-accordion-item>
+              <mdb-accordion-item-head >Trade Name Approval <mdb-icon style="right: 64px;position: absolute;" title="Edit" (click)="addDocuments($event)" far icon="edit"></mdb-icon><mdb-icon style="right: 40px;position: absolute;" far icon="trash-alt"></mdb-icon>
+              </mdb-accordion-item-head>
+              <mdb-accordion-item-body class="border-left border-right">
+                  <div class="row">
+                      <div class="col-sm-6">
+                          <p class="mb-0 mt-3">Market Authorization Holder</p>
+                          <p class="font-weight-bold mt-1">ABC Authorization</p>
+                        <!-- <div class="md-form">
+                          <input type="text"class="form-control"id="trade_name1" placeholder="ABC Company" mdbInput>
+                          <label for="trade_name1">
+                            Trade name</label>
+                        </div> -->
+                      </div>
+                      <div class="col-sm-6">
+                          <p class="mb-0 mt-3">Market Authorization Holder</p>
+                          <p class="font-weight-bold mt-1">ABC Authorization</p>
+                        <!-- <div class="md-form">
+                          <input type="text" class="form-control" id="market_authorization_holder1" placeholder="ABC Authorization" mdbInput>
+                          <label for="market_authorization_holder1">
+                            Market Authorization Holder</label>
+                        </div> -->
+                      </div>
+                    </div>
+                    <h6 class="md-form">Country Authorizations (4)</h6>
+              </mdb-accordion-item-body>
+            </mdb-accordion-item>
+
+          </mdb-accordion>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()"
+      [disabled]="productViewForm.invalid" *ngIf="heading === 'Add' || heading === 'Edit'" mdbWavesEffect>Save</button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+  </div>
+</div>

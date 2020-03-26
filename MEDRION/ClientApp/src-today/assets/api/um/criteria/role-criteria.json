@@ -1,0 +1,66 @@
+{
+    "formFields": {
+        "role_code":{ "type":"text", "required":true, "maxLength":20, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "role_name":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "role_description":{ "type":"textarea", "required":false, "maxLength":200, "pattern":null,  "validationMessage":"Field is either empty or incorrect"},
+        "role_template":{ "type":"dropdown", "required":true, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+    },
+    "formOperations": [
+        {
+            "name": "Save",
+            "id": "save",
+            "type":"submit"
+        }
+    ],
+    "columnDefs": [
+        {
+            "field": "role_code",
+            "headerName": "Code",
+            "sort": "asc"
+        },
+        {
+            "field": "role_name",
+            "headerName": "Name"            
+        },
+        {
+            "field": "role_template",
+            "headerName": "Template"
+        }
+    ],
+    "operations": [
+        {
+            "name": "Map Privileges",
+            "id": "map_privileges"
+        },
+        {
+            "name": "Map Users",
+            "id": "map_users"
+        },
+        {
+            "name": "Delete",
+            "id": "delete"
+        },
+        {
+            "name": "View",
+            "id": "view"
+        },
+        {
+            "name": "Edit",
+            "id": "edit"
+        },
+        {
+            "name": "Add New",
+            "id": "add"
+        }
+    ],
+    "advanceSearch": 
+        {
+            "fields": [
+                {
+                    "label": "Name",
+                    "field": "name",
+                    "type": "text"
+                }
+            ]
+        }
+}

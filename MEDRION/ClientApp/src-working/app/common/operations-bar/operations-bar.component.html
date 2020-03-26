@@ -1,0 +1,6 @@
+<div class="operations-row" #operationsBar [ngClass]="{'operation-row-ext':app_ext}">
+  <button style="margin-top: -0.5px;" mdbBtn type="{{operation?.type?operation.type:'button'}}" color="light" size="sm" mdbWavesEffect *ngFor="let operation of operations | myfilter:filterargs"
+    [disabled]="operation?.disabled?!operation.disabled:!enableOperations" (click)="onOperationClick(operation)">
+    <mdb-icon far icon="{{operation.icon}}"></mdb-icon> {{operation.name}}
+  </button>
+</div>

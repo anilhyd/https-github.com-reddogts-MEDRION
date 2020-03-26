@@ -1,0 +1,94 @@
+<div class="modal-content">
+
+    <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title w-100 text-center" id="myModalLabel">{{heading}}</h4>
+    </div>
+
+    <div class="modal-body">
+        <form [formGroup]="composeForm">
+            <div class="row">
+                <div class="col-12">
+                    <div class="md-form">
+                        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true" id="name"
+                            formControlName="name" class="form-control" mdbInput required>
+                        <label for="name">Subject</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-11">
+                    <div class="md-form">
+                        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true" id="to"
+                            formControlName="to" class="form-control" mdbInput required>
+                        <label for="to">To</label>
+                    </div>
+                </div>
+                <div class="col-1">
+                    <div class="md-form">
+                        <button size="sm" type="button" mdbBtn color="light" class="waves-light" (click)="to()"
+                            mdbWavesEffect>...</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-11">
+                    <div class="md-form">
+                        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true" id="cc"
+                            formControlName="cc" class="form-control" mdbInput>
+                        <label for="cc">CC</label>
+                    </div>
+                </div>
+                <div class="col-1">
+                    <div class="md-form">
+                        <button size="sm" type="button" mdbBtn color="light" class="waves-light" (click)="to()"
+                            mdbWavesEffect>...</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-auto">
+                    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close" style="margin-left:0px !important"
+                        (click)="attachments()" mdbWavesEffect>
+                        <mdb-icon class="mr-1" fas icon="paperclip"></mdb-icon>Attachments
+                    </button>
+                </div>
+                <div class="col">
+                    <div class="chip mt-2" title="{{item}}" *ngFor="let item of uploadedFiles; index as i">
+                        <mdb-icon fas class="mr-1" icon="file-excel"></mdb-icon>
+                        <span class="crop-text wd-200">{{item}}</span>
+                        <i class="close fas fa-times"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <!-- <div class="md-form">
+                        <textarea placeholder="" mdbValidate [validateSuccess]="false" [validateError]="true"
+                            style="height: 156px;" formControlName="desc" mdbValidate id="desc" type="text"
+                            class="md-textarea form-control" required mdbInput></textarea>
+                    </div> -->
+                    <div class="md-form">
+                        <textarea style="height: 156px;" mdbValidate [validateSuccess]="false"
+                          formControlName="desc" id="desc" type="text" class="md-textarea form-control" mdbInput></textarea>
+                        <label for="desc">
+                          Body</label>
+                      </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+            (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+        <button type="button" size="sm" mdbBtn color="light" class="waves-light" (click)="modalRef.hide()" mdbWavesEffect>Save as Draft
+        </button>
+        <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()"
+            [disabled]="composeForm.invalid" mdbWavesEffect>
+            <mdb-icon class="mr-1" far icon="paper-plane"></mdb-icon> Send
+        </button>
+    </div>
+</div>

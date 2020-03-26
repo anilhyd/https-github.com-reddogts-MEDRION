@@ -1,0 +1,200 @@
+{
+    "formFields": [
+        {
+            "new_request": {
+                "status":{ "type":"dropdown", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "product_name":{ "type":"dropdown", "required":true, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "dosage_formulation":{ "type":"dropdown", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "strength":{ "type":"dropdown", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "units":{ "type":"dropdown", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "required_by":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "fulfulment_type":{ "type":"dropdown", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "patiient_id":{ "type":"dropdown", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "shipping_address":{ "type":"dropdown", "required":true, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "partner_network":{ "type":"dropdown", "required":true, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "billing_address":{ "type":"dropdown", "required":true, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+                "recurrence":{ "type":"dropdown", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "repeats_every":{ "type":"dropdown", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+                "ends_on_radio":{ "type":"radio", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "after_no_of_occurances_radio":{ "type":"radio", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "ends_on_input":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "after_no_of_occurances_input":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "days_input":{ "type":"checkbox", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+                "required_quantity":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "required_quantity_type":{ "type":"dropdown", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "used_quantity":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "used_quantity_type":{ "type":"dropdown", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "date_of_receipt":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+                "allocated_quantity":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "allocated_quantity_type":{ "type":"dropdown", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "shipment_tracking_id":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "shipment_service_provider":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "date_of_dispatch":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "batch_number":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "date_of_manufacture":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "date_of_expiry":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "storage_instructions":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "return_quantity":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "return_quantity_type":{ "type":"dropdown", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "shipment_number":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "return_shipment_service_provider":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "return_date_of_dispatch":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "return_note":{ "type":"text", "required":false, "maxLength":500, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "return_date_of_receipt":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+            },
+            "return_retrival": {
+                "return_quantity":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "return_quantity_type":{ "type":"dropdown", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "shippment_number":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "shippment_service_provider":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "date_of_dispatch":{ "type":"text", "required":true, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "notes":{ "type":"textarea", "required":false, "maxLength":500, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "date_of_receipt":{ "type":"text", "required":true, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+            },
+
+            "fund_request": {
+                "status":{ "type":"dropdown", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "category":{ "type":"dropdown", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "sub_category":{ "type":"dropdown", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "other_category":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "required_fund":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "used_fund":{ "type":"text", "required":true, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "bank_details":{ "type":"dropdown", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "return_amount":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "cheque_number":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "shimpment_service_provider":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "shipment_tracking_number":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "transaction_number":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "allocated_fund":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "transaction_number2":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+            },
+
+            "fund_return_retrival": {
+                "return_amount":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "notes":{ "type":"textarea", "required":false, "maxLength":500, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+            }
+        }
+    ],
+    
+
+
+
+    "columnDefs": [
+        {
+            "headerName": "Request ID",
+            "field": "request_id"
+        },
+        {
+            "headerName": "Request Type",
+            "field": "request_type"
+        },
+        {
+            "headerName": "Product Name",
+            "field": "product_name",
+            "sort": "asc"  
+        },
+        {
+            "headerName": "Requested",
+            "field": "requested"
+        },
+        {
+            "headerName": "Allocated",
+            "field": "allocated"
+        },
+        {
+            "headerName": "Used",
+            "field": "used"
+        },
+        {
+            "headerName": "Status",
+            "field": "status"
+        }
+    ],
+    "operations": [
+        
+        {
+            "name": "Edit",
+            "id": "edit"
+        },
+        {
+            "name": "Delete",
+            "id": "delete"
+        },
+        {
+            "name": "Withdraw",
+            "id": "withdraw"
+        },
+        {
+            "name": "Allocate",
+            "id": "allocate"
+        },
+        {
+            "name": "Return",
+            "id": "returnProduct"
+        },
+        {
+            "name": "Approve",
+            "id": "approve"
+        },
+        {
+            "name": "Reject",
+            "id": "reject"
+        },
+        {
+            "name": "Retrieve",
+            "id": "retrieve"
+        },
+        {
+            "name": "Close",
+            "id": "close"
+        },
+        {
+            "name": "Retrieve Fund",
+            "id": "retrieve_fund"
+        },
+        {
+            "name": "View Fund",
+            "id": "view_fund_request"
+        },
+        {
+            "name": "Add Fund Request",
+            "id": "add_fund_request"
+        },
+        {
+            "name": "Add Product Request",
+            "id": "add_product_request"
+        }
+    ],
+    "advanceSearch": 
+        {
+            "fields": [
+                {
+                    "label": "Request ID",
+                    "field": "id",
+                    "type": "text"
+                },
+                {
+                    "label": "Request Type",
+                    "field": "request_type",
+                    "type": "text"
+                },
+                {
+                    "label": "Product Name ",
+                    "field": "product_name ",
+                    "type": "dropdown",
+                    "options": [{ "value": "All", "label":"All"},{ "value": "OptionOne", "label":"Exemestane"},{ "value": "OptionTwo", "label":"Radium 223 dichloride"}]
+                },
+                {
+                    "label": "Status",
+                    "field": "status",
+                    "type": "dropdown",
+                    "options": [{ "value": "Submitted", "label":"Submitted"},{ "value": "OptionOne", "label":"Approved"},{ "value": "OptionTwo", "label":"Allocated"},{ "value": "OptionThree", "label":"Closed"}]
+                }
+            ],
+            "filters": []
+        }
+}

@@ -1,0 +1,244 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h5 class="modal-title w-100" id="myModalLabel">{{heading}} Company Representatives</h5>
+  </div>
+
+  <div class="modal-body">
+    <form [formGroup]="companyRepresentativeViewForm">
+
+      <div class="row">
+
+        <div class="col-sm-3" *ngIf="formFields?.id_number">
+          <div class="md-form">
+            <input type="text" mdbValidate maxlength="{{formFields?.id_number?.maxLength}}" [validateSuccess]="false"
+              [validateError]="formFields?.id_number?.required" class="form-control" formControlName="id_number"
+              id="id_number" required="{{formFields?.id_number?.required}}" mdbInput>
+            <label for="id_number"><span *ngIf="formFields?.id_number?.required" class="red-text">*</span> ID
+              Number</label>
+          </div>
+        </div>
+        
+        <div class="col-sm-1" *ngIf="formFields?.prefix">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.prefix?.required"
+              [options]="optionsSelect" formControlName="prefix" id="prefix"
+              required="{{formFields?.prefix?.required}}">
+            </mdb-select>
+            <label for="prefix"><span *ngIf="formFields?.prefix?.required" class="red-text">*</span> Prefix</label>
+          </div>
+
+        </div>
+        <div class="col-sm-2" *ngIf="formFields?.first_name">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.first_name?.required"
+              maxlength="{{formFields?.first_name?.maxLength}}" class="form-control" formControlName="first_name"
+              id="first_name" required="{{formFields?.first_name?.required}}" mdbInput>
+            <label for="first_name"><span *ngIf="formFields?.first_name?.required" class="red-text">*</span> First
+              Name</label>
+          </div>
+        </div>
+        <div class="col-sm-3" *ngIf="formFields?.middle_name">
+          <div class="md-form">
+              <input type="text" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.middle_name?.required"
+              maxlength="{{formFields?.middle_name?.maxLength}}" formControlName="middle_name" id="middle_name"
+              class="form-control" required="{{formFields?.middle_name?.required}}" mdbInput>
+            <label for="middle_name"><span *ngIf="formFields?.middle_name?.required"
+                class="red-text">*</span> Middle Name</label>
+          </div>
+        </div>
+        <div class="col-sm-3" *ngIf="formFields?.last_name">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.last_name?.required"
+              maxlength="{{formFields?.last_name?.maxLength}}" class="form-control" formControlName="last_name"
+              id="last_name" required="{{formFields?.last_name?.required}}" mdbInput>
+            <label for="last_name"><span *ngIf="formFields?.last_name?.required" class="red-text">*</span> Last
+              Name</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3" *ngIf="formFields?.representative_type">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.representative_type?.required" [options]="optionsSelect"
+              formControlName="representative_type" id="representative_type"
+              required="{{formFields?.representative_type?.required}}">
+            </mdb-select>
+            <label for="representative_type"><span *ngIf="formFields?.representative_type?.required"
+                class="red-text">*</span> Representative
+              Type</label>
+          </div>
+        </div>
+        <div class="col-sm-3" *ngIf="formFields?.region">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.region?.required"
+              [options]="optionsSelect" formControlName="region" id="region"
+              required="{{formFields?.region?.required}}">
+            </mdb-select>
+            <label for="region"><span *ngIf="formFields?.region?.required" class="red-text">*</span> Region</label>
+          </div>
+
+        </div>
+        <div class="col-sm-3" *ngIf="formFields?.district">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.district?.required"
+              [options]="optionsSelect" formControlName="prefix" id="district"
+              required="{{formFields?.district?.required}}">
+            </mdb-select>
+            <label for="district"><span *ngIf="formFields?.district?.required" class="red-text">*</span>
+              District</label>
+          </div>
+        </div>
+        <div class="col-sm-3" *ngIf="formFields?.territory">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.territory?.required"
+              [options]="optionsSelect" formControlName="territory" id="territory"
+              required="{{formFields?.territory?.required}}">
+            </mdb-select>
+            <label for="territory"><span *ngIf="formFields?.territory?.required" class="red-text">*</span>
+              Territory</label>
+          </div>
+        </div>
+      </div>
+      <div class="text-left">
+        <h6 class="dark-grey-text  mb-2 mt-5">
+          <strong class="card-header-text">Address & Communication Details</strong>
+        </h6>
+      </div>
+      <div formGroupName="address_communication">
+        <div class="row">
+          <div class="col-sm-6" *ngIf="formFields?.address_communication?.formFields?.address">
+            <div class="md-form">
+              <textarea mdbValidate [validateSuccess]="false"
+                [validateError]="formFields?.address_communication?.formFields?.address?.required"
+                maxlength="{{formFields?.address_communication?.formFields?.address?.maxLength}}" formControlName="address"
+                id="address" type="text" class="md-textarea form-control"
+                required="{{formFields?.address_communication?.formFields?.address?.required}}" mdbInput></textarea>
+              <label for="address"><span *ngIf="formFields?.address_communication?.formFields?.address?.required"
+                  class="red-text">*</span> <mdb-icon far icon="address-card"></mdb-icon> Address</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3" *ngIf="formFields?.address_communication?.formFields?.postal_Code">
+            <div class="md-form">
+              <input type="text" mdbValidate [validateSuccess]="false"
+                [validateError]="formFields?.address_communication?.formFields?.postal_Code?.required"
+                maxlength="{{formFields?.address_communication?.formFields?.postal_Code?.maxLength}}" formControlName="postal_Code"
+                id="postal_Code" class="form-control"
+                required="{{formFields?.address_communication?.formFields?.postal_Code?.required}}" mdbInput>
+              <label for="postal_Code"><span *ngIf="formFields?.address_communication?.formFields?.postal_Code?.required"
+                  class="red-text">*</span> <mdb-icon fas icon="map-marker-alt"></mdb-icon> Postal Code</label>
+            </div>
+          </div>
+          <div class="col-sm-3" *ngIf="formFields?.address_communication?.formFields?.city">
+            <div class="md-form">
+              <input type="text" mdbValidate [validateSuccess]="false"
+                [validateError]="formFields?.address_communication?.formFields?.city?.required"
+                maxlength="{{formFields?.address_communication?.formFields?.city?.maxLength}}" formControlName="city" id="city"
+                class="form-control" required="{{formFields?.address_communication?.formFields?.city?.required}}" mdbInput>
+              <label for="city"><span *ngIf="formFields?.address_communication?.formFields?.city?.required"
+                  class="red-text">*</span> <mdb-icon far icon="building"></mdb-icon> City</label>
+            </div>
+          </div>
+          <div class="col-sm-3" *ngIf="formFields?.address_communication?.formFields?.state">
+            <div class="md-form">
+              <input type="text" mdbValidate [validateSuccess]="false"
+                [validateError]="formFields?.address_communication?.formFields?.state?.required"
+                maxlength="{{formFields?.address_communication?.formFields?.state?.maxLength}}" formControlName="state" id="state"
+                class="form-control" required="{{formFields?.address_communication?.formFields?.state?.required}}" mdbInput>
+              <label for="state"><span *ngIf="formFields?.address_communication?.formFields?.state?.required"
+                  class="red-text">*</span> <mdb-icon fas icon="city"></mdb-icon> State</label>
+            </div>
+          </div>
+          <div class="col-sm-3" *ngIf="formFields?.address_communication?.formFields?.country">
+            <div class="md-form">
+              <input type="text" mdbValidate [validateSuccess]="false"
+                [validateError]="formFields?.address_communication?.formFields?.country?.required"
+                maxlength="{{formFields?.address_communication?.formFields?.country?.maxLength}}" formControlName="country"
+                id="country" class="form-control" required="{{formFields?.address_communication?.formFields?.country?.required}}"
+                mdbInput>
+              <label for="country"><span *ngIf="formFields?.address_communication?.formFields?.country?.required"
+                  class="red-text">*</span><mdb-icon fas icon="globe-americas"></mdb-icon> Country</label>
+            </div>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-sm-2" *ngIf="formFields?.address_communication?.formFields?.phone_number">
+            <div class="md-form">
+              <input type="text" mdbValidate [validateSuccess]="false"
+                [validateError]="formFields?.address_communication?.formFields?.phone_number?.required"
+                maxlength="{{formFields?.address_communication?.formFields?.phone_number?.maxLength}}"
+                formControlName="phone_number" id="phone_number" class="form-control"
+                required="{{formFields?.address_communication?.formFields?.name?.required}}" mdbInput>
+              <label for="phone_number"><span *ngIf="formFields?.address_communication?.formFields?.phone_number?.required"
+                  class="red-text">*</span> <mdb-icon fas icon="phone"></mdb-icon> Phone Number</label>
+            </div>
+          </div>
+          <div class="col-sm-1" *ngIf="formFields?.address_communication?.formFields?.phone_number_ext">
+            <div class="md-form">
+              <input type="text" mdbValidate [validateSuccess]="false"
+                [validateError]="formFields?.address_communication?.formFields?.phone_number_ext?.required"
+                maxlength="{{formFields?.address_communication?.formFields?.phone_number_ext?.maxLength}}"
+                formControlName="phone_number_ext" id="phone_number_ext" class="form-control"
+                required="{{formFields?.address_communication?.formFields?.phone_number_ext?.required}}" mdbInput>
+              <label for="phone_number_ext"><span *ngIf="formFields?.address_communication?.formFields?.phone_number_ext?.required"
+                  class="red-text">*</span> Ext</label>
+            </div>
+          </div>
+          <div class="col-sm-2" *ngIf="formFields?.address_communication?.formFields?.other_phone_number">
+            <div class="md-form">
+              <input type="text" mdbValidate maxlength="{{formFields?.address_communication?.formFields?.other_phone_number?.maxLength}}"
+                [validateSuccess]="false"
+                [validateError]="formFields?.address_communication?.formFields?.other_phone_number?.required"
+                formControlName="other_phone_number" id="other_phone_number" class="form-control"
+                required="{{formFields?.address_communication?.formFields?.other_phone_number?.required}}" mdbInput>
+              <label for="other_phone_number"><span
+                  *ngIf="formFields?.address_communication?.formFields?.other_phone_number?.required" class="red-text">*</span>
+                  <mdb-icon fas icon="phone"></mdb-icon> Other Phone No</label>
+            </div>
+          </div>
+          <div class="col-sm-1" *ngIf="formFields?.address_communication?.formFields?.other_phone_number_ext">
+            <div class="md-form">
+              <input type="text"  mdbValidate maxlength="{{formFields?.address_communication?.formFields?.other_phone_number_ext?.maxLength}}"
+                [validateSuccess]="false"
+                [validateError]="formFields?.address_communication?.formFields?.other_phone_number_ext?.required"
+                formControlName="other_phone_number_ext" id="other_phone_number_ext"
+                required="{{formFields?.address_communication?.formFields?.other_phone_number_ext?.required}}" class="form-control"
+                mdbInput>
+              <label for="other_phone_number_ext"><span
+                  *ngIf="formFields?.address_communication?.formFields?.other_phone_number_ext?.required"
+                  class="red-text">*</span> Ext</label>
+            </div> 
+          </div>
+          <div class="col-sm-6" *ngIf="formFields?.address_communication?.formFields?.email_id">
+            <div class="md-form">
+              <input type="text" mdbValidate [validateSuccess]="false"
+                [validateError]="formFields?.address_communication?.formFields?.email_id?.required"
+                maxlength="{{formFields?.address_communication?.formFields?.email_id?.maxLength}}"
+                required="{{formFields?.address_communication?.formFields?.email_id?.required}}" formControlName="email_id"
+                id="email_id" class="form-control" mdbInput>
+              <label for="email_id"><span *ngIf="formFields?.address_communication?.formFields?.email_id?.required"
+                  class="red-text">*</span> <mdb-icon far icon="envelope"></mdb-icon> Email Address</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()"
+      [disabled]="companyRepresentativeViewForm.invalid" *ngIf="heading === 'Add' || heading === 'Edit'"
+      mdbWavesEffect>Save</button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+  </div>
+</div>

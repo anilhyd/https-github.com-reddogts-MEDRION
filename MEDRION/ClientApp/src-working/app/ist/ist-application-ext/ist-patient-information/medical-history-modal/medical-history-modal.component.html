@@ -1,0 +1,27 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">Medical History</h4>
+  </div>
+  <div class="modal-body">
+    <div class="row org-grid mb-3" *ngIf="rowData?.length">
+      <div class="col-lg-12" *ngIf="loadGrid">
+        <ag-grid-angular style="width: 99%;" class="ag-theme-balham simple-grid" style="height: calc(100% -  49px)"
+          [rowData]="rowData" [columnDefs]="columnDefs" [gridOptions]="gridOptions" (gridReady)="onGridReady($event)"
+          [frameworkComponents]="frameworkComponents" [context]="context">
+        </ag-grid-angular>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="addMedicalHistory()"
+      mdbWavesEffect>Add New</button>  
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()"
+       mdbWavesEffect>Ok</button>  
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close" (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+  </div>
+</div>

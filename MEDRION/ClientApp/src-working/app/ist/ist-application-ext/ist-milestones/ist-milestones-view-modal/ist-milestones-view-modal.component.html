@@ -1,0 +1,94 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h5 class="modal-title w-100" id="myModalLabel">{{heading}} Milestones</h5>
+  </div>
+
+  <div class="modal-body">
+    <form [formGroup]="milestoneForm">
+      <div class="row">
+        <div class="col-md-4 col-sm-4" *ngIf="formFields?.milestone">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.milestone?.required"
+              maxlength="{{formFields?.milestone?.maxLength}}" class="form-control" formControlName="milestone"
+              id="dynmcId1" mdbInput required="{{formFields?.milestone?.required}}">
+            <label for="dynmcId1"><span *ngIf="formFields?.milestone?.required" class="red-text">*</span>
+              Milestone#</label>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="md-form">
+            <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions"
+              [label]="'Study Start Date'" formControlName="current_start_date_of_study"
+              required="{{formFields?.current_start_date_of_study?.required}}">
+            </mdb-date-picker>
+            <!-- <mdb-date-picker name="mydate" [options]="myDatePickerOptions" formControlName="current_start_date_of_study" 
+                required="{{formFields?.current_start_date_of_study?.required}}"
+                    required></mdb-date-picker>
+                <label for="current_start_date_of_study" class="active"><span *ngIf="formFields?.current_start_date_of_study?.required" class="red-text">*</span>
+                  Study Start Date</label> -->
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="md-form">
+            <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions"
+              [label]="'Study End Date'" formControlName="current_end_date_of_study"
+              required="{{formFields?.current_end_date_of_study?.required}}">
+            </mdb-date-picker>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-sm-12" *ngIf="formFields?.milestone_title">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.milestone_title?.required"
+              maxlength="{{formFields?.milestone_title?.maxLength}}" class="form-control"
+              formControlName="milestone_title" id="dynmcId4" mdbInput
+              required="{{formFields?.milestone_title?.required}}">
+            <label for="dynmcId4"><span *ngIf="formFields?.milestone_title?.required" class="red-text">*</span>
+              Title</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-sm-12" *ngIf="formFields?.notes">
+          <div class="md-form">
+            <textarea mdbValidate maxlength="{{formFields?.notes?.maxLength}}"
+              [validateSuccess]="formFields?.notes?.required" formControlName="notes" id="dynmcId5" type="text"
+              class="md-textarea form-control" mdbInput required="{{formFields?.notes?.required}}"></textarea>
+            <label for="dynmcId5"><span *ngIf="formFields?.notes?.required" class="red-text">*</span>
+              <mdb-icon far icon="sticky-note"></mdb-icon> Notes</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="mt-4 col-12">
+          <h5>Attachments <button style="float:right" size="sm" type="button" mdbBtn color="light"
+              (click)="addNewAttachment()" mdbWavesEffect>Add New Attachment</button> </h5>
+        </div>
+      </div>
+      <div class="row org-grid mb-3" *ngIf="rowData?.length">
+        <div class="col-lg-12" *ngIf="loadGrid">
+          <ag-grid-angular style="width: 99%;" class="ag-theme-balham simple-grid" style="height: calc(100% -  49px)"
+            [rowData]="rowData" [columnDefs]="columnDefs" [gridOptions]="gridOptions" (gridReady)="onGridReady($event)"
+            [frameworkComponents]="frameworkComponents" [context]="context">
+          </ag-grid-angular>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()"
+      *ngIf="heading === 'Add' || heading === 'Edit'" [disabled]="milestoneForm.invalid" mdbWavesEffect>Save</button>
+      <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()"
+      *ngIf="heading === 'Add' || heading === 'Edit'" [disabled]="milestoneForm.invalid" mdbWavesEffect>Submit</button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+  </div>
+</div>

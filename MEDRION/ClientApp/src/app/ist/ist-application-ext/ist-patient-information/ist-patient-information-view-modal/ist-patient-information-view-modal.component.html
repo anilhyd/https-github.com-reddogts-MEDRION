@@ -1,0 +1,432 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">{{heading}} Patient</h4>
+  </div>
+  <!-- <p class="modal-second-title">
+    <mdb-icon far icon="lightbulb" class="amber-text" size="lg"></mdb-icon> Allows to enter the new classification
+    details comprising the multiple test results
+  </p> -->
+  <div class="modal-body">
+    <form [formGroup]="viewPatientInformationForm">
+
+      <div class="row">
+        <div class="col-lg-12 col-xs-12">
+          <h6 class="dark-grey-text"><strong class="card-header-text">General
+              :</strong></h6>
+        </div>
+        <div class="col-3">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.first_name?.required"
+              maxlength="{{formFields?.first_name?.maxLength}}" class="form-control" formControlName="first_name"
+              id="first_name" mdbInput required="{{formFields?.first_name?.required}}">
+            <label for="first_name"><span *ngIf="formFields?.first_name?.required" class="red-text">*</span>
+              First Name</label>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.middle_name?.required"
+              maxlength="{{formFields?.middle_name?.maxLength}}" class="form-control" formControlName="middle_name"
+              id="middle_name" mdbInput required="{{formFields?.middle_name?.required}}">
+            <label for="middle_name"><span *ngIf="formFields?.middle_name?.required" class="red-text">*</span>
+              Middle Name</label>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.last_name?.required"
+              maxlength="{{formFields?.last_name?.maxLength}}" class="form-control" formControlName="last_name"
+              id="last_name" mdbInput required="{{formFields?.last_name?.required}}">
+            <label for="last_name"><span *ngIf="formFields?.last_name?.required" class="red-text">*</span>
+              Last Name</label>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.initials?.required"
+              maxlength="{{formFields?.initials?.maxLength}}" class="form-control" formControlName="initials"
+              id="initials" mdbInput required="{{formFields?.initials?.required}}">
+            <label for="initials"><span *ngIf="formFields?.initials?.required" class="red-text">*</span>
+              Initials</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.patient_id?.required"
+              maxlength="{{formFields?.patient_id?.maxLength}}" class="form-control" formControlName="patient_id"
+              id="patient_id" mdbInput required="{{formFields?.patient_id?.required}}">
+            <label for="patient_id"><span *ngIf="formFields?.patient_id?.required" class="red-text">*</span>
+              Patient ID</label>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="md-form">
+            <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions"
+              [label]="'Date of Birth'" formControlName="date_of_birth"
+              required="{{formFields?.date_of_birth?.required}}">
+            </mdb-date-picker>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.gender?.required"
+              [options]="genderOptions" formControlName="gender"
+              required="{{formFields?.gender?.required}}"></mdb-select>
+            <label for="gender"><span *ngIf="formFields?.gender?.required" class="red-text">*</span>
+              Gender</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <div class="md-form">
+            <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions" [label]="'Date of LMP'"
+              formControlName="date_of_lmp" required="{{formFields?.date_of_lmp?.required}}">
+            </mdb-date-picker>
+          </div>
+        </div>
+        <div class="col-2 pr-0">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.weight?.required"
+              maxlength="{{formFields?.weight?.maxLength}}" class="form-control" formControlName="weight" id="weight"
+              mdbInput required="{{formFields?.weight?.required}}">
+            <label for="weight"><span *ngIf="formFields?.weight?.required" class="red-text">*</span>
+              Weight</label>
+          </div>
+        </div>
+        <div class="col-1">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.weight_dropdown?.required"
+              [options]="weightOptions" formControlName="weight_dropdown"
+              required="{{formFields?.weight_dropdown?.required}}"></mdb-select>
+            <label for="weight_dropdown"><span *ngIf="formFields?.weight_dropdown?.required" class="red-text">*</span>
+            </label>
+          </div>
+        </div>
+        <div class="col-2 pr-0">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.height?.required"
+              maxlength="{{formFields?.height?.maxLength}}" class="form-control" formControlName="height" id="height"
+              mdbInput required="{{formFields?.height?.required}}">
+            <label for="height"><span *ngIf="formFields?.height?.required" class="red-text">*</span>
+              Height</label>
+          </div>
+        </div>
+        <div class="col-1">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.height_dropdown?.required"
+              [options]="heightOptions" formControlName="height_dropdown"
+              required="{{formFields?.height_dropdown?.required}}"></mdb-select>
+            <label for="height_dropdown"><span *ngIf="formFields?.height_dropdown?.required" class="red-text">*</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12 col-xs-12">
+          <h6 class="dark-grey-text"><strong class="card-header-text">Address and Communication Details
+              :</strong></h6>
+        </div>
+        <div class="col-6">
+          <div class="md-form">
+            <textarea mdbValidate [validateSuccess]="false" [validateError]="formFields?.address?.required"
+              maxlength="{{formFields?.address?.maxLength}}" class="md-textarea form-control" formControlName="address"
+              id="address" mdbInput required="{{formFields?.address?.required}}"></textarea>
+            <label for="address"><span *ngIf="formFields?.address?.required" class="red-text">*</span>
+              <mdb-icon far icon="address-card"></mdb-icon> Address</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.postal_code?.required"
+              maxlength="{{formFields?.postal_code?.maxLength}}" class="form-control" formControlName="postal_code"
+              id="postal_code" mdbInput required="{{formFields?.postal_code?.required}}">
+            <label for="postal_code"><span *ngIf="formFields?.postal_code?.required" class="red-text">*</span>
+              <mdb-icon fas icon="map-marker-alt"></mdb-icon> Postal Code</label>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.city?.required"
+              maxlength="{{formFields?.city?.maxLength}}" class="form-control" formControlName="city" id="city" mdbInput
+              required="{{formFields?.city?.required}}">
+            <label for="city"><span *ngIf="formFields?.city?.required" class="red-text">*</span>
+              <mdb-icon far icon="building"></mdb-icon> City</label>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.state?.required"
+              maxlength="{{formFields?.state?.maxLength}}" class="form-control" formControlName="state" id="state"
+              mdbInput required="{{formFields?.state?.required}}">
+            <label for="state"><span *ngIf="formFields?.state?.required" class="red-text">*</span>
+              <mdb-icon fas icon="city"></mdb-icon> State</label>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.country?.required"
+              maxlength="{{formFields?.country?.maxLength}}" class="form-control" formControlName="country" id="country"
+              mdbInput required="{{formFields?.country?.required}}">
+            <label for="country"><span *ngIf="formFields?.country?.required" class="red-text">*</span>
+             <mdb-icon fas icon="globe-americas"></mdb-icon> Country</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2 pr-0">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.phone_number?.required" maxlength="{{formFields?.phone_number?.maxLength}}"
+              class="form-control" formControlName="phone_number" id="phone_number" mdbInput
+              required="{{formFields?.phone_number?.required}}">
+            <label for="phone_number"><span *ngIf="formFields?.phone_number?.required" class="red-text">*</span>
+              <mdb-icon fas icon="phone"></mdb-icon> Phone Number</label>
+          </div>
+        </div>
+        <div class="col-1">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.phone_number_ext?.required"
+              maxlength="{{formFields?.phone_number_ext?.maxLength}}" class="form-control"
+              formControlName="phone_number_ext" id="phone_number_ext" mdbInput
+              required="{{formFields?.phone_number_ext?.required}}">
+            <label for="phone_number_ext"><span *ngIf="formFields?.phone_number_ext?.required" class="red-text">*</span>
+              Ext</label>
+          </div>
+        </div>
+        <div class="col-3 pr-0">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.other_phone_number?.required"
+              maxlength="{{formFields?.other_phone_number?.maxLength}}" class="form-control"
+              formControlName="other_phone_number" id="other_phone_number" mdbInput
+              required="{{formFields?.other_phone_number?.required}}">
+            <label for="other_phone_number"><span *ngIf="formFields?.other_phone_number?.required"
+                class="red-text">*</span>
+              <mdb-icon fas icon="phone"></mdb-icon> Other Phone Number</label>
+          </div>
+        </div>
+        <div class="col-1">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.other_phone_number?.required"
+              maxlength="{{formFields?.other_phone_number?.maxLength}}" class="form-control"
+              formControlName="other_phone_number" id="other_phone_number" mdbInput
+              required="{{formFields?.other_phone_number?.required}}">
+            <label for="other_phone_number"><span *ngIf="formFields?.other_phone_number?.required"
+                class="red-text">*</span>
+              Ext</label>
+          </div>
+        </div>
+        <div class="col-5">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.email_id?.required"
+              maxlength="{{formFields?.email_id?.maxLength}}" class="form-control" formControlName="email_id"
+              id="email_id" mdbInput required="{{formFields?.email_id?.required}}">
+            <label for="email_id"><span *ngIf="formFields?.email_id?.required" class="red-text">*</span>
+              <mdb-icon far icon="envelope"></mdb-icon> Email ID</label>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-lg-12 col-xs-12">
+          <h6 class="dark-grey-text"><strong class="card-header-text">Status
+              :</strong></h6>
+        </div>
+        <div class="col-3">
+          <div class="form-check d-inline-block mr-4 pl-0">
+            <input type="radio" class="form-check-input" id="active" name="status" formControlName="status" value="active" checked mdbInput>
+            <label class="form-check-label" for="active">Active</label>
+          </div>
+          <div class="form-check d-inline-block">
+            <input type="radio" class="form-check-input" id="inactive" name="status" formControlName="status" value="inactive" mdbInput>
+            <label class="form-check-label" for="inactive">Inactive</label>
+          </div>
+        </div>
+        <div class="col-6" *ngIf="viewPatientInformationForm?.controls?.status?.value=='inactive'">
+          <div class="md-form">
+            <textarea mdbValidate required="true" class="md-textarea form-control" mdbInput></textarea>
+            <label for="address"><span class="red-text">*</span>  Reason</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-lg-12 col-xs-12">
+          <h6 class="dark-grey-text"><strong class="card-header-text">Additional Details</strong></h6>
+        </div>
+        <div class="col-6">
+          <button (click)="pregnancyDetails()" type="button" mdbBtn mdbBtn color="link" size="sm" title="Pregnancy Details" 
+          mdbWavesEffect><img src="../assets/images/patient_detail_icon1.png"></button>
+          <button (click)="patientDiagnosisNotes()" type="button" mdbBtn mdbBtn color="link" size="sm" title="Patient Diagnosis Notes"
+          mdbWavesEffect><img src="../assets/images/patient_detail_icon2.png"></button>
+          <button (click)="labDetails()" type="button" mdbBtn mdbBtn color="link" size="sm" title ="Lab Details" 
+          mdbWavesEffect><img src="../assets/images/patient_detail_icon3.png"></button>
+          <button (click)="medicalHistory()" type="button" mdbBtn mdbBtn color="link" size="sm" title="Medical History"
+          mdbWavesEffect><img src="../assets/images/patient_detail_icon4.png"></button>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-lg-6">
+          <h6 class="dark-grey-text"><strong class="card-header-text">Additional Attachments</strong></h6>
+        </div>
+        <div class="col-lg-6 text-right">
+          <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Add New"
+          (click)="newAdditionalAttachment()" mdbWavesEffect>Add New Attachments</button>
+        </div>
+      </div>
+      <div class="row org-grid mb-3" *ngIf="rowData?.length">
+        <div class="col-lg-12" *ngIf="loadGrid">
+          <ag-grid-angular style="width: 99%;" class="ag-theme-balham simple-grid" style="height: calc(100% -  49px)"
+            [rowData]="rowData" [columnDefs]="columnDefs" [gridOptions]="gridOptions" (gridReady)="onGridReady($event)"
+            [frameworkComponents]="frameworkComponents" [context]="context">
+          </ag-grid-angular>
+        </div>
+      </div>
+
+
+
+      <!-- <div class="row">
+        <div class="col-lg-12 col-xs-12">
+          <h6 class="dark-grey-text"><strong class="card-header-text">Withdraw Remarks
+              :</strong></h6>
+        </div>
+        <div class="col-3">
+          <div class="md-form">
+            <mdb-checkbox *ngIf="formFields?.withdrawn" [inline]="true" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.withdrawn?.required" formControlName="withdrawn"
+              required="{{formFields?.withdrawn?.required}}"><span *ngIf="formFields?.withdrawn?.required"
+                class="red-text">*</span>Ongoing
+            </mdb-checkbox>
+          </div>
+
+        </div>
+        <div class="col-8">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.remarks?.required"
+              maxlength="{{formFields?.remarks?.maxLength}}" class="form-control" formControlName="remarks" id="remarks"
+              mdbInput required="{{formFields?.remarks?.required}}">
+            <label for="remarks"><span *ngIf="formFields?.remarks?.required" class="red-text">*</span>
+              Remarks</label>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-lg-12 col-xs-12">
+          <h6 class="dark-grey-text"><strong class="card-header-text">Pregnancy Details
+              :</strong></h6>
+        </div>
+        <div class="col-3">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.status?.required"
+              maxlength="{{formFields?.status?.maxLength}}" class="form-control" formControlName="status" id="status"
+              mdbInput required="{{formFields?.status?.required}}">
+            <label for="status"><span *ngIf="formFields?.status?.required" class="red-text">*</span>
+              Status</label>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.due_date?.required"
+              maxlength="{{formFields?.due_date?.maxLength}}" class="form-control" formControlName="due_date"
+              id="due_date" mdbInput required="{{formFields?.due_date?.required}}">
+            <label for="due_date"><span *ngIf="formFields?.due_date?.required" class="red-text">*</span>
+              Due Date</label>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.no_of_fields?.required" maxlength="{{formFields?.no_of_fields?.maxLength}}"
+              class="form-control" formControlName="no_of_fields" id="no_of_fields" mdbInput
+              required="{{formFields?.no_of_fields?.required}}">
+            <label for="no_of_fields"><span *ngIf="formFields?.no_of_fields?.required" class="red-text">*</span>
+              No of Fetus</label>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.weeks_at_experience?.required"
+              maxlength="{{formFields?.weeks_at_experience?.maxLength}}" class="form-control"
+              formControlName="weeks_at_experience" id="weeks_at_experience" mdbInput
+              required="{{formFields?.weeks_at_experience?.required}}">
+            <label for="weeks_at_experience"><span *ngIf="formFields?.weeks_at_experience?.required"
+                class="red-text">*</span>
+              Weeks of Exposure</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <div class="md-form">
+            <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions"
+              [label]="'Delivery Date'" formControlName="delivery_date"
+              required="{{formFields?.delivery_date?.required}}">
+            </mdb-date-picker>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.delivery_type?.required"
+              [options]="deliveryTypeOptions" formControlName="delivery_type"
+              required="{{formFields?.delivery_type?.required}}"></mdb-select>
+            <label for="delivery_type"><span *ngIf="formFields?.delivery_type?.required" class="red-text">*</span>
+              Delivery Type</label>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.birth_type?.required"
+              [options]="birthTypeOptions" formControlName="birth_type"
+              required="{{formFields?.birth_type?.required}}"></mdb-select>
+            <label for="birth_type"><span *ngIf="formFields?.birth_type?.required" class="red-text">*</span>
+              Birth Type</label>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.feutal_outcome?.required"
+              [options]="fetalOutcomeOptions" formControlName="feutal_outcome"
+              required="{{formFields?.feutal_outcome?.required}}"></mdb-select>
+            <label for="feutal_outcome"><span *ngIf="formFields?.feutal_outcome?.required" class="red-text">*</span>
+              Fetal Outcome</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <div class="md-form">
+            <textarea mdbValidate [validateSuccess]="false" [validateError]="formFields?.notes?.required"
+              maxlength="{{formFields?.notes?.maxLength}}" class="md-textarea form-control" formControlName="notes"
+              id="notes" mdbInput required="{{formFields?.notes?.required}}"></textarea>
+            <label for="notes"><span *ngIf="formFields?.notes?.required" class="red-text">*</span>
+              <mdb-icon far icon="sticky-note"></mdb-icon> Notes</label>
+          </div>
+        </div>
+      </div> -->
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()"
+      [disabled]="viewPatientInformationForm.invalid" mdbWavesEffect>Save</button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+  </div>
+</div>

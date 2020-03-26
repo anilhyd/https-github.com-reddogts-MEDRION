@@ -1,0 +1,37 @@
+[
+    {
+      "id": 1,
+      "code": "SCR-001",
+      "name": "General Information",
+      "type": "Static",
+      "applicable_module": "IST"
+    },
+    {
+      "id": 2,
+      "code": "SCR-003",
+      "name": "Organisation Setup",
+      "type": "Static",
+      "applicable_module": "IST"
+    },
+    {
+      "id": 3,
+      "code": "SCR-004",
+      "name": "Concept Proposal",
+      "type": "Static",
+      "applicable_module": "IST"
+    },
+    {
+      "id": 4,
+      "code": "SCR-005",
+      "name": "Institutional Review Board",
+      "type": "Static",
+      "applicable_module": "IST"
+    },
+    {
+      "id": 5,
+      "code": "SCR-014",
+      "name": "Program Information",
+      "type": "Flex",
+      "applicable_module": "EAP"
+    }
+  ]

@@ -1,0 +1,20 @@
+{
+    "id_number": "ALP-100i",
+    "full_name": "Michael",
+    "first_name": "R",
+    "last_name": "Himpele",
+    "representative_type": "Sales Rep",
+    "region": "East",
+    "district": "New York",
+    "territory": "Hudson Valley",
+    "address_communication": {
+        "address": "Delaware",
+    "postal_Code": 75074,
+    "city": "Plano",
+    "state": "Texas",
+    "country": "United States",
+    "phone_number": "1-661-500-9058",
+    "other_phone_number": "947-1936",
+    "email_id": "michael.himpele@hsalphapharma.com"
+    }
+  }

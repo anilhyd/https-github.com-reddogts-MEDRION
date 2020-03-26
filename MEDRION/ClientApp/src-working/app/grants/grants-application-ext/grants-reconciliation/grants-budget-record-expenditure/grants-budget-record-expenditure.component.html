@@ -1,0 +1,85 @@
+<div class="modal-content">
+
+    <div class="modal-header">
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">×</span>
+      </button>
+      <h4 class="modal-title w-100 text-center" id="myModalLabel">Record Expenditure Details</h4>
+    </div>
+    <p class="modal-second-title">
+        <mdb-icon far icon="lightbulb" class="amber-text" size="lg"></mdb-icon> Enables the user to enter the expenditure incurred for the budget request
+      </p>
+    <div class="modal-body">
+      <form [formGroup]="recordExpenditureForm">
+        <div class="row">
+            <div class="col-sm-4">
+              <p class="mb-0 mt-3">Budget Type</p>
+              <p><strong>Total Fees</strong></p>
+            </div>
+            <div class="col-sm-4">
+              <p class="mb-0 mt-3">Budget Subtype</p>
+              <p><strong>Requested Amount</strong></p>
+            </div>
+          </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <p class="mb-0 mt-3">Total Fees</p>
+            <p><strong>1234567 USD</strong></p>
+          </div>
+          <div class="col-sm-4">
+            <p class="mb-0 mt-3">Requested Amount</p>
+            <p><strong>1234567 USD</strong></p>
+          </div>
+          <div class="col-sm-4">
+              <p class="mb-0 mt-3">Allocated Amount</p>
+              <p><strong>1234567 USD</strong></p>
+            </div>
+        </div>
+  
+        <div class="row"><div class="col-lg-12 col-xs-12"><h6 class="dark-grey-text mb-2"><strong class="card-header-text">Expenditure Details</strong></h6></div></div>
+  
+        <div class="row">
+          <div class="col-sm-4" *ngIf="formFields?.amount">
+            <div class="md-form input-group">
+              <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+                maxlength="{{formFields?.amount?.maxLength}}" class="form-control" formControlName="amount"
+                id="amount" mdbInput required="{{formFields?.amount?.required}}">
+                <div class="input-group-append">
+                  <span class="input-group-text md-addon">USD</span>
+                </div>
+              <label for="amount"><span *ngIf="formFields?.amount?.required" class="red-text">*</span>
+                Amount</label>
+            </div>
+          </div>
+        </div>
+        <div class="row" *ngIf="formFields?.invoices">
+            <div class="col-sm-12">
+                <p class="mb-1 mt-3">Invoice copies <span *ngIf="formFields?.invoices?.required" class="ml-2">*</span></p>
+                <div class="file-field mt-2">
+                  <file-upload></file-upload>
+                </div> 
+            </div> 
+            <div class="col-sm-12">
+                
+                <div class="chip mt-2" title="{{item}}" *ngFor="let item of uploadedFiles; index as i">
+                    <mdb-icon fas class="mr-1" icon="file-excel"></mdb-icon>
+                  <span class="crop-text wd-200">{{item}}</span>
+                  <i class="close fas fa-times" (click)="removeItem(i)"></i>
+                </div>
+                
+            </div>
+          </div>
+  
+        
+        
+        
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()"
+        [disabled]="recordExpenditureForm.invalid" mdbWavesEffect>Save</button>
+      <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+        (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+      
+    </div>
+  </div>

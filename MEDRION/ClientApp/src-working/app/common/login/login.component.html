@@ -1,0 +1,50 @@
+<div class="total-bg">
+  <div class="login-card">
+    <div class="row box">
+      <div class="col-6 left-half">
+        <p><a><img src="../../../assets/images/logo1.png" style="width:5em" class="img-fluid flex-center"></a></p>
+        <h5 style="color: #969595;text-decoration: underline;">Welcome to Medrion</h5>
+        <p style="font-size: 13px;color: #969595;">If you already have an account, please login. Otherwise, please register for one of the programs and activate your account to login Medrion Application Suite.</p>
+        <hr>
+        <p style="font-size: 14px;">New to Medrion?</p>
+        <p style="font-size: 14px;" class="mb-1">Interested in IST - <a href="javascript:void(0)"
+            (click)="openIST()">Create
+            Account</a>
+          <p style="font-size: 14px;" class="mb-1">Interested in EAP - <a href="javascript:void(0)"
+              (click)="openEAP()">Create
+              Account</a>
+            <p style="font-size: 14px;">Interested in GRANTS - <a href="javascript:void(0)"
+                (click)="openGrants()">Create
+                Account</a>
+            </p>
+            <hr>
+            <p style="text-align: right;margin-bottom: 0px;">Powered By</p>
+            <p style="text-align: right;"><a><img style="width: 4em;" src="../assets/images/logo.png"></a></p>
+      </div>
+      <div class="col-6 right-half">
+        <form [formGroup]="loginForm" (ngSubmit)="login()" style="color: #757575;padding: 5em;">
+          <div class="md-form" style="margin-top: 45px;margin-bottom: 33px;">
+            <input type="text" id="materialLoginFormEmail" formControlName="username"
+              class="form-control bg-white" autofocus mdbInput required>
+            <label style="color: #fff;" for="materialLoginFormEmail">Email address</label>
+          </div>
+
+          <div class="md-form">
+            <input type="password" id="materialLoginFormPassword" formControlName="password"
+              class="form-control bg-white" mdbInput required>
+            <label style="color: #fff;" for="materialLoginFormPassword">Password</label>
+          </div>
+          <div class="d-flex justify-content-around">
+            <div>
+              <a style="color: #fff;font-size: 12px;position: relative;left: 72px;" href="javascript:void(0)"
+                routerLink="/forgot_password" [skipLocationChange]="true">Forgot password?</a>
+            </div>
+          </div>
+          <span class="text-danger">{{errorMess}}</span>
+          <button mdbBtn color="dark-green" block="true" class="my-4 waves-effect z-depth-0" mdbWavesEffect
+            type="submit" [disabled]="!loginForm.valid || submitted">Sign in</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

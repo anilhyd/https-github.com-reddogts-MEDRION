@@ -1,0 +1,23 @@
+[
+    { "id": 1, "dept_code": "Venkat", "dept_name": "srikanth", "dept_parent_name": "pingali", "dept_incharge": "hyderabad" },
+    { "id": 2, "dept_code": "Gopi", "dept_name": "Krishna", "dept_parent_name": "devarapalli", "dept_incharge": "hyderabad" },
+    { "id": 3, "dept_code": "Siva", "dept_name": "naga", "dept_parent_name": "chodavarapu", "dept_incharge": "hyderabad" },
+    { "id": 4, "dept_code": "Venkat", "dept_name": "srikanth", "dept_parent_name": "pingali", "dept_incharge": "hyderabad" },
+    { "id": 5, "dept_code": "Gopi", "dept_name": "Krishna", "dept_parent_name": "devarapalli", "dept_incharge": "hyderabad" },
+    { "id": 6, "dept_code": "Siva", "dept_name": "naga", "dept_parent_name": "chodavarapu", "dept_incharge": "hyderabad" },
+    { "id": 7, "dept_code": "Venkat", "dept_name": "srikanth", "dept_parent_name": "pingali", "dept_incharge": "hyderabad" },
+    { "id": 8, "dept_code": "Gopi", "dept_name": "Krishna", "dept_parent_name": "devarapalli", "dept_incharge": "hyderabad" },
+    { "id": 9, "dept_code": "Siva", "dept_name": "naga", "dept_parent_name": "chodavarapu", "dept_incharge": "hyderabad" },
+    { "id": 10, "dept_code": "Venkat", "dept_name": "srikanth", "dept_parent_name": "pingali", "dept_incharge": "hyderabad" },
+    { "id": 11, "dept_code": "Gopi", "dept_name": "Krishna", "dept_parent_name": "devarapalli", "dept_incharge": "hyderabad" },
+    { "id": 12, "dept_code": "Siva", "dept_name": "naga", "dept_parent_name": "chodavarapu", "dept_incharge": "hyderabad" },
+    { "id": 13, "dept_code": "Venkat", "dept_name": "srikanth", "dept_parent_name": "pingali", "dept_incharge": "hyderabad" },
+    { "id": 14, "dept_code": "Gopi", "dept_name": "Krishna", "dept_parent_name": "devarapalli", "dept_incharge": "hyderabad" },
+    { "id": 15, "dept_code": "Siva", "dept_name": "naga", "dept_parent_name": "chodavarapu", "dept_incharge": "hyderabad" },
+    { "id": 16, "dept_code": "Venkat", "dept_name": "srikanth", "dept_parent_name": "pingali", "dept_incharge": "hyderabad" },
+    { "id": 17, "dept_code": "Gopi", "dept_name": "Krishna", "dept_parent_name": "devarapalli", "dept_incharge": "hyderabad" },
+    { "id": 18, "dept_code": "Siva", "dept_name": "naga", "dept_parent_name": "chodavarapu", "dept_incharge": "hyderabad" },
+    { "id": 19, "dept_code": "Venkat", "dept_name": "srikanth", "dept_parent_name": "pingali", "dept_incharge": "hyderabad" },
+    { "id": 18, "dept_code": "Gopi", "dept_name": "Krishna", "dept_parent_name": "devarapalli", "dept_incharge": "hyderabad" },
+    { "id": 19, "dept_code": "Siva", "dept_name": "naga", "dept_parent_name": "chodavarapu", "dept_incharge": "hyderabad" }
+  ]

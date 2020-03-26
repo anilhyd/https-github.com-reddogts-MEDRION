@@ -1,0 +1,86 @@
+[
+    {
+      "id": 1,
+      "name": "Oncology,",
+      "status": "Active",
+      "products": "Radium-223 dichloride",
+      "code": "TH-001"
+    },
+    {
+      "id": 2,
+      "name": "Pulmonology,",
+      "status": "Active",
+      "products": "Super Drug",
+      "code": "TH-002"
+    },
+    {
+      "id": 3,
+      "name": "Cardiology,",
+      "status": "Active",
+      "products": "Wonder Drug",
+      "code": "TH-003"
+    },
+    {
+      "id": 4,
+      "name": "Neurology",
+      "status": "Active",
+      "products": "Exemestane",
+      "code": "TH-004"
+    },
+    {
+      "id": 5,
+      "name": "Dermatology",
+      "status": "Active",
+      "products": "Radium-223 dichloride",
+      "code": "TH-005"
+    },
+    {
+      "id": 6,
+      "name": "Ophthalmology",
+      "status": "Active",
+      "products": "Super Drug",
+      "code": "TH-006"
+    },
+    {
+      "id": 7,
+      "name": "Urology",
+      "status": "Active",
+      "products": "Wonder Drug",
+      "code": "TH-007"
+    },
+    {
+      "id": 8,
+      "name": "Psychiatry",
+      "status": "Active",
+      "products": "Exemestane",
+      "code": "TH-008"
+    },
+    {
+      "id": 9,
+      "name": "Reproduction",
+      "status": "Active",
+      "products": "Radium-223 dichloride",
+      "code": "TH-009"
+    },
+    {
+      "id": 10,
+      "name": "Immunology",
+      "status": "Active",
+      "products": "Super Drug",
+      "code": "TH-010"
+    },
+    {
+      "id": 11,
+      "name": "Osteoarthritis",
+      "status": "Active",
+      "products": "Wonder Drug",
+      "code": "TH-011"
+    },
+    {
+      "id": 12,
+      "name": "Pediatrics",
+      "status": "Active",
+      "products": "Exemestane",
+      "code": "TH-012"
+    }
+  ]

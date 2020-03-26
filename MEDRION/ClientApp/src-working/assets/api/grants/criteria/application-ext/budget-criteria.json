@@ -1,0 +1,182 @@
+{
+    "formFields": [
+        {
+            "add_formfields" : {
+                "budget_type": {
+                    "type": "dropdown",
+                    "required": true,
+                    "validationMessage": "Field is either empty or incorrect"
+                },
+                "budget_sub_type": {
+                    "type": "dropdown",
+                    "required": true,
+                    "validationMessage": "Field is either empty or incorrect"
+                },
+                "total_fees": {
+                    "type": "text",
+                    "required": true,
+                    "pattern": null,
+                    "maxLength": 10,
+                    "validationMessage": "Field is either empty or incorrect"
+                },
+                "requested_amount": {
+                    "type": "text",
+                    "required": true,
+                    "pattern": null,
+                    "maxLength": 10,
+                    "validationMessage": "Field is either empty or incorrect"
+                },
+                "notes": {
+                    "type": "text",
+                    "required": false,
+                    "pattern": null,
+                    "validationMessage": "Field is either empty or incorrect"
+                }
+            },
+            "allocate_budget":{
+                "budget_type": {
+                    "type": "dropdown",
+                    "required": true,
+                    "validationMessage": "Field is either empty or incorrect"
+                },
+                "budget_sub_type": {
+                    "type": "dropdown",
+                    "required": true,
+                    "validationMessage": "Field is either empty or incorrect"
+                },
+                "allocated_amount": {
+                    "type": "text",
+                    "required": true,
+                    "pattern": null,
+                    "maxLength": 10,
+                    "validationMessage": "Field is either empty or incorrect"
+                },
+                "allocated_date": {
+                    "type": "text",
+                    "required": true,
+                    "pattern": null,
+                    "validationMessage": "Field is either empty or incorrect"
+                },
+                "notes": {
+                    "type": "text",
+                    "required": false,
+                    "pattern": null,
+                    "maxLength": 100,
+                    "validationMessage": "Field is either empty or incorrect"
+                }
+            }, 
+            "record_expenditure":{
+               
+                "amount": {
+                    "type": "text",
+                    "required": true,
+                    "pattern": null,
+                    "maxLength": 10,
+                    "validationMessage": "Field is either empty or incorrect"
+                },
+                "invoices": {
+                    "type": "file",
+                    "required": false,
+                    "pattern": null,
+                    "validationMessage": "Field is either empty or incorrect"
+                }
+            } 
+        }
+    ],
+    "formOperations": [
+        {
+            "name": "Save",
+            "id": "save"
+        }
+    ],
+    "columnDefs": [
+        {
+            "headerName": "Type",
+            "field": "type",
+            "sort": "asc"
+        },
+        {
+            "headerName": "Sub Type",
+            "field": "subType"
+        },
+        {
+            "headerName": "Total Fees",
+            "field": "totalFees"
+        },
+        {
+            "headerName": "Requested Amount",
+            "field": "requestedAmount"
+        },
+        {
+            "headerName": "Allocated Amount",
+            "field": "allocatedAmount"
+        },
+        {
+            "headerName": "Status",
+            "field": "status"
+        }
+    ],
+    "advanceSearch": 
+    {
+        "fields": [
+            {
+                "label": "Type",
+                "field": "simple",
+                "type": "dropdown"
+            },
+            {
+                "label": "Sub Type",
+                "field": "program_type",
+                "type": "dropdown"
+            },
+            {
+                "label": "Date From",
+                "field": "date_from",
+                "type": "date"
+            },
+            {
+                "label": "Date To",
+                "field": "date_to",
+                "type": "date"
+            },
+            {
+                "label": "Status",
+                "field": "status",
+                "type": "dropdown"
+            }
+        ],
+        "filters": []
+    },
+    "operations": [
+        
+        {
+            "name": "Allocate",
+            "id": "allocate"
+        },
+        {
+            "name": "Reject",
+            "id": "reject"
+        },
+        {
+            "name": "Approve",
+            "id": "approve"
+        },
+        {
+            "name": "Submit",
+            "id": "submit"
+        },
+        {
+            "name": "Delete",
+            "id": "delete"
+        },
+        {
+            "name": "Edit",
+            "id": "edit"
+        },
+        {
+            "name": "Add New",
+            "id": "add"
+        }
+    ]
+    
+}

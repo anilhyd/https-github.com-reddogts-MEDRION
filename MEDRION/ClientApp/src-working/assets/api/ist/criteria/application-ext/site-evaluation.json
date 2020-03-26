@@ -1,0 +1,123 @@
+{
+    "formFields": {
+        "organisation_study_center": {
+            "type": "dropdown",
+            "required": true,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "site_evaluation_type": {
+            "type": "dropdown",
+            "pattern": null,
+            "required": false
+        },
+        "assigned_representative": {
+            "type": "dropdown",
+            "pattern": null,
+            "required": false
+        },
+        "expected_date_of_site_visit": {
+            "type": "text",
+            "maxLength": 15,
+            "pattern": null,
+            "required": false
+        },
+        "contact_person_name": {
+            "type": "text",
+            "maxLength": 50,
+            "required": false
+        },
+        "contact_person_designation": {
+            "type": "text",
+            "maxLength": 300,
+            "required": false
+        },
+        "notes": {
+            "type": "textarea",
+            "required": false,
+            "pattern": null
+        }
+        
+    },
+
+    "columnDefs": [
+        {
+            "headerName": "Organisation Study Center",
+            "field": "organisation_study_center",
+            "sort": "asc"            
+        },
+        {
+            "headerName": "Site Evaluation Type",
+            "field": "site_evaluation_type"
+        },
+        {
+            "headerName": "Representative Name",
+            "field": "representative"
+        },
+        {
+            "headerName": "Assigned Date",
+            "field": "assigned_date"
+        },
+        {
+            "headerName": "Visited Date",
+            "field": "visited_date"
+        }
+    ],
+    "operations": [
+        {
+            "name": "Status Update",
+            "id": "statusUpdate"
+        },
+        {
+            "name": "Delete",
+            "id": "delete"
+        },
+        {
+            "name": "Edit",
+            "id": "edit"
+        },
+        {
+            "name": "Add New",
+            "id": "add"
+        }
+    ],
+    "advanceSearch": 
+        {
+            "fields": [
+                {
+                    "label": "Organization Study Center",
+                    "field": "title",
+                    "type": "text"
+                },
+                {
+                    "label": "Site Evaluation Type",
+                    "field": "org",
+                    "type": "text"
+                },
+                {
+                    "label": "Representative Name",
+                    "field": "city",
+                    "type": "text"
+                },
+                {
+                    "label": "Assigned Date From",
+                    "field": "city",
+                    "type": "date"
+                },
+                {
+                    "label": "Assigned Date To",
+                    "field": "city",
+                    "type": "date"
+                },
+                {
+                    "label": "Visited Date From",
+                    "field": "city",
+                    "type": "date"
+                },
+                {
+                    "label": "Visited Date To",
+                    "field": "city",
+                    "type": "date"
+                }
+            ]
+        }
+}

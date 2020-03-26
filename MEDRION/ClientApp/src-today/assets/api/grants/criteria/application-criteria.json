@@ -1,0 +1,183 @@
+{
+    "columnDefs": [
+        {
+            "headerName": "Application ID",
+            "field": "application_id"
+        },
+        {
+            "headerName": "Grant Type",
+            "field": "grant_type"
+        },
+        {
+            "headerName": "Organization Name",
+            "field": "organization_name"
+        },
+        {
+            "headerName": "Tax Status",
+            "field": "tax_status"
+        },
+        {
+            "headerName": "Program Titile",
+            "field": "program_title"
+        },
+        {
+            "headerName": "Sub Date",
+            "field": "sub_date"
+        },
+        {
+            "headerName": "Status",
+            "field": "status"
+        },
+        {
+            "headerName": "Assigned To",
+            "field": "assigned_to"
+        }    
+    ],
+    "caseDetails": [
+        {"caseSet" : {
+            "caseHeading": "",
+            "caseData" : [
+                {
+                    "label": "Organization Name ",
+                    "value": "org_name"
+                },
+                {
+                    "label": "Organization Type",
+                    "value": "type"
+                },
+                {
+                    "label": "Tax Status",
+                    "value": "tax_status"
+                },
+                {
+                    "label": "Tax ID",
+                    "value": "tax_id"
+                },
+                {
+                    "label": "Country",
+                    "value": "country"
+                },
+                {
+                    "label": "State",
+                    "value": "state"
+                },
+                {
+                    "label": "City",
+                    "value": "city"
+                },
+                {
+                    "label": "Full Name",
+                    "value": "full_name"
+                },
+                {
+                    "label": "Email ID",
+                    "value": "email_id"
+                },
+                {
+                    "label": "Phone Number",
+                    "value": "phone_num"
+                },
+                {
+                    "label": "Grant Info",
+                    "value": "other_phone_num"
+                },
+                {
+                    "label": "Grant Application ID",
+                    "value": "grant_app_id"
+                },
+                {
+                    "label": "Grant Type",
+                    "value": "grant_type"
+                },
+                {
+                    "label": "Program Title",
+                    "value": "program_title"
+                },
+                {
+                    "label": "Therupatic Area",
+                    "value": "the_area"
+                },
+                {
+                    "label": "Submitted Date",
+                    "value": "submitted_date"
+                },
+                {
+                    "label": "Assigned To",
+                    "value": "assigned_to"
+                },
+                {
+                    "label": "Status",
+                    "value": "status"
+                }
+            ]
+
+        }
+    }],
+    "operations": [
+        
+        {
+            "name": "Assign",
+            "id": "assign"
+        },
+        {
+            "name": "Route",
+            "id": "route"
+        },
+        {
+            "name": "On-Hold/Release",
+            "id": "onHold"
+        },
+        {
+            "name": "Reject",
+            "id": "reject"
+        }
+    ],
+    "advanceSearch": 
+        {
+            "fields": [
+                {
+                    "label": "Application ID",
+                    "field": "application_id",
+                    "type": "text"
+                },
+                {
+                    "label": "Grant Type",
+                    "field": "grant_type",
+                    "type": "dropdown",
+                    "options": [{ "value": "assigned", "label":"Assigned"},{ "value": "unassigned", "label":"Unassigned"}]
+                },
+                {
+                    "label": "Organization Name",
+                    "field": "organization_name",
+                    "type": "text"
+                },
+                {
+                    "label": "Program Title",
+                    "field": "program_title",
+                    "type": "text"
+                },
+                {
+                    "label": "Submission Date From",
+                    "field": "submission_date_from",
+                    "type": "date"
+                },
+                {
+                    "label": "Submission Date To",
+                    "field": "submission_date_to",
+                    "type": "date"
+                },
+                {
+                    "label": "Status",
+                    "field": "status",
+                    "type": "dropdown",
+                    "options": [{ "value": "assigned", "label":"Assigned"},{ "value": "unassigned", "label":"Unassigned"}]
+                },
+                {
+                    "label": "Assigned To",
+                    "field": "assigned_to",
+                    "type": "text"
+                }
+            ],
+            "filters": []
+        }
+}

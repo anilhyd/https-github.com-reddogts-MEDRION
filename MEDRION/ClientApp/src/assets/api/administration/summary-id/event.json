@@ -1,0 +1,9 @@
+{
+    "code": "E-001",
+    "name": "Registrations Save",
+    "module": "IST",
+    "type": "Manual",
+    "targeted_user": "External user",
+    "enabled_for": "YES",
+    "id": 1
+  }

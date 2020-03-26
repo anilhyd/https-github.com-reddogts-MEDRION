@@ -1,0 +1,386 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h5 class="modal-title w-100" id="myModalLabel">{{heading}} Product Request</h5>
+  </div>
+
+  <div class="modal-body pt-0">
+    <form [formGroup]="fundRequestForm">
+      <div class="row justify-content-end">
+        <div class="col-md-3 col-sm-4 text-right" *ngIf="formFields?.status">
+          <h6 class="mb-0">Status <span class="badge badge-dark ml-1">Submitted</span></h6>
+        </div>
+      </div>
+      <div class="row mt-2">
+        <div class="col-3" *ngIf="formFields?.product_name">
+            <div class="md-form">
+              <mdb-select mdbValidate [validateSuccess]="false"
+                  [validateError]="formFields?.product_name?.required" [options]="productNamesOptions"
+                  formControlName="product_name" required="{{formFields?.product_name?.required}}"></mdb-select>
+              <label for="product_name"><span *ngIf="formFields?.product_name?.required" class="red-text">*</span>Product Name</label>
+            </div>
+            </div>
+            <div class="col-3" *ngIf="formFields?.dosage_formulation">
+              <div class="md-form">
+                <mdb-select mdbValidate [validateSuccess]="false"
+                    [validateError]="formFields?.dosage_formulation?.required" [options]="dosageFormulationOptions"
+                    formControlName="dosage_formulation" required="{{formFields?.dosage_formulation?.required}}"></mdb-select>
+                <label for="dosage_formulation"><span *ngIf="formFields?.dosage_formulation?.required" class="red-text">*</span>Dosage Formulation</label>
+            </div>
+          </div>
+         
+          <div class="col-3">
+            <div class="row">
+              <div class="col-6 pr-0" *ngIf="formFields?.strength">
+                <div class="md-form">
+                  <mdb-select mdbValidate [validateSuccess]="false"
+                      [validateError]="formFields?.strength?.required" [options]="strengthValuesOptions"
+                      formControlName="strength" required="{{formFields?.strength?.required}}"></mdb-select>
+                  <label for="strength"><span *ngIf="formFields?.strength?.required" class="red-text">*</span>Strength & Units</label>
+              </div>
+            </div>
+            <div class="col-6" *ngIf="formFields?.units">
+              <div class="md-form">
+                <mdb-select mdbValidate [validateSuccess]="false"
+                    [validateError]="formFields?.units?.required" [options]="strengthAndUnitsOptions"
+                    formControlName="units" required="{{formFields?.units?.required}}"></mdb-select>
+            </div>
+          </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="row">
+              <div class="col-6 pr-0" *ngIf="formFields?.required_quantity">
+                <div class="md-form">
+                  <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.required_quantity?.required"
+                    maxlength="{{formFields?.required_quantity?.maxLength}}" class="form-control" formControlName="required_quantity"
+                    id="required_quantity" mdbInput required="{{formFields?.required_quantity?.required}}">
+                  <label for="required_quantity"><span *ngIf="formFields?.required_quantity?.required" class="red-text">*</span>
+                    Required Quantity</label>
+                </div>
+                </div>
+                <div class="col-6" *ngIf="formFields?.required_quantity_type">
+                  <div class="md-form">
+                    <mdb-select mdbValidate [validateSuccess]="false"
+                        [validateError]="formFields?.required_quantity_type?.required" [options]="dosageFormulationOptions"
+                        formControlName="required_quantity_type" required="{{formFields?.required_quantity_type?.required}}"></mdb-select>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+
+      </div>
+      <div class="row">
+        <div class="col-9">
+          <div class="row">
+            <div class="col-4" *ngIf="formFields?.required_by">
+              <div class="md-form">
+                <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions"
+                    [label]="'Required By'" formControlName="required_by"
+                    required="{{formFields?.required_by?.required}}">
+                </mdb-date-picker>
+              </div>
+            </div>
+            <div class="col-4" *ngIf="formFields?.fulfulment_type">
+              <div class="md-form">
+                <mdb-select mdbValidate [validateSuccess]="false"
+                    [validateError]="formFields?.fulfulment_type?.required" [options]="fullFillmentTypeOptions"
+                    formControlName="fulfulment_type" required="{{formFields?.fulfulment_type?.required}}"></mdb-select>
+                <label for="fulfulment_type"><span *ngIf="formFields?.fulfulment_type?.required" class="red-text">*</span>Fulfulment Type</label>
+              </div>
+            </div>
+            <div class="col-4" *ngIf="formFields?.patiient_id">
+              <div class="md-form">
+                <mdb-select mdbValidate [validateSuccess]="false"
+                    [validateError]="formFields?.patiient_id?.required" [options]="patientIdOptions"
+                    formControlName="patiient_id" required="{{formFields?.patiient_id?.required}}"></mdb-select>
+                <label for="patiient_id"><span *ngIf="formFields?.patiient_id?.required" class="red-text">*</span>Patient ID</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-8" *ngIf="formFields?.shipping_address">
+              <div class="md-form">
+                <mdb-select mdbValidate [validateSuccess]="false"
+                    [validateError]="formFields?.shipping_address?.required" [(ngModel)]="shippingAddress" [options]="shippingAddressOptions"
+                    formControlName="shipping_address" required="{{formFields?.shipping_address?.required}}"></mdb-select>
+                <label for="shipping_address"><span *ngIf="formFields?.shipping_address?.required" class="red-text">*</span>Shipping Address / Partner Network</label>
+                <button (click)="addOrg()" class="text-addon-btn" type="button" mdbBtn color="link" placement="left"><mdb-icon fas icon="plus-square"></mdb-icon></button>
+              </div>
+              <div class="mt-3 address-text" *ngIf="shippingAddress != ''">
+                <p class="mb-0">Address: <br>Green Hill Medical Center,1507</p>
+                <p class="mb-0">City: Nolan</p>
+                <p class="mb-0">State: Texas</p>
+                <p class="mb-0">Country: US</p>
+                <p>Postel Code: 78202</p>
+              </div>
+            </div>
+            
+            <div class="col-4" *ngIf="formFields?.billing_address">
+              <div class="md-form">
+                <mdb-select mdbValidate [validateSuccess]="false" [(ngModel)]="billingAddress"
+                    [validateError]="formFields?.billing_address?.required" [options]="shippingAddressOptions"
+                    formControlName="billing_address" required="{{formFields?.billing_address?.required}}"></mdb-select>
+                <label for="billing_address"><span *ngIf="formFields?.billing_address?.required" class="red-text">*</span>Billing Address</label>
+                <button (click)="addOrg()" class="text-addon-btn" type="button" mdbBtn color="link" placement="left"><mdb-icon fas icon="plus-square"></mdb-icon></button>
+              </div>
+              <div class="mt-3 address-text" *ngIf="billingAddress != ''">
+                <p class="mb-0">Address: <br>Green Hill Medical Center,1507</p>
+                <p class="mb-0">City: Nolan</p>
+                <p class="mb-0">State: Texas</p>
+                <p class="mb-0">Country: US</p>
+                <p>Postel Code: 78202</p>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row mt-2">
+            <div class="col-4" *ngIf="formFields?.recurrence && isNewMode">
+                <div class="md-form">
+                  <mdb-select mdbValidate [validateSuccess]="false"
+                      [validateError]="formFields?.recurrence?.required" [(ngModel)]="recurrence" [options]="recurrenceOptions"
+                      formControlName="recurrence" required="{{formFields?.recurrence?.required}}"></mdb-select>
+                  <label for="recurrence"><span *ngIf="formFields?.recurrence?.required" class="red-text">*</span>Recurrence</label>
+                </div>
+                </div>
+                <div class="col-4" *ngIf="formFields?.repeats_every && isNewMode">
+
+                  <div class="md-form">
+                    <mdb-select mdbValidate [validateSuccess]="false"
+                        [validateError]="formFields?.repeats_every?.required" [options]="repeatsEveryOptions"
+                        formControlName="repeats_every" required="{{formFields?.repeats_every?.required}}"></mdb-select>
+                    <label for="repeats_every"><span *ngIf="formFields?.repeats_every?.required" class="red-text">*</span>Repeats Every</label>
+                </div>
+              </div>
+              
+          </div>
+          <div class="mb-3 label-as" *ngIf="recurrence == 'weekly'">
+            <mdb-checkbox [inline]="true"  class="mr-3">Mon</mdb-checkbox>
+            <mdb-checkbox [inline]="true"  class="mr-3">Tue</mdb-checkbox>
+            <mdb-checkbox [inline]="true"  class="mr-3">Wed</mdb-checkbox>
+            <mdb-checkbox [inline]="true"  class="mr-3">Thu</mdb-checkbox>
+            <mdb-checkbox [inline]="true"  class="mr-3">Fri</mdb-checkbox>
+            <mdb-checkbox [inline]="true"  class="mr-3">Sat</mdb-checkbox>
+            <mdb-checkbox [inline]="true"  class="mr-3">Sun</mdb-checkbox>
+          </div>
+          <div class="row">
+            <div class="col-4" *ngIf="formFields?.ends_on_radio && isNewMode">
+              <div class="form-check label-as pl-0">
+                <input type="radio" class="form-check-input" id="daysOn" name="daysPreferences" mdbInput>
+                <label class="form-check-label" for="daysOn">Ends On</label>
+              </div>
+              <div class="md-form mt-0">
+                <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.ends_on_input?.required"
+                  maxlength="{{formFields?.ends_on_input?.maxLength}}" class="form-control" formControlName="ends_on_input"
+                  id="ends_on_input" mdbInput required="{{formFields?.ends_on_input?.required}}">
+              </div>
+            </div>
+            <div class="col-4" *ngIf="formFields?.ends_on_radio && isNewMode">
+              <div class="form-check label-as pl-0">
+                <input type="radio" class="form-check-input" id="occurances" name="daysPreferences" mdbInput>
+                <label class="form-check-label" for="occurances">After no. of Occurances</label>
+              </div>
+              <div class="md-form mt-0">
+                <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.after_no_of_occurances_input?.required"
+                  maxlength="{{formFields?.after_no_of_occurances_input?.maxLength}}" class="form-control" formControlName="after_no_of_occurances_input"
+                  id="after_no_of_occurances_input" mdbInput required="{{formFields?.after_no_of_occurances_input?.required}}">
+              </div>
+            </div>
+          </div>
+
+          <div class="border-top pt-3 mt-2">
+            <div class="row">
+              <div class="col-4">
+                <div class="row">
+                  <div class="col-6 pr-0" *ngIf="formFields?.allocated_quantity">
+                    <div class="md-form">
+                      <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.allocated_quantity?.required"
+                        maxlength="{{formFields?.allocated_quantity?.maxLength}}" class="form-control" formControlName="allocated_quantity"
+                        id="allocated_quantity" mdbInput required="{{formFields?.allocated_quantity?.required}}">
+                      <label for="allocated_quantity"><span *ngIf="formFields?.allocated_quantity?.required" class="red-text">*</span>
+                        Allocated Quantity</label>
+                    </div>
+                  </div>
+                    <div class="col-6" *ngIf="formFields?.allocated_quantity_type">
+                      <div class="md-form">
+                        <mdb-select mdbValidate [validateSuccess]="false"
+                        [validateError]="formFields?.allocated_quantity_type?.required" [options]="dosageFormulationOptions"
+                        formControlName="allocated_quantity_type" required="{{formFields?.allocated_quantity_type?.required}}"></mdb-select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4" *ngIf="formFields?.shipment_tracking_id">
+                <div class="md-form">
+                  <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.shipment_tracking_id?.required"
+                    maxlength="{{formFields?.shipment_tracking_id?.maxLength}}" class="form-control" formControlName="shipment_tracking_id"
+                    id="shipment_tracking_id" mdbInput required="{{formFields?.shipment_tracking_id?.required}}">
+                  <label for="shipment_tracking_id"><span *ngIf="formFields?.shipment_tracking_id?.required" class="red-text">*</span>
+                    Shipment Tracking ID</label>
+                </div>
+              </div>
+              <div class="col-4" *ngIf="formFields?.shipment_service_provider">
+                <div class="md-form">
+                  <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.shipment_service_provider?.required"
+                    maxlength="{{formFields?.shipment_service_provider?.maxLength}}" class="form-control" formControlName="shipment_service_provider"
+                    id="shipment_service_provider" mdbInput required="{{formFields?.shipment_service_provider?.required}}">
+                  <label for="shipment_service_provider"><span *ngIf="formFields?.shipment_service_provider?.required" class="red-text">*</span>
+                    Shipment Service Provider</label>
+                </div>
+              </div>
+             
+            </div>
+    
+            <div class="row">
+              <div class="col-4" *ngIf="formFields?.batch_number">
+                <div class="md-form">
+                  <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.batch_number?.required"
+                    maxlength="{{formFields?.batch_number?.maxLength}}" class="form-control" formControlName="batch_number"
+                    id="batch_number" mdbInput required="{{formFields?.batch_number?.required}}">
+                  <label for="batch_number"><span *ngIf="formFields?.batch_number?.required" class="red-text">*</span>
+                    Batch Number / Code Mark</label>
+                </div>
+              </div>
+              <div class="col-4" *ngIf="formFields?.date_of_manufacture">
+                <div class="md-form">
+                  <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions"
+                      [label]="'Date of Manufacture'" formControlName="date_of_manufacture"
+                      required="{{formFields?.date_of_manufacture?.required}}">
+                  </mdb-date-picker>
+                </div>
+              </div>
+              <div class="col-4" *ngIf="formFields?.date_of_expiry">
+                <div class="md-form">
+                  <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions"
+                      [label]="'Date of Expiry'" formControlName="date_of_expiry"
+                      required="{{formFields?.date_of_expiry?.required}}">
+                  </mdb-date-picker>
+                </div>
+              </div>
+            </div>
+    
+            <div class="row">
+              <div class="col-8" *ngIf="formFields?.storage_instructions">
+                <div class="md-form">
+                  <textarea mdbValidate [validateSuccess]="false" [validateError]="formFields?.storage_instructions?.required"
+                    maxlength="{{formFields?.storage_instructions?.maxLength}}" class="form-control full-width" formControlName="storage_instructions"
+                    id="storage_instructions" mdbInput required="{{formFields?.storage_instructions?.required}}"></textarea>
+                  <label for="storage_instructions"><span *ngIf="formFields?.storage_instructions?.required" class="red-text">*</span>
+                    Storage Instructions (If any)</label>
+                </div>
+              </div>
+              <div class="col-4" *ngIf="formFields?.date_of_dispatch">
+                <div class="md-form">
+                  <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions"
+                      [label]="'Date of Dispatch'" formControlName="date_of_dispatch"
+                      required="{{formFields?.date_of_dispatch?.required}}">
+                  </mdb-date-picker>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3 border-left">
+          <p>Receipt and Update</p>
+          <div class="row mb-2">
+            <div class="col-6 pr-0" *ngIf="formFields?.used_quantity">
+              <div class="md-form">
+                <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.used_quantity?.required"
+                  maxlength="{{formFields?.used_quantity?.maxLength}}" class="form-control" formControlName="used_quantity"
+                  id="used_quantity" mdbInput required="{{formFields?.used_quantity?.required}}">
+                <label for="used_quantity"><span *ngIf="formFields?.used_quantity?.required" class="red-text">*</span>
+                  Used Quantity</label>
+              </div>
+              </div>
+              <div class="col-6" *ngIf="formFields?.used_quantity_type">
+                <div class="md-form">
+                  <mdb-select mdbValidate [validateSuccess]="false"
+                      [validateError]="formFields?.used_quantity_type?.required" [options]="dosageFormulationOptions"
+                      formControlName="used_quantity_type" required="{{formFields?.used_quantity_type?.required}}"></mdb-select>
+              </div>
+            </div>
+          </div>
+
+          <div class="md-form">
+            <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions"
+                [label]="'Date of Receipt'" formControlName="required_by"
+                required="{{formFields?.required_by?.required}}">
+            </mdb-date-picker>
+          </div>
+
+          <p class="mt-3">Return and Retrieval</p>
+          <div class="row mb-2">
+            <div class="col-6 pr-0" *ngIf="formFields?.return_quantity">
+              <div class="md-form">
+                <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.return_quantity?.required"
+                  maxlength="{{formFields?.return_quantity?.maxLength}}" class="form-control" formControlName="return_quantity"
+                  id="return_quantity" mdbInput required="{{formFields?.return_quantity?.required}}">
+                <label for="return_quantity"><span *ngIf="formFields?.return_quantity?.required" class="red-text">*</span>
+                  Return Quantity</label>
+              </div>
+              </div>
+              <div class="col-6" *ngIf="formFields?.return_quantity_type">
+                <div class="md-form">
+                  <mdb-select mdbValidate [validateSuccess]="false"
+                      [validateError]="formFields?.return_quantity_type?.required" [options]="dosageFormulationOptions"
+                      formControlName="return_quantity_type" required="{{formFields?.return_quantity_type?.required}}"></mdb-select>
+              </div>
+            </div>
+          </div>
+          <div class="md-form mb-4">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.shipment_number?.required"
+              maxlength="{{formFields?.shipment_number?.maxLength}}" class="form-control" formControlName="shipment_number"
+              id="shipment_number" mdbInput required="{{formFields?.shipment_number?.required}}">
+            <label for="shipment_number"><span *ngIf="formFields?.shipment_number?.required" class="red-text">*</span>
+              Shipment Number</label>
+          </div>
+          <div class="md-form mb-4">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.return_shipment_service_provider?.required"
+              maxlength="{{formFields?.return_shipment_service_provider?.maxLength}}" class="form-control" formControlName="return_shipment_service_provider"
+              id="return_shipment_service_provider" mdbInput required="{{formFields?.return_shipment_service_provider?.required}}">
+            <label for="return_shipment_service_provider"><span *ngIf="formFields?.return_shipment_service_provider?.required" class="red-text">*</span>
+              Shipment Serivce Provider</label>
+          </div>
+          <div class="md-form mb-4 date-picker-right">
+            <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions"
+                [label]="'Date of Dispatch'" formControlName="return_date_of_dispatch"
+                required="{{formFields?.return_date_of_dispatch?.required}}">
+            </mdb-date-picker>
+          </div>
+          <div class="md-form mb-4">
+            <textarea mdbValidate [validateSuccess]="false" [validateError]="formFields?.return_note?.required"
+              maxlength="{{formFields?.return_note?.maxLength}}" class="form-control full-width" formControlName="return_note"
+              id="return_note" mdbInput required="{{formFields?.return_note?.required}}"></textarea>
+            <label for="return_note"><span *ngIf="formFields?.return_note?.required" class="red-text">*</span>
+              Notes</label>
+          </div>
+          <div class="md-form mb-4 date-picker-right">
+            <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions"
+                [label]="'Date of Receipt'" formControlName="return_date_of_receipt"
+                required="{{formFields?.return_date_of_receipt?.required}}">
+            </mdb-date-picker>
+          </div>
+
+
+
+         </div>
+      </div>
+      
+      
+
+    </form>
+  </div>
+
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()"
+      *ngIf="heading === 'Add' || heading === 'Edit'" [disabled]="fundRequestForm.invalid" mdbWavesEffect>Save</button>
+      <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+  </div>
+</div>

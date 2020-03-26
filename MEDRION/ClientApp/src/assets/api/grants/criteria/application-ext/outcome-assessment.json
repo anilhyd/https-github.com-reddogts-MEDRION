@@ -1,0 +1,116 @@
+{
+    "formFields": {
+        "serial_no": {
+            "type": "label",
+            "required": false,
+            "maxLength": false,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "date": {
+            "type": "date",
+            "required": true,
+            "maxLength": 35,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "outcome_assessment_instruments": {
+            "type": "textarea",
+            "required": false,
+            "maxLength": 35,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "description_of_methods": {
+            "type": "textarea",
+            "required": true,
+            "maxLength": 35,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "planned": {
+            "type": "checkbox",
+            "required": true,
+            "maxLength": 50,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "implemented": {
+            "type": "checkbox",
+            "required": true,
+            "maxLength": 50,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "reason_not_implemented": {
+            "type": "textarea",
+            "required": true,
+            "maxLength": 50,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        }
+    },
+    "formOperations": [
+        {
+            "name": "Save",
+            "id": "save"
+        }
+    ],
+
+    "columnDefs": [
+        {
+            "headerName": "S NO - #",
+            "field": "serial_no"   
+        },
+        {
+            "headerName": "Outcome Assessment",
+            "field": "outcome_ass"
+        },
+        {
+            "headerName": "Description of Methods",
+            "field": "desc_methods"
+        },
+        {
+            "headerName": "Planned",
+            "field": "planned"
+        },
+        {
+            "headerName": "Implemented",
+            "field": "implemented"
+        },
+        {
+            "headerName": "Reasons for Not Implemented",
+            "field": "reasons_not_imp"
+        }
+    ],
+    "operations": [
+        {
+            "name": "Delete",
+            "id": "delete"
+        },
+        {
+            "name": "Edit",
+            "id": "edit"
+        },
+        {
+            "name": "Add New",
+            "id": "add"
+        }
+    ],
+    "advanceSearch": 
+    {
+        "fields": [
+            {
+                "label": "Outcome Assesment",
+                "field": "simple",
+                "type": "text"
+            },
+            {
+                "label": "Description of Methods",
+                "field": "program_type",
+                "type": "text"
+            }
+        ],
+        "filters": []
+    }
+}

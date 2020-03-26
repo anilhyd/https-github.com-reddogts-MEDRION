@@ -1,0 +1,208 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">{{heading}} Request Fund</h4>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="fundForm">
+      <div class="row">
+        <div class="col-3">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.category?.required"
+              [options]="categoryOptions" formControlName="category" required="{{formFields?.category?.required}}">
+            </mdb-select>
+            <label for="category"><span *ngIf="formFields?.category?.required" class="red-text">*</span>
+              Category</label>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.sub_category?.required"
+              [options]="subCategoryOptions" formControlName="sub_category"
+              required="{{formFields?.sub_category?.required}}"></mdb-select>
+            <label for="sub_category"><span *ngIf="formFields?.sub_category?.required" class="red-text">*</span>
+              Sub-Category</label>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.others?.required"
+              maxlength="{{formFields?.others?.maxLength}}" class="form-control" formControlName="others" id="others"
+              mdbInput required="{{formFields?.others?.required}}">
+            <label for="others"><span *ngIf="formFields?.others?.required" class="red-text">*</span>
+              Other Category</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2 pr-0">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.requested_fund?.required"
+              maxlength="{{formFields?.strerequested_fundngth?.maxLength}}" class="form-control"
+              formControlName="requested_fund" id="requested_fund" mdbInput
+              required="{{formFields?.requested_fund?.required}}">
+            <label for="requested_fund"><span *ngIf="formFields?.requested_fund?.required" class="red-text">*</span>
+              Requested Amount</label>
+          </div>
+        </div>
+        <div class="col-1 pl-0">
+          <div class="md-form">
+            <p>USD</p>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.bank_details?.required"
+              [options]="basicOptions" formControlName="bank_details" required="{{formFields?.bank_details?.required}}">
+            </mdb-select>
+            <label for="bank_details"><span *ngIf="formFields?.bank_details?.required" class="red-text">*</span>
+              Bank Details</label>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="md-form">
+            <button type="submit" size="sm" mdbBtn color="amber" class="relative waves-light" mdbWavesEffect>Add
+              Bank</button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-12">
+            <h6 class="dark-grey-text mb-2"><strong class="card-header-text">Attachments </strong> <button size="sm"
+                type="button" mdbBtn color="light" mdbWavesEffect>Add</button></h6>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6" *ngIf="formFields?.estimation">
+          <mdb-card class="mb-4">
+            <mdb-card-body>
+              <div formGroupName="estimation">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <p class="mb-1"><small>Document Type: <span *ngIf="formFields?.estimation?.required"
+                          class="ml-1">*</span></small></p>
+                    <h6>Estimation</h6>
+                  </div>
+                  <div class="col-sm-4 text-right">
+                    <p><small>Date of upload</small> <span class="d-block">03/05/2019</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12 col-md-auto">
+                    <div class="file-field">
+                      <file-upload></file-upload>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="chip mt-2" title="{{item}}" *ngFor="let item of uploadedFiles; index as i">
+                      <mdb-icon fas class="mr-1" icon="file-excel"></mdb-icon>
+                      <span class="crop-text wd-200">{{item}}</span>
+                      <i class="close fas fa-times"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="md-form">
+                  <textarea mdbValidate maxlength="{{formFields?.estimation?.formFields?.estimation_notes?.maxLength}}"
+                    [validateSuccess]="false" formControlName="estimation_notes" id="estimation_notes" type="text"
+                    class="md-textarea form-control" mdbInput
+                    required="{{formFields?.estimation?.formFields?.estimation_notes?.required}}"></textarea>
+                  <label for="estimation_notes"><span
+                      *ngIf="formFields?.estimation?.formFields?.estimation_notes?.required" class="red-text">*</span>
+                    <mdb-icon far icon="sticky-note"></mdb-icon> Notes</label>
+                </div>
+              </div>
+            </mdb-card-body>
+          </mdb-card>
+        </div>
+
+        <div class="col-sm-6" *ngIf="formFields?.actuals">
+          <mdb-card class="mb-4">
+            <mdb-card-body>
+              <div formGroupName="actuals">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <p class="mb-1"><small>Document Type: <span *ngIf="formFields?.actuals?.required"
+                          class="ml-1">*</span></small></p>
+                    <h6>Actuals</h6>
+                  </div>
+                  <div class="col-sm-4 text-right">
+                    <p><small>Date of upload</small> <span class="d-block">03/05/2019</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12 col-md-auto">
+                    <div class="file-field">
+                      <file-upload></file-upload>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="chip mt-2" title="{{item}}" *ngFor="let item of uploadedFiles; index as i">
+                      <mdb-icon fas class="mr-1" icon="file-excel"></mdb-icon>
+                      <span class="crop-text wd-200">{{item}}</span>
+                      <i class="close fas fa-times"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="md-form">
+                  <textarea mdbValidate maxlength="{{formFields?.actuals?.formFields?.actuals_notes?.maxLength}}"
+                    [validateSuccess]="false" formControlName="actuals_notes" id="actuals_notes" type="text"
+                    class="md-textarea form-control" mdbInput
+                    required="{{formFields?.actuals?.formFields?.actuals_notes?.required}}"></textarea>
+                  <label for="actuals_notes"><span *ngIf="formFields?.actuals?.formFields?.actuals_notes?.required"
+                      class="red-text">*</span>
+                    <mdb-icon far icon="sticky-note"></mdb-icon> Notes</label>
+                </div>
+              </div>
+            </mdb-card-body>
+          </mdb-card>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 col-xs-12">
+          <h6 class="dark-grey-text mb-2"><strong class="card-header-text">Fund Usage Info</strong></h6>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <div class="md-form">
+            <h6 class="mb-0">Allocated Amount</h6>
+            <p><strong>100 USD</strong></p>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="md-form">
+            <h6 class="mb-0">Used Amount</h6>
+            <p><strong>100 USD</strong></p>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="md-form">
+            <h6 class="mb-0">Return Amount</h6>
+            <p><strong>100 USD</strong></p>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="md-form">
+            <h6 class="mb-0">Balance Amount</h6>
+            <p><strong>100 USD</strong></p>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()"
+      *ngIf="heading === 'Add' || heading === 'Edit'" [disabled]="fundForm.invalid" mdbWavesEffect>Save</button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+  </div>
+</div>

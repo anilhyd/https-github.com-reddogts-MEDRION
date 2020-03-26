@@ -1,0 +1,29 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100" id="myModalLabel">Add Values</h4>
+  </div>
+  <p class="modal-second-title">
+      <mdb-icon far icon="lightbulb" class="amber-text" size="lg"></mdb-icon> Add multiple values with comma seperation
+    </p>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-lg-12 col-xs-12">
+        <div class="md-form">
+          <textarea mdbValidate maxlength="1024" id="verification_certificate" type="text" class="md-textarea form-control" mdbInput></textarea>
+          <label for="verification_certificate">
+            </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" mdbBtn color="light" size="sm" class="relative waves-light" (click)="modalRef.hide()"
+      mdbWavesEffect>Save</button>
+    <button type="button" mdbBtn color="light" size="sm" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+  </div>
+</div>

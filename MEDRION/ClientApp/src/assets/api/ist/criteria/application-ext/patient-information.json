@@ -1,0 +1,234 @@
+{
+    "formFields": [
+        {
+            "add_formfields": {
+                "first_name":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "middle_name":{ "type":"text", "required":false, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "last_name":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "initials":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},     
+
+                "patient_id":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "date_of_birth":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "gender":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+
+                "date_of_lmp":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "weight":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "weight_dropdown":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "height":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "height_dropdown":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+                "address":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+                "postal_code":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "city":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "state":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "country":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+
+                "phone_number":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "phone_number_ext":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "other_phone_number":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "other_phone_number_ext":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "email_id":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+                "withdrawn":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "remarks":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+                "status":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "due_date":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "no_of_fields":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "weeks_at_experience":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+                "delivery_date":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "delivery_type":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "birth_type":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "feutal_outcome":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+                "notes":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+            },
+            "add_classifications":{
+                "classification_type":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "attachments":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "notes":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+                "test_details":{ 
+                    "test_name":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                    "date":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+                    "result":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                    "result_units":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                    "normal_range":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                    "normal_range_units":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+                    "comments":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+                }
+            },
+            "add_medical_diagnosis":{
+                "enter_diagnosis_details":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+            },
+            "add_medical_history":{
+                "medical_history":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+                "start_date":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "finish_date":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+                "ongoing":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+                "description":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+            },
+
+            "additional_attachments" :{
+                "att_clasification":{ "type":"dropdown", "required":true, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "file_name":{ "type":"file", "required":true, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "notes":{ "type":"text", "required":false, "maxLength":500, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "person":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "date":{ "type":"text", "required":true, "maxLength":20, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+            },
+
+            "pregnancy_details" :{
+                "pregnant":{ "type":"dropdown", "required":true, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "due_date":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "nof_fetus":{ "type":"text", "required":false, "maxLength":20, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "weeks_at_exposure":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "trimester_at_exposure":{ "type":"checkbox", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "delivery_date":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "delivery_type":{ "type":"dropdown", "required":false, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "birth_type":{ "type":"dropdown", "required":false, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "first":{ "type":"checkbox", "required":false, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "second":{ "type":"checkbox", "required":false, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "third":{ "type":"checkbox", "required":false, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "fetal_outcome":{ "type":"dropdown", "required":false, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "notes":{ "type":"text", "required":false, "maxLength":500, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+            },
+
+            "lab_details" :{
+                "test_name":{ "type":"text", "required":true, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "test_result":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "result_unit":{ "type":"dropdown", "required":false, "maxLength":20, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "test_date":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "normal_range":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "range_unit":{ "type":"dropdown", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "comment":{ "type":"text", "required":false, "maxLength":500, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+            },
+
+            "medical_history" :{
+                "medical_history":{ "type":"text", "required":true, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "start_date":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "stop_date":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "ongoing":{ "type":"checkbox", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "duration":{ "type":"text", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+            }
+        }
+    ],
+    "columnDefs": [
+        {
+            "headerName": "Patient Id",
+            "field": "patient_id",
+            "sort": "asc"            
+        },
+        {
+            "headerName": "Full Name",
+            "field": "full_name"
+        },
+        {
+            "headerName": "Gender",
+            "field": "gender"
+        },
+        {
+            "headerName": "Age",
+            "field": "age"
+        },
+        {
+            "headerName": "Status",
+            "field": "status"
+        }
+    ],
+    "operations": [
+        {
+            "name": "Edit",
+            "id": "edit"
+        },
+        {
+            "name": "Delete",
+            "id": "delete"
+        },
+        {
+            "name": "Withdraw",
+            "id": "withdraw"
+        },
+        {
+            "name": "Add Patient",
+            "id": "add"
+        },
+        {
+            "name": "Upload",
+            "id": "uploadDoc"
+        },
+        {
+            "name": "Download",
+            "id": "download"
+        }
+    ],
+    "advanceSearch": 
+        {
+            "fields": [
+                {
+                    "label": "Patient ID",
+                    "field": "name",
+                    "type": "text"
+                },
+                {
+                    "label": "Full Name",
+                    "field": "gender",
+                    "type": "text"
+                },
+                {
+                    "label": "Gender",
+                    "field": "city",
+                    "type": "dropdown",
+                    "options":[
+                        {"label":"Male","value":"male"},
+                        {"label":"Female","value":"female"}
+                    ]
+                },
+                {
+                    "label": "City",
+                    "field": "city",
+                    "type": "dropdown"
+                },
+                {
+                    "label": "Age",
+                    "field": "state",
+                    "type": "dropdown"
+                },
+                {
+                    "label": "Status",
+                    "field": "status",
+                    "type": "dropdown"
+                }
+            ],
+            "filters": [
+                {
+                    "label": "Recently added patients in last 1 month",
+                    "filter_key":"unique_key_1",
+                    "criteria": ""
+                },
+                {
+                    "label": "Recently added patients in last 6 months",
+                    "filter_key":"unique_key_2",
+                    "criteria": ""
+                },
+                {
+                    "label": "Patients who were withdrawn in last 1 month",
+                    "filter_key":"unique_key_3",
+                    "criteria": ""
+                },
+                {
+                    "label": "patients who were with drawn in last 6 months",
+                    "filter_key":"unique_key_4",
+                    "criteria": ""
+                }
+            ]
+        }
+}

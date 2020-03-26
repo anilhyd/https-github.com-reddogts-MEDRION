@@ -1,0 +1,53 @@
+<form [formGroup]="accredationDetailsForm">
+  <div class="row">
+    <div class="col-3">
+      <mdb-breadcrumb customClass="black-text lighten-4 custom-breadcrumb"
+        style="font-size:13px;text-transform:uppercase;">
+        <mdb-breadcrumb-item>Accredation Details
+        </mdb-breadcrumb-item>
+      </mdb-breadcrumb>
+    </div>
+    <div class="col-9">
+      <app-operations-bar [operations]="operations" [enableOperations]="accredationDetailsForm.valid?true:false"
+        (callbackOperation)="onCallbackOperation($event)"></app-operations-bar>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-xs-12" *ngIf="formFields?.accredited_provider">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.accredited_provider?.required"
+        [options]="chooseoptions" formControlName="accredited_provider"
+        required="{{formFields?.accredited_provider?.required}}"></mdb-select>
+        <label for="accredited_provider"><span *ngIf="formFields?.accredited_provider?.required" class="red-text">*</span>
+        Is the grant requestor an accredited provider?</label>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xs-12" *ngIf="formFields?.program_accredited">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.program_accredited?.required"
+        [options]="chooseoptions" formControlName="program_accredited"
+        required="{{formFields?.program_accredited?.required}}"></mdb-select>
+        <label for="program_accredited"><span *ngIf="formFields?.program_accredited?.required" class="red-text">*</span>
+        Is the program accredited?</label>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xs-12" *ngIf="formFields?.program_be_managed">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.program_be_managed?.required"
+        [options]="chooseoptions" formControlName="program_be_managed"
+        required="{{formFields?.program_be_managed?.required}}"></mdb-select>
+        <label for="program_be_managed"><span *ngIf="formFields?.program_be_managed?.required" class="red-text">*</span>
+        Will the program be managed to the accreditation standards of the ACCME, AOA, AAFP, AMA, and/or ADA CERP?</label>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xs-12" *ngIf="formFields?.implementer_partner">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.implementer_partner?.required"
+        [options]="chooseoptions" formControlName="implementer_partner"
+        required="{{formFields?.implementer_partner?.required}}"></mdb-select>
+        <label for="implementer_partner"><span *ngIf="formFields?.implementer_partner?.required" class="red-text">*</span>
+        Will you be working with a third party implementer/educational partner?</label>
+      </div>
+    </div>
+  </div>
+</form>

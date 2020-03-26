@@ -1,0 +1,93 @@
+<div class="main-search" *ngIf="advanceSearch">
+    <h6 style="font-weight: bold;font-size: 14px;">
+        <span (click)="test.toggle();collapesedOrNot=!collapesedOrNot" style="cursor:pointer;">
+            <mdb-icon far icon="plus-square mr-1" *ngIf="!collapesedOrNot"></mdb-icon>
+            <mdb-icon far icon="minus-square mr-1" *ngIf="collapesedOrNot"></mdb-icon> Search Criteria
+        </span>
+        <button style="margin: -5px 3px;float:right;" *ngIf="collapesedOrNot" mdbBtn color="light" size="sm" class="waves-light"
+            mdbWavesEffect>View All</button>
+        <button style="margin: -5px 3px;float:right;" *ngIf="collapesedOrNot" mdbBtn color="light" size="sm" class="waves-light"
+            mdbWavesEffect>Clear</button>
+        <button style="margin: -5px 3px;float:right;" *ngIf="collapesedOrNot" mdbBtn color="light" size="sm" class="waves-light"
+            mdbWavesEffect>Search</button>
+    </h6>
+    <div class="" mdbCollapse #test="bs-collapse">
+        <div class="row" style="padding-top: 10px;">
+            <div class="col-sm-3" *ngFor="let field of advanceSearch?.fields">
+                <div class="md-form form-sm mb-2 bg-white" *ngIf="field?.type==='text'">
+                    <input mdbInput type="text" id="form{{field.label}}" class="form-control form-control-sm mb-0">
+                    <label for="form{{field.label}}" class="">{{field.label}}</label>
+                </div>
+                <div class="md-form form-sm mb-2 bg-white" *ngIf="field?.type==='dropdown'">
+                    <mdb-select mdbValidate [options]="field?.options || basicOptions" class="mb-0"></mdb-select>
+                    <label for="form{{field.label}}">
+                        {{field.label}}</label>
+                </div>
+                <div class="md-form form-sm mb-2 bg-white" *ngIf="field?.type==='date'">
+                    <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions" [label]="field.label" class="mb-0">
+                    </mdb-date-picker>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12" *ngIf="gridOperations?.length">
+        <div class="float-right form-sm">
+            <div class="btn-group btn-group-sm" role="group" aria-label="Basic example" style="margin-bottom: 7px;">
+                <button *ngFor="let operation of gridOperations" mdbBtn type="button" color="light" size="sm"
+                    class="waves-light" mdbWavesEffect [disabled]="!enableGridOperations"
+                    (click)="onGridOperationClick(operation)">{{operation.name}}</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row main-height">
+    <div [ngClass]="{'col-sm-12':app_ext || !toggleCaseDetails,'col-sm-9':!app_ext || toggleCaseDetails}">
+        <ul class="grid-bar" >
+            <li style="float: right;position: absolute;right: 186px;" *ngIf="!app_ext">
+                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                    <button mdbBtn color="light" size="sm" class="waves-light" mdbWavesEffect style="border-radius:4px 0px 0px 4px !important;"
+                        (click)="toggleCase(false)" [ngClass]="{'active': toggleCaseDetails==false}">
+                        <mdb-icon fas icon="window-maximize"></mdb-icon>
+                    </button>
+                    <button mdbBtn color="light" size="sm" class="waves-light" mdbWavesEffect style="border-radius:0px 4px 4px 0px !important;" (click)="toggleCase(true)"
+                        [ngClass]="{'active': toggleCaseDetails==true}">
+                        <mdb-icon fas icon="columns"></mdb-icon>
+                    </button>
+                </div>
+
+            </li>
+        </ul>
+        <ag-grid-angular [ngClass]="{'ext-screen':app_ext}" style="width: 100%;" class="ag-theme-balham" style="height: calc(100% -  49px)"
+            [rowData]="rowData" [columnDefs]="columnDefs" [gridOptions]="gridOptions" (gridReady)="onGridReady($event)"
+            (selectionChanged)="onSelectionChanged($event)" [paginationAutoPageSize]="true" [pagination]="pagination" [frameworkComponents]="frameworkComponents" [context]="context"
+            (rowDoubleClicked)="onRowDoubleClicked($event)" [floatingFilter]="hasFloatingFilter">
+        </ag-grid-angular>
+    </div>
+    <div class="case-details" [ngClass]="{'col-sm-3':toggleCaseDetails}" *ngIf="!app_ext && toggleCaseDetails">
+        <p class="case-details-head color-secondary"><span style="font-size: 12px;">Application Details :</span> <br><span style="font-weight: bold;">{{caseDetailsSelectedRow?.app_id}}</span>
+            <button mdbBtn color="light" size="sm" class="waves-light" (click)="onSelectRow()"
+                mdbWavesEffect>
+                <mdb-icon far icon="edit"></mdb-icon>
+            </button>
+            <span class="btn-group" mdbDropdown style="margin-top:0px;" *ngIf="operations">
+                <button mdbBtn color="light" size="sm" class="waves-light"
+                    classInside="dropdown-toggle" mdbDropdownToggle mdbWavesEffect>
+                    <mdb-icon fas icon="cog"></mdb-icon>
+                </button>
+                <div class="dropdown-menu dropdown-primary dropdown-menu-right" style="font-size:15px;">
+                    <a class="dropdown-item" *ngFor="let operation of operations" (click)="onOperationClick(operation)">{{operation.name}}</a>
+                </div>
+            </span>  
+        </p>
+        <hr style="margin-top: 0px;">
+        <div *ngFor="let item of caseDetails">
+            <p style="font-size: 15px;" class="mt-3 mb-1">{{item.caseSet.caseHeading}}</p>
+            <div class="row" *ngFor="let subitem of item.caseSet.caseData">
+                <div class="col-5"><span class="color-secondary details-cell">{{subitem.label}}</span></div>
+                <div class="col-7"><span class="details-cell">{{caseDetailsSelectedRow?caseDetailsSelectedRow[subitem.value]:''}}</span></div>
+            </div>
+        </div>
+    </div>
+</div>

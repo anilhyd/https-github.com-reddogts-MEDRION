@@ -1,0 +1,142 @@
+<form [formGroup]="emailConfigurationForm">
+  <div class="row">
+    <div class="col-3">
+        <mdb-breadcrumb customClass="black-text lighten-4 custom-breadcrumb"
+            style="font-size:13px;text-transform:uppercase;">
+            <mdb-breadcrumb-item class="step-up">Email Configuration
+            </mdb-breadcrumb-item>
+        </mdb-breadcrumb>
+    </div>
+    <div class="col-9">
+        <app-operations-bar [operations]="operations"
+            [enableOperations]="emailConfigurationForm.valid?true:false" (callbackOperation)="onCallbackOperation($event)">
+        </app-operations-bar>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-lg-4 col-xs-12" *ngIf="formFields?.name">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.name?.required"
+        maxlength="{{formFields?.name?.maxLength}}" class="form-control" formControlName="name"
+        id="name" mdbInput required="{{formFields?.name?.required}}">
+        <label for="name"><span *ngIf="formFields?.name?.required" class="red-text">*</span>
+        Name</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-xs-12" *ngIf="formFields?.email_address">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.email_address?.required"
+        maxlength="{{formFields?.email_address?.maxLength}}" class="form-control" formControlName="email_address"
+        id="email_address" mdbInput required="{{formFields?.email_address?.required}}">
+        <label for="email_address"><span *ngIf="formFields?.email_address?.required" class="red-text">*</span>
+        <mdb-icon far icon="envelope"></mdb-icon> Email Address</label>
+      </div>
+    </div>
+  </div>
+  <div class="text-left">
+    <h6 class="dark-grey-text  mb-2 mt-5">
+      <strong class="card-header-text">Server Details</strong>
+    </h6>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-xs-12" *ngIf="formFields?.incoming_mail_server">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.incoming_mail_server?.required"
+        maxlength="{{formFields?.incoming_mail_server?.maxLength}}" class="form-control" formControlName="incoming_mail_server"
+        id="incoming_mail_server" mdbInput required="{{formFields?.incoming_mail_server?.required}}">
+        <label for="incoming_mail_server"><span *ngIf="formFields?.incoming_mail_server?.required" class="red-text">*</span>
+        Incoming mail server</label>
+      </div>
+    </div>
+    <div class="col-lg-2 col-xs-12" *ngIf="formFields?.in_port_number">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.in_port_number?.required"
+        maxlength="{{formFields?.in_port_number?.maxLength}}" class="form-control" formControlName="in_port_number"
+        id="in_port_number" mdbInput required="{{formFields?.in_port_number?.required}}">
+        <label for="in_port_number"><span *ngIf="formFields?.in_port_number?.required" class="red-text">*</span>
+        Port Number</label>
+      </div>
+    </div>
+    <div class="col-lg-2 col-xs-12" *ngIf="formFields?.in_connection_type">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.in_connection_type?.required"
+        [options]="chooseoptions" formControlName="in_connection_type"
+        required="{{formFields?.in_connection_type?.required}}"></mdb-select>
+        <label for="in_connection_type"><span *ngIf="formFields?.in_connection_type?.required" class="red-text">*</span>
+        Connection Type</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-xs-12" *ngIf="formFields?.outgoing_mail_server">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.outgoing_mail_server?.required"
+        maxlength="{{formFields?.outgoing_mail_server?.maxLength}}" class="form-control" formControlName="outgoing_mail_server"
+        id="outgoing_mail_server" mdbInput required="{{formFields?.outgoing_mail_server?.required}}">
+        <label for="outgoing_mail_server"><span *ngIf="formFields?.outgoing_mail_server?.required" class="red-text">*</span>
+        Outgoing mail server</label>
+      </div>
+    </div>
+    <div class="col-lg-2 col-xs-12" *ngIf="formFields?.out_port_number">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.out_port_number?.required"
+        maxlength="{{formFields?.out_port_number?.maxLength}}" class="form-control" formControlName="out_port_number"
+        id="out_port_number" mdbInput required="{{formFields?.out_port_number?.required}}">
+        <label for="out_port_number"><span *ngIf="formFields?.out_port_number?.required" class="red-text">*</span>
+        Port Number</label>
+      </div>
+    </div>
+    <div class="col-lg-2 col-xs-12" *ngIf="formFields?.out_connection_type">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.out_connection_type?.required"
+        [options]="chooseoptions" formControlName="out_connection_type"
+        required="{{formFields?.out_connection_type?.required}}"></mdb-select>
+        <label for="out_connection_type"><span *ngIf="formFields?.out_connection_type?.required" class="red-text">*</span>
+        Connection Type</label>
+      </div>
+    </div>
+  </div>
+  
+  <div class="text-left">
+    <h6 class="dark-grey-text  mb-2 mt-5">
+      <strong class="card-header-text">Logon Credentials</strong>
+    </h6>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-xs-12" *ngIf="formFields?.user_name">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.user_name?.required"
+        maxlength="{{formFields?.user_name?.maxLength}}" class="form-control" formControlName="user_name"
+        id="user_name" mdbInput required="{{formFields?.user_name?.required}}">
+        <label for="user_name"><span *ngIf="formFields?.user_name?.required" class="red-text">*</span>
+        User Name</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-xs-12" *ngIf="formFields?.password">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.password?.required"
+        maxlength="{{formFields?.password?.maxLength}}" class="form-control" formControlName="password"
+        id="password" mdbInput required="{{formFields?.password?.required}}">
+        <label for="password"><span *ngIf="formFields?.password?.required" class="red-text">*</span>
+        Password</label>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="text-left">
+    <h6 class="dark-grey-text  mb-2 mt-5">
+      <strong class="card-header-text">Test Connection Status (Last Updated)</strong>
+    </h6>
+  </div>
+  <div class="row mt-3">
+    <div class="col-lg-4 col-xs-12">
+      <p>Succeded on 26 May 2019 at 11:10 Hrs</p>
+    </div>
+  </div>
+</form>

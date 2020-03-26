@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-3">
+    <mdb-breadcrumb customClass="black-text lighten-4 custom-breadcrumb"
+      style="font-size:13px;text-transform:uppercase;">
+      <mdb-breadcrumb-item>Notes
+      </mdb-breadcrumb-item>
+    </mdb-breadcrumb>
+  </div>
+  <div class="col-9">
+    <app-operations-bar [operations]="operations" (callbackOperation)="onCallbackOperation($event)">
+    </app-operations-bar>
+  </div>
+</div>
+<div class="row mt-2">
+  <div class="col-12">
+    <div class="mx-auto mb-5">
+      <div class="mdb-feed" *ngFor="let note of rowData">
+        <div class="news">
+          <div class="excerpt">
+            <div class="brief">
+              <a class="name">{{note?.username}}</a> posted on {{note?.date_by}}   
+              <div class="date">{{note?.notes_age}} days ago</div>
+            </div>
+
+            <div class="added-text">{{note?.notes}}</div>
+
+            <div class="feed-footer" *ngIf="note?.attachments">
+              <p style="margin-bottom: 0px;color: #6a91b8;">Attachments</p>
+              <a class="like" *ngFor="let attachment of note?.attachments">
+                <i class="fas fa-file"></i>
+                <span>{{attachment?.file_name}}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

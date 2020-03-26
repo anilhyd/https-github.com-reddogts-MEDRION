@@ -1,0 +1,13 @@
+<!-- <app-header #appHeader *ngIf="!app_ext" class="main-header"></app-header>
+<app-ext-header *ngIf="app_ext" class="ext-header"></app-ext-header>
+<main [ngClass]="{'pl240':app_ext, 'pl50':!app_ext, 'total-height':true}" (click)="!app_ext && closeToggle()">
+  <div class="container-fluid total-height">
+    <router-outlet></router-outlet>
+  </div>
+</main> -->
+<app-header #appHeader [ngClass]="{'ext-header':app_ext}"></app-header>
+<main [ngClass]="{'pl240':app_ext}" style="height: calc(100% - 82px);overflow:auto;">
+  <div class="container-fluid container-height">
+    <router-outlet></router-outlet>
+  </div>
+</main>

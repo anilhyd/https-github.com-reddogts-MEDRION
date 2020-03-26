@@ -1,0 +1,170 @@
+[
+    {
+      "id": 1,
+      "name": "Activity Type",
+      "values": "",
+      "code": "LK-001",
+      "extendable": "Yes"
+    },
+    {
+      "id": 2,
+      "name": "Activity Sub Type",
+      "values": "",
+      "code": "LK-002",
+      "extendable": "No"
+    },
+    {
+      "id": 3,
+      "name": "Amendment Type",
+      "values": "",
+      "code": "LK-003",
+      "extendable": "Yes"
+    },
+    {
+      "id": 4,
+      "name": "Attachment Classification",
+      "values": "",
+      "code": "LK-004",
+      "extendable": "No"
+    },
+    {
+      "id": 5,
+      "name": "Birth Type",
+      "values": "",
+      "code": "LK-005",
+      "extendable": "Yes"
+    },
+    {
+      "id": 6,
+      "name": "Delivery Type",
+      "values": "",
+      "code": "LK-006",
+      "extendable": "No"
+    },
+    {
+      "id": 7,
+      "name": "Dosage Formulation",
+      "values": "",
+      "code": "LK-007",
+      "extendable": "Yes"
+    },
+    {
+      "id": 8,
+      "name": "Fetal Outcome",
+      "values": "",
+      "code": "LK-008",
+      "extendable": "No"
+    },
+    {
+      "id": 9,
+      "name": "Fund Category",
+      "values": "",
+      "code": "LK-009",
+      "extendable": "Yes"
+    },
+    {
+      "id": 10,
+      "name": "Fund Sub-Category",
+      "values": "",
+      "code": "LK-010",
+      "extendable": "No"
+    },
+    {
+      "id": 11,
+      "name": "Height Units",
+      "values": "",
+      "code": "LK-011",
+      "extendable": "Yes"
+    },
+    {
+      "id": 12,
+      "name": "Institutional Review Board Type",
+      "values": "",
+      "code": "LK-012",
+      "extendable": "No"
+    },
+    {
+      "id": 13,
+      "name": "Organization Types",
+      "values": "",
+      "code": "LK-013",
+      "extendable": "Yes"
+    },
+    {
+      "id": 14,
+      "name": "Organization Sub Types",
+      "values": "",
+      "code": "LK-014",
+      "extendable": "No"
+    },
+    {
+      "id": 15,
+      "name": "Prefix",
+      "values": "",
+      "code": "LK-015",
+      "extendable": "Yes"
+    },
+    {
+      "id": 16,
+      "name": "Publication Content",
+      "values": "",
+      "code": "LK-016",
+      "extendable": "No"
+    },
+    {
+      "id": 17,
+      "name": "Publication Type",
+      "values": "",
+      "code": "LK-017",
+      "extendable": "Yes"
+    },
+    {
+      "id": 18,
+      "name": "Report Type",
+      "values": "",
+      "code": "LK-018",
+      "extendable": "No"
+    },
+    {
+      "id": 19,
+      "name": "Report Sub Type",
+      "values": "",
+      "code": "LK-019",
+      "extendable": "Yes"
+    },
+    {
+      "id": 20,
+      "name": "Site Evaluation Type",
+      "values": "",
+      "code": "LK-020",
+      "extendable": "No"
+    },
+    {
+      "id": 21,
+      "name": "Strength Units",
+      "values": "",
+      "code": "LK-021",
+      "extendable": "Yes"
+    },
+    {
+      "id": 22,
+      "name": "User Roles",
+      "values": "",
+      "code": "LK-022",
+      "extendable": "No"
+    },
+    {
+      "id": 23,
+      "name": "Weight Units",
+      "values": "",
+      "code": "LK-023",
+      "extendable": "Yes"
+    },
+    {
+      "id": 24,
+      "name": "Study Type",
+      "values": "",
+      "code": "LK-024",
+      "extendable": "No"
+    }
+  ]

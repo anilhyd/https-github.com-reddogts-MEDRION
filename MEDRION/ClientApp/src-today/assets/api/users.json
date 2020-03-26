@@ -1,0 +1,171 @@
+{
+    "username": "srikanth",
+    "mailId": "venkat.ieee55@gmail.com",
+    "phone_number": "9703889494",
+    "password":"admin",
+    "role": {
+        "role_type": "admin",
+        "permissions": [
+            {
+                "name": "IST",
+                "id": "ist",
+                "icon_type":"fab",
+                "icon": "nimblr",
+                "screens": [
+                    {
+                        "name": "Registrations",
+                        "id": "registrations"
+                    },
+                    {
+                        "name": "All Applications",
+                        "id": "applications"
+                    },
+                    {
+                        "name": "My Applications",
+                        "id": "my-applications"
+                    }
+                ]
+            },
+            {
+                "name": "EAP",
+                "id": "eap",
+                "icon_type":"fab",
+                "icon": "osi",
+                "screens": [
+                    {
+                        "name": "All Applications",
+                        "id": "applications"
+                    },
+                    {
+                        "name": "My applications",
+                        "id": "my-applications"
+                    }
+                ]
+            },
+            {
+                "name": "Grants",
+                "id": "grants",
+                "icon_type":"fab",
+                "icon": "nintendo-switch",
+                "screens": [
+                    {
+                        "name": "Registrations",
+                        "id": "registrations"
+                    },
+                    {
+                        "name": "All applications",
+                        "id": "applications"
+                    },
+                    {
+                        "name": "My applications",
+                        "id": "my-applications"
+                    }
+                ]
+            },            
+            {
+                "name": "Administration",
+                "id": "administration",
+                "icon": "sketch",
+                "icon_type":"fab",
+                "screens": [
+                    {
+                        "name": "EAP Type",
+                        "id": "eapType"
+                    },
+                    {
+                        "name": "Lookups",
+                        "id": "lookups"
+                    },
+                    {
+                        "name": "Document Attach",
+                        "id": "document_attach"
+                    },
+                    {
+                        "name": "Company Representatives",
+                        "id": "company_representatives"
+                    },
+                    {
+                        "name": "Theraupetic Area",
+                        "id": "theraupetic_area"
+                    },
+                    {
+                        "name": "Product",
+                        "id": "product"
+                    },
+                    {
+                        "name": "Program",
+                        "id": "program"
+                    },
+                    {
+                        "name": "Ccode",
+                        "id": "c_code"
+                    },
+                    {
+                        "name": "Event Summary",
+                        "id": "event_summary"
+                    },
+                    {
+                        "name": "Email Configuration",
+                        "id": "email_configuration"
+                    },
+                    {
+                        "name": "LDAP Configuration",
+                        "id": "ldap_configuration"
+                    },
+                    {
+                        "name": "SAML-SSO Configuration",
+                        "id": "saml_sso_configuration"
+                    }
+                ]
+            },
+            {
+                "name": "UM",
+                "id": "um",
+                "icon": "viadeo",
+                "icon_type":"fab",
+                "screens": [
+                    {
+                        "name": "Organization",
+                        "id": "organization"
+                    },
+                    {
+                        "name": "Department",
+                        "id": "department"
+                    },
+                    {
+                        "name": "Role",
+                        "id": "role"
+                    },
+                    {
+                        "name": "User",
+                        "id": "user"
+                    },
+                    {
+                        "name": "Privilege",
+                        "id": "privilege"
+                    }
+                ]
+            },
+            {
+                "name": "Personalization",
+                "id": "personalization",
+                "icon": "palette",
+                "icon_type":"fas",
+                "screens": [
+                    {
+                        "name": "Change Password",
+                        "id": "changePassword"
+                    },
+                    {
+                        "name": "Change Theme",
+                        "id": "changeTheme"
+                    },
+                    {
+                        "name": "View Profile",
+                        "id": "viewProfile"
+                    }
+                ]
+            }
+        ]
+    }
+}

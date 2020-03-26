@@ -1,0 +1,9 @@
+
+    {
+        "id": 1,
+        "code":"123456", 
+        "name":"Area Name",
+        "supports":"Supports",
+        "products": "Product 1",
+        "status":"Status"
+    }

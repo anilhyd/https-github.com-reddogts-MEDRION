@@ -1,0 +1,78 @@
+<div class="modal-content">
+
+    <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title w-100 text-center" id="myModalLabel">{{heading}}</h4>
+    </div>
+    <p class="modal-second-title">
+        <mdb-icon far icon="lightbulb" class="amber-text" size="lg"></mdb-icon> Select the Persons to whom you want to send this correspondence
+      </p>
+    <div class="modal-body">
+        <div class="md-form mb-3">
+            <input mdbInput type="text" id="form1" class="form-control">
+            <label for="form1" class="">Search</label>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="chip mt-2 w-100">
+                <mdb-checkbox [default]="true" class="chip-check">&nbsp;</mdb-checkbox>
+                <span class="crop-text wd-200">Person Name</span>
+                
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="chip mt-2 w-100">
+                <mdb-checkbox [default]="true" class="chip-check">&nbsp;</mdb-checkbox>
+                <span class="crop-text wd-200">Person Name</span>
+                
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="chip mt-2 w-100">
+                <mdb-checkbox [default]="true" class="chip-check">&nbsp;</mdb-checkbox>
+                <span class="crop-text wd-200">Person Name</span>
+                
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="chip mt-2 w-100">
+                <mdb-checkbox [default]="true" class="chip-check">&nbsp;</mdb-checkbox>
+                <span class="crop-text wd-200">Person Name</span>
+                
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="chip mt-2 w-100">
+                <mdb-checkbox [default]="true" class="chip-check">&nbsp;</mdb-checkbox>
+                <span class="crop-text wd-200">Person Name</span>
+                
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="chip mt-2 w-100">
+                <mdb-checkbox [default]="true" class="chip-check">&nbsp;</mdb-checkbox>
+                <span class="crop-text wd-200">Person Name</span>
+                
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="chip mt-2 w-100">
+                <mdb-checkbox [default]="true" class="chip-check">&nbsp;</mdb-checkbox>
+                <span class="crop-text wd-200">Person Name</span>
+                
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <div class="modal-footer">
+      <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()" 
+            mdbWavesEffect>Ok
+        </button>
+        <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+            (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+        
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100" id="myModalLabel">{{ heading }}</h4>
+  </div>
+  <div class="modal-body">
+    <div>
+      <p>
+        What is Lorem Ipsum?
+  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      </p>
+      <p>
+  Why do we use it?
+  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+      </p>
+    </div>
+
+    <div class="mt-5">
+      <mdb-checkbox [checked]="false">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</mdb-checkbox>
+      <div class="row mt-2">
+        <div class="col-1">
+          <p class="mt-3">Place</p>
+        </div>
+        <div class="col-4">
+          <div class="md-form">
+            <input mdbInput type="text" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          <p class="mt-2">Date</p>
+        </div>
+        <div class="col-4">
+          <p class="mt-2">mm / dd / yyyy</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" mdbBtn color="light" size="sm" class="relative waves-light" (click)="modalRef.hide()" mdbWavesEffect>
+      Submit
+    </button>
+    <button type="button" mdbBtn color="light" size="sm" class="waves-light" aria-label="Cancel" (click)="modalRef.hide()" mdbWavesEffect>
+      Cancel
+    </button>
+  </div>
+</div>

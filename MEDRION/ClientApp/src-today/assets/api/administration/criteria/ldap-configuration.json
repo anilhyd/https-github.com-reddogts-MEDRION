@@ -1,0 +1,21 @@
+{
+    "formFields": {
+        "enable_ldap_int":{ "type":"checkbox", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "host_server_name":{ "type":"text", "required":true, "maxLength":200, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "user_search_filter":{ "type":"text", "required":true, "maxLength":200, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "port_number":{ "type":"text", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "auth_type":{ "type":"dropdown", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "user_name":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "password":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+    },
+    "operations": [   
+        {
+            "name": "Test Connection",
+            "id": "test_connection"
+        },
+        {
+            "name": "Save",
+            "id": "save"
+        }
+    ]
+}

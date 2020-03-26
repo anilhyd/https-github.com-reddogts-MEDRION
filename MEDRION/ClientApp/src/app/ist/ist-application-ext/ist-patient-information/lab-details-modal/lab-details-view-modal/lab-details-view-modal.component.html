@@ -1,0 +1,99 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">New Lab Details</h4>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="labDetailsForm">
+
+      <div class="row">
+        <div class="col-6">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.test_name?.required"
+              maxlength="{{formFields?.test_name?.maxLength}}" class="form-control" formControlName="test_name"
+              id="test_name" mdbInput required="{{formFields?.test_name?.required}}"/>
+            <label for="test_name"><span *ngIf="formFields?.test_name?.required" class="red-text">*</span>
+              Test Name</label>
+          </div>
+        </div>
+        
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.test_result?.required"
+              maxlength="{{formFields?.test_result?.maxLength}}" class="form-control" formControlName="test_result"
+              id="test_name" mdbInput required="{{formFields?.test_result?.required}}"/>
+            <label for="test_result"><span *ngIf="formFields?.test_result?.required" class="red-text">*</span>
+              Test Result</label>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="md-form">
+            <mdb-select  mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.result_unit?.required" [options]="strengthAndUnitsOptions"
+              formControlName="result_unit" required="{{formFields?.result_unit?.required}}">
+            </mdb-select>
+            <label for="result_unit"><span *ngIf="formFields?.result_unit?.required" class="red-text">*</span>
+              Unit</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="md-form">
+            <mdb-date-picker class="date-picker-right" [inline]="true" name="test_date" [options]="myDatePickerOptions"
+              [label]="'Test Date'" formControlName="test_date"
+              required="{{formFields?.test_date?.required}}">
+            </mdb-date-picker>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.normal_range?.required"
+              maxlength="{{formFields?.normal_range?.maxLength}}" class="form-control" formControlName="normal_range"
+              id="normal_range" mdbInput required="{{formFields?.normal_range?.required}}"/>
+            <label for="normal_range"><span *ngIf="formFields?.normal_range?.required" class="red-text">*</span>
+              Normal Range</label>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="md-form">
+            <mdb-select  mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.range_unit?.required" [options]="strengthAndUnitsOptions"
+              formControlName="range_unit" required="{{formFields?.range_unit?.required}}">
+            </mdb-select>
+            <label for="range_unit"><span *ngIf="formFields?.range_unit?.required" class="red-text">*</span>
+              Unit</label>
+          </div>
+        </div>
+      </div>
+    
+      <div class="row">
+        <div class="col-12">
+          <div class="md-form">
+            <textarea mdbValidate [validateSuccess]="false" [validateError]="formFields?.comment?.required"
+              maxlength="{{formFields?.comment?.maxLength}}" class="form-control full-width" formControlName="comment"
+              id="comment" mdbInput required="{{formFields?.comment?.required}}"></textarea>
+            <label for="comment"><span *ngIf="formFields?.comment?.required" class="red-text">*</span>
+              Comment</label>
+          </div>
+        </div>
+      </div>
+      
+      
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()"
+      [disabled]="labDetailsForm.invalid" mdbWavesEffect>Save</button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+  </div>
+</div>

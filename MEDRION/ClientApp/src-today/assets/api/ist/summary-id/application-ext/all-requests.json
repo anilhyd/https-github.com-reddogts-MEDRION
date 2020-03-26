@@ -1,0 +1,12 @@
+{
+    "request_id": "P-IST-001",
+    "product_name": "Exemestane",
+    "submitted_Date": "27-Feb-2020",
+    "required_by": "27-Mar-2020",
+    "requested": 1000,
+    "allocated": 1000,
+    "used": 1000,
+    "status": "Closed",
+    "id": 1,
+    "request_type": "product"
+  }

@@ -1,0 +1,70 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">{{heading}}</h4>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="rfpForm">
+      <div class="row">
+        <div class="col-sm-6" *ngIf="formFields?.code">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.code?.required"
+              maxlength="{{formFields?.code?.maxLength}}" class="form-control" formControlName="code"
+              id="code" required="{{formFields?.code?.required}}" mdbInput>
+            <label for="code"><span *ngIf="formFields?.code?.required" class="red-text">*</span>
+              Code</label>
+          </div>
+        </div>
+        <div class="col-sm-6" *ngIf="formFields?.name">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.name?.required"
+              maxlength="{{formFields?.name?.maxLength}}" class="form-control"
+              formControlName="name" id="name"
+              required="{{formFields?.name?.required}}" mdbInput>
+            <label for="name"><span *ngIf="formFields?.name?.required"
+                class="red-text">*</span>
+                Name</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12" *ngIf="formFields?.description">
+          <div class="md-form">
+            <textarea mdbValidate [validateSuccess]="false" [validateError]="formFields?.description?.required"
+              maxlength="{{formFields?.description?.maxLength}}" class="form-control full-width" formControlName="description"
+              id="description" required="{{formFields?.description?.required}}" mdbInput></textarea>
+            <label for="description"><span *ngIf="formFields?.description?.required" class="red-text">*</span>
+              Description</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6" *ngIf="formFields?.loi_required">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.loi_required?.required"
+              [options]="loiOptions" formControlName="loi_required" id="loi_required"
+              required="{{formFields?.loi_required?.required}}">
+            </mdb-select>
+            <label for="loi_required"><span *ngIf="formFields?.loi_required?.required" class="red-text">*</span>
+              LOI Required</label>
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" [disabled]="rfpForm.invalid" (click)="modalRef.hide()"
+      mdbWavesEffect>Ok</button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+  </div>
+</div>

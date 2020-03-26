@@ -1,0 +1,227 @@
+[
+    {
+      "code": "E-001",
+      "name": "Registrations Save",
+      "module": "IST",
+      "type": "Manual",
+      "targeted_user": "External user",
+      "enabled_for": "YES",
+      "id": 1
+    },
+    {
+      "code": "E-002",
+      "name": "Application Submission",
+      "module": "IST",
+      "type": "Manual",
+      "targeted_user": "Both",
+      "enabled_for": "YES",
+      "id": 2
+    },
+    {
+      "code": "E-003",
+      "name": "Application Discard",
+      "module": "IST",
+      "type": "Manual",
+      "targeted_user": "External user",
+      "enabled_for": "YES",
+      "id": 3
+    },
+    {
+      "code": "E-004",
+      "name": "Application Route",
+      "module": "IST",
+      "type": "Manual",
+      "targeted_user": "Both",
+      "enabled_for": "YES",
+      "id": 4
+    },
+    {
+      "code": "E-005",
+      "name": "Application Return",
+      "module": "IST",
+      "type": "Manual",
+      "targeted_user": "Both",
+      "enabled_for": "YES",
+      "id": 5
+    },
+    {
+      "code": "E-006",
+      "name": "Application Withdraw",
+      "module": "IST",
+      "type": "Manual",
+      "targeted_user": "Both",
+      "enabled_for": "YES",
+      "id": 6
+    },
+    {
+      "code": "E-007",
+      "name": "Application On-Hold",
+      "module": "IST",
+      "type": "Manual",
+      "targeted_user": "External user",
+      "enabled_for": "YES",
+      "id": 7
+    },
+    {
+      "code": "E-008",
+      "name": "Application Release",
+      "module": "IST",
+      "type": "Manual",
+      "targeted_user": "External user",
+      "enabled_for": "YES",
+      "id": 8
+    },
+    {
+      "code": "E-009",
+      "name": "Application Close",
+      "module": "IST",
+      "type": "Manual",
+      "targeted_user": "External user",
+      "enabled_for": "YES",
+      "id": 9
+    },
+    {
+      "code": "E-010",
+      "name": "Patients Saving",
+      "module": "IST",
+      "type": "Manual",
+      "targeted_user": "External user",
+      "enabled_for": "YES",
+      "id": 10
+    },
+    {
+      "code": "E-011",
+      "name": "Patients Withdraw",
+      "module": "IST",
+      "type": "Manual",
+      "targeted_user": "Internal User",
+      "enabled_for": "YES",
+      "id": 11
+    },
+    {
+      "code": "E-012",
+      "name": "Request Submit/Approve/Reject",
+      "module": "IST",
+      "type": "Manual",
+      "targeted_user": "Internal User",
+      "enabled_for": "YES",
+      "id": 12
+    },
+    {
+      "code": "E-013",
+      "name": "Request Return",
+      "module": "IST",
+      "type": "Manual",
+      "targeted_user": "Both",
+      "enabled_for": "YES",
+      "id": 13
+    },
+    {
+      "code": "E-014",
+      "name": "Rerquest Retrieval",
+      "module": "IST",
+      "type": "Manual",
+      "targeted_user": "Both",
+      "enabled_for": "YES",
+      "id": 14
+    },
+    {
+      "code": "E-015",
+      "name": "Milestone Save",
+      "module": "IST",
+      "type": "Manual",
+      "targeted_user": "Both",
+      "enabled_for": "YES",
+      "id": 15
+    },
+    {
+      "code": "E-016",
+      "name": "Study Report Save",
+      "module": "IST",
+      "type": "Manual",
+      "targeted_user": "Internal User",
+      "enabled_for": "YES",
+      "id": 16
+    },
+    {
+      "code": "E-017",
+      "name": "Amendments Save",
+      "module": "IST",
+      "type": "Manual",
+      "targeted_user": "Internal User",
+      "enabled_for": "YES",
+      "id": 17
+    },
+    {
+      "code": "E-018",
+      "name": "Activities & Seminar Save",
+      "module": "IST",
+      "type": "Manual",
+      "targeted_user": "Internal User",
+      "enabled_for": "YES",
+      "id": 18
+    },
+    {
+      "code": "E-019",
+      "name": "Site Evaluation",
+      "module": "IST",
+      "type": "Manual",
+      "targeted_user": "Both",
+      "enabled_for": "YES",
+      "id": 19
+    },
+    {
+      "code": "E-020",
+      "name": "Publication",
+      "module": "IST",
+      "type": "Manual",
+      "targeted_user": "Internal User",
+      "enabled_for": "YES",
+      "id": 20
+    },
+    {
+      "code": "E-021",
+      "name": "RFI",
+      "module": "IST",
+      "type": "Manual",
+      "targeted_user": "Internal User",
+      "enabled_for": "YES",
+      "id": 21
+    },
+    {
+      "code": "E-022",
+      "name": "Unattended Application After Submission",
+      "module": "IST",
+      "type": "Auto",
+      "targeted_user": "Internal User",
+      "enabled_for": "YES",
+      "id": 22
+    },
+    {
+      "code": "E-023",
+      "name": "No Action taken by user more than a pre-defined time",
+      "module": "IST",
+      "type": "Auto",
+      "targeted_user": "Both",
+      "enabled_for": "YES",
+      "id": 23
+    },
+    {
+      "code": "E-024",
+      "name": "Patient enrollment history update",
+      "module": "IST",
+      "type": "Auto",
+      "targeted_user": "Both",
+      "enabled_for": "YES",
+      "id": 24
+    },
+    {
+      "code": "E-025",
+      "name": "User not active",
+      "module": "IST",
+      "type": "Auto",
+      "targeted_user": "Both",
+      "enabled_for": "YES",
+      "id": 25
+    }
+  ]

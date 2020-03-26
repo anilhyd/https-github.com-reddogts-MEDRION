@@ -1,0 +1,277 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">Add Product Approval</h4>
+  </div>
+  <p class="modal-second-title">
+    <mdb-icon far icon="lightbulb" class="amber-text" size="lg"></mdb-icon> Enables to complete the details of a
+    particular product approval
+  </p>
+  <div class="modal-body">
+    <form [formGroup]="addProductApprovalViewForm">
+      <div class="row">
+        <div class="col-sm-6" *ngIf="formFields?.trade_name">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.trade_name?.required"
+              maxlength="{{formFields?.trade_name?.maxLength}}" class="form-control" formControlName="trade_name"
+              id="trade_name" required="{{formFields?.trade_name?.required}}" mdbInput>
+            <label for="trade_name"><span *ngIf="formFields?.trade_name?.required" class="red-text">*</span>
+              Trade name</label>
+          </div>
+        </div>
+        <div class="col-sm-6" *ngIf="formFields?.market_authorization_holder">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.market_authorization_holder?.required"
+              maxlength="{{formFields?.market_authorization_holder?.maxLength}}" class="form-control"
+              formControlName="market_authorization_holder" id="market_authorization_holder"
+              required="{{formFields?.market_authorization_holder?.required}}" mdbInput>
+            <label for="market_authorization_holder"><span *ngIf="formFields?.market_authorization_holder?.required"
+                class="red-text">*</span>
+              Market Authorization Holder</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3" *ngIf="formFields?.approval_type">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.approval_type?.required"
+              [options]="optionsSelect" formControlName="approval_type" id="approval_type"
+              required="{{formFields?.approval_type?.required}}">
+            </mdb-select>
+            <label for="approval_type"><span *ngIf="formFields?.approval_type?.required" class="red-text">*</span>
+              Approval Type</label>
+          </div>
+        </div>
+        <div class="col-sm-3" *ngIf="formFields?.approval_number">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.approval_number?.required"
+              maxlength="{{formFields?.approval_number?.maxLength}}" class="form-control"
+              formControlName="approval_number" id="approval_number"
+              required="{{formFields?.approval_number?.required}}" mdbInput>
+            <label for="approval_number"><span *ngIf="formFields?.approval_number?.required" class="red-text">*</span>
+              Approval Number</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="md-form mt-0">
+          <div class="col-sm-12">
+            <h6 class="dark-grey-text mb-2 mt-1"><strong class="card-header-text">Country Authorizations (4) </strong>
+              <button size="sm" type="button" mdbBtn color="light"
+                mdbWavesEffect>Add</button>
+            </h6>
+          </div>
+        </div>
+      </div>
+      <div formGroupName="country_authorizations"
+        style="padding: 0px 15px 50px 15px;margin-bottom: 30px;box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.01), 0 1px 5px 0 rgba(0, 0, 0, 0.13)">
+        <div class="row">
+          <div class="col-sm-3" *ngIf="formFields?.country_authorizations?.formFields?.country">
+            <div class="md-form">
+              <mdb-select mdbValidate [validateSuccess]="false"
+                [validateError]="formFields?.country_authorizations?.formFields?.country?.required"
+                [options]="countryOptions" formControlName="country" id="country"
+                required="{{formFields?.country_authorizations?.formFields?.country?.required}}">
+              </mdb-select>
+              <label for="country"><span *ngIf="formFields?.country_authorizations?.formFields?.country?.required"
+                  class="red-text">*</span><mdb-icon fas icon="globe-americas"></mdb-icon> Country</label>
+            </div>
+          </div>
+          <div class="col-sm-3" *ngIf="formFields?.country_authorizations?.formFields?.website">
+            <div class="md-form">
+              <input type="text" mdbValidate [validateSuccess]="false"
+                [validateError]="formFields?.country_authorizations?.formFields?.website?.required"
+                maxlength="{{formFields?.country_authorizations?.formFields?.website?.maxLength}}" class="form-control"
+                formControlName="website" id="website"
+                required="{{formFields?.country_authorizations?.formFields?.website?.required}}" mdbInput>
+              <label for="website"><span *ngIf="formFields?.country_authorizations?.formFields?.website?.required"
+                  class="red-text">*</span>
+                Website</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-3" *ngIf="formFields?.country_authorizations?.formFields?.contact_number">
+            <div class="md-form">
+              <input type="text" mdbValidate [validateSuccess]="false"
+                [validateError]="formFields?.country_authorizations?.formFields?.contact_number?.required"
+                maxlength="{{formFields?.country_authorizations?.formFields?.contact_number?.maxLength}}"
+                class="form-control" formControlName="contact_number" id="contact_number"
+                required="{{formFields?.country_authorizations?.formFields?.contact_number?.required}}" mdbInput>
+              <label for="contact_number"><span
+                  *ngIf="formFields?.country_authorizations?.formFields?.contact_number?.required"
+                  class="red-text">*</span>
+                Contact Number</label>
+            </div>
+          </div>
+          <div class="col-sm-3" *ngIf="formFields?.country_authorizations?.formFields?.award_date">
+            <div class="md-form">
+              <mdb-date-picker [label]="'Award Date'" [inline]="true" name="mydate"
+                [options]="myDatePickerOptions" formControlName="award_date"
+                required="{{formFields?.country_authorizations?.formFields?.award_date?.required}}">
+              </mdb-date-picker>
+            </div>
+          </div>
+          <div class="col-sm-3" *ngIf="formFields?.country_authorizations?.formFields?.withdrawn_date">
+            <div class="md-form">
+              <mdb-date-picker [label]="'Withdrawn Date'" [inline]="true" name="mydate"
+                [options]="myDatePickerOptions" formControlName="withdrawn_date"
+                required="{{formFields?.country_authorizations?.formFields?.withdrawn_date?.required}}">
+              </mdb-date-picker>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="md-form">
+            <div class="col-sm-12">
+              <h6><strong>NDC/DIN (2)</strong></h6>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3" *ngIf="formFields?.country_authorizations?.formFields?.ndc_number">
+            <div class="md-form">
+              <input type="text" mdbValidate [validateSuccess]="false"
+                [validateError]="formFields?.country_authorizations?.formFields?.ndc_number?.required"
+                maxlength="{{formFields?.country_authorizations?.formFields?.ndc_number?.maxLength}}"
+                class="form-control" formControlName="ndc_number" id="ndc_number"
+                required="{{formFields?.country_authorizations?.formFields?.ndc_number?.required}}" mdbInput>
+              <label for="ndc_number"><span *ngIf="formFields?.country_authorizations?.formFields?.ndc_number?.required"
+                  class="red-text">*</span>
+                NDC Number</label>
+            </div>
+          </div>
+          <div class="col-sm-3" *ngIf="formFields?.country_authorizations?.formFields?.manufacturer_site">
+            <div class="md-form">
+              <mdb-select mdbValidate [validateSuccess]="false"
+                [validateError]="formFields?.country_authorizations?.formFields?.manufacturer_site?.required"
+                [options]="countryOptions" formControlName="manufacturer_site" id="manufacturer_site"
+                required="{{formFields?.country_authorizations?.formFields?.manufacturer_site?.required}}">
+              </mdb-select>
+              <label for="manufacturer_site"><span
+                  *ngIf="formFields?.country_authorizations?.formFields?.manufacturer_site?.required"
+                  class="red-text">*</span><mdb-icon fas icon="globe-americas"></mdb-icon> Country</label>
+            </div>
+          </div>
+          <div class="col-sm-6" *ngIf="formFields?.country_authorizations?.formFields?.description">
+            <div class="md-form">
+              <input type="text" mdbValidate [validateSuccess]="false"
+                [validateError]="formFields?.country_authorizations?.formFields?.description?.required"
+                maxlength="{{formFields?.country_authorizations?.formFields?.description?.maxLength}}"
+                class="form-control" formControlName="description" id="description"
+                required="{{formFields?.country_authorizations?.formFields?.description?.required}}" mdbInput>
+              <label for="description"><span
+                  *ngIf="formFields?.country_authorizations?.formFields?.description?.required"
+                  class="red-text">*</span>
+                NDC Number</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+
+          <div class="col-sm-12 text-right">
+            <div class="md-form">
+              <button size="sm" type="button" mdbBtn color="light" mdbWavesEffect>Add
+                NDC/DIN</button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="md-form mt-0">
+            <div class="col-sm-12">
+              <h6><strong>Fullfillment Setup</strong></h6>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 md-form mt-0">
+            <mdb-checkbox [checked]="false">Allow shipment to Reporter/Requestor/HCP</mdb-checkbox>
+          </div>
+          <div class="col-12 md-form">
+            <mdb-checkbox [checked]="false">Allow shipment to Authorised Drug Administration Site</mdb-checkbox>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-12 md-form custom-head">
+          <mdb-accordion [multiple]="true">
+            <mdb-accordion-item>
+              <mdb-accordion-item-head>USA Country Authorization  <mdb-icon style="right: 64px;position: absolute;" title="Edit" far icon="edit"></mdb-icon><mdb-icon style="right: 40px;position: absolute;" far icon="trash-alt"></mdb-icon>
+              </mdb-accordion-item-head>
+              <mdb-accordion-item-body class="border-left border-right">
+                  <div class="row">
+                      <div class="col-sm-6">
+                          <p class="mb-0 mt-3"><mdb-icon fas icon="globe-americas"></mdb-icon> Country</p>
+                          <p class="font-weight-bold mt-1">ABC Country</p>
+                        <!-- <div class="md-form">
+                          <input type="text"class="form-control"id="trade_name1" placeholder="ABC Country" mdbInput>
+                          <label for="trade_name1">
+                           <mdb-icon fas icon="globe-americas"></mdb-icon> Country</label>
+                        </div> -->
+                      </div>
+                      <div class="col-sm-6">
+                          <p class="mb-0 mt-3">NDC Number</p>
+                          <p class="font-weight-bold mt-1">ABC NDC Number</p>
+                        <!-- <div class="md-form">
+                          <input type="text" class="form-control" id="market_authorization_holder1" placeholder="ABC NDC Number" mdbInput>
+                          <label for="market_authorization_holder1">
+                            NDC Number</label>
+                        </div> -->
+                      </div>
+                    </div>
+              </mdb-accordion-item-body>
+            </mdb-accordion-item>
+
+            <mdb-accordion-item>
+              <mdb-accordion-item-head>USA Country Authorization  <mdb-icon style="right: 64px;position: absolute;" title="Edit" far icon="edit"></mdb-icon><mdb-icon style="right: 40px;position: absolute;" far icon="trash-alt"></mdb-icon>
+              </mdb-accordion-item-head>
+              <mdb-accordion-item-body class="border-left border-right">
+                  <div class="row">
+                      <div class="col-sm-6">
+                          <p class="mb-0 mt-3"><mdb-icon fas icon="globe-americas"></mdb-icon> Country</p>
+                          <p class="font-weight-bold mt-1">ABC Country</p>
+                        <!-- <div class="md-form">
+                          <input type="text"class="form-control"id="trade_name2" placeholder="ABC Country" mdbInput>
+                          <label for="trade_name2">
+                           <mdb-icon fas icon="globe-americas"></mdb-icon> Country</label>
+                        </div> -->
+                      </div>
+                      <div class="col-sm-6">
+                          <p class="mb-0 mt-3">NDC Number</p>
+                          <p class="font-weight-bold mt-1">ABC NDC Number</p>
+                        <!-- <div class="md-form">
+                          <input type="text" class="form-control" id="market_authorization_holder2" placeholder="ABC NDC Number" mdbInput>
+                          <label for="market_authorization_holder2">
+                            NDC Number</label>
+                        </div> -->
+                      </div>
+                    </div>
+              </mdb-accordion-item-body>
+            </mdb-accordion-item>
+
+          </mdb-accordion>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()"
+      mdbWavesEffect>Save</button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+  </div>
+</div>

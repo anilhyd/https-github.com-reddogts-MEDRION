@@ -1,0 +1,215 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">Set Delivery</h4>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="eventForm">
+        <div class="row">
+            <div class="col-sm-4">
+              <p class="mb-0 ">Code</p>
+              <p><strong>Event Code</strong></p>
+            </div>
+            <div class="col-sm-4">
+              <p class="mb-0 ">Name</p>
+              <p><strong>Event Name</strong></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <p class="mb-2 ">Description</p>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <p class="mb-0 ">Module</p>
+              <p><strong>Module Name</strong></p>
+            </div>
+            <div class="col-sm-4">
+              <p class="mb-0 ">Type</p>
+              <p><strong>Manual Trigger/Remainder</strong></p>
+            </div>
+            <div class="col-sm-4">
+                <p class="mb-0 ">Priority</p>
+                <p><strong>High/Medium/Low</strong></p>
+              </div>
+              <div class="col-sm-6">
+                  <p class="mb-0 ">Targetted Users</p>
+                  <p><strong>Internal/External/Both</strong></p>
+                </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <p class="mb-2 ">Parameters</p>
+              <p><strong>Parameter 1, Parameter 2, Parameter 3, Parameter 4, Parameter 5</strong></p>
+            </div>
+          </div>
+
+        <div class="">
+            <h6 class="dark-grey-text  mb-2 mt-5">
+              <strong class="card-header-text">Delivered through</strong>
+            </h6>
+            <div class="mt-2">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <div class="md-form mt-0">
+                            <mdb-checkbox *ngIf="formFields?.sms" class="mr-3" [inline]="true" mdbValidate [validateSuccess]="false"
+                              [validateError]="formFields?.sms?.required" formControlName="sms"
+                              required="{{formFields?.sms?.required}}">SMS
+                            </mdb-checkbox>
+                          </div>
+                    </div>
+                    <div class="col-sm-2 text-right">
+                        <button type="button" size="sm" mdbBtn color="light" class="relative waves-light w-100" mdbWavesEffect>Validate</button>
+                    </div>
+                  </div>
+                  <div class="md-form" *ngIf="formFields?.sms_message_template">
+                    <textarea mdbValidate maxlength="{{formFields?.sms_message_template?.maxLength}}" [validateSuccess]="false"
+                      formControlName="sms_message_template" id="sms_message_template" type="text" class="md-textarea form-control" mdbInput
+                      required="{{formFields?.sms_message_template?.required}}"></textarea>
+                    <label for="sms_message_template"><span *ngIf="formFields?.sms_message_template?.required" class="red-text">*</span>
+                      Message Template</label>
+                  </div>
+            </div>
+            <div class="mt-4">
+                <div class="row">
+                    <div class="col-sm-7">
+                        <div class="md-form mt-0">
+                            <mdb-checkbox *ngIf="formFields?.notification_store" class="mr-3" [inline]="true" mdbValidate [validateSuccess]="false"
+                              [validateError]="formFields?.notification_store?.required" formControlName="notification_store"
+                              required="{{formFields?.notification_store?.required}}">Notification Store
+                            </mdb-checkbox> 
+                          </div>
+                    </div>
+                    <div class="col-sm-3 text-right">
+                        <button type="button" size="sm" mdbBtn color="light" class="relative waves-light w-100" mdbWavesEffect>Copy From SMS</button>
+                    </div>
+                    <div class="col-sm-2 text-right">
+                        <button type="button" size="sm" mdbBtn color="light" class="relative waves-light w-100" mdbWavesEffect>Validate</button>
+                    </div>
+                  </div>
+                  <div class="md-form" *ngIf="formFields?.notification_message_template">
+                    <textarea mdbValidate maxlength="{{formFields?.notification_message_template?.maxLength}}" [validateSuccess]="false"
+                      formControlName="notification_message_template" id="notification_message_template" type="text" class="md-textarea form-control" mdbInput
+                      required="{{formFields?.notification_message_template?.required}}"></textarea>
+                    <label for="notification_message_template"><span *ngIf="formFields?.notification_message_template?.required" class="red-text">*</span>
+                      Message Template</label>
+                  </div>
+            </div>
+            <div class="mt-4">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <div class="md-form mt-0">
+                            <mdb-checkbox *ngIf="formFields?.e_mail" class="mr-3" [inline]="true" mdbValidate [validateSuccess]="false"
+                              [validateError]="formFields?.e_mail?.required" formControlName="e_mail"
+                              required="{{formFields?.e_mail?.required}}">eMail
+                            </mdb-checkbox> 
+                          </div>
+                    </div>
+                    <div class="col-sm-2 text-right">
+                        <button type="button" size="sm" mdbBtn color="light" class="relative waves-light w-100" mdbWavesEffect>Validate</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-10" *ngIf="formFields?.mail_to">
+                        <div class="md-form">
+                            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+                              maxlength="{{formFields?.mail_to?.maxLength}}" class="form-control" formControlName="mail_to"
+                              id="mail_to" mdbInput required="{{formFields?.mail_to?.required}}">
+                            <label for="mail_to"><span *ngIf="formFields?.mail_to?.required" class="red-text">*</span>
+                              To</label>
+                          </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <button type="button" size="sm" mdbBtn color="light" class="relative waves-light w-100 mt-4" (click)="openTo()" mdbWavesEffect>Select</button>
+                    </div>
+                  </div>
+                  <div class="row mt-1">
+                    <div class="col-sm-10" *ngIf="formFields?.mail_cc">
+                        <div class="md-form">
+                            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+                              maxlength="{{formFields?.mail_cc?.maxLength}}" class="form-control" formControlName="mail_cc"
+                              id="mail_cc" mdbInput required="{{formFields?.mail_cc?.required}}">
+                            <label for="mail_cc"><span *ngIf="formFields?.mail_cc?.required" class="red-text">*</span>
+                              CC</label>
+                          </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <button type="button" size="sm" mdbBtn color="light" class="relative waves-light w-100 mt-4" (click)="openTo()"  mdbWavesEffect>Select</button>
+                    </div>
+                  </div>
+                  <div class="row mt-1">
+                      <div class="col-sm-10" *ngIf="formFields?.mail_bcc">
+                          <div class="md-form">
+                              <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+                                maxlength="{{formFields?.mail_bcc?.maxLength}}" class="form-control" formControlName="mail_bcc"
+                                id="mail_bcc" mdbInput required="{{formFields?.mail_bcc?.required}}">
+                              <label for="mail_bcc"><span *ngIf="formFields?.mail_bcc?.required" class="red-text">*</span>
+                                BCC</label>
+                            </div>
+                      </div>
+                      <div class="col-sm-2">
+                          <button type="button" size="sm" mdbBtn color="light" class="relative waves-light w-100 mt-4" (click)="openTo()" mdbWavesEffect>Select</button>
+                      </div>
+                    </div>
+                    <div class="row mt-1">
+                      <div class="col-sm-12" *ngIf="formFields?.mail_subject">
+                          <div class="md-form">
+                              <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+                                maxlength="{{formFields?.mail_subject?.maxLength}}" class="form-control" formControlName="mail_subject"
+                                id="mail_subject" mdbInput required="{{formFields?.mail_subject?.required}}">
+                              <label for="mail_subject"><span *ngIf="formFields?.mail_subject?.required" class="red-text">*</span>
+                                Subject</label>
+                            </div>
+                      </div>
+                    </div>
+                    <div class="row mt-1">
+                        <div class="col-sm-12" *ngIf="formFields?.mail_body">
+                            <div class="md-form">
+                                <textarea style="min-height: 150px" mdbValidate maxlength="{{formFields?.mail_body?.maxLength}}" [validateSuccess]="false"
+                                  formControlName="mail_body" id="mail_body" type="text" class="md-textarea form-control  md-textarea-auto" mdbInput
+                                  required="{{formFields?.mail_body?.required}}"></textarea>
+                                <label for="mail_body"><span *ngIf="formFields?.mail_body?.required" class="red-text">*</span>
+                                  Body</label>
+                              </div>
+                        </div>
+                      </div>
+                  
+            </div>
+
+            <div class="">
+              <p class="mb-2">Attachments</p>
+              <div class="row">
+                  <div class="col-12 col-md-auto">
+                      <div class="file-field mt-2">
+                        <file-upload></file-upload>
+                      </div> 
+                  </div> 
+                  <div class="col">
+                      <div class="chip mt-2" title="{{item}}" *ngFor="let item of uploadedFiles; index as i">
+                          <mdb-icon fas class="mr-1" icon="file-excel"></mdb-icon>
+                        <span class="crop-text wd-200">{{item}}</span>
+                        <i class="close fas fa-times" (click)="removeItem(i)"></i>
+                      </div>
+                      
+                  </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()"
+      *ngIf="heading === 'Add' || heading === 'Edit'" [disabled]="eventForm.invalid" mdbWavesEffect>Save</button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+  </div>
+</div>

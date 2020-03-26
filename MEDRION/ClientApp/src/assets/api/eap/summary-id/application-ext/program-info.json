@@ -1,0 +1,28 @@
+{
+    "eap_type":"IndividualPatientIND",
+    "letter_of_authorization": {
+            "file_name": "Letter of authorization.pdf",
+            "notes" :"A letter permitting FDA to refer to the company’s IND or IDE file to provide certain necessary information about the investigational medical product (e.g., chemistry, manufacturing, controls) for the individual patient expanded access IND or IDE submitted by the applying licensed physician. The company should include the IND or IDE number for its investigational medical product in the LOA."
+    },
+    "fda_form_3926": {
+        "file_name": "Letter of authorization.pdf",
+        "notes" :"Text Area"
+    },
+    "fda_form_1571": {
+        "file_name": "Letter of authorization.pdf",
+        "notes" :"Text Area"
+    },
+    "fda_form_1572": {
+        "file_name": "Letter of authorization.pdf",
+        "notes" :"Text Area"
+    },
+    "irb_approval": {
+        "file_name": "Letter of authorization.pdf",
+        "notes" :"As an AAHRPP-accredited IRB, Salus IRB is committed to upholding the highest standards in human research protection while providing the high level of service and expertise that our customers have relied upon for nearly 30 years. Salus employs a consultative, partnership approach when working with sponsors and investigators, providing added value by delivering IRB services in a convenient, reliable, and efficient manner to bring our clients performance for a faster world"
+    },
+    "patient_consent_form": {
+        "file_name": "Letter of authorization.pdf",
+        "notes" :"Text Area"
+    }
+   
+ }

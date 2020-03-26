@@ -1,0 +1,45 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">{{heading}} Notes</h4>
+  </div>
+  <p class="modal-second-title">
+    <mdb-icon far icon="lightbulb" class="amber-text" size="lg"></mdb-icon> You can enter the details relating to this
+    application
+  </p>
+  <div class="modal-body">
+    <form [formGroup]="notesForm">
+      <div class="row">
+        <div class="col-sm-12" *ngIf="formFields?.notes">
+          <div class="md-form">
+            <textarea mdbValidate maxlength="{{formFields?.notes?.maxLength}}" [validateSuccess]="false"
+              formControlName="notes" id="dynmcId5" type="text" class="md-textarea form-control increased" mdbInput
+              required="{{formFields?.notes?.required}}"></textarea>
+            <label for="dynmcId5"><span *ngIf="formFields?.notes?.required" class="red-text">*</span>
+              <mdb-icon far icon="sticky-note"></mdb-icon> Notes</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div>
+            <p class="md-form">Attachments</p>
+            <div class="file-field mt-2">
+              <file-upload></file-upload>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="save()"
+      *ngIf="heading === 'Add' || heading === 'Edit'" [disabled]="notesForm.invalid" mdbWavesEffect>Save</button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+  </div>
+</div>

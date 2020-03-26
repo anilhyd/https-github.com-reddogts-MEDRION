@@ -1,0 +1,37 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">Diagnosis Dt 10-09-2018</h4>
+  </div>
+  <p class="modal-second-title">
+    <mdb-icon far icon="lightbulb" class="amber-text" size="lg"></mdb-icon> Allows to enter diagnosis details
+  </p>
+  <div class="modal-body">
+    <form [formGroup]="addDiagnosisForm">
+      <div class="row">
+        <div class="col-12">
+          <div class="md-form">
+            <textarea mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.enter_diagnosis_details?.required"
+              maxlength="{{formFields?.enter_diagnosis_details?.maxLength}}" class="md-textarea form-control"
+              formControlName="enter_diagnosis_details" id="enter_diagnosis_details" mdbInput
+              required="{{formFields?.enter_diagnosis_details?.required}}"></textarea>
+            <label for="enter_diagnosis_details"><span *ngIf="formFields?.enter_diagnosis_details?.required"
+                class="red-text">*</span>
+              Enter Diagnosis Details</label>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()"
+      [disabled]="addDiagnosisForm.invalid" mdbWavesEffect>Save</button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+  </div>
+</div>

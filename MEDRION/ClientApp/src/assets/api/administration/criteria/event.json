@@ -1,0 +1,70 @@
+{
+    "formFields": {
+        "sms":{ "type":"checkbox", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "sms_message_template":{ "type":"text", "required":true, "maxLength":520, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "notification_store":{ "type":"checkbox", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "notification_message_template":{ "type":"text", "required":true, "maxLength":520, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "e_mail":{ "type":"checkbox", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "mail_to":{ "type":"text", "required":false, "maxLength":100, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "mail_cc":{ "type":"text", "required":false, "maxLength":100, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "mail_bcc":{ "type":"text", "required":false, "maxLength":100, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "mail_subject":{ "type":"text", "required":true, "maxLength":100, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "mail_body":{ "type":"text", "required":true, "maxLength":2048, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+    },
+
+    "columnDefs": [
+        {
+            "headerName": "Code",
+            "field": "code",
+            "sort": "asc"            
+        },
+        {
+            "headerName": "Name",
+            "field": "name"
+        },
+        {
+            "headerName": "Module",
+            "field": "module"
+        },
+        {
+            "headerName": "Type",
+            "field": "type"
+        },
+        {
+            "headerName": "Targeted User",
+            "field": "targeted_user"
+        },
+        {
+            "headername": "Enabled for", 
+            "field": "enabled_for" 
+        }
+    ],
+    "operations": [   
+        {
+            "name": "Set Delivery",
+            "id": "setDelivery"
+        }
+    ],
+    "advanceSearch": 
+        {
+            "fields": [
+                {
+                    "label": "Name",
+                    "field": "name",
+                    "type": "text"
+                },
+                {
+                    "label": "Module",
+                    "field": "faq",
+                    "type": "dropdown"
+                },
+                {
+                    "label": "Enabled",
+                    "field": "faq",
+                    "type": "dropdown",
+                    "options": [{ "value": "yes", "label":"Yes"},{ "value": "no", "label":"No"}]
+                }
+            ]
+
+        }
+}

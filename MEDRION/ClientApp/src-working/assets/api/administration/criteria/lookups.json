@@ -1,0 +1,58 @@
+{
+    "formFields": {
+        
+        "code":{ "type":"text", "required":true, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "name":{ "type":"dropdown", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "description":{ "type":"textarea", "required":false, "maxLength":500, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "values":{ "type":"file", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+    },
+
+    "columnDefs": [
+        {
+            "headerName": "Code",
+            "field": "code",
+            "sort": "asc"            
+        },
+        {
+            "headerName": "Name",
+            "field": "name"
+        },
+        {
+            "headerName": "Module Applicability",
+            "field": "name"
+        },
+        {
+            "headerName": "Extendable",
+            "field": "extendable"
+        },
+        {
+            "headerName": "Values",
+            "field": "values"
+        }
+    ],
+    "operations": [   
+        {
+            "name": "Sort Order",
+            "id": "sort_order"
+        },
+        {
+            "name": "Add Values",
+            "id": "add"
+        }
+    ],
+    "advanceSearch": 
+        {
+            "fields": [
+                {
+                    "label": "Name",
+                    "field": "name",
+                    "type": "text"
+                },
+                {
+                    "label": "Module",
+                    "field": "module",
+                    "type": "dropdown"
+                }
+            ]
+        }
+}

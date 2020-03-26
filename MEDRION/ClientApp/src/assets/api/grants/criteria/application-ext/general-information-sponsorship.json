@@ -1,0 +1,45 @@
+{
+    "formFields": {
+        "area_of_focus":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "program_title":{ "type":"text", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "detailed_purpose":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "healthcare_professionals_attending":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "requested_spncership_level":{ "type":"dropdown", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "other_sponcership_tires_available":{ "type":"dropdown", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "funding_decision_needed_by_date":{ "type":"text", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "requested_amount":{ "type":"text", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "how_much_tax_is_deductible":{ "type":"text", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "total_program_budget_amount":{ "type":"text", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "other_financial_support_being_sought":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "approximate_percentage_of_your_organisation":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "program_fund_be_used_for_political":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "program_fund_be_used_for_co_payments":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "program_fund_be_used_for_any_other_activities":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "program_fund_be_used_for_meals_for_hcps":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "event_being_sponsored_accredited":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "held_this_program_previously":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "has_previously_supported_this_program":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "contact_person":{ "type":"text", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "flex_field1": {
+            "type": "text",
+            "required": false,
+            "maxLength": 500,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "flex_field2": {
+            "type": "dropdown",
+            "required": false,
+            "maxLength": 500,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "flex_field3": {
+            "type": "date",
+            "required": false,
+            "maxLength": 500,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        }
+    }
+}

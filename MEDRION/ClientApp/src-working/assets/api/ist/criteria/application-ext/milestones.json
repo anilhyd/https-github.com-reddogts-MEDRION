@@ -1,0 +1,131 @@
+{
+    "formFields": {
+        "milestone": {
+            "type": "label",
+            "required": true,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "current_start_date_of_study": {
+            "type": "date",
+            "pattern": null
+        },
+        "current_end_date_of_study": {
+            "type": "date",
+            "pattern": null
+        },
+        "milestone_title": {
+            "type": "text",
+            "required": true,
+            "maxLength": 100,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "notes": {
+            "type": "textarea",
+            "required": true,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "document_type": {
+            "type": "dropdown",
+            "required": true,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "attachments_classification": {
+            "type": "dropdown",
+            "required": true,
+            "maxLength": 50,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "upload_file_name": {
+            "type": "text",
+            "required": true,
+            "maxLength": 150,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "upload_date": {
+            "type": "date",
+            "required": false,
+            "maxLength": 15,
+            "pattern": null
+        },
+        "attachement_notes": {
+            "type": "text",
+            "required": false,
+            "maxLength": 1500,
+            "pattern": null
+        }
+    },
+    "formOperations": [
+        {
+            "name": "Save",
+            "id": "save"
+        }
+    ],
+
+    "columnDefs": [
+        {
+            "headerName": "Milestone #",
+            "field": "milestone"   
+        },
+        {
+            "headerName": "Title",
+            "field": "milestone_title"
+        },
+        {
+            "headerName": "Start Date",
+            "field": "current_start_date_of_study"
+        },
+        {
+            "headerName": "End Date",
+            "field": "current_end_date_of_study"
+        },
+        {
+            "headerName": "Submitted Date",
+            "field": "current_end_date_of_study"
+        }
+    ],
+    "operations": [
+        {
+            "name": "Delete",
+            "id": "delete"
+        },
+        {
+            "name": "Edit",
+            "id": "edit"
+        },
+        {
+            "name": "Add New",
+            "id": "add"
+        }
+    ],
+    "advanceSearch": 
+        {
+            "fields": [
+                {
+                    "label": "Milestone #",
+                    "field": "title",
+                    "type": "text"
+                },
+                {
+                    "label": "Title",
+                    "field": "title",
+                    "type": "text"
+                },
+                {
+                    "label": "From Date",
+                    "field": "org",
+                    "type": "date"
+                },
+                {
+                    "label": "To Date",
+                    "field": "city",
+                    "type": "date"
+                }
+            ]
+        }
+}

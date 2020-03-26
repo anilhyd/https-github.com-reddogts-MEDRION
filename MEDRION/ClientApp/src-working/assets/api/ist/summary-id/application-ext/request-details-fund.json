@@ -1,0 +1,48 @@
+{
+    "id":1,
+    "add_details": {
+        "id":1,
+        "request_type": "fund",
+        "category": "staff",
+        "sub_category": "bus",
+        "others": "Lorem ipsum dolar",
+        "requested_fund": 1213,
+        "used_fund": 1000,
+        "type_of_attachment": "estimations",
+        "file_name": [
+            {
+                "file": "file 1.pdf"
+            }
+        ],
+        "date_of_upload": "2019-01-04",
+        "status": "submitted",
+        "bank_details": "HDCXXXXSSXXX"
+    },
+    "update_usage_details": {
+        "used_amount": 1000
+    },
+    "allocate_details": {
+        "allocated_fund_": 1213,
+        "transaction_number": "SSDFWW68668DSS"
+    },
+    "return_or_retrieval_details": {
+        "refund_amount": 233,
+        "credit_check_number": 1221321,
+        "shipment_number": "SDSSD233432SD",
+        "bank_details": "BOA - pvt ltd",
+        "transaction_number": "DDFDF312312DFFF"
+    },
+    "bank_details_details": {
+        "account_holder_first_name": "Srikanth",
+        "account_holder_last_name": "Pingali",
+        "bank_name": "BOA",
+        "bank_number": "SFSDW2323224242",
+        "bank_transit_number": "GHTHTH2423",
+        "bank_account_number": "DFDXXXXXXX234234",
+        "bank_location": "NJ",
+        "phone_number": 9703889494,
+        "ext_phone_number": 91,
+        "fax_number": 9703889494,
+        "ext_fax_number": 91
+    }
+}

@@ -1,0 +1,169 @@
+<form [formGroup]="grantsInformationForm">
+  <div class="row">
+    <div class="col-3">
+      <mdb-breadcrumb customClass="black-text lighten-4 custom-breadcrumb"
+        style="font-size:13px;text-transform:uppercase;">
+        <mdb-breadcrumb-item>Grants Information
+        </mdb-breadcrumb-item>
+      </mdb-breadcrumb>
+    </div>
+    <div class="col-9">
+      <app-operations-bar [operations]="operations" [enableOperations]="grantsInformationForm.valid?true:false"
+        (callbackOperation)="onCallbackOperation($event)"></app-operations-bar>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-xs-12" *ngIf="formFields?.program_type">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.program_type?.required"
+        [options]="programTypeOptions" formControlName="program_type"
+        required="{{formFields?.program_type?.required}}"></mdb-select>
+        <label for="program_type"><span *ngIf="formFields?.program_type?.required" class="red-text">*</span>
+        Program Type</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.program_title">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.program_title?.required"
+        maxlength="{{formFields?.program_title?.maxLength}}" class="form-control" formControlName="program_title"
+        id="dynmcId1" mdbInput required="{{formFields?.program_title?.required}}">
+        <label for="dynmcId1"><span *ngIf="formFields?.program_title?.required" class="red-text">*</span>
+        Program Title</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.program_description">
+      <div class="md-form">
+        <textarea mdbValidate [validateSuccess]="false" [validateError]="formFields?.program_description?.required"
+        maxlength="{{formFields?.program_description?.maxLength}}" class="md-textarea form-control"
+        formControlName="program_description" id="dynmcId2" mdbInput
+        required="{{formFields?.program_description?.required}}"></textarea>
+        <label for="dynmcId2"><span *ngIf="formFields?.program_description?.required" class="red-text">*</span>
+        Program/Event Description</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-xs-12" *ngIf="formFields?.funding_decision_date">
+      <div class="md-form">
+        <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions"
+        [label]="'Funding Decision Needed by Date'" formControlName="funding_decision_date"
+        required="{{formFields?.funding_decision_date?.required}}"></mdb-date-picker>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-xs-12" *ngIf="formFields?.start_date">
+      <div class="md-form">
+        <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions"
+        [label]="'Start Date'" formControlName="start_date"
+        required="{{formFields?.start_date?.required}}"></mdb-date-picker>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-xs-12" *ngIf="formFields?.end_date">
+      <div class="md-form">
+        <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions"
+        [label]="'End Date'" formControlName="end_date"
+        required="{{formFields?.end_date?.required}}"></mdb-date-picker>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.amount_requested">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.amount_requested?.required"
+        maxlength="{{formFields?.amount_requested?.maxLength}}" class="form-control" formControlName="amount_requested"
+        id="dynmcId3" mdbInput required="{{formFields?.amount_requested?.required}}">
+        <label for="dynmcId3"><span *ngIf="formFields?.amount_requested?.required" class="red-text">*</span>
+        Amount requested</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.total_amount">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.total_amount?.required"
+        maxlength="{{formFields?.total_amount?.maxLength}}" class="form-control" formControlName="total_amount"
+        id="dynmcId4" mdbInput required="{{formFields?.total_amount?.required}}">
+        <label for="dynmcId4"><span *ngIf="formFields?.total_amount?.required" class="red-text">*</span>
+        Total Amount for Program</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.anticipated_revenue">
+      <div class="md-form input-group">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.anticipated_revenue?.required"
+        maxlength="{{formFields?.anticipated_revenue?.maxLength}}" class="form-control" formControlName="anticipated_revenue"
+        id="dynmcId5" mdbInput required="{{formFields?.anticipated_revenue?.required}}">
+        <div class="input-group-append">
+            <span class="input-group-text md-addon">USD</span>
+          </div>
+        <label for="dynmcId5"><span *ngIf="formFields?.anticipated_revenue?.required" class="red-text">*</span>
+        Anticipated Revenue from Registrations</label>        
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-5 col-xs-12" *ngIf="formFields?.faculty_members">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.faculty_members?.required"
+        [options]="chooseoptions" formControlName="faculty_members"
+        required="{{formFields?.faculty_members?.required}}"></mdb-select>
+        <label for="faculty_members"><span *ngIf="formFields?.faculty_members?.required" class="red-text">*</span>
+        Are any faculty members receiving Fee for Service?</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.needs_assessment_summary">
+      <div class="md-form">
+        <textarea mdbValidate [validateSuccess]="false" [validateError]="formFields?.needs_assessment_summary?.required"
+        maxlength="{{formFields?.needs_assessment_summary?.maxLength}}" class="md-textarea form-control"
+        formControlName="needs_assessment_summary" id="dynmcId6" mdbInput
+        required="{{formFields?.needs_assessment_summary?.required}}"></textarea>
+        <label for="dynmcId6"><span *ngIf="formFields?.needs_assessment_summary?.required" class="red-text">*</span>
+        Needs Assessment Summary </label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.competencies">
+      <div class="md-form">
+        <textarea mdbValidate [validateSuccess]="false" [validateError]="formFields?.competencies?.required"
+        maxlength="{{formFields?.competencies?.maxLength}}" class="md-textarea form-control"
+        formControlName="competencies" id="dynmcId7" mdbInput
+        required="{{formFields?.competencies?.required}}"></textarea>
+        <label for="dynmcId7"><span *ngIf="formFields?.competencies?.required" class="red-text">*</span>
+        Competencies that will be achieved by request </label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-5 col-xs-12" *ngIf="formFields?.highest_proposed">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.highest_proposed?.required"
+        [options]="chooseoptions" formControlName="highest_proposed"
+        required="{{formFields?.highest_proposed?.required}}"></mdb-select>
+        <label for="highest_proposed"><span *ngIf="formFields?.highest_proposed?.required" class="red-text">*</span>
+        Highest proposed outcome level</label>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-5">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.educational_objectives">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.educational_objectives?.required"
+        maxlength="{{formFields?.educational_objectives?.maxLength}}" class="form-control" formControlName="educational_objectives"
+        id="dynmcId8" mdbInput required="{{formFields?.educational_objectives?.required}}">
+        <label for="dynmcId8"><span *ngIf="formFields?.educational_objectives?.required" class="red-text">*</span>
+          Educational Objectives</label>
+      </div>
+    </div>
+  </div>
+</form>

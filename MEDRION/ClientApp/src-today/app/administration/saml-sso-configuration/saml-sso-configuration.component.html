@@ -1,0 +1,123 @@
+<form [formGroup]="samlSsoConfigurationForm">
+  <div class="row">
+    <div class="col-3">
+        <mdb-breadcrumb customClass="black-text lighten-4 custom-breadcrumb"
+            style="font-size:13px;text-transform:uppercase;">
+            <mdb-breadcrumb-item class="step-up">SAML SSO Configuration
+            </mdb-breadcrumb-item>
+        </mdb-breadcrumb>
+    </div>
+    <div class="col-9">
+        <app-operations-bar [operations]="operations"
+            [enableOperations]="samlSsoConfigurationForm.valid?true:false" (callbackOperation)="onCallbackOperation($event)">
+        </app-operations-bar>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-md-3 col-xs-12">
+      <mdb-checkbox [checked]="false">Enable SAML SSO</mdb-checkbox>
+    </div>
+  </div>
+  
+  <div class="text-left">
+    <h6 class="dark-grey-text  mb-2 mt-5">
+      <strong class="card-header-text">Server Details</strong>
+    </h6>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-xs-12" *ngIf="formFields?.signin_url">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.signin_url?.required"
+        maxlength="{{formFields?.signin_url?.maxLength}}" class="form-control" formControlName="signin_url"
+        id="signin_url" mdbInput required="{{formFields?.signin_url?.required}}">
+        <label for="signin_url"><span *ngIf="formFields?.signin_url?.required" class="red-text">*</span>
+        Sign in URL</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-xs-12" *ngIf="formFields?.signout_url">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.signout_url?.required"
+        maxlength="{{formFields?.signout_url?.maxLength}}" class="form-control" formControlName="signout_url"
+        id="signout_url" mdbInput required="{{formFields?.signout_url?.required}}">
+        <label for="signout_url"><span *ngIf="formFields?.signout_url?.required" class="red-text">*</span>
+        Sign out URL</label>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="row">
+    <div class="col-lg-4 col-xs-12" *ngIf="formFields?.issuer">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.issuer?.required"
+        maxlength="{{formFields?.issuer?.maxLength}}" class="form-control" formControlName="issuer"
+        id="issuer" mdbInput required="{{formFields?.issuer?.required}}">
+        <label for="issuer"><span *ngIf="formFields?.issuer?.required" class="red-text">*</span>
+        Issuer</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-xs-12" *ngIf="formFields?.password">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.password?.required"
+        maxlength="{{formFields?.password?.maxLength}}" class="form-control" formControlName="password"
+        id="password" mdbInput required="{{formFields?.password?.required}}">
+        <label for="password"><span *ngIf="formFields?.password?.required" class="red-text">*</span>
+        Password</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-xs-12" *ngIf="formFields?.verification_certificate">
+      <div class="md-form">
+        <textarea mdbValidate maxlength="{{formFields?.verification_certificate?.maxLength}}" [validateSuccess]="false" [validateError]="formFields?.verification_certificate?.required"
+          formControlName="verification_certificate" id="verification_certificate" type="text" class="md-textarea form-control" mdbInput
+          required="{{formFields?.verification_certificate?.required}}"></textarea>
+        <label for="verification_certificate"><span *ngIf="formFields?.verification_certificate?.required" class="red-text">*</span>
+          Verification Certificate</label>
+      </div>
+    </div>
+  </div>
+  
+  <div class="text-left">
+    <h6 class="dark-grey-text  mb-2 mt-5">
+      <strong class="card-header-text">Service Provider Details</strong>
+    </h6>
+  </div>
+  
+  <div class="row">
+    <div class="col-lg-4 col-xs-12" *ngIf="formFields?.acs_url">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.acs_url?.required"
+        maxlength="{{formFields?.acs_url?.maxLength}}" class="form-control" formControlName="acs_url"
+        id="acs_url" mdbInput required="{{formFields?.acs_url?.required}}">
+        <label for="acs_url"><span *ngIf="formFields?.acs_url?.required" class="red-text">*</span>
+        ACS URL</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-xs-12" *ngIf="formFields?.login_url">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.login_url?.required"
+        maxlength="{{formFields?.login_url?.maxLength}}" class="form-control" formControlName="login_url"
+        id="login_url" mdbInput required="{{formFields?.login_url?.required}}">
+        <label for="login_url"><span *ngIf="formFields?.login_url?.required" class="red-text">*</span>
+        Login URL</label>
+      </div>
+    </div>
+  </div>
+  <div class="text-left">
+    <h6 class="dark-grey-text  mb-2 mt-5">
+      <strong class="card-header-text">Test Connection Status (Last Updated)</strong>
+    </h6>
+  </div>
+  <div class="row mt-3">
+    <div class="col-lg-4 col-xs-12">
+      <p>Succeded on 26 May 2019 at 11:10 Hrs</p>
+    </div>
+  </div>
+</form>

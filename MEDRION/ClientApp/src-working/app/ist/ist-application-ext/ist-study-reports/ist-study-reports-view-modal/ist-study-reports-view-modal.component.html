@@ -1,0 +1,94 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">{{heading}} Study Reports</h4>
+  </div>
+
+  <div class="modal-body">
+    <form [formGroup]="studyReportsForm">
+      <div class="row">
+        <div class="col-md-4 col-sm-4" *ngIf="formFields?.report_type">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.report_type?.required"
+              [options]="typeOptions" formControlName="report_type"
+              required="{{formFields?.report_type?.required}}"></mdb-select>
+            <label for="report_type"><span *ngIf="formFields?.report_type?.required" class="red-text">*</span>
+              Type</label>
+            <!-- <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.report_type?.required"
+                  maxlength="{{formFields?.report_type?.maxLength}}" class="form-control" formControlName="report_type"
+                  id="dynmcId1" mdbInput required="{{formFields?.report_type?.required}}">
+                <label for="dynmcId1"><span *ngIf="formFields?.report_type?.required" class="red-text">*</span>
+                  Type</label> -->
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4" *ngIf="formFields?.report_sub_type">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.report_sub_type?.required"
+              [options]="subtypeOptions" formControlName="report_sub_type"
+              required="{{formFields?.report_sub_type?.required}}"></mdb-select>
+            <label for="report_sub_type"><span *ngIf="formFields?.report_sub_type?.required" class="red-text">*</span>
+              Sub Type</label>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4" *ngIf="formFields?.patient_id">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.patient_id?.required"
+              [options]="patientOptions" formControlName="patient_id"
+              required="{{formFields?.patient_id?.required}}"></mdb-select>
+            <label for="patient_id"><span *ngIf="formFields?.patient_id?.required" class="red-text">*</span>
+              Patient ID</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-sm-12" *ngIf="formFields?.title">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.title?.required"
+              maxlength="{{formFields?.title?.maxLength}}" class="form-control" formControlName="title" id="dynmcId1"
+              mdbInput required="{{formFields?.title?.required}}">
+            <label for="dynmcId1"><span *ngIf="formFields?.title?.required" class="red-text">*</span>
+              Title</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-sm-12" *ngIf="formFields?.notes">
+          <div class="md-form">
+            <textarea mdbValidate maxlength="{{formFields?.notes?.maxLength}}" [validateSuccess]="false"
+              formControlName="notes" id="dynmcId2" type="text" class="md-textarea form-control" mdbInput
+              required="{{formFields?.notes?.required}}"></textarea>
+            <label for="dynmcId2"><span *ngIf="formFields?.notes?.required" class="red-text">*</span>
+              <mdb-icon far icon="sticky-note"></mdb-icon> Notes</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="mt-4 col-12">
+          <h5>Attachments <button style="float:right" size="sm" type="button" mdbBtn color="light"
+              (click)="addNewAttachment()" mdbWavesEffect>Add New Attachment</button> </h5>
+        </div>
+      </div>
+      <div class="row org-grid mb-3" *ngIf="rowData?.length">
+        <div class="col-lg-12" *ngIf="loadGrid">
+          <ag-grid-angular style="width: 99%;" class="ag-theme-balham simple-grid" style="height: calc(100% -  49px)"
+            [rowData]="rowData" [columnDefs]="columnDefs" [gridOptions]="gridOptions" (gridReady)="onGridReady($event)"
+            [frameworkComponents]="frameworkComponents" [context]="context">
+          </ag-grid-angular>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="save()"
+      *ngIf="heading === 'Add' || heading === 'Edit'" [disabled]="studyReportsForm.invalid" mdbWavesEffect>Save</button>
+      <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="save()"
+      *ngIf="heading === 'Add' || heading === 'Edit'" [disabled]="studyReportsForm.invalid" mdbWavesEffect>Submit</button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+  </div>
+</div>

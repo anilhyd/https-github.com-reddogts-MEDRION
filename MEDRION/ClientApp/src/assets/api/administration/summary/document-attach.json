@@ -1,0 +1,134 @@
+[
+    {
+      "id": "cd-01",
+      "module": "IST",
+      "screen": "General Information",
+      "document_attach": "Investigator Brochure, FDA Form 1571, FDA Form 1572, IRB Approval, Informed Consent Documents, Information Given to study subjects, Study Contract, Insurance Statement, Conflict of Interest (COI) "
+    },
+    {
+      "id": "cd-02",
+      "module": "IST",
+      "screen": "Patients Info",
+      "document_attach": "Lab Reports, Medical Reports, Diagnosis, Protocol, Prescription"
+    },
+    {
+      "id": "cd-03",
+      "module": "IST",
+      "screen": "Study Reports",
+      "document_attach": "Follow up IND Safety report, Adverse Event Template, Serious Adverse Event Template, Product Complaint Template,  Study Report Template , Other Study Reports"
+    },
+    {
+      "id": "cd-04",
+      "module": "IST",
+      "screen": "Activities and Seminar",
+      "document_attach": "Presentation Slide Deck, Presentation Poster, Presentation Agenda, Presentation Take Aways, Other Activities and Seminar "
+    },
+    {
+      "id": "cd-05",
+      "module": "IST",
+      "screen": "Publications",
+      "document_attach": "Abstract Draft, Abstract Final, Abstract Reviewed, Poster Initial Concept,  Poster Final, Poster Accepted, Other Applications"
+    },
+    {
+      "id": "cd-06",
+      "module": "IST",
+      "screen": "Milestones",
+      "document_attach": "Milestone Template 1, Milestone Template 2, Milestone Template 3, Other Milestone"
+    },
+    {
+      "id": "cd-07",
+      "module": "IST",
+      "screen": "Amendments",
+      "document_attach": "Protocol Amendment - New Investigator, Protocol Amendment - Change in Protocol, Protocol Amendment - New Protocol,  Information amendments - Chemistry ,Information amendments - Manufacturing, Information amendment - Pharmacology-Toxicology , Information amendment - clinical"
+    },
+    {
+      "id": "cd-08",
+      "module": "IST",
+      "screen": "Site Visits",
+      "document_attach": "Site Evaluation Report, Site Initiation Report, Site Interim monitoring, Closeout Report"
+    },
+    {
+      "id": "cd-09",
+      "module": "IST",
+      "screen": "Attachments",
+      "document_attach": "Investigational Instructions, Insurance Statement, Curriculum Vitae, License Copy, Certificate(s) of Analysis of Investigation Product(s) received, Serious Adverse Events and Significant Protocol Details, 'Drug / Device Accountability log, Monitoring Visit Log, Delegation of Responsibility log, Site Signature Log, Study / Protocol Training Log, Screening Log, Enrollment Log, Adverse Event Log, Protocol Deviation Log, Subject Identification List, IRB Announcing study closure, Signed Informed Consent Forms, Source Documents, Documentation of Data Corrections"
+    },
+    {
+      "id": "cd-11",
+      "module": "EAP Type-1",
+      "screen": "Non-Emergency Individual Patient",
+      "document_attach": "Request a Letter of Authorization (LOA),  FDA Form 3926*, Obtain IRB approval, Obtain Informed Consent, "
+    },
+    {
+      "id": "cd-12",
+      "module": "EAP Type - 2",
+      "screen": "Non-Emergency Intermediate-Size Population IND",
+      "document_attach": "Request a Letter of Authorization (LOA),  Forms FDA 1571 and 1572, Obtain IRB approval, Obtain Informed Consent, "
+    },
+    {
+      "id": "cd-13",
+      "module": "EAP Type - 3",
+      "screen": "Emergency Individual Patient IND",
+      "document_attach": "Request Letter of Authorization (LOA), Request FDA Emergency Use Authorization, Obtain Informed Consent, Form FDA 3926**( within 15 business days of FDA )"
+    },
+    {
+      "id": "cd-14",
+      "module": "EAP Type - 4",
+      "screen": "Emergency Use Individual Patient Protocol",
+      "document_attach": "Request Letter of Authorization (LOA), Request FDA Emergency Use Authorization, Obtain Informed Consent, Form FDA 3926**( within 15 business days of FDA )"
+    },
+    {
+      "id": "cd-15",
+      "module": "EAP Type - 5",
+      "screen": "Intermediate-Size Population IND*",
+      "document_attach": "Request a Letter of Authorization (LOA),  Forms FDA 1571 and 1572, Obtain IRB approval, Obtain Informed Consent, "
+    },
+    {
+      "id": "cd-16",
+      "module": "EAP Type - 6",
+      "screen": "Intermediate-Size Population Protocol**",
+      "document_attach": "Request a Letter of Authorization (LOA),  Forms FDA 1571 and 1572, Obtain IRB approval, Obtain Informed Consent, "
+    },
+    {
+      "id": "cd-17",
+      "module": "EAP Type - 7",
+      "screen": "Treatment IND*",
+      "document_attach": "Request a Letter of Authorization (LOA),  Forms FDA 1571 and 1572, Obtain IRB approval, Obtain Informed Consent, "
+    },
+    {
+      "id": "cd-18",
+      "module": "EAP Type - 8",
+      "screen": "Treatment Protocol**",
+      "document_attach": "Request a Letter of Authorization (LOA),  Forms FDA 1571 and 1572, Obtain IRB approval, Obtain Informed Consent, "
+    },
+    {
+      "id": "cd-19",
+      "module": "EAP ",
+      "screen": "Study Reports",
+      "document_attach": "Follow up IND Safety report, Adverse Event Template, Serious Adverse Event Template, Product Complaint Template,  Study Report Template , Other Study Reports"
+    },
+    {
+      "id": "cd-20",
+      "module": "EAP ",
+      "screen": "Amendments",
+      "document_attach": "Protocol Amendment - New Investigator, Protocol Amendment - Change in Protocol, Protocol Amendment - New Protocol,  Information amendments - Chemistry ,Information amendments - Manufacturing, Information amendment - Pharmacology-Toxicology , Information amendment - clinical"
+    },
+    {
+      "id": "cd-21",
+      "module": "EAP ",
+      "screen": "Attachments",
+      "document_attach": "Investigational Instructions, Insurance Statement, Curriculum Vitae, License Copy, Certificate(s) of Analysis of Investigation Product(s) received, Serious Adverse Events and Significant Protocol Details, 'Drug / Device Accountability log, Monitoring Visit Log, Delegation of Responsibility log, Site Signature Log, Study / Protocol Training Log, Screening Log, Enrollment Log, Adverse Event Log, Protocol Deviation Log, Subject Identification List, IRB Announcing study closure, Signed Informed Consent Forms, Source Documents, Documentation of Data Corrections"
+    },
+    {
+      "id": "cd-22",
+      "module": "GRANTS",
+      "screen": "Registrations",
+      "document_attach": "W-8, W-9"
+    },
+    {
+      "id": "cd-23",
+      "module": "GRANTS",
+      "screen": "Docuemnts Upload",
+      "document_attach": "Detailed Agenda, Policy or Statement on conflicts of Interest, Proposed Faculty / Speakers, Approved Accrediting Provide, Certificate (required for accredited programs), Previous Year Program Evaluation / Outcomes (if Applicable), Draft Invitation / Flyer, Needs Assessment, Outcomes Measure plan"
+    }
+  ]

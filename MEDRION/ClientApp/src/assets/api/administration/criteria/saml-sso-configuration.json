@@ -1,0 +1,22 @@
+{
+    "formFields": {
+        "enable_saml_sso":{ "type":"checkbox", "required":true, "maxLength":200, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "signin_url":{ "type":"text", "required":true, "maxLength":200, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "signout_url":{ "type":"text", "required":true, "maxLength":200, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "issuer":{ "type":"text", "required":true, "maxLength":200, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "password":{ "type":"text", "required":true, "maxLength":200, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "verification_certificate":{ "type":"textarea", "required":true, "maxLength":1000, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "acs_url":{ "type":"text", "required":true, "maxLength":200, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "login_url":{ "type":"text", "required":true, "maxLength":200, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+    },
+    "operations": [   
+        {
+            "name": "Test Connection",
+            "id": "test_connection"
+        },
+        {
+            "name": "Save",
+            "id": "save"
+        }
+    ]
+}

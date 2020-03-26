@@ -1,0 +1,9 @@
+{
+    "id":1, 
+    "type":"Journal", 
+    "content":"Abstract", 
+    "journal_name":"International Journal of Radiation Oncology",
+    "title":"Clinical-Genomic Models of Node-Positive Breast Cancer: Training, Testing, and Validation",
+    "expected_date_of_publication":"20-Jul-2020",
+    "current_end_date_of_analysis":"15-Jan-2020"
+}

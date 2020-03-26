@@ -1,0 +1,38 @@
+{
+    "requestId":"1",
+    "phsy_name":"Mathew Leuis",
+    "study_sponsered":"Study Sponser Details",
+    "title": "Required for purpose of testing a special drug X for a patient and going through the clinical trails",
+    "required_type":"Type XYZ",
+    "review_status":"ongoing",
+    "last_updated_review":"3 months ago",
+    "requests": [
+        {"name":"General Information", "id":"general_information"},
+        {"name":"Grant Information", "id":"grant_information"},
+        {"name":"Delivery Format", "id":"delivery_format"},
+        {"name":"Audiences", "id":"audiences"},
+        {"name":"Budget", "id":"budget"},
+        {"name":"Accredation details", "id":"accredation_details"},
+        {"name":"Authorized Signee And Payee", "id":"authorized_signee_and_payee"},
+        {"name":"Outcome Assessment", "id":"outcome_assessment"},
+        {"name":"Reconciliation", "id":"reconciliation"},
+
+        {"name":"Sponsorship Benefits", "id":"sponsorship_benefits"},
+        {"name":"Document Upload", "id":"document_upload"},
+        {"name":"Sponsorship Benefits (Sponsorship)", "id":"sponsorship_benefits_sponsorship"},
+        {"name":"Document Upload (Sponsorship)", "id":"document_upload_sponsorship"},
+        {"name":"General Information (Sponsorship)", "id":"general_information_sponsorship"},
+        {"name":"General Information (Charitable)", "id":"general_information_charitable"}
+    ]
+}
+
+
+
+
+
+
+ 
+
+
+
+

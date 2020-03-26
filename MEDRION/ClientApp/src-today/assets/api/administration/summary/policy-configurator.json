@@ -1,0 +1,42 @@
+[
+    {
+      "id": 1,
+      "policy_code": "PC-001",
+      "policy_name": "IST Policy",
+      "module": "IST",
+      "sub_module": "",
+      "status": "Active"
+    },
+    {
+      "id": 2,
+      "policy_code": "PC-002",
+      "policy_name": "EAP Policy",
+      "module": "EAP",
+      "sub_module": "",
+      "status": "Inactive"
+    },
+    {
+      "id": 3,
+      "policy_code": "PC-003",
+      "policy_name": "Grants CME Policy",
+      "module": "Grants",
+      "sub_module": "CME",
+      "status": "Active"
+    },
+    {
+      "id": 4,
+      "policy_code": "PC-004",
+      "policy_name": "Grants Charity Policy",
+      "module": "Grants",
+      "sub_module": "Charity",
+      "status": "Inactive"
+    },
+    {
+      "id": 5,
+      "policy_code": "PC-005",
+      "policy_name": "Grants Sponsorship",
+      "module": "Grants",
+      "sub_module": "Sponsorship",
+      "status": "Inactive"
+    }
+  ]

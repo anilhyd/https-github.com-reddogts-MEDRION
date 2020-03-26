@@ -1,0 +1,95 @@
+{
+    "formFields": {
+        "name_of_organisation":{ "type":"text", "required":true, "maxLength":150, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "organisation_type":{ "type":"dropdown", "required":false, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "organisation_sub_type":{ "type":"dropdown", "required":false, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "organisation_website":{ "type":"text", "required":true, "maxLength":100, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "address":{ "type":"textarea", "required":true, "maxLength":200, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        
+        "postal_code":{ "type":"text", "required":true, "maxLength":20, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "city":{ "type":"text", "required":true, "maxLength":100, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "state_province":{"type":"text", "required":true, "maxLength":100, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "country":{"type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "email_address":{"type":"text", "required":true, "maxLength":100, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+        "phone_number":{"type":"text", "required":true, "maxLength":10, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "ext_phone_number":{ "type":"text", "required":true, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "other_phone_number":{ "type":"number", "required":true, "maxLength":15, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "ext_other_phone_number":{"type":"number", "required":true, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "fax_number":{ "type":"number", "required":true, "maxLength":10, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+        "ext_fax_number":{"type":"number", "required":true, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "notes":{ "type":"textarea", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "flex_field_1":{"type":"text", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "flex_field_2":{ "type":"text", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "flex_field_3":{ "type":"text", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        
+        "flex_field_4":{ "type":"text", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "flex_field_5":{"type":"text", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+    },
+
+
+
+    "columnDefs": [
+        {
+            "headerName": "Name",
+            "field": "name_of_organisation",
+            "sort": "asc"            
+        },
+        {
+            "headerName": "City",
+            "field": "city"
+        },
+        {
+            "headerName": "Type",
+            "field": "organisation_type"
+        },
+        {
+            "headerName": "Phone Number",
+            "field": "phone_number"
+        },
+        {
+            "headerName": "Other Phone Number",
+            "field": "other_phone_number"
+        }
+    ],
+    "operations": [
+        {
+            "name": "Delete",
+            "id": "delete"
+        },
+        {
+            "name": "Edit",
+            "id": "edit"
+        },
+        {
+            "name": "Add New",
+            "id": "add"
+        }
+    ],
+    "advanceSearch": 
+        {
+            "fields": [
+                {
+                    "label": "Name",
+                    "field": "name",
+                    "type": "text"
+                },
+                {
+                    "label": "City",
+                    "field": "city",
+                    "type": "text"
+                },
+                {
+                    "label": "Type",
+                    "field": "type",
+                    "type": "dropdown"
+                },
+                {
+                    "label": "Phone Number",
+                    "field": "phone_number",
+                    "type": "text"
+                }
+            ]
+        }
+}

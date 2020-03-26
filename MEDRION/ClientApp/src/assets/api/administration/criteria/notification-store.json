@@ -1,0 +1,73 @@
+{
+    "columnDefs": [
+        {
+            "headerName": "Group",
+            "field": "group",
+            "sort": "asc",
+            "width":100
+                       
+        },
+        {
+            "headerName": "Message + Tags",
+            "field": "message_tags",
+            "width":750
+        },
+        {
+            "headerName": "Date & Time",
+            "field": "date_time",
+            "width":150
+        },
+        {
+            "headerName": "Status - Read/Unread",
+            "field": "status_read_unread",
+            "width":100
+        }
+    ],
+    "operations": [   
+        {
+            "name": "Read",
+            "id": "read"
+        },
+        {
+            "name": "UnRead",
+            "id": "unread"
+        }
+    ],
+    "advanceSearch": 
+        {
+            "fields": [
+                {
+                    "label": "Group",
+                    "field": "group",
+                    "type": "text"
+                },
+                {
+                    "label": "Status",
+                    "field": "status",
+                    "type": "text"
+                },
+                {
+                    "label": "Tags",
+                    "field": "tags",
+                    "type": "text"
+                }
+            ],
+            "filters": [
+                {
+                    "label": "Show only unread",
+                    "filter_key":"unique_key_1",
+                    "criteria": ""
+                },
+                {
+                    "label": "Received today",
+                    "filter_key":"unique_key_2",
+                    "criteria": ""
+                },
+                {
+                    "label": "Received in last week",
+                    "filter_key":"unique_key_3",
+                    "criteria": ""
+                }
+            ]
+        }
+}

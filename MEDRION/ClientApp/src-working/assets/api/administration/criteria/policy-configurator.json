@@ -1,0 +1,69 @@
+{
+    "formFields":
+        {
+            "policy_code":{ "type":"text", "required":true, "maxLength":20, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+            "policy_name":{ "type":"text", "required":true, "maxLength":20, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+            "module":{ "type":"dropdown", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+            "sub_module":{ "type":"dropdown", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+            "description":{ "type":"textarea", "required":false, "maxLength":500, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+            "policy_attachment":{ "type":"file", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+        },
+
+    "columnDefs": [
+        {
+            "headerName": "Policy Code",
+            "field": "policy_code",
+            "sort": "asc"            
+        },
+        {
+            "headerName": "Policy Name",
+            "field": "policy_name"
+        },
+        {
+            "headerName": "Module",
+            "field": "module"
+        },
+        {
+            "headerName": "Sub-Module",
+            "field": "sub_module"
+        },
+        {
+            "headerName": "Status",
+            "field": "status"
+        }
+    ],
+    "operations": [       
+        {
+            "name": "Publish",
+            "id": "publish"
+        }, 
+        {
+            "name": "Delete",
+            "id": "delete"
+        },
+        {
+            "name": "Edit",
+            "id": "edit"
+        },
+        {
+            "name": "Add New",
+            "id": "add"
+        }        
+    ],
+    "advanceSearch": 
+        {
+            "fields": [
+                {
+                    "label": "Module",
+                    "field": "module",
+                    "type": "text"
+                },
+                {
+                    "label": "Status",
+                    "field": "status",
+                    "type": "dropdown"
+                }
+            ]
+
+        }
+}

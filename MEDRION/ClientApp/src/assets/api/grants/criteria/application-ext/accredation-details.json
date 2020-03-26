@@ -1,0 +1,8 @@
+{
+    "formFields": {
+        "accredited_provider":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "program_accredited":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "program_be_managed":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "implementer_partner":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+    }
+}

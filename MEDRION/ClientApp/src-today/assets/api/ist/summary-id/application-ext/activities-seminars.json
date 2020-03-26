@@ -1,0 +1,23 @@
+{
+    "id":1, 
+    "activity_type":"Webinar", 
+    "activity_sub_type":"Training", 
+    "activity_start_date":"14-Feb-2020",
+    "activity_end_date":"14-Feb-2020",
+
+    "activity_title":"HCP Webinar Series - Helping your young breast cancer patients manage fear and anxiety",
+    "activity_agenda":"Conflict of Interest Statement",
+    "activity_overview":"Activity Overview - This activity helps the HCP's to guide the patients who are facing Psycological challenges while undergoing the treatment",
+    "activty_session_title":"Introduction ",
+    "faculty_first_name":"Ezra ",
+    "faculty_last_name":"Cohen",
+    "occupation":"Senior Professor",
+    "qualification":"MD (Oncology)",
+
+
+    "upload_file_name":"Webinar - Presentation ",
+    "upload_date":"15-Feb-2020",
+    "notes":"",
+    "speakers":"Gopikrishna",
+    "upload_status":"Active"
+}

@@ -1,0 +1,29 @@
+{ 
+    "therapeutic_area": "Pulmonology",
+    "delivery_format_type": "live",
+    "enduring_material":{
+        "meeting_type":"",
+        "opt_in_process":"",
+        "release_date": "2017-04-13",
+        "expiry_date": "2017-04-23",
+        "transfer_mode":"NA"
+    },
+    "live": {   
+        "faculty_or_speakers": "2",
+        "open_or_closed_meeting":"",
+        "activity_start_date": "2017-04-13",
+        "activity_end_date": "2017-04-23",
+        "venue": "One Liberty Plaza, 1 Liberty",
+        "postal_code": "",
+        "city": "Hempstead",
+        "state": "New York ",
+        "country":"USA"
+    },
+    "web": {
+        "faculty_or_speakers": "NA",
+        "open_or_closed_meeting":"NA",
+        "activity_start_date": "NA",
+        "activity_end_date": "",
+        "web_url": "NA"
+    }
+}

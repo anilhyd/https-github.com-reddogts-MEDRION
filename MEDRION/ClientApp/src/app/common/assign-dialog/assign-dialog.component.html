@@ -1,0 +1,38 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100" id="myModalLabel">Assign Application</h4>
+
+  </div>
+  <p class="modal-second-title">
+    <mdb-icon far icon="lightbulb" class="amber-text" size="lg"></mdb-icon> {{assignMessage}}
+  </p>
+  <div class="modal-body">
+
+    <form [formGroup]="assignUser">
+      <div class="row">
+        <div class="col-sm-1">
+
+        </div>
+        <div class="col-md-10">
+          <div class="md-form">
+            <mdb-select [options]="users" formControlName="user" id="dynmcId" placeholder="Choose user"></mdb-select>
+            <label for="dynmcId"><span class="red-text">*</span> Select User</label>
+          </div>
+        </div>
+        <div class="col-sm-1">
+
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    
+    <button type="button" mdbBtn color="light" size="sm" class="relative waves-light" [disabled]="!assignUser.valid"
+      (click)="modalRef.hide()" mdbWavesEffect>Assign</button>
+      <button type="button" mdbBtn color="light" size="sm" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+  </div>
+</div>

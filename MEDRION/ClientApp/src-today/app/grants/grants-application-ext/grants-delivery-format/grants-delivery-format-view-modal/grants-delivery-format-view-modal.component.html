@@ -1,0 +1,282 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">{{heading}} Delivery Format</h4>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="deliveryFormatForm">
+      <div class="row">
+        <div class="col-sm-6" *ngIf="formFields?.therapeutic_area">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.therapeutic_area?.required"
+              [options]="stateOptions" formControlName="therapeutic_area"
+              required="{{formFields?.therapeutic_area?.required}}">
+            </mdb-select>
+            <label for="therapeutic_area"><span *ngIf="formFields?.therapeutic_area?.required" class="red-text">*</span>
+              Therapeutic Area</label>
+          </div>
+        </div>
+        <div class="col-sm-6" *ngIf="formFields?.delivery_format_type">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.delivery_format_type?.required" [options]="deliveryFormatOptions"
+              formControlName="delivery_format_type" required="{{formFields?.delivery_format_type?.required}}">
+            </mdb-select>
+            <label for="delivery_format_type"><span *ngIf="formFields?.delivery_format_type?.required"
+                class="red-text">*</span>
+              Delivery Format Type</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-2" *ngIf="deliveryFormatForm?.controls?.delivery_format_type?.value ==='enduring_material'" formGroupName="enduring_material">
+        <h6 class="dark-grey-text"><strong class="card-header-text">Enduring Material</strong></h6>
+        <div class="row">
+          <div class="col-sm-8" *ngIf="formFields?.enduring_material?.formFields?.meeting_type">
+
+            <div class="md-form">
+              <p class="mb-0">Meeting Type<span
+                *ngIf="formFields?.enduring_material?.formFields?.meeting_type?.required" class="ml-1">*</span></p>
+              <mdb-checkbox class="mr-3" *ngIf="formFields?.enduring_material?.formFields?.meeting_type" [inline]="true"
+                mdbValidate [validateSuccess]="false" [validateError]="formFields?.enduring_material?.formFields?.meeting_type?.required"
+                formControlName="meeting_type" required="{{formFields?.meeting_type?.required}}">Open (Public)
+              </mdb-checkbox>
+              <mdb-checkbox *ngIf="formFields?.enduring_material?.formFields?.meeting_type" [inline]="true" mdbValidate
+                [validateSuccess]="false" [validateError]="formFields?.enduring_material?.formFields?.meeting_type?.required"
+                formControlName="meeting_type" required="{{formFields?.meeting_type?.required}}">Closed
+                (Invite Only)
+              </mdb-checkbox>
+            </div>
+          </div>
+          <div class="col-sm-4" *ngIf="formFields?.enduring_material?.formFields?.opt_in_process">
+            <div class="md-form">
+              <p class="mb-4">Opt-in process<span
+                *ngIf="formFields?.enduring_material?.formFields?.opt_in_process?.required" class="ml-1">*</span></p>
+              <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" id="materialInline1" name="opt_in_process"
+                  formControlName="opt_in_process" [value]="true" mdbInput>
+                <label class="form-check-label" for="materialInline1">Yes</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" id="materialInline2" name="opt_in_process"
+                  formControlName="opt_in_process" [value]="false" mdbInput>
+                <label class="form-check-label" for="materialInline2">No</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6" *ngIf="formFields?.enduring_material?.formFields?.release_date">
+            <div class="md-form">
+              <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions"
+                [label]="'Release Date'" formControlName="release_date"
+                required="{{formFields?.release_date?.required}}">
+              </mdb-date-picker>
+            </div>
+          </div>
+          <div class="col-sm-6" *ngIf="formFields?.enduring_material?.formFields?.expiry_date">
+            <div class="md-form">
+              <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions"
+                [label]="'Expiry Date'" formControlName="expiry_date"
+                required="{{formFields?.expiry_date?.required}}">
+              </mdb-date-picker>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12" *ngIf="formFields?.enduring_material?.formFields?.transfer_mode">
+            <div class="md-form">
+              <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+                maxlength="{{formFields?.enduring_material?.formFields?.transfer_mode?.maxLength}}" class="form-control"
+                formControlName="transfer_mode" id="transfer_mode" mdbInput
+                required="{{formFields?.enduring_material?.formFields?.required}}">
+              <label for="transfer_mode"><span *ngIf="formFields?.enduring_material?.formFields?.transfer_mode?.required"
+                  class="red-text">*</span>
+                Transfer mode</label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="mt-2" *ngIf="deliveryFormatForm?.controls?.delivery_format_type?.value ==='live'" formGroupName="live">
+        <h6 class="dark-grey-text"><strong class="card-header-text">Live</strong></h6>
+        <div class="row">
+          <div class="col-sm-6" *ngIf="formFields?.live?.formFields?.faculty_or_speakers">
+            <div class="md-form">
+              <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+                maxlength="{{formFields?.live?.formFields?.faculty_or_speakers?.maxLength}}" class="form-control"
+                formControlName="faculty_or_speakers" id="faculty_or_speakers" mdbInput
+                required="{{formFields?.live?.formFields?.faculty_or_speakers?.required}}">
+              <label for="faculty_or_speakers"><span *ngIf="formFields?.live?.formFields?.faculty_or_speakers?.required"
+                  class="red-text">*</span>
+                # of Faculty/Speakers</label>
+            </div>
+          </div>
+          <div class="col-sm-6" *ngIf="formFields?.live?.formFields?.open_or_closed_meeting">
+            <div class="md-form">
+              <p class="mb-0">Meeting Type</p>
+              <mdb-checkbox class="mr-3" *ngIf="formFields?.live?.formFields?.open_or_closed_meeting" [inline]="true" mdbValidate
+                [validateSuccess]="false" [validateError]="formFields?.live?.formFields?.open_or_closed_meeting?.required"
+                formControlName="open_or_closed_meeting" required="{{formFields?.live?.formFields?.open_or_closed_meeting?.required}}">
+                <span *ngIf="formFields?.live?.formFields?.open_or_closed_meeting?.required" class="red-text">*</span>Open (Public)
+              </mdb-checkbox>
+              <mdb-checkbox *ngIf="formFields?.live?.formFields?.open_or_closed_meeting" [inline]="true" mdbValidate
+                [validateSuccess]="false" [validateError]="formFields?.live?.formFields?.open_or_closed_meeting?.required"
+                formControlName="open_or_closed_meeting" required="{{formFields?.live?.formFields?.open_or_closed_meeting?.required}}">
+                <span *ngIf="formFields?.live?.formFields?.open_or_closed_meeting?.required" class="red-text">*</span>Closed (Invite
+                Only)
+              </mdb-checkbox>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6" *ngIf="formFields?.live?.formFields?.activity_start_date">
+            <div class="md-form">
+              <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions"
+                [label]="'Activity Start Date'" formControlName="activity_start_date"
+                required="{{formFields?.live?.formFields?.activity_start_date?.required}}">
+              </mdb-date-picker>
+            </div>
+          </div>
+          <div class="col-sm-6" *ngIf="formFields?.live?.formFields?.activity_end_date">
+            <div class="md-form">
+              <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions"
+                [label]="'Activity End Date'" formControlName="activity_end_date"
+                required="{{formFields?.live?.formFields?.activity_end_date?.required}}">
+              </mdb-date-picker>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12" *ngIf="formFields?.live?.formFields?.venue">
+            <div class="md-form">
+              <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+                maxlength="{{formFields?.live?.formFields?.venue?.maxLength}}" class="form-control" formControlName="venue" id="venue"
+                mdbInput required="{{formFields?.live?.formFields?.venue?.required}}">
+              <label for="venue"><span *ngIf="formFields?.live?.formFields?.venue?.required" class="red-text">*</span>
+                Venue</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6" *ngIf="formFields?.live?.formFields?.postal_code">
+            <div class="md-form">
+              <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+                maxlength="{{formFields?.live?.formFields?.postal_code?.maxLength}}" class="form-control"
+                formControlName="postal_code" id="postal_code" mdbInput
+                required="{{formFields?.live?.formFields?.postal_code?.required}}">
+              <label for="postal_code"><span *ngIf="formFields?.live?.formFields?.postal_code?.required" class="red-text">*</span>
+                <mdb-icon fas icon="map-marker-alt"></mdb-icon> Postal Code</label>
+            </div>
+          </div>
+          <div class="col-sm-6" *ngIf="formFields?.live?.formFields?.city">
+            <div class="md-form">
+              <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+                maxlength="{{formFields?.live?.formFields?.city?.maxLength}}" class="form-control" formControlName="city" id="city"
+                mdbInput required="{{formFields?.city?.required}}">
+              <label for="city"><span *ngIf="formFields?.live?.formFields?.city?.required" class="red-text">*</span>
+                <mdb-icon far icon="building"></mdb-icon> City</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6" *ngIf="formFields?.live?.formFields?.state">
+            <div class="md-form">
+              <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.live?.formFields?.state?.required"
+                [options]="stateOptions" formControlName="state" required="{{formFields?.live?.formFields?.state?.required}}">
+              </mdb-select>
+              <label for="state"><span *ngIf="formFields?.live?.formFields?.state?.required" class="red-text">*</span>
+                <mdb-icon fas icon="city"></mdb-icon> State</label>
+            </div>
+          </div>
+          <div class="col-sm-6" *ngIf="formFields?.live?.formFields?.country">
+            <div class="md-form">
+              <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.live?.formFields?.country?.required"
+                [options]="countryOptions" formControlName="country" required="{{formFields?.live?.formFields?.country?.required}}">
+              </mdb-select>
+              <label for="country"><span *ngIf="formFields?.live?.formFields?.country?.required" class="red-text">*</span>
+               <mdb-icon fas icon="globe-americas"></mdb-icon> Country</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-2" *ngIf="deliveryFormatForm?.controls?.delivery_format_type?.value ==='web'" formGroupName="web">
+        <h6 class="dark-grey-text"><strong class="card-header-text">Web</strong></h6>
+        <div class="row">
+          <div class="col-sm-6" *ngIf="formFields?.web?.formFields?.faculty_or_speakers">
+            <div class="md-form">
+              <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+                maxlength="{{formFields?.web?.formFields?.faculty_or_speakers?.maxLength}}" class="form-control"
+                formControlName="faculty_or_speakers" id="faculty_or_speakers" mdbInput
+                required="{{formFields?.web?.formFields?.faculty_or_speakers?.required}}">
+              <label for="faculty_or_speakers"><span *ngIf="formFields?.web?.formFields?.faculty_or_speakers?.required"
+                  class="red-text">*</span>
+                # of Faculty/Speakers</label>
+            </div>
+          </div>
+          <div class="col-sm-6" *ngIf="formFields?.web?.formFields?.open_or_closed_meeting">
+            <div class="md-form">
+              <p class="mb-0">Meeting Type</p>
+              <mdb-checkbox class="mr-3" *ngIf="formFields?.web?.formFields?.open_or_closed_meeting" [inline]="true" mdbValidate
+                [validateSuccess]="false" [validateError]="formFields?.web?.formFields?.open_or_closed_meeting?.required"
+                formControlName="open_or_closed_meeting" required="{{formFields?.web?.formFields?.open_or_closed_meeting?.required}}">
+                <span *ngIf="formFields?.web?.formFields?.open_or_closed_meeting?.required" class="red-text">*</span>Open (Public)
+              </mdb-checkbox>
+              <mdb-checkbox *ngIf="formFields?.web?.formFields?.open_or_closed_meeting" [inline]="true" mdbValidate
+                [validateSuccess]="false" [validateError]="formFields?.web?.formFields?.open_or_closed_meeting?.required"
+                formControlName="open_or_closed_meeting"
+                required="{{formFields?.web?.formFields?.open_or_closed_meeting?.required}}"><span
+                  *ngIf="formFields?.web?.formFields?.open_or_closed_meeting?.required" class="red-text">*</span>Closed (Invite
+                Only)
+              </mdb-checkbox>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6" *ngIf="formFields?.web?.formFields?.activity_start_date">
+            <div class="md-form">
+              <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions"
+                [label]="'Activity Start Date'" formControlName="activity_start_date"
+                required="{{formFields?.web?.formFields?.activity_start_date?.required}}">
+              </mdb-date-picker>
+            </div>
+          </div>
+          <div class="col-sm-6" *ngIf="formFields?.web?.formFields?.activity_end_date">
+            <div class="md-form">
+              <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions"
+                [label]="'Activity End Date'" formControlName="activity_end_date"
+                required="{{formFields?.web?.formFields?.activity_end_date?.required}}">
+              </mdb-date-picker>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12" *ngIf="formFields?.web?.formFields?.web_url">
+            <div class="md-form">
+              <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+                maxlength="{{formFields?.web?.formFields?.web_url?.maxLength}}" class="form-control" formControlName="web_url"
+                id="web_url" mdbInput required="{{formFields?.web?.formFields?.web_url?.required}}">
+              <label for="web_url"><span *ngIf="formFields?.web?.formFields?.web_url?.required" class="red-text">*</span>
+                Web URL</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()"
+      *ngIf="heading === 'Create' || heading === 'Edit'" [disabled]="deliveryFormatForm.invalid"
+      mdbWavesEffect>Save</button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+  </div>
+</div>

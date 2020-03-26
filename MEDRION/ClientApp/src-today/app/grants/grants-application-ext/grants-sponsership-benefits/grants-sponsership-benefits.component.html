@@ -1,0 +1,143 @@
+<form [formGroup]="sponsorshipBenefitsForm">
+  <div class="row">
+    <div class="col-3">
+      <mdb-breadcrumb customClass="black-text lighten-4 custom-breadcrumb"
+        style="font-size:13px;text-transform:uppercase;">
+        <mdb-breadcrumb-item>Sponsorship Benefits
+        </mdb-breadcrumb-item>
+      </mdb-breadcrumb>
+    </div>
+    <div class="col-9">
+      <app-operations-bar [operations]="operations" [enableOperations]="sponsorshipBenefitsForm.valid?true:false"
+        (callbackOperation)="onCallbackOperation($event)"></app-operations-bar>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-xs-12" *ngIf="formFields?.sponsorship_benefit">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.sponsorship_benefit?.required"
+        [options]="chooseoptions" formControlName="sponsorship_benefit"
+        required="{{formFields?.sponsorship_benefit?.required}}"></mdb-select>
+        <label for="sponsorship_benefit"><span *ngIf="formFields?.sponsorship_benefit?.required" class="red-text">*</span>
+        Sponsorship Benefit</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-xs-12" *ngIf="formFields?.activity_start_date">
+      <div class="md-form">
+        <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions"
+        [label]="'Activity Start Date'" formControlName="activity_start_date"
+        required="{{formFields?.activity_start_date?.required}}"></mdb-date-picker>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-xs-12" *ngIf="formFields?.activity_finish_date">
+      <div class="md-form">
+        <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions"
+        [label]="'Activity Finish Date'" formControlName="activity_finish_date"
+        required="{{formFields?.activity_finish_date?.required}}"></mdb-date-picker>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-xs-12" *ngIf="formFields?.target_geographic_reach">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.target_geographic_reach?.required"
+        [options]="TargetGeographicReachOptions" formControlName="target_geographic_reach"
+        required="{{formFields?.target_geographic_reach?.required}}"></mdb-select>
+        <label for="target_geographic_reach"><span *ngIf="formFields?.target_geographic_reach?.required" class="red-text">*</span>
+        Target Geographic Reach</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.event_venue">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.event_venue?.required"
+        maxlength="{{formFields?.event_venue?.maxLength}}" class="form-control" formControlName="event_venue"
+        id="dynmcId1" mdbInput required="{{formFields?.event_venue?.required}}">
+        <label for="dynmcId1"><span *ngIf="formFields?.event_venue?.required" class="red-text">*</span>
+        Event Venue</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-xs-12" *ngIf="formFields?.event_venue_type">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.event_venue_type?.required"
+        [options]="EventVenueTypeOptions" formControlName="event_venue_type"
+        required="{{formFields?.event_venue_type?.required}}"></mdb-select>
+        <label for="event_venue_type"><span *ngIf="formFields?.event_venue_type?.required" class="red-text">*</span>
+        Event Venue Type</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-xs-12" *ngIf="formFields?.country">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.country?.required"
+        [options]="countryOptions" formControlName="country"
+        required="{{formFields?.country?.required}}"></mdb-select>
+        <label for="country"><span *ngIf="formFields?.country?.required" class="red-text">*</span>
+       <mdb-icon fas icon="globe-americas"></mdb-icon> Country</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.city">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.city?.required"
+        maxlength="{{formFields?.city?.maxLength}}" class="form-control" formControlName="city"
+        id="dynmcId1" mdbInput required="{{formFields?.city?.required}}">
+        <label for="dynmcId1"><span *ngIf="formFields?.city?.required" class="red-text">*</span>
+        <mdb-icon far icon="building"></mdb-icon> City</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-xs-12" *ngIf="formFields?.state">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.state?.required"
+        [options]="stateOptions" formControlName="state"
+        required="{{formFields?.state?.required}}"></mdb-select>
+        <label for="state"><span *ngIf="formFields?.state?.required" class="red-text">*</span>
+        <mdb-icon fas icon="city"></mdb-icon> State</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.zip_code">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.zip_code?.required"
+        maxlength="{{formFields?.zip_code?.maxLength}}" class="form-control" formControlName="zip_code"
+        id="dynmcId1" mdbInput required="{{formFields?.zip_code?.required}}">
+        <label for="dynmcId1"><span *ngIf="formFields?.zip_code?.required" class="red-text">*</span>
+          <mdb-icon fas icon="map-marker-alt"></mdb-icon> Zip Code</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.audience_group">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.audience_group?.required"
+        maxlength="{{formFields?.audience_group?.maxLength}}" class="form-control" formControlName="audience_group"
+        id="dynmcId1" mdbInput required="{{formFields?.audience_group?.required}}">
+        <label for="dynmcId1"><span *ngIf="formFields?.audience_group?.required" class="red-text">*</span>
+        Audience Group</label>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-60">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.attendees">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.attendees?.required"
+        maxlength="{{formFields?.attendees?.maxLength}}" class="form-control" formControlName="attendees"
+        id="dynmcId1" mdbInput required="{{formFields?.attendees?.required}}">
+        <label for="dynmcId1"><span *ngIf="formFields?.attendees?.required" class="red-text">*</span>
+        # Of Attendees</label>
+      </div>
+    </div>
+  </div>
+</form>

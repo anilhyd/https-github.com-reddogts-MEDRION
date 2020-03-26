@@ -1,0 +1,107 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">{{heading}}</h4>
+  </div>
+  <p class="modal-second-title">
+    <mdb-icon far icon="lightbulb" class="amber-text" size="lg"></mdb-icon> Allows to return the product which has been
+    issued and nit consumed as part of the product request
+  </p>
+  <div class="modal-body">
+    <form [formGroup]="returnOrRetrieveForm">
+      <div class="row">
+        <div class="col-6">
+          <h6 class="mb-0">Request ID</h6>
+          <p><strong>REQ-001</strong></p>
+        </div>
+        <div class="col-6">
+          <h6 class="mb-0">Product Name</h6>
+          <p><strong>Product A</strong></p>
+        </div>
+        <div class="col-6">
+          <h6 class="mb-0">Allocated Qty</h6>
+          <p><strong>100 Nos</strong></p>
+        </div>
+        <div class="col-6">
+          <h6 class="mb-0">Balance Qty</h6>
+          <p><strong>100 Nos</strong></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3" *ngIf="formFields?.return_quantity">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+              maxlength="{{formFields?.return_quantity?.maxLength}}" class="form-control"
+              formControlName="return_quantity" id="return_quantity" mdbInput
+              required="{{formFields?.return_quantity?.required}}">
+            <label for="return_quantity"><span *ngIf="formFields?.return_quantity?.required" class="red-text">*</span>
+              Return Quantity</label>
+          </div>
+        </div>
+        <div class="col-sm-3" *ngIf="formFields?.return_quantity_dropdown">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.return_quantity_dropdown?.required" [options]="returnQuantityOptions"
+              formControlName="return_quantity_dropdown" required="{{formFields?.return_quantity_dropdown?.required}}"
+              id="return_quantity_dropdown"></mdb-select>
+            <label for="return_quantity_dropdown"><span *ngIf="formFields?.return_quantity_dropdown?.required"
+                class="red-text">*</span></label>
+          </div>
+        </div>
+        <div class="col-sm-6" *ngIf="formFields?.date_of_dispatch">
+          <div class="md-form">
+            <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions"
+              formControlName="date_of_dispatch" required="{{formFields?.date_of_dispatch?.required}}" [label]="'Date of Dispatch *'"
+              required="{{formFields?.date_of_dispatch?.required}}">
+            </mdb-date-picker>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-sm-6" *ngIf="formFields?.shipping_service_provider">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+              maxlength="{{formFields?.shipping_service_provider?.maxLength}}" class="form-control"
+              formControlName="shipping_service_provider" id="shipping_service_provider" mdbInput
+              required="{{formFields?.shipping_service_provider?.required}}">
+            <label for="shipping_service_provider"><span *ngIf="formFields?.shipping_service_provider?.required"
+                class="red-text">*</span>
+              Shippment Service Provider</label>
+          </div>
+        </div>
+        <div class="col-sm-6" *ngIf="formFields?.shipping_tracking_id">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+              maxlength="{{formFields?.shipping_tracking_id?.maxLength}}" class="form-control"
+              formControlName="shipping_tracking_id" id="shipping_tracking_id" mdbInput
+              required="{{formFields?.shipping_tracking_id?.required}}">
+            <label for="shipping_tracking_id"><span *ngIf="formFields?.shipping_tracking_id?.required"
+                class="red-text">*</span>
+              Shippment Number</label>
+          </div>
+        </div>
+        <div class="col-sm-12" *ngIf="formFields?.notes">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+              maxlength="{{formFields?.notes?.maxLength}}" class="form-control" formControlName="notes" id="notes"
+              mdbInput required="{{formFields?.notes?.required}}">
+            <label for="notes"><span *ngIf="formFields?.notes?.required" class="red-text">*</span>
+              <mdb-icon far icon="sticky-note"></mdb-icon> Notes</label>
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()"
+      [disabled]="returnOrRetrieveForm.invalid" mdbWavesEffect>Save</button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+  </div>
+</div>

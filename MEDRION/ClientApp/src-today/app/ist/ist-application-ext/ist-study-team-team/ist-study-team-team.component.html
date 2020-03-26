@@ -1,0 +1,17 @@
+<div class="row border-bottom mb-10" *ngIf="route.children.length === 0">
+  <div class="col-3">
+    <mdb-breadcrumb customClass="black-text lighten-4 custom-breadcrumb"
+      style="font-size:13px;text-transform:uppercase;">
+      <mdb-breadcrumb-item>Study Team
+      </mdb-breadcrumb-item>
+    </mdb-breadcrumb>
+  </div>
+  <div class="col-9">
+    <app-operations-bar [operations]="operations" [enableOperations]="true"
+      (callbackOperation)="onCallbackOperation($event)"></app-operations-bar>
+  </div>
+</div>
+<app-client-grid *ngIf="route.children.length === 0" [operations]="operations" (callbackOperation)="onCallbackOperation($event)" [columnDefs]="columnDefs" [rowData]="rowData" [advanceSearch]="advanceSearch" 
+  (setGridApi)="onSetGridApi($event)" (selectionChanged)="onSelectionChanged($event)"
+  (rowDoubleClicked)="onRowDoubleClicked($event)"></app-client-grid>
+<router-outlet></router-outlet>

@@ -1,0 +1,7 @@
+{
+    "id": 1,
+    "module_name": "IST",
+    "feature_name": "Application",
+    "enabled": "Yes",
+    "format": "IST-{YYYY}-{COUNTER}"
+  }

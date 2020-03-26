@@ -1,0 +1,14 @@
+{
+    "amd_type": "New Protocol",
+    "amd_title": "New Protocal is initiated due to lack of response from the patients for the used dosage.",
+    "submission_date": "20-Mar-2020",
+    "field_label": "Address",
+    "status": "",
+    "id": 1,
+    "patient_name": "NA (-)",
+    "patient_id": "NA (-)",
+    "form_name": "study_team_team_request",
+    "section": "Additional info",
+    "field_value": "Address",
+    "notes": "A new protocol is update for effective results as the previous protocol used is having very minimal results on the desired sample."
+  }

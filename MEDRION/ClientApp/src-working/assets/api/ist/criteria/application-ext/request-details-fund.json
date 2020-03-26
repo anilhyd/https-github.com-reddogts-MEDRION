@@ -1,0 +1,188 @@
+{
+    "formFields": 
+        [
+            {
+                "add_formfields":{        
+                    "request_type":{ "type":"dropdown", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                    "category":{ "type":"dropdown", "required":false, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                    "sub_category":{ "type":"dropdown", "required":false, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                    "others":{ "type":"text", "required":false, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                    "requested_fund":{ "type":"number", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+            
+                    "used_fund":{ "type":"number", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                    "type_of_attachment":{ "type":"dropdown", "required":false, "maxLength":30, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                    "file_name":{ "type":"label", "required":false, "maxLength":70, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                    "date_of_upload":{"type":"date", "required":false, "maxLength":15, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                    "status":{"type":"dropdown", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+            
+                    "bank_details":{"type":"dropdown", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+                    "attachments":{"type":"file", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                    "estimation":{
+                        "type":"formGroup-label",
+                        "required":false,
+                        "formFields":{
+                            "estimation_attachments":{"type":"file", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                            "estimation_notes":{"type":"textarea", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+                        }
+                    },
+                    "actuals":{
+                        "type":"formGroup-label",
+                        "required":false,
+                        "formFields":{
+                            
+                            "actuals_attachments":{"type":"file", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                            "actuals_notes":{"type":"textarea", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+                        }
+                    }                
+                    
+                    
+                },    
+                "update_usage_formfields":{
+                    "used_amount":{ "type":"number", "required":true, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+                },
+                "allocate_formfields":{
+                    "allocated_fund":{ "type":"number", "required":false, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                    "transaction_number":{ "type":"text", "required":false, "maxLength":20, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+                },
+                "return_or_retrieval_formfields":{
+                    
+                    "refund_amount":{"type":"number", "required":false, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                    "credit_check_number":{ "type":"number", "required":false, "maxLength":10, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                    "shipment_number":{"type":"text", "required":false, "maxLength":20, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                    "bank_details":{ "type":"label", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                    "transaction_number":{ "type":"number", "required":false, "maxLength":20, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+                },
+                "bank_details_formfields":{
+                    
+                    "account_holder_first_name":{"type":"text", "required":false, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                    "account_holder_last_name":{ "type":"text", "required":false, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                    "bank_name":{"type":"text", "required":false, "maxLength":100, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                    "bank_number":{ "type":"text", "required":false, "maxLength":20, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                    "bank_transit_number":{ "type":"text", "required":false, "maxLength":20, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+            
+                    "bank_account_number":{ "type":"number", "required":false, "maxLength":20, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                    "bank_location":{ "type":"text", "required":false, "maxLength":75, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                    "phone_number":{ "type":"number", "required":false, "maxLength":15, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                    "ext_phone_number":{"type":"number", "required":false, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                    "fax_number":{"type":"number", "required":false, "maxLength":15, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+                    "ext_fax_number":{ "type":"number", "required":false, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+                }
+            }
+        ],
+ 
+    "columnDefs": [
+        {
+            "headerName": "Request ID",
+            "field": "request_id"                       
+        },
+        {
+            "headerName": "Category",
+            "field": "product_name",
+            "sort": "asc"         
+        },
+        {
+            "headerName": "Sub Category",
+            "field": "sub_category"          
+        },
+        {
+            "headerName": "Requested Amount",
+            "field": "requested_amt"          
+        },
+        {
+            "headerName": "Allocated Amount(USD)",
+            "field": "allocated_Amt"          
+        },
+        {
+            "headerName": "Used Amount(USD)",
+            "field": "used_amt"        
+        },
+        {
+            "headerName": "Return Amount(USD)",
+            "field": "return_qty"         
+        },
+        {
+            "headerName": "Status",
+            "field": "status"        
+        }
+    ],
+    "operations": [
+        {
+            "name": "Close",
+            "id": "close"
+        },
+        {
+            "name": "Approve",
+            "id": "approve"
+        },
+        {
+            "name": "Reject",
+            "id": "reject"
+        },
+        {
+            "name": "Allocate",
+            "id": "allocate"
+        },
+        {
+            "name": "Retrieval",
+            "id": "retrieve"
+        },
+        {
+            "name": "Return",
+            "id": "return"
+        },
+        {
+            "name": "Bank Account",
+            "id": "bank_account"
+        },
+        {
+            "name": "Update Usage",
+            "id": "update_usage"
+        },
+        {
+            "name": "Delete",
+            "id": "delete"
+        },
+        {
+            "name": "Edit",
+            "id": "edit"
+        },
+        {
+            "name": "Add New",
+            "id": "add"
+        }
+    ],
+    "advanceSearch": 
+        {
+            "fields": [
+                {
+                    "label": "Category",
+                    "field": "category",
+                    "type": "dropdown"
+                },
+                {
+                    "label": "Sub Category",
+                    "field": "sub_category",
+                    "type": "dropdown"
+                },
+                {
+                    "label": "Status",
+                    "field": "status",
+                    "type": "dropdown"
+                }
+            ],
+            "filters": [
+                {
+                    "label": "Completely consumed",
+                    "filter_key":"unique_key_1",
+                    "criteria": ""
+                },
+                {
+                    "label": "Allocated but not consumed at all",
+                    "filter_key":"unique_key_2",
+                    "criteria": ""
+                }
+            ]
+        }
+}

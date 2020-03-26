@@ -1,0 +1,117 @@
+<div class="modal-content">
+
+    <div class="modal-header">
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">×</span>
+      </button>
+      <h4 class="modal-title w-100 text-center" id="myModalLabel">View Budget Request Details</h4>
+    </div>
+    <p class="modal-second-title">
+        <mdb-icon far icon="lightbulb" class="amber-text" size="lg"></mdb-icon> Enables the user to view the budget request details comprising of the allocation and expenditure information also
+      </p>
+    <div class="modal-body">
+          
+        <div class="row">
+            <div class="col-sm-6">
+              <p class="mb-0 mt-2">Type</p>
+              <p><strong>Accreditation Fees</strong></p>
+            </div>
+            <div class="col-sm-6">
+              <p class="mb-0 mt-2">Sub Type</p>
+              <p><strong>Accreditation Fees</strong></p>
+            </div>
+          </div>
+  
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="mb-0 mt-2">Total Fees</p>
+            <p><strong>500 USD</strong></p>
+          </div>
+          <div class="col-sm-6">
+            <p class="mb-0 mt-2">Requested Amount</p>
+            <p><strong>500 USD</strong></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <p class="mb-2 mt-2">Notes</p>
+            <p>Accreditation Fees, Faculty and Staff Travel</p>
+          </div>
+        </div>
+        <div class="row"><div class="col-lg-12 col-xs-12"><h6 class="dark-grey-text mb-2"><strong class="card-header-text">Allocation Details</strong></h6></div></div>
+        <div class="row">
+            <div class="col-sm-6">
+              <p class="mb-0 mt-3">Amount</p>
+              <p><strong>500 USD</strong></p>
+            </div>
+            <div class="col-sm-6">
+              <p class="mb-0 mt-3">Date</p>
+              <p><strong>02-04-2019</strong></p>
+            </div>
+          </div>
+          <div class="row"><div class="col-lg-12 col-xs-12"><h6 class="dark-grey-text mb-2"><strong class="card-header-text">Expenditure Details</strong></h6></div></div>
+          <div class="row">
+              <div class="col-sm-6">
+                <p class="mb-0 mt-3">Amount</p>
+                <p><strong>500 USD</strong></p>
+              </div>
+              <div class="col-sm-6">
+                <p class="mb-0 mt-3">Balance</p>
+                <p><strong>500 USD</strong></p>
+              </div>
+            </div> 
+            <div class="row">
+              <div class="col-sm-12">
+                <p class="mb-2 mt-1">Invoices</p>
+                <div>
+                    <div class="chip">Invoices1.pdf</div>
+                    <div class="chip">Invoices2.pdf</div>
+                </div>
+              </div>
+            </div>
+
+
+        <div class="row">
+          <div class="col-sm-6" *ngIf="formFields?.allocated_amount">
+            <div class="md-form input-group">
+              <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+                maxlength="{{formFields?.allocated_amount?.maxLength}}" class="form-control" formControlName="allocated_amount"
+                id="allocated_amount" mdbInput required="{{formFields?.allocated_amount?.required}}">
+                <div class="input-group-append">
+                  <span class="input-group-text md-addon">USD</span>
+                </div>
+              <label for="allocated_amount"><span *ngIf="formFields?.allocated_amount?.required" class="red-text">*</span>
+                Amount</label>
+            </div>
+          </div>
+          <div class="col-sm-6" *ngIf="formFields?.allocated_date">
+            <div class="md-form">
+                <mdb-date-picker [inline]="true" name="allocated_date" [options]="myDatePickerOptions" [label]="'Date'"
+                  formControlName="allocated_date" required="{{formFields?.allocated_date?.required}}">
+                </mdb-date-picker>
+              </div>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-md-12 col-sm-12" *ngIf="formFields?.notes">
+            <div class="md-form">
+              <textarea mdbValidate maxlength="{{formFields?.notes?.maxLength}}"
+                [validateSuccess]="formFields?.notes?.required" formControlName="notes" id="dynmcId5" type="text"
+                class="md-textarea form-control" mdbInput required="{{formFields?.notes?.required}}"></textarea>
+              <label for="dynmcId5"><span *ngIf="formFields?.notes?.required" class="red-text">*</span>
+                <mdb-icon far icon="sticky-note"></mdb-icon> Notes</label>
+            </div>
+          </div>
+        </div>
+  
+        
+    </div>
+    <div class="modal-footer">
+      <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()"
+        mdbWavesEffect>Ok</button>
+      <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+        (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+      
+    </div>
+  </div>

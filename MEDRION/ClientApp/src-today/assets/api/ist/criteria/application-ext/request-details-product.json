@@ -1,0 +1,284 @@
+{
+    "formFields": [
+        {
+            "add_formfields":{        
+                "request_type":{ "type":"dropdown", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "request_id":{ "type":"label", "required":true, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "product_name":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "dosage_formulation":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "strength":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        
+                "units":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "required_by":{ "type":"date", "required":false, "maxLength":15, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "fullfillment_type":{ "type":"dropdown", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "patient_id":{"type":"dropdown", "required":false, "maxLength":15, "null":null, "validationMessage":"Field is either empty or incorrect"},
+                "shipping_address":{"type":"dropdown", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        
+                "partner_network":{"type":"dropdown", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "billing_address":{"type":"dropdown", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "required_quantity":{ "type":"number", "required":true, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "required_quantity_dropdown":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "used_quantity":{"type":"number", "required":true, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        
+                "used_quantity_dropdown":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "date_of_receipt":{"type":"text", "required":false, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "recurrence":{"type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "allOrSelectedPatients":{ "type":"radio", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+                "frequency_details":{
+                    "type":"formGroup-label",
+                    "formFields":{
+                        "daily":{
+                            "type":"formGroup-label",
+                            "formFields":{
+                                "every_days":{ "type":"radio", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "days":{ "type":"number", "required":false, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "every_weekday":{ "type":"radio", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "start_date_":{ "type":"date", "required":false, "maxLength":15, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "no_end_date":{ "type":"radio", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+    
+                                "end_after":{ "type":"radio", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "occurances":{ "type":"number", "required":false, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "end_by":{ "type":"radio", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "end_date":{ "type":"date", "required":false, "maxLength":15, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "dayNeverOnAfter":{ "type":"radio", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+                            }                         
+                        },
+                        "weekly":{
+                            "type":"formGroup-label",
+                            "formFields":{
+                                "days":{ "type":"number", "required":false, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "recur_every":{ "type":"radio", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "weeks_on":{ "type":"number", "required":false, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "sunday":{ "type":"checkbox", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "monday":{ "type":"checkbox", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "tuesday":{ "type":"checkbox", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+                                "wednesday":{ "type":"checkbox", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "thursday":{ "type":"checkbox", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "friday":{ "type":"checkbox", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "saturday":{ "type":"checkbox", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "start_date":{ "type":"date", "required":false, "maxLength":15, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+                                "no_end_date":{ "type":"radio", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "end_after":{ "type":"radio", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "occurances":{ "type":"number", "required":false, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "end_by":{ "type":"radio", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "end_date":{ "type":"date", "required":false, "maxLength":15, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "weeklyNeverOnAfter":{ "type":"radio", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+                            }
+                        },
+                        "monthly":{
+                            "type":"formGroup-label",
+                            "formFields":{
+                                "days":{ "type":"number", "required":false, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "day":{ "type":"radio", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "of_every":{ "type":"number", "required":false, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "month":{ "type":"number", "required":false, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "on":{ "type":"radio", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "month_name":{ "type":"dropdown", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+                                "on_the":{ "type":"radio", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "week_number_of_month":{ "type":"dropdown", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "day_of_week":{ "type":"dropdown", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "of_every_month":{ "type":"number", "required":false, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "start_date":{ "type":"date", "required":false, "maxLength":15, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+                                "no_end_date":{ "type":"radio", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "end_after":{ "type":"radio", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "occurances":{ "type":"number", "required":false, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "end_by":{ "type":"radio", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "end_date":{ "type":"date", "required":false, "maxLength":15, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "monthlyNeverOnAfter":{ "type":"radio", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+                            }
+                        },
+                        "yearly":{
+                            "type":"formGroup-label",
+                            "formFields":{
+                                "days":{ "type":"number", "required":false, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "recur_every":{ "type":"text", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "year":{ "type":"number", "required":false, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "on":{ "type":"radio", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "month_name":{ "type":"dropdown", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "day_of_month":{ "type":"text", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+                                "week_number_of_month":{ "type":"dropdown", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "on_the":{ "type":"label", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "no_of_week":{ "type":"label", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "day_of_week":{ "type":"dropdown", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "of_month_name":{ "type":"dropdown", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+                                "start_date":{ "type":"date", "required":false, "maxLength":15, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "no_end_date":{ "type":"radio", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "end_after":{ "type":"radio", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "occurances":{ "type":"number", "required":false, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "end_by":{ "type":"radio", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+                                "end_date":{ "type":"date", "required":false, "maxLength":15, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                                "yearlyNeverOnAfter":{ "type":"radio", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+                            }
+                        }
+                    }
+                }
+            },
+            "allocate_formfields":{        
+                "allocated_quantity":{ "type":"number", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "allocated_quantity_dropdown":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "shipping_tracking_id":{ "type":"text", "required":true, "maxLength":20, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "shipping_service_provider":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "date_of_dispatch":{ "type":"date", "required":true, "maxLength":15, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        
+                "batch_number_code_number":{ "type":"text", "required":true, "maxLength":20, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "date_of_manufacture":{ "type":"text", "required":true, "maxLength":15, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "date_of_expiry":{ "type":"date", "required":true, "maxLength":15, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "storage_instructions":{ "type":"text", "required":false, "maxLength":250, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+            },
+            "return_or_retrieve_formfields":{        
+                "return_quantity":{ "type":"number", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "return_quantity_dropdown":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "shipping_tracking_id":{ "type":"text", "required":true, "maxLength":20, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "shipping_service_provider":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "date_of_dispatch":{ "type":"date", "required":true, "maxLength":15, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        
+                "notes":{ "textarea":"text", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "date_of_receipt":{ "type":"date", "required":true, "maxLength":15, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+            },
+            "update_usage_formfields":{        
+                "date_of_receipt":{ "type":"date", "required":true, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "used_quantity":{ "type":"number", "required":true, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+            }
+        }
+    ],
+
+
+
+    "columnDefs": [
+        {
+            "headerName": "Request ID",
+            "field": "request_id"                       
+        },
+        {
+            "headerName": "Product Name",
+            "field": "product_name",
+            "sort": "asc"         
+        },
+        {
+            "headerName": "Submitted Date",
+            "field": "submitted_Date"        
+        },
+        {
+            "headerName": "Required By",
+            "field": "required_by"          
+        },
+        {
+            "headerName": "Requested",
+            "field": "requested"         
+        },
+        {
+            "headerName": "Allocated",
+            "field": "allocated"          
+        },
+        {
+            "headerName": "Used",
+            "field": "used"          
+        },        
+        {
+            "headerName": "Status",
+            "field": "status"        
+        }
+    ],
+    "operations": [
+        {
+            "name": "Close",
+            "id": "close"
+        },
+        {
+            "name": "Approve",
+            "id": "approve"
+        },
+        {
+            "name": "Reject",
+            "id": "reject"
+        },
+        {
+            "name": "Allocate",
+            "id": "allocate"
+        },
+        {
+            "name": "Retrieval",
+            "id": "retrieve"
+        },
+        {
+            "name": "Return",
+            "id": "return"
+        },
+        {
+            "name": "Update Usage",
+            "id": "update_usage"
+        },
+        {
+            "name": "Delete",
+            "id": "delete"
+        },
+        {
+            "name": "Edit",
+            "id": "edit"
+        },
+        {
+            "name": "Add New",
+            "id": "add"
+        }
+    ],
+    "advanceSearch": 
+        {
+            "fields": [
+                {
+                    "label": "Product Name",
+                    "field": "product_name",
+                    "type": "text"
+                },
+                {
+                    "label": "Dosage formulation",
+                    "field": "dosage_formulation",
+                    "type": "dropdown"
+                },
+                {
+                    "label": "Full fillment type",
+                    "field": "fullfillment_type",
+                    "type": "dropdown"
+                },
+                {
+                    "label": "Status",
+                    "field": "status",
+                    "type": "dropdown"
+                },
+                {
+                    "label": "To be Received On",
+                    "field": "to_be_received_on",
+                    "type": "date"
+                }
+            ],
+            "filters": [
+                {
+                    "label": "Completely consumed",
+                    "filter_key":"unique_key_1",
+                    "criteria": ""
+                },
+                {
+                    "label": "Allocated but not consumed at all",
+                    "filter_key":"unique_key_2",
+                    "criteria": ""
+                },
+                {
+                    "label": "Items to be received in next 1 week",
+                    "filter_key":"unique_key_3",
+                    "criteria": ""
+                },
+                {
+                    "label": "Items to be received in next 1 month",
+                    "filter_key":"unique_key_4",
+                    "criteria": ""
+                }
+            ]
+        }
+}

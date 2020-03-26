@@ -1,0 +1,116 @@
+[
+    {
+      "id": 1,
+      "code": "FAQ-001",
+      "faq": "Who can apply for expanded access?",
+      "answer": "A patient with a serious or life-threatening disease or condition for which there is no comparable or satisfactory alternative treatment should discuss expanded access with their physician. It is important to note that individual patients are NOT able to apply for expanded access themselves. Only a licensed physician who is overseeing the patient’s care may do so."
+    },
+    {
+      "id": 2,
+      "code": "FAQ-002",
+      "faq": "How do I know if my current disease or condition is considered serious or lifethreatening?",
+      "answer": "It is important to have a discussion with your physician about whether or not your Current disease or condition can be defined as either: A serious disease/condition: A disease or condition that has a substantial impact on day-to-day functioning. Whether a disease or condition is serious is a matter of clinical judgment, based on its impact on such factors as survival, day-to-day functioning, or the likelihood that the disease, if left untreated, will progress from a less severe condition to a more serious one; or Immediately life threatening disease/condition: A stage of disease in which there is reasonable likelihood that death will occur within a matter of months or in which premature death is likely without early treatment."
+    },
+    {
+      "id": 3,
+      "code": "FAQ-003",
+      "faq": "What requirements must be met in order to apply for Expanded Access?",
+      "answer": "A patient may apply for expanded access if the following conditions are met: 1.The patient and his or her physician are both willing to participate 2.The patient’s physician determines that there is no comparable or satisfactory alternative therapy available 3.The patient’s physician determines the probable risk to the person from the investigational product is not greater than the probable risk from the disease or condition; 4.FDA determines that there is sufficient evidence of the safety and effectiveness of the investigational product to support its use in the particular circumstance; 5.FDA determines that providing the investigational product will not interfere with the ongoing clinical trial; 6.The patient’s physician volunteers to serve as the sponsor-investigator, or the entity responsible for the treatment plan development and implementation 7.The patient is unable to participate in the clinical trial."
+    },
+    {
+      "id": 4,
+      "code": "FAQ-004",
+      "faq": "How do I get my physician involved?",
+      "answer": "It is important to first talk with your physician to see if using an investigational treatment is appropriate for you. You will also need to make sure they are willing to oversee your treatment, work with the manufacturing company and FDA, obtain the drugs and/or biologics, monitor you during the course of treatment, and file the necessary paperwork. Form FDA 3926 can be used by physicians to submit a request for individual patient expanded access to investigational new drugs,including emergencies."
+    },
+    {
+      "id": 5,
+      "code": "FAQ-005",
+      "faq": "What is the application process like?",
+      "answer": "Individual patient expanded access submissions must be made by the patient’s physician and be submitted directly to FDA. The physician is then considered the sponsor of that application. He or she must also be willing to manage the use of the investigational drug and the patient’s medical care. This includes reviewing the requirements for expanded access with the patient, discussing potential risks and benefits, obtaining required informed consent, submitting the expanded access treatment protocol to an Institutional Review Board (IRB) for approval, reporting adverse events and outcomes, and submitting the necessary paperwork to FDA. Physicians must follow the steps below to request expanded access for their patient: 1. Ensure their patient meets the eligibility criteria for expanded access 2. Discuss the risks of the investigational drug treatment with their patient and obtain informed consent. Informed consent MUST be obtained before initiating treatment, unless one of the standard informed consent exceptions applies 3. Obtain a letter of authorization from the drug manufacturer Contact the drug manufacturer/company to request use of the drug outside of the clinical trial setting. The manufacturer must decide whether to provide the drug to treat the patient under expanded access. · If the manufacturer agrees to provide the drug for expanded access, the physician submits a Letter of Authorization from the drug company to the FDA with Form 3926 submission 4. Fill out the “Individual Patient Expanded Access Investigation New Drug Application form (Form FDA 3926) and submit it to FDA 5. Request Institutional Review Board (IRB) approval by submitting the expanded access treatment protocol to an IRB for initial and continuing review (this requirement can be retrospective in emergency expanded access use) 6. Await authorization from FDA and the IRB 7. Begin treatment and monitor the patient Emergency requests for expanded access use under a single patient IND may be submitted over the phone or electronically by a licensed physician, provided the physician explains how the expanded access use will meet the requirements, and agrees to submit an expanded access submission within 15 working days of FDA’s initial authorization of the expanded access use."
+    },
+    {
+      "id": 6,
+      "code": "FAQ-006",
+      "faq": "If I meet the criteria, will I qualify for expanded access/compassionate use to a drug?",
+      "answer": "Not necessarily. Even if you meet the criteria, there may still be some obstacles, including: - Your medical history may preclude you from taking the specific investigational drug unless the risk from your condition outweighs the risk from the drug. - Your physician is not willing to manage the use of the therapy. - The company may decline to allow you to access the drug. They may do so for reasons discussed below"
+    },
+    {
+      "id": 7,
+      "code": "FAQ-007",
+      "faq": "What happens after my physician submits the application to FDA? What if I get denied by FDA?",
+      "answer": "The FDA authorizes over 99% of expanded access requests it receives. If the application is denied, FDA will notify the physician. The notification will be followed by a written letter that provides the reasons for FDA's denial of the request. If approved, a number will be assigned to the application. The IND sponsor (treating physician) should provide this IND number to the drug supplier, so the supplier may ship the drug to the treating physician. Typically FDA responds to these requests in a matter of days (or hours for emergency requests). You must also receive IRB approval before treatment can begin unless it’s an emergency request."
+    },
+    {
+      "id": 8,
+      "code": "FAQ-008",
+      "faq": "How much does it cost? Will my insurance cover this?",
+      "answer": "It is important to note that investigational drugs are expensive to make and the drug company can either request authorization from FDA to charge you the direct and indirect costs of making the drug available or it can elect to cover the cost.Cost will vary based on several factors, such as the manufacturer’s price point and insurance measures.Most insurance companies will not pay for access to an investigational drug and there may be additional cost to reimburse your physician. It is important that you discuss this with your physician and consider the cost of the drug and the medical services associated with its use that are not covered by your insurance."
+    },
+    {
+      "id": 9,
+      "code": "FAQ-009",
+      "faq": "If I am approved, what are the associated risks?",
+      "answer": "An institutional review board (IRB) protects the people receiving the drug and ensures that the risks are reasonable given the potential benefits before approving the use of the therapy. You will be informed of the potential risks and will be required to give consent for treatment. It is important to note that significant unknown risks may exist."
+    },
+    {
+      "id": 10,
+      "code": "FAQ-010",
+      "faq": "If approved, does this mean I will be participating in a clinical trial?",
+      "answer": "No, you will be excluded from the clinical trial."
+    },
+    {
+      "id": 11,
+      "code": "FAQ-011",
+      "faq": "Can the treatment manufacturer deny me?",
+      "answer": "Yes. The manufacturer is not required to offer the drug outside their clinical trials,and therefore may choose not to do so. For example:1. The company may not have enough of the drug available for all patients requesting expanded access and may either establish a lottery system to determine which patients will have treatment access or make the decision on a case-by-case basis.2. Oftentimes small companies do not have any extra product to give outside of the clinical trial, and expanded access requests would siphon away product from the clinical trials.3. Companies are also concerned about adverse events in patients not in the clinical trials affecting the FDA’s review.4. Companies are only allowed to charge to recoup certain research and development costs."
+    },
+    {
+      "id": 12,
+      "code": "FAQ-012",
+      "faq": "What is RightTo-Try?",
+      "answer": "So-called “Right-to-try” laws are state laws that allow terminally-ill patients to bypass the FDA Expanded Access Program and obtain experimental therapy (drugs, biologics, devices that have completed Phase 1 testing but have not been approved by FDA) directly from a manufacturer.Right-to-try is completely separate from the FDA Expanded Access Program and is not regulated or managed by the FDA. Because of this, there are few if any safety procedures in place to protect patients and monitor for adverse reactions to the experimentaltreatment.Moreover, because Right-to-try laws bypass the FDA, manufacturers are less likely to participate in them. In fact, to date, there has not been a successful use of Right-to-try to gain access to an experimental drug. By contrast, the FDA authorizes over 99% of the Expanded Access requests it receives."
+    },
+    {
+      "id": 13,
+      "code": "FAQ-013",
+      "faq": "How do I find out more about expanded access?",
+      "answer": "You can find more information on expanded access through FDA’s website(http://www.fda.gov/ForPatients/Other/ExpandedAccess/ucm20041768.htm).Before you or your physician contact FDA to request expanded access, you may wish to:· Search for possible clinical trials that you may qualify for by using FDA’s clinical trials search tool(http://www.fda.gov/ForPatients/ClinicalTrials/default.htm) or by visiting ClinicalTrials.gov· Search for specific expanded access programs through an online search engine· Call drug manufacturers directly to better understand their policies· Contact patient advocacy organizations to see if they have information on expanded access programs for your disease or condition(Clinicaltrials.gov “Find Studies” - https://clinicaltrials.gov/ct2/search/index)"
+    },
+    {
+      "id": 14,
+      "code": "FAQ-014",
+      "faq": "Who pays?",
+      "answer": "In general, regulations limit fees to the cost of manufacturing.  Drug manufacturers vary by whether they waive all costs.  IRB fees may apply.  There may be hospital costs related to the cost of the drug or monitoring.In general, insurance companies will not pay for treatment that has not demonstrated a treatment benefit in clinical trials."
+    },
+    {
+      "id": 15,
+      "code": "FAQ-015",
+      "faq": "How does my company comply with 21st Century Cures and FDA Final Rule?",
+      "answer": "The 21st Century Cures Act passed in December 2016 requires transparency on Expanded Access (EA) policies and whom to contact for EA requests.Compliance with the FDA Final Rule effective February 2017 requires a unique NCT for any Phase 2/3 drug where expanded access may be provided."
+    },
+    {
+      "id": 16,
+      "code": "FAQ-016",
+      "faq": "Once a request is approved, how is it shipped?",
+      "answer": "Drug manufacturers will insure that the investigational drug is shipped to the physician in the most expedient manner."
+    },
+    {
+      "id": 17,
+      "code": "FAQ-017",
+      "faq": "What is Expanded Access or Compassionate Use?",
+      "answer": "When a clinical trial is not an option, either because a patient does not qualify or perhaps there is no clinical trial, a physician may be able to request access to an investigational drug through a process called compassionate use.  At the Food and Drug Administration this is formally referred to as Expanded Access and other countries refer to this using different terminology.  At Early Access Care we refer to this as Early Access."
+    },
+    {
+      "id": 18,
+      "code": "FAQ-018",
+      "faq": "What information can sponsors collect in an EAP?",
+      "answer": "One of the benefits of providing an EAP is that companies can collect Real World Data (RWD) from patients enrolled in the program. When compiled and analyzed, this data becomes Real World Evidence (RWE) which can be used to supplement clinical trial data when seeking marketing approval for an investigational drug. To find out more, check out WEP Clinical’s RWE offering."
+    },
+    {
+      "id": 19,
+      "code": "FAQ-019",
+      "faq": "What safety data must be reported from an EAP?",
+      "answer": "Companies are required to report certain adverse event data to regulators. To clarify how adverse event data is viewed under expanded access circumstances, the FDA has updated the guidance document for industry. In document, ‘Expanded Access to Investigational Drugs for Treatment Use: faqs and answers’ (faqs 25 and 26), it is stated that suspected adverse reactions must only be reported if there is “evidence to suggest a causal relationship between the drug and the adverse event.”"
+    }
+  ]

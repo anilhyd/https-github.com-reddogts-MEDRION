@@ -1,0 +1,83 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100" id="myModalLabel">Set Display Order</h4>
+  </div>
+  <p class="modal-second-title">
+      <mdb-icon far icon="lightbulb" class="amber-text" size="lg"></mdb-icon> Add to set the display order of the lookup values
+    </p>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="chip mt-2 w-100">
+          <mdb-icon fas class="mr-1" icon="file-excel"></mdb-icon>
+          <span class="crop-text wd-200">Value 1</span>
+          <mdb-checkbox [default]="true" class="chip-check check-position">&nbsp;</mdb-checkbox>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="chip mt-2 w-100">
+          <mdb-icon fas class="mr-1" icon="file-excel"></mdb-icon>
+          <span class="crop-text wd-200">Value 2</span>
+          <mdb-checkbox [default]="true" class="chip-check check-position">&nbsp;</mdb-checkbox>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="chip mt-2 w-100">
+          <mdb-icon fas class="mr-1" icon="file-excel"></mdb-icon>
+          <span class="crop-text wd-200">Value 3</span>
+          <mdb-checkbox [default]="true" class="chip-check check-position">&nbsp;</mdb-checkbox>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="chip mt-2 w-100">
+          <mdb-icon fas class="mr-1" icon="file-excel"></mdb-icon>
+          <span class="crop-text wd-200">Value 4</span>
+          <mdb-checkbox [default]="true" class="chip-check check-position">&nbsp;</mdb-checkbox>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="chip mt-2 w-100">
+          <mdb-icon fas class="mr-1" icon="file-excel"></mdb-icon>
+          <span class="crop-text wd-200">Value 5</span>
+          <mdb-checkbox [default]="true" class="chip-check check-position">&nbsp;</mdb-checkbox>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="chip mt-2 w-100">
+          <mdb-icon fas class="mr-1" icon="file-excel"></mdb-icon>
+          <span class="crop-text wd-200">Value 6</span>
+          <mdb-checkbox [default]="true" class="chip-check check-position">&nbsp;</mdb-checkbox>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="chip mt-2 w-100">
+          <mdb-icon fas class="mr-1" icon="file-excel"></mdb-icon>
+          <span class="crop-text wd-200">Value 1</span>
+          <mdb-checkbox [default]="true" class="chip-check check-position">&nbsp;</mdb-checkbox>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" mdbBtn color="light" size="sm" class="relative waves-light" (click)="modalRef.hide()"
+      mdbWavesEffect>Save</button>
+    <button type="button" mdbBtn color="light" size="sm" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+  </div>
+</div>

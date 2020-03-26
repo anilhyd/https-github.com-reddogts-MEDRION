@@ -1,0 +1,52 @@
+[
+    {
+      "username": "Peter Paul",
+      "date_by": "12-Jan-2020",
+      "notes_age": 18,
+      "notes": "The regional MSL will present the proposal to the Investigator-Sponsored Trial Review Committee (ISTRC). If accepted, a full protocol and budget is requested within 90 days, which will be reviewed by the ISTRC. Following ISTRC approval, regulatory and contracting activities may begin.",
+      "attachments": [
+        {
+          "file_name": "Regulatory Activities List"
+        },
+        {
+          "file_name": "Contracting Activities"
+        }
+      ]
+    },
+    {
+      "username": "Samuel Peter",
+      "date_by": "19-Jan-2020",
+      "notes_age": 11,
+      "notes": "Requests for materials transfer or sponsored research will be considered, with a limited number of projects supported each year.",
+      "attachments": []
+    },
+    {
+      "username": "James Collins",
+      "date_by": "22-Jan-2020",
+      "notes_age": 8,
+      "notes": "Approved LOI applicants are invited to submit a protocol and detailed budget online within 90 days of LOI approval for further consideration. If not already in place, a Non-Disclosure Agreement (NDA) between Seattle Genetics and the investigator’s institution will be executed to provide study drug and safety reporting information for inclusion in the protocol. Submitted protocols and budgets go back to the ISTRC for review. Please note that LOI approval does not mean full approval of an application. It is the first step of the review process. Please see IST Review Process map on page 4 of this overview for clarification.",
+      "attachments": [
+        {
+          "file_name": "Regulatory"
+        }
+      ]
+    },
+    {
+      "username": "Eva Colaco",
+      "date_by": "25-Jan-2020",
+      "notes_age": 5,
+      "notes": "Full protocols must include a detailed budget to be reviewed by the ISTRC. Should the committee approve support for a protocol, a research agreement, copy of IND approval from FDA (if applicable) and a copy of IRB approval are required before support can be provided. Additional institutional and collaborator/vendor requirements should also be considered if applicable.",
+      "attachments": []
+    },
+    {
+      "username": "Albert D'Souza",
+      "date_by": "28-Jan-2020",
+      "notes_age": 2,
+      "notes": "The following information must be submitted via our online application for LOI consideration: \n• Sponsor-Investigator CV \n• Study design including: background, targeted enrollment, number of sites, and estimated trial duration \n• Inclusion/exclusion criteria, treatment plan, primary and secondary endpoints \n• Detailed preliminary budget and estimated drug need \n• Correlative study plans (if applicable) \n• Statistical analysis",
+      "attachments": [
+        {
+          "file_name": "Regulatory"
+        }
+      ]
+    }
+  ]

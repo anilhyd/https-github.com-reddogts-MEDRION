@@ -1,0 +1,26 @@
+[
+    {
+      "name": "Alpha Pharma RFP",
+      "loi_required": "yes",
+      "code": "RFP-001",
+      "id": 1
+    },
+    {
+      "name": "Beta Pharma RFP",
+      "loi_required": "no",
+      "code": "RFP-002",
+      "id": 2
+    },
+    {
+      "name": "C-Pharma RFP",
+      "loi_required": "yes",
+      "code": "RFP-003",
+      "id": 3
+    },
+    {
+      "name": "Zeta Pharma RFP",
+      "loi_required": "yes",
+      "code": "RFP-004",
+      "id": 4
+    }
+  ]

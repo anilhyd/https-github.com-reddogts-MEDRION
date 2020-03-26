@@ -1,0 +1,38 @@
+{
+    "formFields": {
+        "medical_education":{ "type":"text", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "grant_requestor_submitted":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "organization_develop":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "last_request_submitted":{ "type":"text", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "previous_calendar_year":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "exhibit_opportunity":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "submitted_exhibit_opportunity":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "corporate_supporters":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "Please_describe":{ "type":"text", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "rfp_code":{ "type":"text", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "your_annual_revenue":{ "type":"text", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "your_organization":{ "type":"text", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "your_organization_business":{ "type":"text", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "flex_field1": {
+            "type": "text",
+            "required": false,
+            "maxLength": 500,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "flex_field2": {
+            "type": "dropdown",
+            "required": false,
+            "maxLength": 500,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "flex_field3": {
+            "type": "date",
+            "required": false,
+            "maxLength": 500,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        }
+    }
+}

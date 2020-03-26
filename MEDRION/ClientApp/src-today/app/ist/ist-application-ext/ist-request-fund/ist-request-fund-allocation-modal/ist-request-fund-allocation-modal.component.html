@@ -1,0 +1,67 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">{{heading}}</h4>
+  </div>
+  <p class="modal-second-title">
+    <mdb-icon far icon="lightbulb" class="amber-text" size="lg"></mdb-icon> Allows to enter the Allocation details for
+    the request
+  </p>
+  <div class="modal-body">
+    <form [formGroup]="fundAllocationForm">
+      <div class="row">
+        <div class="col-4">
+          <h6 class="mb-0">Request ID</h6>
+          <p><strong>REQ-001</strong></p>
+        </div>
+        <div class="col-4">
+          <h6 class="mb-0">Categorization</h6>
+          <p><strong>Category, Sub-Category</strong></p>
+        </div>
+        <div class="col-4">
+          <h6 class="mb-0">Requested Amount</h6>
+          <p><strong>100 USD</strong></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <h6 class="mb-0">Bank Details</h6>
+          <p><strong>BOA, NJ</strong></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4" *ngIf="formFields?.allocated_fund">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+              maxlength="{{formFields?.allocated_fund?.maxLength}}" class="form-control"
+              formControlName="allocated_fund" id="allocated_fund" mdbInput
+              required="{{formFields?.allocated_fund?.required}}">
+            <label for="allocated_fund"><span *ngIf="formFields?.allocated_fund?.required" class="red-text">*</span>
+              Allocated Amount (USD)</label>
+          </div>
+        </div>
+        <div class="col-sm-4" *ngIf="formFields?.transaction_number">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+              maxlength="{{formFields?.transaction_number?.maxLength}}" class="form-control"
+              formControlName="transaction_number" id="transaction_number" mdbInput
+              required="{{formFields?.transaction_number?.required}}">
+            <label for="transaction_number"><span *ngIf="formFields?.transaction_number?.required"
+                class="red-text">*</span>
+              Transaction Number</label>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()"
+      [disabled]="fundAllocationForm.invalid" mdbWavesEffect>Save</button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+  </div>
+</div>

@@ -1,0 +1,81 @@
+{
+    "formFields":
+        {
+            "code":{ "type":"text", "required":true, "maxLength":20, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+            "name":{ "type":"text", "required":true, "maxLength":100, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+            "description":{ "type":"textarea", "required":false, "maxLength":500, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+            "type":{ "type":"dropdown", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+            "module":{ "type":"dropdown", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+        },
+
+    "columnDefs": [
+        {
+            "headerName": "Code",
+            "field": "code",
+            "sort": "asc"            
+        },
+        {
+            "headerName": "Name",
+            "field": "name"
+        },
+        {
+            "headerName": "Type",
+            "field": "type"
+        },
+        {
+            "headerName": "Applicable Module",
+            "field": "applicable_module"
+        }
+    ],
+    "operations": [    
+        {
+            "name": "Edit",
+            "id": "edit"
+        },
+        {
+            "name": "Delete",
+            "id": "delete"
+        },
+        {
+            "name": "Active",
+            "id": "active"
+        },
+        {
+            "name": "Inactive",
+            "id": "inactive"
+        },
+        {
+            "name": "Configure Controls",
+            "id": "configure_controls"
+        },    
+        {
+            "name": "Add New Flex Screen",
+            "id": "add"
+        }        
+    ],
+    "advanceSearch": 
+        {
+            "fields": [
+                {
+                    "label": "Code",
+                    "field": "code",
+                    "type": "text"
+                },
+                {
+                    "label": "Name",
+                    "field": "name",
+                    "type": "text"
+                },
+                {
+                    "label": "Module",
+                    "field": "module",
+                    "type": "dropdown",
+                    "options":[
+                        {"value":"OptionOne", "label":"Option One"},
+                        {"value":"OptionTwo", "label":"Option Two"}
+                    ]
+                }
+            ]
+
+        }
+}

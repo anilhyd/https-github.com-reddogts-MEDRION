@@ -1,0 +1,65 @@
+{
+    "formFields": {
+        
+        "code":{ "type":"text", "required":true, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "name":{ "type":"dropdown", "required":true, "maxLength":100, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "description":{ "type":"textarea", "required":false, "maxLength":500, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+    },
+
+    "columnDefs": [
+        {
+            "headerName": "Code",
+            "field": "code",
+            "sort": "asc"            
+        },
+        {
+            "headerName": "Name",
+            "field": "name"
+        },
+        {
+            "headerName": "Products",
+            "field": "products"
+        }
+    ],
+    "operations": [   
+        {
+            "name": "Available Products",
+            "id": "availableProducts"
+        },
+        {
+            "name": "Inactive",
+            "id": "inactive"
+        },
+        {
+            "name": "Active",
+            "id": "active"
+        },
+        {
+            "name": "Delete",
+            "id": "delete"
+        },
+        {
+            "name": "Edit",
+            "id": "edit"
+        },
+        {
+            "name": "Add New",
+            "id": "add"
+        }
+    ],
+    "advanceSearch": 
+        {
+            "fields": [
+                {
+                    "label": "Name",
+                    "field": "name",
+                    "type": "text"
+                },
+                {
+                    "label": "Product",
+                    "field": "product",
+                    "type": "text"
+                }
+            ]
+        }
+}

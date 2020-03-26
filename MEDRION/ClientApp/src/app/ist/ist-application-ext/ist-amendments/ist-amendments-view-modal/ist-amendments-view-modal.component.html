@@ -1,0 +1,130 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">{{heading}} Amendments</h4>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="amemdmentsForm">
+      <div class="row">
+        <div class="col-sm-3" *ngIf="formFields?.amd_type">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.amd_type?.required"
+              [options]="amendmentTypeOptions" formControlName="amd_type" required="{{formFields?.amd_type?.required}}">
+            </mdb-select>
+            <label for="amd_type"><span *ngIf="formFields?.amd_type?.required" class="red-text">*</span>
+              Type</label>
+          </div>
+        </div>
+        <div class="col-sm-9" *ngIf="formFields?.amd_title">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+              maxlength="{{formFields?.amd_title?.maxLength}}" class="form-control" formControlName="amd_title"
+              id="amd_title" mdbInput required="{{formFields?.amd_title?.required}}">
+            <label for="amd_title"><span *ngIf="formFields?.amd_title?.required" class="red-text">*</span>
+              Title</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <!-- <div class="col-sm-6" *ngIf="formFields?.patient_name">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.patient_name?.required"
+              [options]="stateOptions" formControlName="patient_name" required="{{formFields?.patient_name?.required}}">
+            </mdb-select>
+            <label for="patient_name"><span *ngIf="formFields?.patient_name?.required" class="red-text">*</span>
+              Patient Identification Number</label>
+          </div>
+        </div> -->
+        <div class="col-sm-3" *ngIf="formFields?.patient_name">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.patient_name?.required"
+              maxlength="{{formFields?.patient_name?.maxLength}}" class="form-control" formControlName="patient_name"
+              id="patient_name" mdbInput required="{{formFields?.patient_name?.required}}">
+            <label for="patient_name"><span *ngIf="formFields?.patient_name?.required" class="red-text">*</span>
+              Patient Identification Number</label>
+          </div>
+        </div>
+        <div class="col-sm-3" *ngIf="formFields?.submission_date">
+          <div class="md-form">
+            <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions"
+              formControlName="submission_date" required="{{formFields?.submission_date?.required}}"
+              [label]="'Submission Date *'" required>
+            </mdb-date-picker>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="row">
+        <div class="col-sm-3" *ngIf="formFields?.form_name">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.form_name?.required"
+              [options]="formNameOptions" formControlName="form_name" required="{{formFields?.form_name?.required}}">
+            </mdb-select>
+            <label for="form_name"><span *ngIf="formFields?.form_name?.required" class="red-text">*</span>
+              Form Name</label>
+          </div>
+        </div>
+        <div class="col-sm-3" *ngIf="formFields?.section">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.section?.required"
+              [options]="sectionOptions" formControlName="section" required="{{formFields?.section?.required}}">
+            </mdb-select>
+            <label for="section"><span *ngIf="formFields?.section?.required" class="red-text">*</span>
+              Section</label>
+          </div>
+        </div>
+        <div class="col-sm-3" *ngIf="formFields?.field_label">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.field_label?.required"
+              [options]="fieldLabelOptions" formControlName="field_label" required="{{formFields?.field_label?.required}}">
+            </mdb-select>
+            <label for="field_label"><span *ngIf="formFields?.field_label?.required" class="red-text">*</span>
+              Field Label</label>
+          </div>
+        </div>
+        <div class="col-sm-3" *ngIf="formFields?.field_value">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+              maxlength="{{formFields?.field_value?.maxLength}}" class="form-control" formControlName="field_value"
+              id="field_value" mdbInput required="{{formFields?.field_value?.required}}">
+            <label for="field_value"><span *ngIf="formFields?.field_value?.required" class="red-text">*</span>
+              Field Value</label>
+          </div>
+        </div>
+      </div> -->
+      <div class="md-form" *ngIf="formFields?.notes">
+        <textarea mdbValidate maxlength="{{formFields?.notes?.maxLength}}" [validateSuccess]="false"
+          formControlName="notes" id="notes" type="text" class="md-textarea form-control" mdbInput
+          required="{{formFields?.notes?.required}}"></textarea>
+        <label for="notes"><span *ngIf="formFields?.notes?.required" class="red-text">*</span>
+          <mdb-icon far icon="sticky-note"></mdb-icon> Notes
+        </label>
+      </div>
+      <div class="row">
+        <div class="mt-4 col-12">
+          <h5>Attachments <button style="float:right" size="sm" type="button" mdbBtn color="light"
+              (click)="addNewAttachment()" mdbWavesEffect>Add New Attachment</button> </h5>
+        </div>
+      </div>
+      <div class="row org-grid mb-3" *ngIf="rowData?.length">
+        <div class="col-lg-12" *ngIf="loadGrid">
+          <ag-grid-angular style="width: 99%;" class="ag-theme-balham simple-grid" style="height: calc(100% -  49px)"
+            [rowData]="rowData" [columnDefs]="columnDefs" [gridOptions]="gridOptions" (gridReady)="onGridReady($event)"
+            [frameworkComponents]="frameworkComponents" [context]="context">
+          </ag-grid-angular>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()"
+      *ngIf="heading === 'Add' || heading === 'Edit'" [disabled]="amemdmentsForm.invalid" mdbWavesEffect>Save</button>
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()"
+      *ngIf="heading === 'Add' || heading === 'Edit'" [disabled]="amemdmentsForm.invalid" mdbWavesEffect>Submit</button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+
+  </div>
+</div>

@@ -1,0 +1,23 @@
+{
+    "name_of_organisation": "Green Hill Medical Center",
+    "organisation_website": "www.ghmc.com",
+    "address": "1507 Nolan",
+    "city": "San Antonio",
+    "state_province": "Texas",
+    "country": "USA",
+    "postal_code": 78202,
+    "notes": "",
+    "organisation_type": "Hospital",
+    "organisation_sub_type": "Study Center",
+    "email_address": "support@ghmc.com",
+    "phone_number": "(210) 253-9766",
+    "ext_phone_number": "22",
+    "other_phone_number": "(210) 257-0471",
+    "ext_other_phone_number": "32",
+    "fax_number": "(210) 265-1076",
+    "ext_fax_number": "227",
+    "flex_field_1": "Text Box Small",
+    "flex_field_2": "Dropdown",
+    "flex_field_3": "Date Picker",
+    "id":1
+  }

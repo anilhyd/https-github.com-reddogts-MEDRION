@@ -1,0 +1,59 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">RFI Entry</h4>
+  </div>
+  <div class="modal-body">
+
+    <form [formGroup]="rfiNewForm">
+      
+      <div class="row">
+          <div class="col-sm-12">
+              <div class="md-form">
+                <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+                   class="form-control" formControlName="title"
+                  id="title" mdbInput required="true">
+                <label for="title"><span class="red-text">*</span>
+                  Title</label> 
+              </div>
+            </div>
+        <div class="col-sm-12 col-xs-12">
+          <div class="md-form">
+            <textarea mdbValidate [validateSuccess]="false" [validateError]="true" required="true"
+              formControlName="details" id="details" type="text" class="increased md-textarea form-control" mdbInput></textarea>
+            <label for="details"><span class="red-text">*</span>
+              Details</label>
+          </div>
+        </div>
+      </div>
+      <p class="mt-3 mb-0">Attachments</p>
+      <div class="row">
+        <div class="col-12 col-md-auto">
+            <div class="file-field mt-0">
+              <file-upload></file-upload>
+            </div> 
+        </div> 
+        <div class="col">
+            <div class="chip mt-2" title="{{item}}" *ngFor="let item of uploadedFiles; index as i">
+                <mdb-icon fas class="mr-1" icon="file-excel"></mdb-icon>
+              <span class="crop-text wd-200">{{item}}</span>
+              <i class="close fas fa-times" (click)="removeItem(i)"></i>
+            </div>
+            
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" mdbBtn color="light" size="sm" class="relative waves-light" [disabled]="!rfiNewForm.valid"
+      (click)="modalRef.hide()" mdbWavesEffect>Save</button>
+      <button type="button" mdbBtn color="light" size="sm" class="relative waves-light" [disabled]="!rfiNewForm.valid"
+      (click)="modalRef.hide()" mdbWavesEffect>Submit</button>
+    <button type="button" mdbBtn color="light" size="sm" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+  </div>
+</div>

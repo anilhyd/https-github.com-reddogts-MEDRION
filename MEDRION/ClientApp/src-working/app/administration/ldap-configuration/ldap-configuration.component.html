@@ -1,0 +1,126 @@
+<form [formGroup]="ldapConfigurationForm">
+  <div class="row">
+    <div class="col-3">
+        <mdb-breadcrumb customClass="black-text lighten-4 custom-breadcrumb"
+            style="font-size:13px;text-transform:uppercase;">
+            <mdb-breadcrumb-item class="step-up">LDAP Configuration
+            </mdb-breadcrumb-item>
+        </mdb-breadcrumb>
+    </div>
+    <div class="col-9">
+        <app-operations-bar [operations]="operations"
+            [enableOperations]="ldapConfigurationForm.valid?true:false" (callbackOperation)="onCallbackOperation($event)">
+        </app-operations-bar>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-md-3 col-xs-12">
+      <mdb-checkbox [checked]="false">Enable LDAP Integration</mdb-checkbox>
+    </div>
+  </div>
+  
+  <div class="text-left">
+    <h6 class="dark-grey-text  mb-2 mt-5">
+      <strong class="card-header-text">Server Details</strong>
+    </h6>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-xs-12" *ngIf="formFields?.host_server_name">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.host_server_name?.required"
+        maxlength="{{formFields?.host_server_name?.maxLength}}" class="form-control" formControlName="host_server_name"
+        id="host_server_name" mdbInput required="{{formFields?.host_server_name?.required}}">
+        <label for="host_server_name"><span *ngIf="formFields?.host_server_name?.required" class="red-text">*</span>
+        Host / Server Name</label>
+      </div>
+    </div>
+    <div class="col-lg-2 col-xs-12" *ngIf="formFields?.port_number">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.port_number?.required"
+        maxlength="{{formFields?.port_number?.maxLength}}" class="form-control" formControlName="port_number"
+        id="port_number" mdbInput required="{{formFields?.port_number?.required}}">
+        <label for="port_number"><span *ngIf="formFields?.port_number?.required" class="red-text">*</span>
+        Port Number</label>
+      </div>
+    </div>
+    <div class="col-lg-2 col-xs-12" *ngIf="formFields?.auth_type">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.auth_type?.required"
+        [options]="chooseoptions" formControlName="auth_type"
+        required="{{formFields?.auth_type?.required}}"></mdb-select>
+        <label for="auth_type"><span *ngIf="formFields?.auth_type?.required" class="red-text">*</span>
+        Auth Type</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-xs-12" *ngIf="formFields?.user_search_filter">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.user_search_filter?.required"
+        maxlength="{{formFields?.user_search_filter?.maxLength}}" class="form-control" formControlName="user_search_filter"
+        id="user_search_filter" mdbInput required="{{formFields?.user_search_filter?.required}}">
+        <label for="user_search_filter"><span *ngIf="formFields?.user_search_filter?.required" class="red-text">*</span>
+        User Search Filter</label>
+      </div>
+    </div>
+  </div>
+  
+  <div class="text-left">
+    <h6 class="dark-grey-text  mb-2 mt-5">
+      <strong class="card-header-text">Logon Credentials</strong>
+    </h6>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-xs-12" *ngIf="formFields?.user_name">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.user_name?.required"
+        maxlength="{{formFields?.user_name?.maxLength}}" class="form-control" formControlName="user_name"
+        id="user_name" mdbInput required="{{formFields?.user_name?.required}}">
+        <label for="user_name"><span *ngIf="formFields?.user_name?.required" class="red-text">*</span>
+        User Name</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-xs-12" *ngIf="formFields?.password">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.password?.required"
+        maxlength="{{formFields?.password?.maxLength}}" class="form-control" formControlName="password"
+        id="password" mdbInput required="{{formFields?.password?.required}}">
+        <label for="password"><span *ngIf="formFields?.password?.required" class="red-text">*</span>
+        Password</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-8 md-form">
+        <h6>Certificate</h6>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4 col-md-auto">
+        <div class="file-field">
+          <file-upload></file-upload>
+        </div>
+    </div> 
+    <div class="col">
+        <div class="chip mt-2" title="{{item}}" *ngFor="let item of uploadedFiles; index as i">
+            <mdb-icon fas class="mr-1" icon="file-excel"></mdb-icon>
+          <span class="crop-text wd-200">{{item}}</span>
+          <i class="close fas fa-times"></i>
+        </div>
+    </div>
+  </div>
+  
+  
+  <div class="text-left">
+    <h6 class="dark-grey-text  mb-2 mt-5">
+      <strong class="card-header-text">Test Connection Status (Last Updated)</strong>
+    </h6>
+  </div>
+  <div class="row mt-3">
+    <div class="col-lg-4 col-xs-12">
+      <p>Succeded on 26 May 2019 at 11:10 Hrs</p>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,118 @@
+{
+    "formFields": {
+        "audience_group": {
+            "type": "dropdown",
+            "required": true,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "speciality": {
+            "type": "dropdown",
+            "required": true,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "category_of_credit": {
+            "type": "dropdown",
+            "required": true,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "credit_hours_for_category": {
+            "type": "dropdown",
+            "required": true,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "invitations_expected_distributed": {
+            "type": "text",
+            "maxLength": 5,
+            "pattern": null,
+            "required": true,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "expected_learners": {
+            "type": "text",
+            "maxLength": 5,
+            "pattern": null,
+            "required": true,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "learners_expected_receive_credit": {
+            "type": "text",
+            "maxLength": 5,
+            "pattern": "[^ @]*@[^ @]*",
+            "required": true,
+            "validationMessage": "Field is either empty or incorrect"
+        }
+    },
+    "formOperations": [
+        {
+            "name": "Save",
+            "id": "save"
+        }
+    ],
+    "advanceSearch": 
+    {
+        "fields": [
+            {
+                "label": "Audience Group",
+                "field": "simple",
+                "type": "dropdown"
+            },
+            {
+                "label": "Speciality",
+                "field": "program_type",
+                "type": "dropdown"
+            },
+            {
+                "label": "Category of Credit",
+                "field": "request_type",
+                "type": "dropdown"
+            }
+        ],
+        "filters": []
+    },
+    "columnDefs": [
+        {
+            "headerName": "Audience Group",
+            "field": "audience_group",
+            "sort": "asc"
+        },
+        {
+            "headerName": "Speciality",
+            "field": "speciality"
+        },
+        {
+            "headerName": "Category of Credit",
+            "field": "category_of_credit"
+        },
+        {
+            "headerName": "CE/CME Credit Hours for Category",
+            "field": "hours_for_category"
+        },
+        {
+            "headerName": "# of Invitations Expected to Distributed",
+            "field": "learners_expected"
+        },
+        {
+            "headerName": "# of Expected Learners",
+            "field": "expected_learners"
+        },
+        {
+            "headerName": "# of Learners Expected to Receive Credit",
+            "field": "learners_expectd_credit"
+        }
+    ],
+    "operations": [
+        {
+            "name": "Delete",
+            "id": "delete"
+        },
+        {
+            "name": "Edit",
+            "id": "edit"
+        },
+        {
+            "name": "Add New",
+            "id": "add"
+        }
+    ]
+    
+}

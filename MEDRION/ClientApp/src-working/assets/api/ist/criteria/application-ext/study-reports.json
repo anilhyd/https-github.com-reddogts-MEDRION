@@ -1,0 +1,130 @@
+{
+    "formFields": {
+        "report_type": {
+            "type": "dropdown",
+            "required": true,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "report_sub_type": {
+            "type": "dropdown",
+            "required": false,
+            "pattern": null
+        },
+        "patient_id": {
+            "type": "dropdown",
+            "required": true,
+            "pattern": null
+        },
+        "title": {
+            "type": "text",
+            "required": true,
+            "maxLength": 250,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "notes": {
+            "type": "textarea",
+            "required": true,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "document_type": {
+            "type": "dropdown",
+            "required": false,
+            "maxLength": 50,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "upload_file_name": {
+            "type": "text",
+            "required": true,
+            "maxLength": 150,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "upload_date": {
+            "type": "date",
+            "required": false,
+            "maxLength": 15,
+            "pattern": null
+        },
+        "attachement_notes": {
+            "type": "textarea",
+            "required": false,
+            "maxLength": 1500,
+            "pattern": null
+        }
+    },
+
+    "formOperations": [
+        {
+            "name": "Save",
+            "id": "save"
+        }
+    ],
+
+    "columnDefs": [
+        {
+            "headerName": "Type",
+            "field": "report_type"
+        },
+        {
+            "headerName": "Title",
+            "field": "title"
+        },
+        {
+            "headerName": "Patient Name (Patient ID)",
+            "field": "patient_name"
+        },
+        {
+            "headerName": "Submitted Date",
+            "field": "submitted_date"
+        }
+    ],
+    
+    "operations": [
+        {
+            "name": "Delete",
+            "id": "delete"
+        },
+        {
+            "name": "Edit",
+            "id": "edit"
+        },
+        {
+            "name": "Add New",
+            "id": "add"
+        }
+    ],
+    "advanceSearch": 
+        {
+            "fields": [
+                {
+                    "label": "Type",
+                    "field": "title",
+                    "type": "text"
+                },
+                {
+                    "label": "Title",
+                    "field": "org",
+                    "type": "text"
+                },
+                {
+                    "label": "Patient Name",
+                    "field": "city",
+                    "type": "text"
+                },
+                {
+                    "label": "Submitted Date (From)",
+                    "field": "city",
+                    "type": "date"
+                },
+                {
+                    "label": "Submitted Date (End)",
+                    "field": "city",
+                    "type": "date"
+                }
+            ]
+        }
+}

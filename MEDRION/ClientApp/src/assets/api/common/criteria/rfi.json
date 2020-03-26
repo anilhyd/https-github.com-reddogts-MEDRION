@@ -1,0 +1,77 @@
+{
+    "formFields": { 
+        "title":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},       
+        "description":{ "type":"textarea", "required":true, "maxLength":500, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "attachments":{ "type":"file", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+    },
+    "columnDefs": [
+        {
+            "headerName": "S.No",
+            "field": "sl_no",
+            "sort": "asc"            
+        },
+        {
+            "headerName": "Title",
+            "field": "title"
+        },
+        {
+            "headerName": "Raised By",
+            "field": "raised_by"
+        },
+        {
+            "headerName": "Raised On",
+            "field": "raised_on"
+        },
+        {
+            "headerName": "Status",
+            "field": "status"
+        }
+    ],
+    "operations": [
+        {
+            "name": "Update Status",
+            "id": "update_status"
+        },
+        {
+            "name": "Submit Response",
+            "id": "submit_response"
+        },
+        {
+            "name": "Delete",
+            "id": "delete"
+        },
+        {
+            "name": "Edit",
+            "id": "edit"
+        },
+        {
+            "name": "Add New",
+            "id": "add"
+        }
+    ],
+    "advanceSearch": 
+        {
+            "fields": [
+                {
+                    "label": "Title",
+                    "field": "title",
+                    "type": "text"
+                },
+                {
+                    "label": "Raised By",
+                    "field": "org",
+                    "type": "text"
+                },
+                {
+                    "label": "Raised From",
+                    "field": "city",
+                    "type": "date"
+                },
+                {
+                    "label": "Raised To",
+                    "field": "city",
+                    "type": "date"
+                }
+            ]
+        }
+}

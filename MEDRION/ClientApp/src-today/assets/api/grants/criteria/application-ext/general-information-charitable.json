@@ -1,0 +1,45 @@
+{
+    "formFields": {
+        "area_of_focus":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "organisations_mission_statement":{ "type":"text", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "organisations_annual_operating":{ "type":"text", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "organisations_board_of_directors":{ "type":"text", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "geographic_focus_of_organisation":{ "type":"text", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "requested_program_title":{ "type":"text", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "brief_description_of_request":{ "type":"text", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "goals_and_objectives":{ "type":"text", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "geographic_focus_of_request":{ "type":"text", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "program_start_date":{ "type":"text", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "program_end_date":{ "type":"text", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "requested_amount":{ "type":"text", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "program_fund_be_used_for_patient_assistance":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "request_proposal":{ "type":"file", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "proposed_program_budget":{ "type":"file", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "annual_budget":{ "type":"file", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "current_irs_letter_of_determination":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "previously_received_funding_from_incyte":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "oig_opinion_letter":{ "type":"file", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "agenda":{ "type":"file", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "flex_field1": {
+            "type": "text",
+            "required": false,
+            "maxLength": 500,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "flex_field2": {
+            "type": "dropdown",
+            "required": false,
+            "maxLength": 500,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "flex_field3": {
+            "type": "date",
+            "required": false,
+            "maxLength": 500,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        }
+    }
+}

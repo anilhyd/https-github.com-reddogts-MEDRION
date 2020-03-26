@@ -1,0 +1,46 @@
+{
+
+    "columnDefs": [
+        {
+            "headerName": "Module",
+            "field": "module",
+            "width":140        
+        },
+        {
+            "name": "Screen Name",
+            "field": "screen",
+            "width":300
+        },
+        {
+            "headerName": "Attached Documents",
+            "field": "document_attach",
+            "width":800
+        }
+    ],
+    "operations": [   
+        {
+            "name": "Attach Documents",
+            "id": "attachDocuments"
+        }
+    ],
+    "advanceSearch": 
+        {
+            "fields": [
+                {
+                    "label": "Module",
+                    "field": "module",
+                    "type": "text"
+                },
+                {
+                    "label": "Screen Name",
+                    "field": "screen_name",
+                    "type": "text"
+                },
+                {
+                    "label": "Attached Document",
+                    "field": "attached_doc",
+                    "type": "text"
+                }
+            ]
+        }
+}

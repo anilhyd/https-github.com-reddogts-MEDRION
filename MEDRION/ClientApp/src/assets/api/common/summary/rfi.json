@@ -1,0 +1,176 @@
+[
+    {
+      "sl_no": 1,
+      "title": "Letter of Authorization ",
+      "raised_by": "Peter Samuel ",
+      "FIELD4": "",
+      "raised_on": "12-Jan-2020",
+      "status": "On going",
+      "thread": [
+        {
+          "username": "Peter Paul",
+          "date_by": "12-Jan-2020",
+          "notes_age": 18,
+          "notes": "The regional MSL will present the proposal to the Investigator-Sponsored Trial Review Committee (ISTRC). If accepted, a full protocol and budget is requested within 90 days, which will be reviewed by the ISTRC. Following ISTRC approval, regulatory and contracting activities may begin.",
+          "attachments": [
+            {
+              "file_name": "Regulatory Activities List"
+            },
+            {
+              "file_name": "Contracting Activities"
+            }
+          ]
+        },
+        {
+          "username": "Samuel Peter",
+          "date_by": "19-Jan-2020",
+          "notes_age": 11,
+          "notes": "Requests for materials transfer or sponsored research will be considered, with a limited number of projects supported each year.",
+          "attachments": []
+        },
+        {
+          "username": "James Collins",
+          "date_by": "22-Jan-2020",
+          "notes_age": 8,
+          "notes": "Approved LOI applicants are invited to submit a protocol and detailed budget online within 90 days of LOI approval for further consideration. If not already in place, a Non-Disclosure Agreement (NDA) between Seattle Genetics and the investigator’s institution will be executed to provide study drug and safety reporting information for inclusion in the protocol. Submitted protocols and budgets go back to the ISTRC for review. Please note that LOI approval does not mean full approval of an application. It is the first step of the review process. Please see IST Review Process map on page 4 of this overview for clarification.",
+          "attachments": [
+            {
+              "file_name": "Regulatory"
+            }
+          ]
+        },
+        {
+          "username": "Eva Colaco",
+          "date_by": "25-Jan-2020",
+          "notes_age": 5,
+          "notes": "Full protocols must include a detailed budget to be reviewed by the ISTRC. Should the committee approve support for a protocol, a research agreement, copy of IND approval from FDA (if applicable) and a copy of IRB approval are required before support can be provided. Additional institutional and collaborator/vendor requirements should also be considered if applicable.",
+          "attachments": []
+        },
+        {
+          "username": "Albert D'Souza",
+          "date_by": "28-Jan-2020",
+          "notes_age": 2,
+          "notes": "The following information must be submitted via our online application for LOI consideration: \n• Sponsor-Investigator CV \n• Study design including: background, targeted enrollment, number of sites, and estimated trial duration \n• Inclusion/exclusion criteria, treatment plan, primary and secondary endpoints \n• Detailed preliminary budget and estimated drug need \n• Correlative study plans (if applicable) \n• Statistical analysis",
+          "attachments": [
+            {
+              "file_name": "Regulatory"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sl_no": 2,
+      "title": "FDA 1571 - Incomplete",
+      "raised_by": "Steve Daniel ",
+      "FIELD4": "",
+      "raised_on": "18-Jan-2020",
+      "status": "On going",
+      "thread": [
+        {
+            "username":"Srikanth", 
+            "date_by":"10-09-2018",
+            "designation":"internal user",
+            "notes_age":"28 days ago",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        },
+        {
+            "username":"Gopi", 
+            "date_by":"10-09-2018",
+            "designation":"internal user",
+            "notes_age":"26 days ago",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        },
+        {
+            "username":"Upender", 
+            "date_by":"10-09-2018",
+            "designation":"internal user",
+            "notes_age":"23 days ago",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        },
+        {
+            "username":"Shiva", 
+            "date_by":"10-09-2018",
+            "designation":"internal user",
+            "notes_age":"21 days ago",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        }
+    ]
+    },
+    {
+      "sl_no": 3,
+      "title": "Patient Recruitment Information - Detailed report",
+      "raised_by": "Mary Sebastian",
+      "FIELD4": "",
+      "raised_on": "27-Feb-2020",
+      "status": "Closed",
+      "thread": [
+        {
+            "username":"Srikanth", 
+            "date_by":"10-09-2018",
+            "designation":"internal user",
+            "notes_age":"28 days ago",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        },
+        {
+            "username":"Gopi", 
+            "date_by":"10-09-2018",
+            "designation":"internal user",
+            "notes_age":"26 days ago",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        },
+        {
+            "username":"Upender", 
+            "date_by":"10-09-2018",
+            "designation":"internal user",
+            "notes_age":"23 days ago",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        },
+        {
+            "username":"Shiva", 
+            "date_by":"10-09-2018",
+            "designation":"internal user",
+            "notes_age":"21 days ago",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        }
+    ]
+    },
+    {
+      "sl_no": 4,
+      "title": "Report - Improper",
+      "raised_by": "Cathy Collines",
+      "FIELD4": "",
+      "raised_on": "17-Mar-2020",
+      "status": "On going",
+      "thread": [
+        {
+            "username":"Srikanth", 
+            "date_by":"10-09-2018",
+            "designation":"internal user",
+            "notes_age":"28 days ago",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        },
+        {
+            "username":"Gopi", 
+            "date_by":"10-09-2018",
+            "designation":"internal user",
+            "notes_age":"26 days ago",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        },
+        {
+            "username":"Upender", 
+            "date_by":"10-09-2018",
+            "designation":"internal user",
+            "notes_age":"23 days ago",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        },
+        {
+            "username":"Shiva", 
+            "date_by":"10-09-2018",
+            "designation":"internal user",
+            "notes_age":"21 days ago",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        }
+    ]
+    }
+   ]

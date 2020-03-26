@@ -1,0 +1,3 @@
+<mdb-breadcrumb>
+  <mdb-breadcrumb-item class="blue-text" [routerLink]="[breadcrumb.url]" *ngFor="let breadcrumb of breadcrumbs$ | async; last as isLast;">{{breadcrumb.label}}</mdb-breadcrumb-item>
+</mdb-breadcrumb>

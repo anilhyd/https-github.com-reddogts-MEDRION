@@ -1,0 +1,41 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">Status Update</h4>
+  </div>
+  <p class="modal-second-title">
+    <mdb-icon far icon="lightbulb" class="amber-text" size="lg"></mdb-icon> You can update the site evaluation status by
+    entering the actual site visit date and upload the evaluation reports.
+  </p>
+  <div class="modal-body">
+    <form [formGroup]="siteEvaluationUpdateStatusForm">
+
+
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.actualSiteVisitedDate?.required"
+          [options]="myDatePickerOptions" formControlName="actualSiteVisitedDate"
+          required="{{formFields?.actualSiteVisitedDate?.required}}"></mdb-select>
+        <label for="actualSiteVisitedDate"><span *ngIf="formFields?.actualSiteVisitedDate?.required"
+            class="red-text">*</span>
+          Actual Site Visit Date</label>
+      </div>
+      <div class="mt-3">
+        <p class="mb-1">Attachments</p>
+        <div class="file-field mt-2">
+          <file-upload></file-upload>
+        </div>
+      </div>
+
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()"
+      [disabled]="siteEvaluationUpdateStatusForm.invalid" mdbWavesEffect>Save</button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+  </div>
+</div>

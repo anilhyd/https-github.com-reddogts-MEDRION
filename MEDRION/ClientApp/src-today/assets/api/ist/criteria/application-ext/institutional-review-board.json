@@ -1,0 +1,23 @@
+{
+    "formFields": {
+        "name":{ "type":"dropdown", "required":true, "maxLength":150, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "website":{ "type":"text", "required":false, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "address":{ "type":"text", "required":true, "maxLength":200, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "city":{ "type":"text", "required":true, "maxLength":100, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "state_province":{ "type":"text", "required":true, "maxLength":100, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+        "postal_code":{ "type":"text", "required":true, "maxLength":20, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "country":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "institutional_review_board_type":{"type":"dropdown", "required":false, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "email_address":{"type":"text", "required":true, "maxLength":100, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "phone_number":{"type":"number", "required":true, "maxLength":10, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+        "ext_phone_number":{"type":"number", "required":true, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "other_phone_number":{ "type":"number", "required":false, "maxLength":10, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "ext_other_phone_number":{ "type":"number", "required":false, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "fax_number":{"type":"number", "required":true, "maxLength":null, "pattern":10, "validationMessage":"Field is either empty or incorrect"},
+        "ext_fax_number":{ "type":"number", "required":true, "maxLength":null, "pattern":5, "validationMessage":"Field is either empty or incorrect"},
+
+        "notes":{ "type":"text", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+    }
+}

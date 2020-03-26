@@ -1,0 +1,218 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true">×</span>
+      </button>
+      <h4 class="modal-title w-100 text-center" id="myModalLabel">{{heading}} Fund Request</h4>
+  </div>
+
+  <div class="modal-body pt-0">
+    <form [formGroup]="fundRequestForm">
+
+      <div class="row justify-content-end">
+        <div class="col-md-3 col-sm-4 text-right" *ngIf="formFields?.status">
+          <h6 class="mb-0">Status <span class="badge badge-dark ml-1">Submitted</span></h6>
+        </div>
+      </div>
+
+      <div class="row mt-2">
+        <div class="col-9">
+          <div class="row">
+            <div class="col-4" *ngIf="formFields?.category">
+                <div class="md-form">
+                  <mdb-select mdbValidate [validateSuccess]="false"
+                      [validateError]="formFields?.category?.required" [options]="categoryOptions"
+                      formControlName="category" required="{{formFields?.category?.required}}"></mdb-select>
+                  <label for="category"><span *ngIf="formFields?.category?.required" class="red-text">*</span>Category</label>
+                </div>
+                </div>
+                <div class="col-4" *ngIf="formFields?.sub_category">
+                  <div class="md-form">
+                    <mdb-select mdbValidate [validateSuccess]="false"
+                        [validateError]="formFields?.sub_category?.required" [options]="subCategoryOptions"
+                        formControlName="sub_category" required="{{formFields?.sub_category?.required}}"></mdb-select>
+                    <label for="sub_category"><span *ngIf="formFields?.sub_category?.required" class="red-text">*</span>Sub Category</label>
+                </div>
+              </div>
+              <div class="col-4" *ngIf="formFields?.other_category">
+                <div class="md-form">
+                  <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.other_category?.required"
+                    maxlength="{{formFields?.other_category?.maxLength}}" class="form-control" formControlName="other_category"
+                    id="other_category" mdbInput required="{{formFields?.other_category?.required}}">
+                  <label for="other_category"><span *ngIf="formFields?.other_category?.required" class="red-text">*</span>
+                    Other Category</label>
+                </div>
+            </div>
+          </div>
+
+
+          <div class="attachments">
+            <div class="row">
+              <div class="col-12">
+                <h5>Attachments <button style="float:right" size="sm" type="button" mdbBtn class="m-0" color="light"
+                    (click)="addNewAttachment()" mdbWavesEffect><mdb-icon fas icon="plus-square"></mdb-icon></button> </h5>
+              </div>
+            </div>
+            <div class="row org-grid mb-3" *ngIf="rowData?.length">
+              <div class="col-lg-12" *ngIf="loadGrid">
+                <ag-grid-angular style="width: 99%;" class="ag-theme-balham simple-grid" style="height: calc(100% -  49px)"
+                  [rowData]="rowData" [columnDefs]="columnDefs" [gridOptions]="gridOptions" (gridReady)="onGridReady($event)"
+                  [frameworkComponents]="frameworkComponents" [context]="context">
+                </ag-grid-angular>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="clearfix" *ngIf="formFields?.required_fund">
+            <div class="md-form">
+              <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.required_fund?.required"
+                maxlength="{{formFields?.required_fund?.maxLength}}" class="form-control" formControlName="required_fund"
+                id="required_fund" mdbInput required="{{formFields?.required_fund?.required}}">
+              <label for="required_fund"><span *ngIf="formFields?.required_fund?.required" class="red-text">*</span>
+                Required Fund</label>
+            </div>
+          </div>
+          <div class="clearfix" *ngIf="formFields?.used_fund">
+            <div class="md-form">
+              <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.used_fund?.required"
+                maxlength="{{formFields?.used_fund?.maxLength}}" class="form-control" formControlName="used_fund"
+                id="used_fund" mdbInput required="{{formFields?.used_fund?.required}}">
+              <label for="used_fund"><span *ngIf="formFields?.used_fund?.required" class="red-text">*</span>
+                Used Fund</label>
+            </div>
+          </div>
+          <div class="clearfix" *ngIf="formFields?.bank_details">
+            <div class="md-form">
+              <mdb-select mdbValidate [validateSuccess]="false"
+                  [validateError]="formFields?.bank_details?.required" [options]="bankDetailsOptions"
+                  formControlName="bank_details" required="{{formFields?.bank_details?.required}}"></mdb-select>
+              <label for="bank_details"><span *ngIf="formFields?.bank_details?.required" class="red-text">*</span>Bank Details</label>
+              <button class="text-addon-btn" type="button" mdbBtn color="link" placement="left" (click)="addBankDetails()"><mdb-icon fas icon="plus-square"></mdb-icon></button>
+            </div>
+            </div>
+            <div class="address-text">
+              <p><em>Accound Holder First Name: Alpha, <br>Accound Holder Last Name: Pharma, <br>Bank Name: U.S Bank, <br>Bank Number: FB02837464, <br>Bank Account Number - 746465000000 <br>Bank Location - NY</em></p>
+            </div>
+        </div>
+      </div>
+
+      <div class="border-top border-bottom mt-3 pt-3 pb-3">
+        <div class="row">
+          <div class="col-6">
+            <div class="row mb-2">
+              <div class="col-6">
+                <h6><strong>Return / Retrival</strong></h6>
+              </div>
+              <div class="col-6">
+                <div class="form-check text-right">
+                  <input type="radio" class="form-check-input" id="send_cheque" checked name="paymentMode" mdbInput>
+                  <label class="form-check-label" for="send_cheque">Send Cheque</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6" *ngIf="formFields?.return_amount">
+                <div class="md-form">
+                  <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.return_amount?.required"
+                    maxlength="{{formFields?.return_amount?.maxLength}}" class="form-control" formControlName="return_amount"
+                    id="return_amount" mdbInput required="{{formFields?.return_amount?.required}}">
+                  <label for="return_amount"><span *ngIf="formFields?.return_amount?.required" class="red-text">*</span>
+                    Return Amount</label>
+                </div>
+              </div>
+              <div class="col-6" *ngIf="formFields?.cheque_number">
+                <div class="md-form">
+                  <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.cheque_number?.required"
+                    maxlength="{{formFields?.cheque_number?.maxLength}}" class="form-control" formControlName="cheque_number"
+                    id="cheque_number" mdbInput required="{{formFields?.cheque_number?.required}}">
+                  <label for="cheque_number"><span *ngIf="formFields?.cheque_number?.required" class="red-text">*</span>
+                    Cheque Number</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6" *ngIf="formFields?.shimpment_service_provider">
+                <div class="md-form">
+                  <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.shimpment_service_provider?.required"
+                    maxlength="{{formFields?.shimpment_service_provider?.maxLength}}" class="form-control" formControlName="shimpment_service_provider"
+                    id="shimpment_service_provider" mdbInput required="{{formFields?.shimpment_service_provider?.required}}">
+                  <label for="shimpment_service_provider"><span *ngIf="formFields?.shimpment_service_provider?.required" class="red-text">*</span>
+                    Shimpment Service Provider</label>
+                </div>
+              </div>
+              <div class="col-6" *ngIf="formFields?.shipment_tracking_number">
+                <div class="md-form">
+                  <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.shipment_tracking_number?.required"
+                    maxlength="{{formFields?.shipment_tracking_number?.maxLength}}" class="form-control" formControlName="shipment_tracking_number"
+                    id="shipment_tracking_number" mdbInput required="{{formFields?.shipment_tracking_number?.required}}">
+                  <label for="shipment_tracking_number"><span *ngIf="formFields?.shipment_tracking_number?.required" class="red-text">*</span>
+                    Shipment Tracking Number</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 border-left">
+            <div class="form-check pl-0 mb-3">
+              <input type="radio" class="form-check-input" id="transfer_to_bank" name="paymentMode" mdbInput>
+              <label class="form-check-label" for="transfer_to_bank">Transfer to Bank</label>
+            </div>
+            <p>(Configured bank details of Pharmaceutical)</p>
+            <div class="address-text">
+              <p><em>Accound Holder First Name: Alpha, <br>Accound Holder Last Name: Pharma, <br>Bank Name: U.S Bank, <br>Bank Number: FB02837464, <br>Bank Account Number - 746465000000 <br>Bank Location - NY</em></p>
+            </div>
+            <div class="row">
+              <div class="col-6" *ngIf="formFields?.transaction_number">
+                <div class="md-form">
+                  <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.transaction_number?.required"
+                    maxlength="{{formFields?.transaction_number?.maxLength}}" class="form-control" formControlName="transaction_number"
+                    id="transaction_number" mdbInput required="{{formFields?.transaction_number?.required}}">
+                  <label for="transaction_number"><span *ngIf="formFields?.transaction_number?.required" class="red-text">*</span>
+                    Transaction Number</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-3" *ngIf="formFields?.allocated_fund">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.allocated_fund?.required"
+              maxlength="{{formFields?.allocated_fund?.maxLength}}" class="form-control" formControlName="allocated_fund"
+              id="allocated_fund" mdbInput required="{{formFields?.allocated_fund?.required}}">
+            <label for="allocated_fund"><span *ngIf="formFields?.allocated_fund?.required" class="red-text">*</span>
+              Allocated Fund</label>
+              <button class="text-addon-btn" type="button" mdbBtn color="link" placement="left"><mdb-icon far icon="envelope"></mdb-icon></button>
+          </div>
+        </div>
+        <div class="col-3" *ngIf="formFields?.transaction_number2">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.transaction_number2?.required"
+              maxlength="{{formFields?.transaction_number2?.maxLength}}" class="form-control" formControlName="transaction_number2"
+              id="transaction_number2" mdbInput required="{{formFields?.transaction_number2?.required}}">
+            <label for="transaction_number2"><span *ngIf="formFields?.transaction_number2?.required" class="red-text">*</span>
+              Transaction Number</label>
+          </div>
+        </div>
+        <!-- <div class="col-3">
+          <button (click)="fundRetrivalRequestModal()" type="button" mdbBtn color="link" class="p-0"><span class="blinking">Return & Retrival</span></button>
+          <button (click)="fundRetrivalRequestModal()" type="button" mdbBtn color="link" class="p-0  mt-3"><span class="blinking blinking-slow">Retrival Request Pending</span></button>
+        </div> -->
+      </div>
+
+    </form>
+  </div>
+
+
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="save()"
+       [disabled]="fundRequestForm.invalid"
+        mdbWavesEffect>Save</button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+        (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+</div>
+</div>

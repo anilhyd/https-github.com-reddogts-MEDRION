@@ -1,0 +1,133 @@
+{
+    "columnDefs": [
+        {
+            "headerName": "Application ID",
+            "field": "app_id"
+        },
+        {
+            "headerName": "EAP Type",
+            "field": "eap_type"
+        },
+        {
+            "headerName": "Physician Name",
+            "field": "physician_name"
+        },
+        {
+            "headerName": "Product Name",
+            "field": "product_name",
+            "sort": "asc"
+        },
+        {
+            "headerName": "Submitted On",
+            "field": "submitted_on"
+        },
+        {
+            "headerName": "Status",
+            "field": "status"
+        },
+        {
+            "headerName": "Assigned To",
+            "field": "assigned_to"
+        }
+        
+    ],
+    "operations": [
+        {
+            "name": "Assign",
+            "id": "assign"
+        },
+        {
+            "name": "Route",
+            "id": "route"
+        },
+        {
+            "name": "On Hold",
+            "id": "onHold"
+        },
+        {
+            "name": "Release",
+            "id": "release"
+        },
+        {
+            "name": "Reject",
+            "id": "reject"
+        },
+        {
+            "name": "Close",
+            "id": "close"
+        }
+    ],
+    "advanceSearch": 
+        {
+            "fields": [
+                {
+                    "label": "Title",
+                    "field": "therapeutic_field",
+                    "type": "text"
+                },
+                {
+                    "label": "EAP Type",
+                    "field": "eap_type",
+                    "type": "dropdown"
+                },
+                {
+                    "label": "Physician Name",
+                    "field": "physician_name",
+                    "type": "text"
+                },
+                
+                {
+                    "label": "Product Name",
+                    "field": "date_from",
+                    "type": "text"
+                },
+                {
+                    "label": "Status",
+                    "field": "status",
+                    "type": "dropdown"
+                }
+            ],
+            "filters": []
+        },
+        "caseDetails": [
+            {"caseSet" : {
+                "caseHeading": "General",
+                "caseData" : [
+                    {
+                        "label": "Application ID",
+                        "value": "app_id"
+                    },
+                    {
+                        "label": "EAP Type",
+                        "value": "eap_type"
+                    },
+                    {
+                        "label": "Physician Name",
+                        "value": "physician_name"
+                    },
+                    {
+                        "label": "Status",
+                        "value": "status"
+                    },
+                    {
+                        "label": "Submitted On",
+                        "value": "submitted_on"
+                    },
+                    {
+                        "label": "Last Updated Date",
+                        "value": "last_updated_date"
+                    },
+                    {
+                        "label": "IRB Name",
+                        "value": "irb_name"
+                    },
+                    {
+                        "label": "Assigned To",
+                        "value": "assigned_to"
+                    }
+                ]
+    
+            }
+        }
+    ]
+}

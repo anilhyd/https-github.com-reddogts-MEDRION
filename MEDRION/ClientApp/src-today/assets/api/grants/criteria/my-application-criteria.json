@@ -1,0 +1,180 @@
+{
+    "columnDefs": [
+        {
+        "headerName": "Grant Application ID",
+            "field": "grant_app_id"
+        },
+        {
+            "headerName": "Grant Type",
+            "field": "grant_type",
+            "sort": "asc"
+        },
+        {
+            "headerName": "Program Title",
+            "field": "program_title"
+        },
+        {
+            "headerName": "Therapeutic Area",
+            "field": "the_area"
+        },
+        {
+            "headerName": "Submitted On",
+            "field": "submitted_on"
+        },
+        {
+            "headerName": "Status",
+            "field": "status"
+        }       
+    ],
+    "caseDetails": [
+        {"caseSet" : {
+            "caseHeading": "",
+            "caseData" : [
+                {
+                    "label": "Organization Name ",
+                    "value": "org_name"
+                },
+                {
+                    "label": "Organization Type",
+                    "value": "type"
+                },
+                {
+                    "label": "Tax Status",
+                    "value": "tax_Status"
+                },
+                {
+                    "label": "Tax ID",
+                    "value": "tax_id"
+                },
+                {
+                    "label": "Country",
+                    "value": "country"
+                },
+                {
+                    "label": "State",
+                    "value": "state"
+                },
+                {
+                    "label": "City",
+                    "value": "city"
+                },
+                {
+                    "label": "Full Name",
+                    "value": "full_name"
+                },
+                {
+                    "label": "Email ID",
+                    "value": "email_id"
+                },
+                {
+                    "label": "Phone Number",
+                    "value": "phone_num"
+                },
+                {
+                    "label": "Grant Info",
+                    "value": "other_phone_num"
+                },
+                {
+                    "label": "Grant Application ID",
+                    "value": "grant_app_id"
+                },
+                {
+                    "label": "Grant Type",
+                    "value": "grant_type"
+                },
+                {
+                    "label": "Program Title",
+                    "value": "program_title"
+                },
+                {
+                    "label": "Therupatic Area",
+                    "value": "the_area"
+                },
+                {
+                    "label": "Submitted Date",
+                    "value": "submitted_date"
+                },
+                {
+                    "label": "Assigned To",
+                    "value": "assigned_to"
+                },
+                {
+                    "label": "Status",
+                    "value": "status"
+                }
+            ]
+
+        }
+    }],
+    "operations": [
+        {
+            "name": "On Hold",
+            "id": "onHold"
+        },
+        {
+            "name": "Release",
+            "id": "release"
+        },
+        {
+            "name": "Route",
+            "id": "route"
+        },
+        {
+            "name": "Return",
+            "id": "return"
+        },
+        {
+            "name": "Withdraw",
+            "id": "withdraw"
+        },
+        {
+            "name": "Discard",
+            "id": "discard"
+        },
+        {
+            "name": "New Application",
+            "id": "add"
+        }
+    ],
+    "advanceSearch": 
+        {
+            "fields": [
+                {
+                    "label": "Grant Application ID",
+                    "field": "simple",
+                    "type": "text"
+                },
+                {
+                    "label": "Grant Type",
+                    "field": "program_type",
+                    "type": "text"
+                },
+                {
+                    "label": "Program Title",
+                    "field": "request_type",
+                    "type": "text"
+                },
+                {
+                    "label": "Therapeutic Area",
+                    "field": "date_from",
+                    "type": "dropdown"
+                },                
+                {
+                    "label": "Status",
+                    "field": "status",
+                    "type": "dropdown"
+                },
+                {
+                    "label": "Accepted Date From",
+                    "field": "status",
+                    "type": "date"
+                },
+                {
+                    "label": "Accepted Date To",
+                    "field": "status",
+                    "type": "date"
+                }
+            ],
+            "filters": []
+        }
+}

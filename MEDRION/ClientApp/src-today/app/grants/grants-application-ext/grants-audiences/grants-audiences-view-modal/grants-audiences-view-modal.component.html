@@ -1,0 +1,87 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">{{heading}} Audience</h4>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="audinecesForm">
+      <div class="row">
+        <div class="col-sm-12" *ngIf="formFields?.audience_group">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.audience_group?.required"
+              [options]="audienceGroupOptions" formControlName="audience_group" required="{{formFields?.audience_group?.required}}">
+            </mdb-select>
+            <label for="audience_group"><span *ngIf="formFields?.audience_group?.required" class="red-text">*</span>
+              Audience Group</label>
+          </div>
+        </div>
+        <div class="col-sm-12" *ngIf="formFields?.speciality">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.speciality?.required"
+              [options]="specialityOptions" formControlName="speciality" required="{{formFields?.speciality?.required}}">
+            </mdb-select>
+            <label for="speciality"><span *ngIf="formFields?.speciality?.required" class="red-text">*</span>
+              Speciality</label>
+          </div>
+        </div>
+        <div class="col-sm-12" *ngIf="formFields?.category_of_credit">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.category_of_credit?.required"
+              [options]="categoryOfCreditOptions" formControlName="category_of_credit" required="{{formFields?.category_of_credit?.required}}">
+            </mdb-select>
+            <label for="category_of_credit"><span *ngIf="formFields?.category_of_credit?.required" class="red-text">*</span>
+              Category of Credit</label>
+          </div>
+        </div>
+        <div class="col-sm-12" *ngIf="formFields?.credit_hours_for_category">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.credit_hours_for_category?.required"
+              [options]="creditHoursOptions" formControlName="credit_hours_for_category" required="{{formFields?.credit_hours_for_category?.required}}">
+            </mdb-select>
+            <label for="credit_hours_for_category"><span *ngIf="formFields?.credit_hours_for_category?.required" class="red-text">*</span>
+              CE/CME Credit Hours for Category</label>
+          </div>
+        </div>
+        <div class="col-sm-12" *ngIf="formFields?.invitations_expected_distributed">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+              maxlength="{{formFields?.invitations_expected_distributed?.maxLength}}" class="form-control" formControlName="invitations_expected_distributed"
+              id="invitations_expected_distributed" mdbInput required="{{formFields?.invitations_expected_distributed?.required}}">
+            <label for="invitations_expected_distributed"><span *ngIf="formFields?.invitations_expected_distributed?.required" class="red-text">*</span>
+              # of invitations Expected to be Distributed</label>
+          </div>
+        </div>
+        <div class="col-sm-12" *ngIf="formFields?.expected_learners">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+              maxlength="{{formFields?.expected_learners?.maxLength}}" class="form-control" formControlName="expected_learners"
+              id="expected_learners" mdbInput required="{{formFields?.expected_learners?.required}}">
+            <label for="expected_learners"><span *ngIf="formFields?.expected_learners?.required" class="red-text">*</span>
+              # of Expected Learners</label>
+          </div>
+        </div>
+        <div class="col-sm-12" *ngIf="formFields?.learners_expected_receive_credit">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+              maxlength="{{formFields?.learners_expected_receive_credit?.maxLength}}" class="form-control" formControlName="learners_expected_receive_credit"
+              id="learners_expected_receive_credit" mdbInput required="{{formFields?.learners_expected_receive_credit?.required}}">
+            <label for="learners_expected_receive_credit"><span *ngIf="formFields?.learners_expected_receive_credit?.required" class="red-text">*</span>
+              # of Learners Expected to Receive Credit</label>
+          </div>
+        </div>
+      </div>
+      
+      
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()"
+      *ngIf="heading === 'Create' || heading === 'Edit'" [disabled]="audinecesForm.invalid" mdbWavesEffect>Save</button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+  </div>
+</div>

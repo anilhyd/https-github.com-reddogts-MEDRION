@@ -1,0 +1,656 @@
+<div class="row">
+    <div class="col-2">
+        <mdb-breadcrumb customClass="black-text lighten-4 custom-breadcrumb"
+            style="font-size:13px;text-transform:uppercase;">
+            <mdb-breadcrumb-item>Correspondence
+            </mdb-breadcrumb-item>
+        </mdb-breadcrumb>
+    </div>
+    <div class="col-10">
+        <app-operations-bar [operations]="operations" [enableOperations]="true"
+            (callbackOperation)="onCallbackOperation($event)"></app-operations-bar>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-3">
+        <div class="md-form mb-0 mt-0">
+            <input type="text" class="form-control" placeholder="Search" id="form" mdbInput>
+        </div>
+    </div>
+</div>
+<div class="row mt-2 custom-tabs">
+    <mdb-tabset #staticTabs1 [buttonClass]="'nav-pills pills-unique pills-corr white'" [contentClass]="''">
+        <!--Panel 1-->
+        <mdb-tab class="h100 border" heading="Inbox">
+            <div class="row h100">
+                <div class="col-3 h100 scroll">
+                    <div class="mail-row">
+                        <mdb-icon fas icon="paperclip" class="attachment"></mdb-icon>
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                        
+                    </div>
+                    <div class="mail-row selected">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <mdb-icon fas icon="paperclip" class="attachment"></mdb-icon>
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                        
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                            <mdb-icon fas icon="paperclip" class="attachment"></mdb-icon>
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                        
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+
+                </div>
+                <div class="col-9 h100 scroll">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mt-2">
+                                
+                                <h4 style="font-weight: 500">Heading 1</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mt-2">
+                                <p class="mb-0" style="font-size:13px;">From</p>
+                                <h5 class="small-text">Person Name</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mt-2">
+                                <p class="mb-0" style="font-size:13px;">To</p>
+                                <h5 class="small-text">Person Name 1, Person Name 2, Person Name 3</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mt-2">
+                                <p class="mb-0" style="font-size:13px;">CC</p>
+                                <h5 class="small-text">Person Name 1, Person Name 2, Person Name 3</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-auto">
+                            <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close" style="margin-left:0px !important"
+                                (click)="attachments()" mdbWavesEffect>
+                                <mdb-icon class="mr-1" fas icon="paperclip"></mdb-icon>Attachments
+                            </button>
+                        </div>
+                        <div class="col">
+                            <div class="chip mt-2" title="{{item}}" *ngFor="let item of uploadedFiles; index as i">
+                                <mdb-icon fas class="mr-1" icon="file-excel"></mdb-icon>
+                                <span class="crop-text wd-200">{{item}}</span>
+                                <i class="close fas fa-times"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="md-form">
+                                <p class="mb-0">Subject</p>
+                                <p style="font-size: 14px;" class="mb-0">Lorem ipsum, dolor sit amet consectetur
+                                    adipisicing elit. Praesentium
+                                    repellendus vitae corporis nulla nisi! Corporis, maxime voluptatum quis esse
+                                    perferendis eum vero ad, quo dolorum culpa animi voluptatem ex tempora.Lorem ipsum,
+                                    dolor sit amet consectetur adipisicing elit. Praesentium repellendus vitae corporis
+                                    nulla nisi! Corporis, maxime voluptatum quis esse perferendis eum vero ad, quo
+                                    dolorum culpa animi voluptatem ex tempora.Lorem ipsum, dolor sit amet consectetur
+                                    adipisicing elit. Praesentium repellendus vitae corporis nulla nisi! Corporis,
+                                    maxime voluptatum quis esse perferendis eum vero ad, quo dolorum culpa animi
+                                    voluptatem ex tempora.Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                    Praesentium repellendus vitae corporis nulla nisi! Corporis, maxime voluptatum quis
+                                    esse perferendis eum vero ad, quo dolorum culpa animi voluptatem ex tempora.Lorem
+                                    ipsum, dolor sit amet consectetur adipisicing elit. Praesentium repellendus vitae
+                                    corporis nulla nisi! Corporis, maxime voluptatum quis esse perferendis eum vero ad,
+                                    quo dolorum culpa animi voluptatem ex tempora.Lorem ipsum, dolor sit amet
+                                    consectetur adipisicing elit. Praesentium repellendus vitae corporis nulla nisi!
+                                    Corporis, maxime voluptatum quis esse perferendis eum vero ad, quo dolorum culpa
+                                    animi voluptatem ex tempora.Lorem ipsum, dolor sit amet consectetur adipisicing
+                                    elit. Praesentium repellendus vitae corporis nulla nisi! Corporis, maxime voluptatum
+                                    quis esse perferendis eum vero ad, quo dolorum culpa animi voluptatem ex
+                                    tempora.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium
+                                    repellendus vitae corporis nulla nisi! Corporis, maxime voluptatum quis esse
+                                    perferendis eum vero ad, quo dolorum culpa animi voluptatem ex tempora.Corporis,
+                                    maxime voluptatum quis esse perferendis eum vero ad, quo dolorum culpa
+                                    animi voluptatem ex tempora.Lorem ipsum, dolor sit amet consectetur adipisicing
+                                    elit. Praesentium repellendus vitae corporis nulla nisi! Corporis, maxime voluptatum
+                                    quis esse perferendis eum vero ad, quo dolorum culpa animi voluptatem ex
+                                    tempora.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium
+                                    repellendus vitae corporis nulla nisi! Corporis, maxime voluptatum quis esse
+                                    perferendis eum vero ad, quo dolorum culpa animi voluptatem ex tempora.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mdb-tab>
+        <!--Panel 2-->
+        <mdb-tab class="h100 border" heading="Sent Items">
+            <div class="row h100">
+                <div class="col-3 h100 scroll">
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row selected">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+
+                </div>
+                <div class="col-9 h100 scroll">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mt-2">
+                                
+                                <h4 style="font-weight: 500">Heading 2</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mt-2">
+                                <p class="mb-0" style="font-size:13px;">From</p>
+                                <h5 class="small-text">Person Name</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mt-2">
+                                <p class="mb-0" style="font-size:13px;">To</p>
+                                <h5 class="small-text">Person Name 1, Person Name 2, Person Name 3</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mt-2">
+                                <p class="mb-0" style="font-size:13px;">CC</p>
+                                <h5 class="small-text">Person Name 1, Person Name 2, Person Name 3</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-auto">
+                            <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close" style="margin-left:0px !important"
+                                (click)="attachments()" mdbWavesEffect>
+                                <mdb-icon class="mr-1" fas icon="paperclip"></mdb-icon>Attachments
+                            </button>
+                        </div>
+                        <div class="col">
+                            <div class="chip mt-2" title="{{item}}" *ngFor="let item of uploadedFiles; index as i">
+                                <mdb-icon fas class="mr-1" icon="file-excel"></mdb-icon>
+                                <span class="crop-text wd-200">{{item}}</span>
+                                <i class="close fas fa-times"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="md-form">
+                                <p class="mb-0">Subject</p>
+                                <p style="font-size: 14px;" class="mb-0">Lorem ipsum, dolor sit amet consectetur
+                                    adipisicing elit. Praesentium
+                                    repellendus vitae corporis nulla nisi! Corporis, maxime voluptatum quis esse
+                                    perferendis eum vero ad, quo dolorum culpa animi voluptatem ex tempora.Lorem ipsum,
+                                    dolor sit amet consectetur adipisicing elit. Praesentium repellendus vitae corporis
+                                    nulla nisi! Corporis, maxime voluptatum quis esse perferendis eum vero ad, quo
+                                    dolorum culpa animi voluptatem ex tempora.Lorem ipsum, dolor sit amet consectetur
+                                    adipisicing elit. Praesentium repellendus vitae corporis nulla nisi! Corporis,
+                                    maxime voluptatum quis esse perferendis eum vero ad, quo dolorum culpa animi
+                                    voluptatem ex tempora.Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                    Praesentium repellendus vitae corporis nulla nisi! Corporis, maxime voluptatum quis
+                                    esse perferendis eum vero ad, quo dolorum culpa animi voluptatem ex tempora.Lorem
+                                    ipsum, dolor sit amet consectetur adipisicing elit. Praesentium repellendus vitae
+                                    corporis nulla nisi! Corporis, maxime voluptatum quis esse perferendis eum vero ad,
+                                    quo dolorum culpa animi voluptatem ex tempora.Lorem ipsum, dolor sit amet
+                                    consectetur adipisicing elit. Praesentium repellendus vitae corporis nulla nisi!
+                                    Corporis, maxime voluptatum quis esse perferendis eum vero ad, quo dolorum culpa
+                                    animi voluptatem ex tempora.Lorem ipsum, dolor sit amet consectetur adipisicing
+                                    elit. Praesentium repellendus vitae corporis nulla nisi! Corporis, maxime voluptatum
+                                    quis esse perferendis eum vero ad, quo dolorum culpa animi voluptatem ex
+                                    tempora.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium
+                                    repellendus vitae corporis nulla nisi! Corporis, maxime voluptatum quis esse
+                                    perferendis eum vero ad, quo dolorum culpa animi voluptatem ex tempora.Corporis,
+                                    maxime voluptatum quis esse perferendis eum vero ad, quo dolorum culpa
+                                    animi voluptatem ex tempora.Lorem ipsum, dolor sit amet consectetur adipisicing
+                                    elit. Praesentium repellendus vitae corporis nulla nisi! Corporis, maxime voluptatum
+                                    quis esse perferendis eum vero ad, quo dolorum culpa animi voluptatem ex
+                                    tempora.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium
+                                    repellendus vitae corporis nulla nisi! Corporis, maxime voluptatum quis esse
+                                    perferendis eum vero ad, quo dolorum culpa animi voluptatem ex tempora.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mdb-tab>
+        <!--Panel 3-->
+        <mdb-tab class="h100 border" heading="Drafts">
+            <div class="row h100">
+                <div class="col-3 h100 scroll">
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row selected">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+
+                </div>
+                <div class="col-9 h100 scroll">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mt-2">
+                                
+                                <h4 style="font-weight: 500">Heading 3</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mt-2">
+                                <p class="mb-0" style="font-size:13px;">From</p>
+                                <h5 class="small-text">Person Name</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mt-2">
+                                <p class="mb-0" style="font-size:13px;">To</p>
+                                <h5 class="small-text">Person Name 1, Person Name 2, Person Name 3</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mt-2">
+                                <p class="mb-0" style="font-size:13px;">CC</p>
+                                <h5 class="small-text">Person Name 1, Person Name 2, Person Name 3</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-auto">
+                            <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close" style="margin-left:0px !important"
+                                (click)="attachments()" mdbWavesEffect>
+                                <mdb-icon class="mr-1" fas icon="paperclip"></mdb-icon>Attachments
+                            </button>
+                        </div>
+                        <div class="col">
+                            <div class="chip mt-2" title="{{item}}" *ngFor="let item of uploadedFiles; index as i">
+                                <mdb-icon fas class="mr-1" icon="file-excel"></mdb-icon>
+                                <span class="crop-text wd-200">{{item}}</span>
+                                <i class="close fas fa-times"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="md-form">
+                                <p class="mb-0">Subject</p>
+                                <p style="font-size: 14px;" class="mb-0">Lorem ipsum, dolor sit amet consectetur
+                                    adipisicing elit. Praesentium
+                                    repellendus vitae corporis nulla nisi! Corporis, maxime voluptatum quis esse
+                                    perferendis eum vero ad, quo dolorum culpa animi voluptatem ex tempora.Lorem ipsum,
+                                    dolor sit amet consectetur adipisicing elit. Praesentium repellendus vitae corporis
+                                    nulla nisi! Corporis, maxime voluptatum quis esse perferendis eum vero ad, quo
+                                    dolorum culpa animi voluptatem ex tempora.Lorem ipsum, dolor sit amet consectetur
+                                    adipisicing elit. Praesentium repellendus vitae corporis nulla nisi! Corporis,
+                                    maxime voluptatum quis esse perferendis eum vero ad, quo dolorum culpa animi
+                                    voluptatem ex tempora.Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                    Praesentium repellendus vitae corporis nulla nisi! Corporis, maxime voluptatum quis
+                                    esse perferendis eum vero ad, quo dolorum culpa animi voluptatem ex tempora.Lorem
+                                    ipsum, dolor sit amet consectetur adipisicing elit. Praesentium repellendus vitae
+                                    corporis nulla nisi! Corporis, maxime voluptatum quis esse perferendis eum vero ad,
+                                    quo dolorum culpa animi voluptatem ex tempora.Lorem ipsum, dolor sit amet
+                                    consectetur adipisicing elit. Praesentium repellendus vitae corporis nulla nisi!
+                                    Corporis, maxime voluptatum quis esse perferendis eum vero ad, quo dolorum culpa
+                                    animi voluptatem ex tempora.Lorem ipsum, dolor sit amet consectetur adipisicing
+                                    elit. Praesentium repellendus vitae corporis nulla nisi! Corporis, maxime voluptatum
+                                    quis esse perferendis eum vero ad, quo dolorum culpa animi voluptatem ex
+                                    tempora.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium
+                                    repellendus vitae corporis nulla nisi! Corporis, maxime voluptatum quis esse
+                                    perferendis eum vero ad, quo dolorum culpa animi voluptatem ex tempora.Corporis,
+                                    maxime voluptatum quis esse perferendis eum vero ad, quo dolorum culpa
+                                    animi voluptatem ex tempora.Lorem ipsum, dolor sit amet consectetur adipisicing
+                                    elit. Praesentium repellendus vitae corporis nulla nisi! Corporis, maxime voluptatum
+                                    quis esse perferendis eum vero ad, quo dolorum culpa animi voluptatem ex
+                                    tempora.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium
+                                    repellendus vitae corporis nulla nisi! Corporis, maxime voluptatum quis esse
+                                    perferendis eum vero ad, quo dolorum culpa animi voluptatem ex tempora.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-sm-12 text-right">
+                            <div class="md-form">
+                                <button size="sm" type="button" mdbBtn color="light" class="waves-light" mdbWavesEffect>
+                                    <mdb-icon class="mr-1" far icon="paper-plane"></mdb-icon>Send
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mdb-tab>
+
+        <mdb-tab class="h100 border" heading="Search">
+            <div class="row h100">
+                <div class="col-3 h100 scroll">
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row selected">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+                    <div class="mail-row">
+                        <p class="heading-font"><strong>Title Text</strong></p>
+                        <p class="small-font" style="margin-bottom:0px">Sent by (Person Name)</p>
+                        <p class="small-font" style="margin-bottom:0px">On 14-01-2019 at 11:30 am</p>
+                    </div>
+
+                </div>
+                <div class="col-9 h100 scroll">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mt-2">
+                                
+                                <h4 style="font-weight: 500">Heading 4</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mt-2">
+                                <p class="mb-0" style="font-size:13px;">From</p>
+                                <h5 class="small-text">Person Name</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mt-2">
+                                <p class="mb-0" style="font-size:13px;">To</p>
+                                <h5 class="small-text">Person Name 1, Person Name 2, Person Name 3</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mt-2">
+                                <p class="mb-0" style="font-size:13px;">CC</p>
+                                <h5 class="small-text">Person Name 1, Person Name 2, Person Name 3</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-auto">
+                            <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close" style="margin-left:0px !important"
+                                (click)="attachments()" mdbWavesEffect>
+                                <mdb-icon class="mr-1" fas icon="paperclip"></mdb-icon>Attachments
+                            </button>
+                        </div>
+                        <div class="col">
+                            <div class="chip mt-2" title="{{item}}" *ngFor="let item of uploadedFiles; index as i">
+                                <mdb-icon fas class="mr-1" icon="file-excel"></mdb-icon>
+                                <span class="crop-text wd-200">{{item}}</span>
+                                <i class="close fas fa-times"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="md-form">
+                                <p class="mb-0">Subject</p>
+                                <p style="font-size: 14px;" class="mb-0">Lorem ipsum, dolor sit amet consectetur
+                                    adipisicing elit. Praesentium
+                                    repellendus vitae corporis nulla nisi! Corporis, maxime voluptatum quis esse
+                                    perferendis eum vero ad, quo dolorum culpa animi voluptatem ex tempora.Lorem ipsum,
+                                    dolor sit amet consectetur adipisicing elit. Praesentium repellendus vitae corporis
+                                    nulla nisi! Corporis, maxime voluptatum quis esse perferendis eum vero ad, quo
+                                    dolorum culpa animi voluptatem ex tempora.Lorem ipsum, dolor sit amet consectetur
+                                    adipisicing elit. Praesentium repellendus vitae corporis nulla nisi! Corporis,
+                                    maxime voluptatum quis esse perferendis eum vero ad, quo dolorum culpa animi
+                                    voluptatem ex tempora.Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                    Praesentium repellendus vitae corporis nulla nisi! Corporis, maxime voluptatum quis
+                                    esse perferendis eum vero ad, quo dolorum culpa animi voluptatem ex tempora.Lorem
+                                    ipsum, dolor sit amet consectetur adipisicing elit. Praesentium repellendus vitae
+                                    corporis nulla nisi! Corporis, maxime voluptatum quis esse perferendis eum vero ad,
+                                    quo dolorum culpa animi voluptatem ex tempora.Lorem ipsum, dolor sit amet
+                                    consectetur adipisicing elit. Praesentium repellendus vitae corporis nulla nisi!
+                                    Corporis, maxime voluptatum quis esse perferendis eum vero ad, quo dolorum culpa
+                                    animi voluptatem ex tempora.Lorem ipsum, dolor sit amet consectetur adipisicing
+                                    elit. Praesentium repellendus vitae corporis nulla nisi! Corporis, maxime voluptatum
+                                    quis esse perferendis eum vero ad, quo dolorum culpa animi voluptatem ex
+                                    tempora.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium
+                                    repellendus vitae corporis nulla nisi! Corporis, maxime voluptatum quis esse
+                                    perferendis eum vero ad, quo dolorum culpa animi voluptatem ex tempora.Corporis,
+                                    maxime voluptatum quis esse perferendis eum vero ad, quo dolorum culpa
+                                    animi voluptatem ex tempora.Lorem ipsum, dolor sit amet consectetur adipisicing
+                                    elit. Praesentium repellendus vitae corporis nulla nisi! Corporis, maxime voluptatum
+                                    quis esse perferendis eum vero ad, quo dolorum culpa animi voluptatem ex
+                                    tempora.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium
+                                    repellendus vitae corporis nulla nisi! Corporis, maxime voluptatum quis esse
+                                    perferendis eum vero ad, quo dolorum culpa animi voluptatem ex tempora.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mdb-tab>
+    </mdb-tabset>
+</div>

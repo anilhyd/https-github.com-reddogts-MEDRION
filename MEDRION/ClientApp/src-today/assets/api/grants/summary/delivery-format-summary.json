@@ -1,0 +1,8 @@
+[
+    { "id": 1,  "therapeuticArea":"Therapeutic Area Name", "DFormatType": "Delivery Format Type", "meetingType": "Meeting Type", "period": "Initial"},
+    { "id": 2,  "therapeuticArea":"Therapeutic Area Name", "DFormatType": "Delivery Format Type", "meetingType": "Meeting Type", "period": "Initial"},
+    { "id": 3,  "therapeuticArea":"Therapeutic Area Name", "DFormatType": "Delivery Format Type", "meetingType": "Meeting Type", "period": "Initial"},
+    { "id": 4,  "therapeuticArea":"Therapeutic Area Name", "DFormatType": "Delivery Format Type", "meetingType": "Meeting Type", "period": "Initial"},
+    { "id": 5,  "therapeuticArea":"Therapeutic Area Name", "DFormatType": "Delivery Format Type", "meetingType": "Meeting Type", "period": "Initial"},
+    { "id": 6,  "therapeuticArea":"Therapeutic Area Name", "DFormatType": "Delivery Format Type", "meetingType": "Meeting Type", "period": "Initial"}
+]

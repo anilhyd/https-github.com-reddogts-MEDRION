@@ -1,0 +1,58 @@
+[
+    {
+      "id": 1,
+      "name": "Individual Patient IND",
+      "status": "Active",
+      "code": "EAP-001",
+      "document_type": ".doc"
+    },
+    {
+      "id": 2,
+      "name": "Emergency Use Individual Patient IND",
+      "status": "Active",
+      "code": "EAP-002",
+      "document_type": ".docx"
+    },
+    {
+      "id": 3,
+      "name": "Intermediate-Size Population IND",
+      "status": "Active",
+      "code": "EAP-003",
+      "document_type": ".pdf"
+    },
+    {
+      "id": 4,
+      "name": "Treatment IND",
+      "status": "Inactive",
+      "code": "EAP-004",
+      "document_type": ".png"
+    },
+    {
+      "id": 5,
+      "name": "Individual Patient Protocol",
+      "status": "Active",
+      "code": "EAP-005",
+      "document_type": ".mp3"
+    },
+    {
+      "id": 6,
+      "name": "Emergency Use Individual Patient Protocol",
+      "status": "Active",
+      "code": "EAP-006",
+      "document_type": ".mp4"
+    },
+    {
+      "id": 7,
+      "name": "Intermediate-Size Population Protocol",
+      "status": "Inactive",
+      "code": "EAP-007",
+      "document_type": ".Gif"
+    },
+    {
+      "id": 8,
+      "name": "Treatment Protocol",
+      "status": "Active",
+      "code": "EAP-008",
+      "document_type": ".Tiff"
+    }
+  ]

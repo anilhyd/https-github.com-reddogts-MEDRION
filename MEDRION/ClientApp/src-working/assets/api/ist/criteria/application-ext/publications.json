@@ -1,0 +1,122 @@
+{
+    "formFields":{
+        "type": {
+            "type": "dropdown",
+            "required": true,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "content": {
+            "type": "dropdown",
+            "required": false,
+            "pattern": null
+        },
+        "journal_name": {
+            "type": "text",
+            "required": false,
+            "pattern": null,
+            "maxLength": 15
+        },
+        "title": {
+            "type": "text",
+            "required": false,
+            "pattern": null,
+            "maxLength": 15
+        },
+        "expected_date_of_publication": {
+            "type": "text",
+            "required": false,
+            "pattern": null,
+            "maxLength": 300
+        },
+        "current_end_date_of_analysis": {
+            "type": "textarea",
+            "required": false,
+            "pattern": null
+        },
+        "notes": {
+            "type": "textarea",
+            "required": false,
+            "pattern": null
+        },
+        "document_type": {
+            "type": "dropdown",
+            "required": false,
+            "pattern": null,
+            "maxLength": 50
+        },
+        "file_names": {
+            "type": "label",
+            "required": true,
+            "pattern": null,
+            "maxLength": 150,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "upload_date": {
+            "type": "date",
+            "required": false,
+            "pattern": null,
+            "maxLength": 15
+        },
+        "attachments_notes": {
+            "type": "textarea",
+            "required": false,
+            "pattern": null,
+            "maxLength": 2000
+        }
+    },
+
+    "columnDefs": [
+        {
+            "headerName": "Type",
+            "field": "type" 
+        },
+        {
+            "headerName": "Content",
+            "field": "content"
+        },
+        {
+            "headerName": "Title",
+            "field": "title"
+        },
+        {
+            "headerName": "Submitted Date",
+            "field": "submited_date"
+        }
+    ],
+    
+    "operations": [
+        {
+            "name": "Delete",
+            "id": "delete"
+        },
+        {
+            "name": "Edit",
+            "id": "edit"
+        },
+        {
+            "name": "Add New",
+            "id": "add"
+        }
+    ],
+    "advanceSearch": 
+        {
+            "fields": [
+                {
+                    "label": "Type",
+                    "field": "title",
+                    "type": "text"
+                },
+                {
+                    "label": "Content",
+                    "field": "org",
+                    "type": "text"
+                },
+                {
+                    "label": "Title",
+                    "field": "city",
+                    "type": "text"
+                }
+            ]
+        }
+}

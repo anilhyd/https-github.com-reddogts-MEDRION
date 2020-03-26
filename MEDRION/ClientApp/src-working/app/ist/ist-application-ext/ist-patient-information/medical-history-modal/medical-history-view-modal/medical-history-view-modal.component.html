@@ -1,0 +1,65 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">New Medical History</h4>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="medicalHistoryForm">
+
+      <div class="row">
+        <div class="col-12">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.medical_history?.required"
+              maxlength="{{formFields?.medical_history?.maxLength}}" class="form-control" formControlName="medical_history"
+              id="medical_history" mdbInput required="{{formFields?.medical_history?.required}}"/>
+            <label for="medical_history"><span *ngIf="formFields?.medical_history?.required" class="red-text">*</span>
+              Medical History</label>
+          </div>
+        </div>
+        
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="md-form">
+            <mdb-date-picker class="date-picker-right" [inline]="true" name="start_date" [options]="myDatePickerOptions"
+              [label]="'Start Date'" formControlName="start_date"
+              required="{{formFields?.start_date?.required}}">
+            </mdb-date-picker>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="md-form">
+            <mdb-date-picker class="date-picker-right" [inline]="true" name="stop_date" [options]="myDatePickerOptions"
+              [label]="'Stop Date'" formControlName="stop_date"
+              required="{{formFields?.stop_date?.required}}">
+            </mdb-date-picker>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+            <mdb-checkbox [inline]="true">Ongoing</mdb-checkbox>
+        </div>
+        <div class="col-6">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.duration?.required"
+              maxlength="{{formFields?.duration?.maxLength}}" class="form-control" formControlName="duration"
+              id="duration" mdbInput required="{{formFields?.duration?.required}}"/>
+            <label for="duration"><span *ngIf="formFields?.duration?.required" class="red-text">*</span>
+              Duration</label>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()"
+      [disabled]="medicalHistoryForm.invalid" mdbWavesEffect>Save</button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+  </div>
+</div>

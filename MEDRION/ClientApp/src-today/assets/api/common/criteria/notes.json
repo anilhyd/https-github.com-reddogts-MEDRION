@@ -1,0 +1,12 @@
+{
+    "formFields": {        
+        "notes":{ "type":"textarea", "required":true, "maxLength":500, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "attachments":{ "type":"file", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+    },
+    "operations": [
+        {
+            "name": "Add Notes",
+            "id": "add"
+        }
+    ]
+}

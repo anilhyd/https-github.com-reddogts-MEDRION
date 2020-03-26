@@ -1,0 +1,97 @@
+{
+    "formFields": {
+        "profile_upto_date":{ "type":"radio", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "detailed_agenda":{
+            "type":"formGroup-label",
+            "required":true,
+            "formFields":{
+                "file_name":{
+                    "type":"file",
+                    "required":true,
+                    "maxLength": 150
+                },
+                "notes":{
+                    "type":"text",
+                    "required":false,
+                    "pattern": null,
+                    "maxLength": 2000
+                }
+            }
+        },
+        "proposed_faculty":{
+            "type":"formGroup-label",
+            "required":true,
+            "formFields":{
+                "file_name":{
+                    "type":"file",
+                    "required":true,
+                    "maxLength": 150
+                },
+                "notes":{
+                    "type":"text",
+                    "required":false,
+                    "pattern": null,
+                    "maxLength": 2000
+                }
+            }
+        },
+        "accrediting_certificate":{
+            "type":"formGroup-label",
+            "required":true,
+            "formFields":{
+                "file_name":{
+                    "type":"file",
+                    "required":true,
+                    "maxLength": 150
+                },
+                "notes":{
+                    "type":"text",
+                    "required":false,
+                    "pattern": null,
+                    "maxLength": 2000
+                }
+            }
+        },
+        "irb_approval":{
+            "type":"formGroup-label",
+            "required":true,
+            "formFields":{
+                "file_name":{
+                    "type":"file",
+                    "required":true,
+                    "maxLength": 150
+                },
+                "notes":{
+                    "type":"text",
+                    "required":false,
+                    "pattern": null,
+                    "maxLength": 2000
+                }
+            }
+        },
+        "patient_consent_form":{
+            "type":"formGroup-label",
+            "required":true,
+            "formFields":{
+                "file_name":{
+                    "type":"file",
+                    "required":true,
+                    "maxLength": 150
+                },
+                "notes":{
+                    "type":"text",
+                    "required":false,
+                    "pattern": null,
+                    "maxLength": 2000
+                }
+            }
+        }
+        
+    },
+    "formOperations": [
+        {
+            "name": "Save",
+            "id": "save"
+        }
+    ]
+}

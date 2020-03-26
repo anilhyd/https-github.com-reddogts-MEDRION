@@ -1,0 +1,193 @@
+{
+    "columnDefs": [
+        {
+            "headerName": "Application ID",
+            "field": "app_id"
+        },
+        {
+            "headerName": "Physician Name",
+            "field": "phsy_name",
+            "sort": "asc"
+        },
+        {
+            "headerName": "Therapeutic Field",
+            "field": "therp_fluid"
+        },
+        {
+            "headerName": "Status",
+            "field": "status"
+        },
+        {
+            "headerName": "Submitted On",
+            "field": "submitted_on"
+        },
+        {
+            "headerName": "Last Updated On",
+            "field": "last_updated_date"
+        }       
+    ],
+    "caseDetails": [
+        {"caseSet" : {
+            "caseHeading": "General",
+            "caseData" : [
+                {
+                    "label": "Application ID",
+                    "value": "app_id"
+                },
+                {
+                    "label": "Physician Name",
+                    "value": "phsy_name"
+                },
+                {
+                    "label": "Study Sponsored",
+                    "value": "study_sponsored"
+                },
+                {
+                    "label": "Therapeutic Field",
+                    "value": "therp_fluid"
+                },
+                {
+                    "label": "Study Type",
+                    "value": "study_type"
+                },
+                {
+                    "label": "Status",
+                    "value": "status"
+                },
+                {
+                    "label": "Submitted On",
+                    "value": "submitted_on"
+                },
+                {
+                    "label": "Last Updated Date",
+                    "value": "last_updated_date"
+                },
+                {
+                    "label": "IRB Name",
+                    "value": "irb_name"
+                },
+                {
+                    "label": "#Total Requests",
+                    "value": "total_requests"
+                },
+                {
+                    "label": "#Closed Requests",
+                    "value": "closed_requests"
+                }
+            ]
+
+        }
+    },
+    {"caseSet" : {
+        "caseHeading": "Patient Recruitment",
+        "caseData" : [
+            {
+                "label": "Duration",
+                "value": "duration"
+            },
+            {
+                "label": "Est Start Date",
+                "value": "est_start_date"
+            },
+            {
+                "label": "Est End Date",
+                "value": "est_end_date"
+            },
+            {
+                "label": "Length of Study",
+                "value": "len_of_study"
+            },
+            {
+                "label": "#Patients Enrolled",
+                "value": "patients_enrolled"
+            }
+        ]
+
+    }
+}
+],
+    "operations": [
+        {
+            "name": "Discard",
+            "id": "discard"
+        },
+        {
+            "name": "Withdraw",
+            "id": "withdraw"
+        },
+        {
+            "name": "On-Hold/Release",
+            "id": "onHold"
+        },
+        {
+            "name": "Route",
+            "id": "routeModal"
+        },
+        {
+            "name": "Return",
+            "id": "return"
+        },
+        {
+            "name": "New Application",
+            "id": "add"
+        }
+    ],
+    "advanceSearch": 
+        {
+            "fields": [
+                {
+                    "label": "Title",
+                    "field": "title",
+                    "type": "text"
+                },
+                {
+                    "label": "Physician Name",
+                    "field": "phy_name",
+                    "type": "text"
+                },
+                {
+                    "label": "Therapeutic Field",
+                    "field": "therapeutice_field",
+                    "type": "text"
+                },
+                {
+                    "label": "Study Type",
+                    "field": "study_type",
+                    "type": "dropdown"
+                },
+                {
+                    "label": "Product",
+                    "field": "product",
+                    "type": "dropdown"
+                },
+                {
+                    "label": "Status",
+                    "field": "status",
+                    "type": "dropdown",
+                    "options": [{ "value": "assigned", "label":"Assigned"},{ "value": "unassigned", "label":"Unassigned"},{ "value": "onHold", "label":"On-Hold"},{ "value": "rejected", "label":"Rejected"},{ "value": "closed", "label":"Closed"}]
+                }
+            ],
+            "filters": [
+                {
+                    "label": "Applications waiting in last one week",
+                    "filter_key":"unique_key_1",
+                    "criteria": ""
+                },
+                {
+                    "label": "Applicaitons waiting in last one month",
+                    "filter_key":"unique_key_2",
+                    "criteria": ""
+                },
+                {
+                    "label": "Applications processed in last one month",
+                    "filter_key":"unique_key_3",
+                    "criteria": ""
+                },
+                {
+                    "label": "Applications processed in last one quarter",
+                    "filter_key":"unique_key_4",
+                    "criteria": ""
+                }
+            ]
+        }
+}

@@ -1,0 +1,166 @@
+{
+    "formFields": {
+        "activity_type": {
+            "type": "dropdown",
+            "required": true,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "activity_sub_type": {
+            "type": "dropdown",
+            "pattern": null
+        },
+        "activity_start_date": {
+            "type": "date",
+            "required": false,
+            "pattern": null,
+            "maxLength": 15
+        },
+        "activity_end_date": {
+            "type": "date",
+            "required": false,
+            "maxLength": 15,
+            "pattern": null
+        },
+        "activity_title": {
+            "type": "text",
+            "required": false,
+            "pattern": null,
+            "maxLength": 300,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "activity_agenda": {
+            "type": "textarea",
+            "required": false,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "activity_overview": {
+            "type": "textarea",
+            "required": false,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "activty_session_title": {
+            "type": "text",
+            "required": true,
+            "maxLength": 300,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "faculty_first_name": {
+            "type": "text",
+            "required": false,
+            "maxLength": 50,
+            "pattern": null
+        },
+        "faculty_last_name": {
+            "type": "text",
+            "required": false,
+            "maxLength": 50,
+            "pattern": null
+        },
+        "occupation": {
+            "type": "text",
+            "required": true,
+            "maxLength": 50,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "qualification": {
+            "type": "text",
+            "required": true,
+            "maxLength": 50,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "attachments_file_type": {
+            "type": "text",
+            "required": false,
+            "maxLength": 50,
+            "pattern": null
+        },
+        "upload_file_name": {
+            "type": "label",
+            "required": false,
+            "maxLength": 150,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "upload_date": {
+            "type": "label",
+            "required": false,
+            "maxLength": 15,
+            "pattern": null
+        },
+        "notes": {
+            "type": "textarea",
+            "required": false,
+            "maxLength": 2000,
+            "pattern": null
+        }
+    },
+
+    "columnDefs": [
+        {
+            "headerName": "Activity Type",
+            "field": "activity_type"
+        },
+        {
+            "headerName": "Title",
+            "field": "activity_title"
+        },
+        {
+            "headerName": "Start Date",
+            "field": "activity_start_date"
+        },
+        {
+            "headerName": "End Date",
+            "field": "activity_end_date"
+        },
+        {
+            "headerName": "Submitted On",
+            "field": "submitted_on"
+        }
+    ],
+    
+    "operations": [
+        {
+            "name": "Delete",
+            "id": "delete"
+        },
+        {
+            "name": "Edit",
+            "id": "edit"
+        },
+        {
+            "name": "Add New",
+            "id": "add"
+        }
+    ],
+    "advanceSearch": 
+        {
+            "fields": [
+                {
+                    "label": "Activity Type",
+                    "field": "title",
+                    "type": "text"
+                },
+                {
+                    "label": "Title",
+                    "field": "org",
+                    "type": "text"
+                },
+                {
+                    "label": "Activity Date From",
+                    "field": "city",
+                    "type": "date"
+                },
+                {
+                    "label": "Activity Date To",
+                    "field": "city",
+                    "type": "date"
+                }
+            ]
+        }
+}

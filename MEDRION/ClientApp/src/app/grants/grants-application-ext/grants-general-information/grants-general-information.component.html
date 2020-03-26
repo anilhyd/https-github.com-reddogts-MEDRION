@@ -1,0 +1,197 @@
+<form [formGroup]="generalInformationForm">
+  <div class="row">
+    <div class="col-3">
+      <mdb-breadcrumb customClass="black-text lighten-4 custom-breadcrumb"
+        style="font-size:13px;text-transform:uppercase;">
+        <mdb-breadcrumb-item>General Information
+        </mdb-breadcrumb-item>
+      </mdb-breadcrumb>
+    </div>
+    <div class="col-9">
+      <app-operations-bar [operations]="operations" [enableOperations]="generalInformationForm.valid?true:false"
+        (callbackOperation)="onCallbackOperation($event)"></app-operations-bar>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.medical_education">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.medical_education?.required"
+        maxlength="{{formFields?.medical_education?.maxLength}}" class="form-control" formControlName="medical_education"
+        id="dynmcId1" mdbInput required="{{formFields?.medical_education?.required}}">
+        <label for="dynmcId1"><span *ngIf="formFields?.medical_education?.required" class="red-text">*</span>
+        For how many Medical Education grants in thepast 12 months have you received funding?</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-xs-12" *ngIf="formFields?.grant_requestor_submitted">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.grant_requestor_submitted?.required"
+        [options]="chooseoptions" formControlName="grant_requestor_submitted"
+        required="{{formFields?.grant_requestor_submitted?.required}}"></mdb-select>
+        <label for="grant_requestor_submitted"><span *ngIf="formFields?.grant_requestor_submitted?.required" class="red-text">*</span>
+        Has the grant requestor submitted a prior grant request for this company?</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.organization_develop">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.organization_develop?.required"
+        [options]="chooseoptions" formControlName="organization_develop"
+        required="{{formFields?.organization_develop?.required}}"></mdb-select>
+        <label for="organization_develop"><span *ngIf="formFields?.organization_develop?.required" class="red-text">*</span>
+        Did you, an affiliate, a parent or a sister organization develop or execute any promotional or commercial program for this company in the last 12 months</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-xs-12" *ngIf="formFields?.last_request_submitted">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.last_request_submitted?.required"
+        maxlength="{{formFields?.last_request_submitted?.maxLength}}" class="form-control" formControlName="last_request_submitted"
+        id="dynmcId2" mdbInput required="{{formFields?.last_request_submitted?.required}}">
+        <label for="dynmcId2"><span *ngIf="formFields?.last_request_submitted?.required" class="red-text">*</span>
+        If so, when was the last request submitted?</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-xs-12" *ngIf="formFields?.previous_calendar_year">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.previous_calendar_year?.required"
+        [options]="chooseoptions" formControlName="previous_calendar_year"
+        required="{{formFields?.previous_calendar_year?.required}}"></mdb-select>
+        <label for="previous_calendar_year"><span *ngIf="formFields?.previous_calendar_year?.required" class="red-text">*</span>
+        Was this program supported by your company in the previous calendar year?</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-xs-12" *ngIf="formFields?.exhibit_opportunity">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.exhibit_opportunity?.required"
+        [options]="chooseoptions" formControlName="exhibit_opportunity"
+        required="{{formFields?.exhibit_opportunity?.required}}"></mdb-select>
+        <label for="exhibit_opportunity"><span *ngIf="formFields?.exhibit_opportunity?.required" class="red-text">*</span>
+        Exhibit Opportunity</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-xs-12" *ngIf="formFields?.submitted_exhibit_opportunity">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.submitted_exhibit_opportunity?.required"
+        [options]="chooseoptions" formControlName="submitted_exhibit_opportunity"
+        required="{{formFields?.submitted_exhibit_opportunity?.required}}"></mdb-select>
+        <label for="submitted_exhibit_opportunity"><span *ngIf="formFields?.submitted_exhibit_opportunity?.required" class="red-text">*</span>
+        Have you submitted any Exhibit Opportunity to your company?</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-xs-12" *ngIf="formFields?.corporate_supporters">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.corporate_supporters?.required"
+        [options]="chooseoptions" formControlName="corporate_supporters"
+        required="{{formFields?.corporate_supporters?.required}}"></mdb-select>
+        <label for="corporate_supporters"><span *ngIf="formFields?.corporate_supporters?.required" class="red-text">*</span>
+        Will there be other corporate supporters of this program?</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.Please_describe">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.Please_describe?.required"
+        maxlength="{{formFields?.Please_describe?.maxLength}}" class="form-control" formControlName="Please_describe"
+        id="dynmcId3" mdbInput required="{{formFields?.Please_describe?.required}}">
+        <label for="dynmcId3"><span *ngIf="formFields?.Please_describe?.required" class="red-text">*</span>
+        If so, Please Describe</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.rfp_code">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.rfp_code?.required"
+        maxlength="{{formFields?.rfp_code?.maxLength}}" class="form-control" formControlName="rfp_code"
+        id="dynmcId4" mdbInput required="{{formFields?.rfp_code?.required}}">
+        <label for="dynmcId4"><span *ngIf="formFields?.rfp_code?.required" class="red-text">*</span>
+        RFP Code</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.your_annual_revenue">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.your_annual_revenue?.required"
+        maxlength="{{formFields?.your_annual_revenue?.maxLength}}" class="form-control" formControlName="your_annual_revenue"
+        id="dynmcId5" mdbInput required="{{formFields?.your_annual_revenue?.required}}">
+        <label for="dynmcId52"><span *ngIf="formFields?.your_annual_revenue?.required" class="red-text">*</span>
+        What is your annual revenue?</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.your_organization">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.your_organization?.required"
+        maxlength="{{formFields?.your_organization?.maxLength}}" class="form-control" formControlName="your_organization"
+        id="dynmcId6" mdbInput required="{{formFields?.your_organization?.required}}">
+        <label for="dynmcId6"><span *ngIf="formFields?.your_organization?.required" class="red-text">*</span>
+        How many employees belong to your organization?</label>
+      </div>
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.your_organization_business">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.your_organization_business?.required"
+        maxlength="{{formFields?.your_organization_business?.maxLength}}" class="form-control" formControlName="your_organization_business"
+        id="dynmcId7" mdbInput required="{{formFields?.your_organization_business?.required}}">
+        <label for="dynmcId7"><span *ngIf="formFields?.your_organization_business?.required" class="red-text">*</span>
+        How many years has your organization been in business?</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <h6 class="dark-grey-text mb-2"><strong class="card-header-text">Flex Section</strong></h6>
+    </div>      
+  </div>
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.flex_field1">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.flex_field1?.required"
+        maxlength="{{formFields?.flex_field1?.maxLength}}" class="form-control" formControlName="flex_field1"
+        id="dynmcId1" mdbInput required="{{formFields?.flex_field1?.required}}">
+        <label for="dynmcId1"><span *ngIf="formFields?.flex_field1?.required" class="red-text">*</span>
+        Flex Field 1</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.flex_field2">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.flex_field2?.required"
+        [options]="chooseoptions" formControlName="flex_field2"
+        required="{{formFields?.flex_field2?.required}}"></mdb-select>
+        <label for="flex_field2"><span *ngIf="formFields?.flex_field2?.required" class="red-text">*</span>
+        Flex Field 2</label>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-5">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.flex_field3">
+      <div class="md-form">
+        <mdb-date-picker [inline]="true" name="mydate"
+          [options]="myDatePickerOptions" formControlName="flex_field3"
+          required="{{formFields?.flex_field3?.required}}">
+        </mdb-date-picker>
+        <label for="flex_field3"><span *ngIf="formFields?.flex_field3?.required" class="red-text">*</span>
+        Flex Field 3</label>
+      </div>
+    </div>
+  </div>
+</form>

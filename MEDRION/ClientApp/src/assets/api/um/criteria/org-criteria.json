@@ -1,0 +1,244 @@
+{
+    "formFields": {
+        "org_code": {
+            "type": "text",
+            "required": true,
+            "maxLength": 10,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "org_name": {
+            "type": "radio",
+            "required": true,
+            "maxLength": 200,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "org_description": {
+            "type": "text",
+            "required": false,
+            "maxLength": 500,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "org_default_currency": {
+            "type": "select",
+            "required": true,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "org_logo": {
+            "type": "file",
+            "required": true,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "org_ist": {
+            "type": "checkbox",
+            "required": false,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "org_eap": {
+            "type": "checkbox",
+            "required": false,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "org_grants": {
+            "type": "checkbox",
+            "required": false,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "org_valid_up_to": {
+            "type": "date",
+            "required": true,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "org_address_1": {
+            "type": "text",
+            "required": false,
+            "maxLength": 100,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "org_address_2": {
+            "type": "text",
+            "required": false,
+            "maxLength": 100,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "org_zip_code": {
+            "type": "text",
+            "required": true,
+            "maxLength": 50,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "org_city": {
+            "type": "text",
+            "required": true,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "org_country": {
+            "type": "select",
+            "required": true,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "org_state": {
+            "type": "select",
+            "required": true,
+            "maxLength": 5,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "org_phone_no": {
+            "type": "text",
+            "required": true,
+            "maxLength": 12,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "org_phone_no_ext": {
+            "type": "text",
+            "required": true,
+            "maxLength": 12,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "org_fax_no": {
+            "type": "select",
+            "required": true,
+            "maxLength": 12,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "org_fax_no_ext": {
+            "type": "select",
+            "required": true,
+            "maxLength": 12,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "org_website": {
+            "type": "select",
+            "required": true,
+            "maxLength": 100,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "org_emailId": {
+            "type": "text",
+            "required": true,
+            "maxLength": 100,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "org_title": {
+            "type": "text",
+            "required": true,
+            "maxLength": 100,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "org_main_header": {
+            "type": "text",
+            "required": false,
+            "maxLength": 100,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "org_sub_header": {
+            "type": "text",
+            "required": false,
+            "maxLength": 100,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        }
+    },
+    "formOperations": [
+        {
+            "name": "Save",
+            "id": "save",
+            "type": "submit"
+        }
+    ],
+    "columnDefs": [
+        {
+            "field": "org_code",
+            "headerName": "Code",
+            "sort": "asc"
+        },
+        {
+            "field": "org_name",
+            "headerName": "Name"            
+        },
+        {
+            "field": "org_country",
+            "headerName": "Country"
+        },
+        {
+            "field": "org_no_of_licensed_modules",
+            "headerName": "No of Licensed Modules"
+        },
+        {
+            "field": "org_license_valid_upto",
+            "headerName": "License Valid Upto"
+        },
+        {
+            "field": "org_status",
+            "headerName": "status ?"
+        }
+    ],
+    "operations": [
+        {
+            "name": "Password Policy",
+            "id": "password_policy"
+        },
+        {
+            "name": "Active",
+            "id": "active"
+        },
+        {
+            "name": "InActive",
+            "id": "inactive"
+        },
+        {
+            "name": "Delete",
+            "id": "delete"
+        },
+        {
+            "name": "Edit",
+            "id": "edit"
+        },
+        {
+            "name": "Add New",
+            "id": "add"
+        }
+    ],
+    "advanceSearch": 
+        {
+            "fields": [
+                {
+                    "label": "Name",
+                    "field": "org_name",
+                    "type": "text"
+                },
+                {
+                    "label": "License Valid Upto",
+                    "field": "lic_valid_upto",
+                    "type": "date"
+                },
+                {
+                    "label": "Status",
+                    "field": "status",
+                    "type": "dropdown"
+                }
+            ]
+        }
+}

@@ -1,0 +1,164 @@
+
+<header>
+  <mdb-side-nav #sidenav class="sn-bg-1 side-nav-ext" *ngIf="app_ext" [fixed]="true">
+    <links>
+
+      <li>
+        <ul class="collapsible collapsible-accordion side-nav-ext-collapsible">
+          <li routerLink="{{routerLinkUrl}}/{{request.id}}" routerLinkActive="active" [queryParams]="setQueryParams" [skipLocationChange]="true"
+            *ngFor="let request of request?.requests"><a>{{request.name}}</a></li>
+        </ul>
+      </li>
+    </links>
+
+    <div class="sidenav-bg mask-strong"></div>
+  </mdb-side-nav>
+  <mdb-navbar SideClass="navbar navbar-expand-lg navbar-light blue-grey lighten-5" [containerInside]="false">
+    <mdb-navbar-brand><a style="display: flex;font-weight: bold;color: #3f729b;" class="navbar-brand"
+        routerLink="/home"><img src="../assets/images/logo.png" class="img-fluid flex-center logo-style"></a>
+    </mdb-navbar-brand>
+    <links>
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item">
+          <a class="nav-link">
+            <span style="font-size: 13px;margin-top: 5px;">{{currentDate}}</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+            <div class="btn-group mx-4" mdbDropdown>
+              <mdb-icon fas icon="user" classInside="dropdown-toggle" mdbDropdownToggle class="waves-effect"
+                mdbWavesEffect style="position: relative;top: 4px;"></mdb-icon><span style="text-transform: capitalize">{{username}}</span>
+              <div class="dropdown-menu dropdown-primary" style="margin-top: 6px;">
+                <a class="dropdown-item" (click)="openChangePasswordPopup()">Change Password</a>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="nav-item" (click)="openNotificationStorePopup()">
+          <a class="nav-link" title="Notifications">
+            <mdb-icon far icon="bell"></mdb-icon>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" title="Help">
+            <i class="fas fa-question-circle"></i>
+          </a>
+        </li>
+        <li class="nav-item" title="Logout" (click)="logout()">
+          <a class="nav-link">
+            <i class="fas fa-sign-out-alt"></i>
+          </a>
+        </li>
+      </ul>
+    </links>
+
+  </mdb-navbar>
+  <mdb-navbar SideClass="navbar navbar-expand-lg second-nav" [containerInside]="false">
+    <mdb-navbar-brand><a class="navbar-brand" routerLink="/home" [skipLocationChange]="true"><img style="position: relative;top: -2px;left: 0px;"
+          src="../assets/images/dashbaord.png"></a>
+    </mdb-navbar-brand>
+    <links>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown" dropdown *ngFor="let module of userDetails?.role?.permissions; let i = index">
+          <a routerLink="{{module.id}}" routerLinkActive="active" dropdownToggle mdbWavesEffect type="button" [skipLocationChange]="true"
+            class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+            {{module.name}}</a>
+          <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu" style="max-height: 23em;overflow: auto;">
+            <a class="dropdown-item waves-light" mdbWavesEffect *ngFor="let screen of module?.screens" [skipLocationChange]="true" [queryParams]="{screenName:screen.id}"
+              routerLink="{{module.id}}/{{screen.id}}" routerLinkActive="active">{{screen.name}}</a>
+          </div>
+        </li>
+      </ul>
+    </links>
+  </mdb-navbar>
+</header>
+<div class="row" style="border-bottom: 1px solid #ccc" *ngIf="app_ext">
+  <div class="col-sm-4"><span style="position: relative;top: 8px;left: 20px;">{{mainHeading}}</span></div>
+  <div class="col-sm-8">
+    <ul class="main-operations" *ngIf="userType === 'iu'">
+      <li><span style="font-size: 13px;position: relative;top: 8px;right: 13px;">WS: Submitted</span></li>
+      <li>
+        <button (click)="route()" type="button" mdbBtn color="link" size="sm" title="Route"
+          mdbWavesEffect><i class="fa fa-check"></i>
+        </button>
+      </li>
+      <li>
+        <button (click)="return()" type="button" mdbBtn color="link" size="sm" title="Return"
+          mdbWavesEffect><i class="fa fa-undo"></i>
+        </button>
+      </li>
+      <li>
+        <button (click)="onHold()" type="button" mdbBtn color="link" size="sm" title="On-Hold"
+          mdbWavesEffect><i class="fa fa-pause"></i>
+        </button>
+      </li>
+      <li>
+        <button (click)="release()" type="button" mdbBtn color="link" size="sm" title="Release"
+          mdbWavesEffect><i class="fa fa-play"></i>
+        </button>
+      </li>
+      <li>
+        <div class="dropdown" mdbDropdown>
+          <button mdbDropdownToggle type="button" mdbBtn color="link" size="sm" class="dropdown-toggle waves-light"
+            mdbWavesEffect>
+            <i class="fa fa-cog"></i>
+          </button>        
+          <div class="dropdown-menu dropdown-primary" *ngIf="requestId" style="padding:0px;margin-top: -10px;">
+            <a class="dropdown-item dropdown-item-custom" style="font-size: 12px;padding-top: 0px;padding-bottom: 0px;" [skipLocationChange]="true" [queryParams]="setQueryParams" routerLink="{{routerLinkUrl}}/rfi_request">RFI</a>
+            <a class="dropdown-item dropdown-item-custom" style="font-size: 12px;padding-top: 0px;padding-bottom: 0px;" [skipLocationChange]="true" [queryParams]="setQueryParams" routerLink="/home/{{module}}/{{screenType}}/application-ext/{{requestId}}/notes_request">Notes</a>
+            <a class="dropdown-item dropdown-item-custom" style="font-size: 12px;padding-top: 0px;padding-bottom: 0px;" [skipLocationChange]="true" [queryParams]="setQueryParams" routerLink="/home/{{module}}/{{screenType}}/application-ext/{{requestId}}/attachments_request">Attachments</a>
+            <a class="dropdown-item dropdown-item-custom" style="font-size: 12px;padding-top: 0px;padding-bottom: 0px;" [skipLocationChange]="true" [queryParams]="setQueryParams" routerLink="/home/{{module}}/{{screenType}}/application-ext/{{requestId}}/correspondence_request">Correspondence</a>
+            <a class="dropdown-item dropdown-item-custom" style="font-size: 12px;padding-top: 0px;padding-bottom: 0px;" (click)="faqView()">FAQ</a>
+            <a class="dropdown-item dropdown-item-custom" style="font-size: 12px;padding-top: 0px;padding-bottom: 0px;" (click)="documentTemplateView()">Document Template</a>
+          </div>
+        </div>
+      </li> 
+      <li>
+        <button (click)="withdraw()" type="button" mdbBtn mdbBtn color="link" size="sm" title="withdraw"
+          mdbWavesEffect><i class="fa fa-times"></i>
+        </button>
+      </li>
+      <li>
+        <button (click)="close()" type="button" mdbBtn mdbBtn color="link" size="sm" title="Close"
+          mdbWavesEffect><i class="fa fa-times-circle"></i>
+        </button>
+      </li>
+    </ul>
+    <ul class="main-operations" *ngIf="userType === 'eu'">
+      <li><span style="font-size: 13px;position: relative;top: 8px;right: 13px;">WS: Submitted</span></li>
+      <li>
+        <button (click)="route()" type="button" mdbBtn mdbBtn color="link" size="sm" title="Route"
+          mdbWavesEffect><i class="fa fa-check"></i>
+        </button>
+      </li>
+      <li>
+        <button (click)="return()" type="button" mdbBtn mdbBtn color="link" size="sm" title="Return"
+          mdbWavesEffect><i class="fa fa-undo"></i>
+        </button>
+      </li>
+      <li>
+        <div class="dropdown" mdbDropdown>
+          <button mdbDropdownToggle type="button" mdbBtn color="link" size="sm" class="dropdown-toggle waves-light"
+            mdbWavesEffect>
+            <i class="fa fa-cog"></i>
+          </button>        
+          <div class="dropdown-menu dropdown-primary" *ngIf="requestId" style="padding:0px;margin-top: -10px;">
+            <a class="dropdown-item dropdown-item-custom" style="font-size: 12px;padding-top: 0px;padding-bottom: 0px;" [skipLocationChange]="true"  routerLink="/home/{{module}}/{{screenType}}/application-ext/{{requestId}}/rfi_request">RFI</a>
+            <a class="dropdown-item dropdown-item-custom" style="font-size: 12px;padding-top: 0px;padding-bottom: 0px;" [skipLocationChange]="true"  routerLink="/home/{{module}}/{{screenType}}/application-ext/{{requestId}}/attachments_request">Attachments</a>
+          </div>
+        </div>
+      </li> 
+      <li>
+        <button (click)="withdraw()" type="button" mdbBtn mdbBtn color="link" size="sm" title="withdraw"
+          mdbWavesEffect><i class="fa fa-times"></i>
+        </button>
+      </li>
+      <li>
+        <button (click)="discard()" type="button" mdbBtn mdbBtn color="link" size="sm" title="Discard"
+          mdbWavesEffect><i class="fa fa-times-circle"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>

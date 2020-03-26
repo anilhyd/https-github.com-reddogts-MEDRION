@@ -1,0 +1,118 @@
+{
+    "formFields": {
+        "user_code":{ "type":"text", "required":true, "maxLength":20, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "user_type":{ "type":"radio", "required":true, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "user_emailId":{ "type":"text", "required":true, "maxLength":200, "pattern":null,  "validationMessage":"Field is either empty or incorrect"},
+        "user_confirm_emailId":{ "type":"text", "required":true, "maxLength":200, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "user_ssn":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+        "user_title":{ "type":"select", "required":false, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "user_first_name":{ "type":"text", "required":false, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "user_middle_name":{ "type":"text", "required":false, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "user_last_name":{ "type":"text", "required":false, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "user_full_name":{ "type":"text", "required":false, "maxLength":200, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+        "user_gender":{ "type":"select", "required":false, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "user_designation":{ "type":"text", "required":false, "maxLength":200, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "user_phone_number":{ "type":"text", "required":false, "maxLength":15, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "user_phone_number_ext":{ "type":"text", "required":false, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "user_alternate_phone_number":{ "type":"text", "required":false, "maxLength":15, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+        "user_alternate_phone_number_ext":{ "type":"text", "required":false, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "user_department":{ "type":"select", "required":true, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "user_reporting_manager":{ "type":"select", "required":false, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "user_organization":{ "type":"text", "required":true, "maxLength":200, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+    },
+    "formOperations": [
+        {
+            "name": "Save",
+            "id": "save",
+            "type":"submit"
+        }
+    ],
+    "columnDefs": [
+        {
+            "headerName": "Code",
+            "field": "user_code",
+            "sort": "asc"
+        },
+        {
+            "headerName": "Full Name",
+            "field": "user_full_name"            
+        },
+        { 
+            "headerName": "eMail ID",
+            "field": "user_emailId"
+        },
+        {
+            "headerName": "User Type",
+            "field": "user_type"
+        },
+        {
+            "headerName": "Organization",
+            "field": "user_organization"
+        },
+        {
+            "headerName": "Status",
+            "field": "user_status"
+        }
+    ],
+    "operations": [
+        {
+            "name": "First Time Login",
+            "id": "first_time_login"
+        },
+        {
+            "name": "Map Roles",
+            "id": "map_roles"
+        },
+        {
+            "name": "Active",
+            "id": "active"
+        },
+        {
+            "name": "InActive",
+            "id": "inactive"
+        },
+        {
+            "name": "Delete",
+            "id": "delete"
+        },
+        {
+            "name": "Edit",
+            "id": "edit"
+        },
+        {
+            "name": "Add New",
+            "id": "add"
+        }
+    ],
+    "advanceSearch": 
+        {
+            "fields": [
+                {
+                    "label": "Name",
+                    "field": "name",
+                    "type": "text"
+                },
+                {
+                    "label": "Email Id",
+                    "field": "lic_valid_upto",
+                    "type": "text"
+                },
+                {
+                    "label": "User Type",
+                    "field": "status",
+                    "type": "dropdown"
+                },{
+                    "label": "Organization",
+                    "field": "name",
+                    "type": "text"
+                },{
+                    "label": "Status",
+                    "field": "name",
+                    "type": "dropdown"
+                }
+            ]
+        }
+}

@@ -1,0 +1,117 @@
+{
+    "formFields": {
+        "amd_type": {
+            "type": "dropdown",
+            "required": true,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "amd_title": {
+            "type": "text",
+            "maxLength": 100,
+            "pattern": null,
+            "required": false
+        },
+        "patient_name": {
+            "type": "dropdown",
+            "maxLength": 100,
+            "required": false
+        },
+        "submission_date": {
+            "type": "text",
+            "maxLength": 100,
+            "required": false
+        },
+        "form_name": {
+            "type": "dropdown",
+            "required": false,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "section": {
+            "type": "dropdown",
+            "required": false,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "field_label": {
+            "type": "dropdown",
+            "required": false,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "field_value": {
+            "type": "text",
+            "required": false,
+            "maxLength": 500,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "notes": {
+            "type": "textarea",
+            "required": true,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "upload_file_name": {
+            "type": "text",
+            "required": true,
+            "maxLength": 150,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "upload_date": {
+            "type": "text",
+            "required": false,
+            "maxLength": 15,
+            "pattern": null,
+            "disabled": true
+        }
+    },
+
+    "columnDefs": [
+        {
+            "headerName": "Type",
+            "field": "type",
+            "sort": "asc"            
+        },
+        {
+            "headerName": "Title",
+            "field": "title"
+        },
+        {
+            "headerName": "Submitted Date",
+            "field": "submitted_date"
+        }
+    ],
+    "operations": [
+        {
+            "name": "Delete",
+            "id": "delete"
+        },
+        {
+            "name": "Edit",
+            "id": "edit"
+        },
+        {
+            "name": "Add New",
+            "id": "add"
+        }
+    ],
+    "advanceSearch": 
+        {
+            "fields": [
+                {
+                    "label": "Type",
+                    "field": "title",
+                    "type": "text"
+                },
+                {
+                    "label": "Title",
+                    "field": "org",
+                    "type": "text"
+                },
+                {
+                    "label": "Status",
+                    "field": "city",
+                    "type": "dropdown"
+                }
+            ]
+        }
+}

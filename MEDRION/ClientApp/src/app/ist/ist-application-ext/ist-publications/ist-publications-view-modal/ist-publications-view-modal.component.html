@@ -1,0 +1,164 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">{{heading}} Publications</h4>
+  </div>
+
+  <div class="modal-body">
+    <form [formGroup]="publicationsForm">
+      <div class="row">
+        <div class="col-md-4 col-sm-4" *ngIf="formFields?.type">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.type?.required"
+              [options]="typeOptions" formControlName="type"
+              required="{{formFields?.type?.required}}"></mdb-select>
+            <label for="type"><span *ngIf="formFields?.type?.required" class="red-text">*</span>
+              Type</label>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4" *ngIf="formFields?.content">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.content?.required"
+              [options]="contentOptions" formControlName="content"
+              required="{{formFields?.content?.required}}"></mdb-select>
+            <label for="content"><span *ngIf="formFields?.content?.required" class="red-text">*</span>
+              Content</label>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4" *ngIf="formFields?.journal_name">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.journal_name?.required" maxlength="{{formFields?.journal_name?.maxLength}}"
+              class="form-control" formControlName="journal_name" id="dynmcId1" mdbInput
+              required="{{formFields?.journal_name?.required}}">
+            <label for="dynmcId1"><span *ngIf="formFields?.journal_name?.required" class="red-text">*</span>
+              Journal Name</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-xs-12" *ngIf="formFields?.title">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.title?.required"
+              maxlength="{{formFields?.title?.maxLength}}" class="form-control" formControlName="title" id="dynmcId2"
+              mdbInput required="{{formFields?.title?.required}}">
+            <label for="dynmcId2"><span *ngIf="formFields?.title?.required" class="red-text">*</span>
+              Title</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 col-xs-12" *ngIf="formFields?.expected_date_of_publication">
+          <div class="md-form">
+            <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions"
+              [label]="'Expected Date of Publication'" formControlName="expected_date_of_publication"
+              required="{{formFields?.expected_date_of_publication?.required}}"></mdb-date-picker>
+          </div>
+        </div>
+        <div class="col-sm-4 col-xs-12" *ngIf="formFields?.current_end_date_of_analysis">
+          <div class="md-form">
+            <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions"
+              [label]="'Current End Date of Analysis'" formControlName="current_end_date_of_analysis"
+              required="{{formFields?.current_end_date_of_analysis?.required}}"></mdb-date-picker>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-sm-12" *ngIf="formFields?.notes">
+          <div class="md-form">
+            <textarea mdbValidate maxlength="{{formFields?.notes?.maxLength}}" [validateSuccess]="false"
+              formControlName="notes" id="dynmcId3" type="text" class="md-textarea form-control" mdbInput
+              required="{{formFields?.notes?.required}}"></textarea>
+            <label for="dynmcId3"><span *ngIf="formFields?.notes?.required" class="red-text">*</span>
+              <mdb-icon far icon="sticky-note"></mdb-icon> Notes</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="mt-4 col-12">
+          <h5>Attachments <button style="float:right" size="sm" type="button" mdbBtn color="light"
+              (click)="addNewAttachment()" mdbWavesEffect>Add New Attachment</button> </h5>
+        </div>
+      </div>
+      <div class="row org-grid mb-3" *ngIf="rowData?.length">
+        <div class="col-lg-12" *ngIf="loadGrid">
+          <ag-grid-angular style="width: 99%;" class="ag-theme-balham simple-grid" style="height: calc(100% -  49px)"
+            [rowData]="rowData" [columnDefs]="columnDefs" [gridOptions]="gridOptions" (gridReady)="onGridReady($event)"
+            [frameworkComponents]="frameworkComponents" [context]="context">
+          </ag-grid-angular>
+        </div>
+      </div>
+      <!-- <div class="row">
+            <div class="col-lg-12 col-xs-12">
+              <h6 class="dark-grey-text mb-2"><strong class="card-header-text">Attachements <button type="button" size="sm" mdbBtn color="light" mdbWavesEffect>ADD</button></strong></h6>
+            </div>
+          </div> -->
+      <!-- <div class="row">
+              <div class="col-md-6 col-xs-12 mb-4">
+                  <mdb-card>
+                    <mdb-card-body>
+                        <div class="row">
+                            <div class="col-sm-12 col-xs-12" *ngIf="formFields?.document_type">
+                              <div class="md-form">
+                                <mdb-select mdbValidate [validateSuccess]="false"
+                                [validateError]="formFields?.document_type?.required" [options]="documentOptions"
+                                formControlName="document_type"
+                                required="{{formFields?.document_type?.required}}"></mdb-select>
+                                <label for="document_type"><span *ngIf="formFields?.document_type?.required" class="red-text">*</span>
+                                  Attachments Classification</label>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-12 col-xs-12">
+                            <div class="file-field md-form">
+                              <div mdbBtn floating="true" size="sm" color="info" mdbWavesEffect>
+                                <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
+                                <input type="file" mdbFileSelect (uploadOutput)="onUploadOutput($event)"
+                                  [uploadInput]="uploadInput">
+                              </div>
+                              <div class="file-path-wrapper">
+                                <input class="file-path" type="text" placeholder="Choose File" [value]="showFiles()">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-12 col-xs-12">
+                              <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions"
+                              [placeholder]="'Upload Date'" formControlName="upload_date"
+                              required="{{formFields?.upload_date?.required}}">
+                              </mdb-date-picker>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-12 col-xs-12" *ngIf="formFields?.attachments_notes">
+                            <div class="md-form">
+                              <textarea mdbValidate maxlength="{{formFields?.attachments_notes?.maxLength}}" [validateSuccess]="false"
+                                formControlName="attachments_notes" id="dynmcId3" type="text" class="md-textarea form-control" mdbInput
+                                required="{{formFields?.attachments_notes?.required}}"></textarea>
+                              <label for="dynmcId3"><span *ngIf="formFields?.attachments_notes?.required" class="red-text">*</span>
+                                <mdb-icon far icon="sticky-note"></mdb-icon> Notes</label>
+                            </div>
+                          </div>
+                        </div>
+                    </mdb-card-body>
+                  </mdb-card>
+              </div>
+          </div> -->
+
+    </form>
+  </div>
+
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="save()"
+      *ngIf="heading === 'Add' || heading === 'Edit'" [disabled]="publicationsForm.invalid" mdbWavesEffect>Save</button>
+      <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="save()"
+      *ngIf="heading === 'Add' || heading === 'Edit'" [disabled]="publicationsForm.invalid" mdbWavesEffect>Submit</button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+  </div>
+</div>

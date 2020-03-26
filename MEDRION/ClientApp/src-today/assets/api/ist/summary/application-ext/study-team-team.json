@@ -1,0 +1,83 @@
+[
+    {
+      "id": 1,
+      "first_name": "Anotony Sam Roberts",
+      "user_role": "Lead Investigator",
+      "organisation_name": "Green Hill Medical Center",
+      "occupation": "Surgical Oncology",
+      "email_address": "AnotonySamRoberts@ghmc.com",
+      "phone_number": "882-555-0109"
+    },
+    {
+      "id": 2,
+      "first_name": "Denise H. Shih",
+      "user_role": "Primary Investigator",
+      "organisation_name": "Green Hill Medical Center",
+      "occupation": "Surgical Oncology",
+      "email_address": "DeniseH.Shih@ghmc.com",
+      "phone_number": "702-555-0177"
+    },
+    {
+      "id": 3,
+      "first_name": "Frances A. Gaines",
+      "user_role": "Co-Investigators",
+      "organisation_name": "Freeman Hospital Center",
+      "occupation": "Professor - Breast Oncology",
+      "email_address": "FrancesA.Gaines@fmc.com",
+      "phone_number": "202-555-0131"
+    },
+    {
+      "id": 4,
+      "first_name": "Marie J. Higgins",
+      "user_role": "Nurse",
+      "organisation_name": "Green Hill Medical Center",
+      "occupation": "Clinical Nurse Specialist",
+      "email_address": "MarieJ.Higgins@ghmc.com",
+      "phone_number": "442-555-0163"
+    },
+    {
+      "id": 5,
+      "first_name": "James C. Carter",
+      "user_role": "Co-Investigators",
+      "organisation_name": "Green Hill Medical Center",
+      "occupation": "Breast Surgery & Mammary Ductoscopy",
+      "email_address": "JamesC.Carter@ghmc.com",
+      "phone_number": "202-555-0198"
+    },
+    {
+      "id": 6,
+      "first_name": "Samuel K. Hall",
+      "user_role": "Statastician",
+      "organisation_name": "Freeman Hospital Center",
+      "occupation": "Radiologist",
+      "email_address": "SamuelK.Hall@fhc.com",
+      "phone_number": "222-555-0130"
+    },
+    {
+      "id": 7,
+      "first_name": "Donnie S. Veiga",
+      "user_role": "Administrator",
+      "organisation_name": "Green Hill Medical Center",
+      "occupation": "Medical Physicist",
+      "email_address": "DonnieS.Veiga@ghmc.com",
+      "phone_number": "102-555-0163"
+    },
+    {
+      "id": 8,
+      "first_name": "Thomas A. Allen",
+      "user_role": "Administrator",
+      "organisation_name": "Freeman Hospital Center",
+      "occupation": "Medical Oncology",
+      "email_address": "ThomasA.Allen@fmc.com",
+      "phone_number": "202-555-0198"
+    },
+    {
+      "id": 9,
+      "first_name": "Karen R. Marshall",
+      "user_role": "Nurse",
+      "organisation_name": "Green Hill Medical Center",
+      "occupation": "Radiation Oncology",
+      "email_address": "KarenR.Marshall@ghmc.com",
+      "phone_number": "245-555-0130"
+    }
+  ]

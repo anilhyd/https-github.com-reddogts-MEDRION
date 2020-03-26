@@ -1,0 +1,390 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">{{heading}} Request Product</h4>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="productForm">
+      <div class="row">
+        <div class="col-3" *ngIf="formFields?.product_name">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.product_name?.required"
+              [options]="basicOptions" formControlName="product_name" required="{{formFields?.product_name?.required}}">
+            </mdb-select>
+            <label for="product_name"><span *ngIf="formFields?.product_name?.required" class="red-text">*</span>
+              Product</label>
+          </div>
+        </div>
+        <div class="col-3" *ngIf="formFields?.dosage_formulation">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.dosage_formulation?.required"
+              [options]="basicOptions" formControlName="dosage_formulation"
+              required="{{formFields?.dosage_formulation?.required}}"></mdb-select>
+            <label for="dosage_formulation"><span *ngIf="formFields?.dosage_formulation?.required"
+                class="red-text">*</span>
+              Dosage Formulation</label>
+          </div>
+        </div>
+        <div class="col-2" *ngIf="formFields?.strength">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.strength?.required"
+              maxlength="{{formFields?.strength?.maxLength}}" class="form-control" formControlName="strength"
+              id="strength" mdbInput required="{{formFields?.strength?.required}}">
+            <label for="strength"><span *ngIf="formFields?.strength?.required" class="red-text">*</span>
+              Strength</label>
+          </div>
+        </div>
+        <div class="col-1" *ngIf="formFields?.units">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.units?.required"
+              [options]="basicOptions" formControlName="units" required="{{formFields?.units?.required}}"></mdb-select>
+          </div>
+        </div>
+        <div class="col-3" *ngIf="formFields?.required_by">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.required_by?.required"
+              maxlength="{{formFields?.required_by?.maxLength}}" class="form-control" formControlName="required_by"
+              id="required_by" mdbInput required="{{formFields?.required_by?.required}}">
+            <label for="required_by"><span *ngIf="formFields?.required_by?.required" class="red-text">*</span>
+              To be made available by </label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3" *ngIf="formFields?.fullfillment_type">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.fullfillment_type?.required"
+              [options]="fullfillmentOptions" formControlName="fullfillment_type"
+              required="{{formFields?.fullfillment_type?.required}}"></mdb-select>
+            <label for="fullfillment_type"><span *ngIf="formFields?.fullfillment_type?.required"
+                class="red-text">*</span>
+              Fullfillment Type</label>
+          </div>
+        </div>
+        <div class="col-6" *ngIf="formFields?.shipping_address">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.shipping_address?.required"
+              [options]="basicOptions" formControlName="shipping_address"
+              required="{{formFields?.shipping_address?.required}}"></mdb-select>
+            <label for="shipping_address"><span *ngIf="formFields?.shipping_address?.required" class="red-text">*</span>
+              Shipping Address</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6" *ngIf="formFields?.partner_network">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.partner_network?.required"
+              [options]="basicOptions" formControlName="partner_network"
+              required="{{formFields?.partner_network?.required}}"></mdb-select>
+            <label for="partner_network"><span *ngIf="formFields?.partner_network?.required" class="red-text">*</span>
+              Partner Network</label>
+          </div>
+        </div>
+        <div class="col-6" *ngIf="formFields?.billing_address">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.billing_address?.required"
+              [options]="basicOptions" formControlName="billing_address"
+              required="{{formFields?.billing_address?.required}}"></mdb-select>
+            <label for="billing_address"><span *ngIf="formFields?.billing_address?.required" class="red-text">*</span>
+              Billing Address</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 col-xs-12">
+          <h6 class="dark-grey-text mb-2"><strong class="card-header-text">Patient Information</strong></h6>
+        </div>
+      </div>
+
+      <div class="row mt-2">
+        <div class="col-4" *ngIf="formFields?.allOrSelectedPatients">
+          <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" id="materialInline1" name="allOrSelectedPatients"
+              formControlName="allOrSelectedPatients" [value]="true" mdbInput>
+            <label class="form-check-label" for="materialInline1">All</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" id="materialInline2" name="allOrSelectedPatients"
+              formControlName="allOrSelectedPatients" [value]="false" mdbInput>
+            <label class="form-check-label" for="materialInline2">Selected Patients</label>
+          </div>
+        </div>
+        <div class="col-2">
+          <button type="submit" size="sm" mdbBtn color="amber" class="relative waves-light"
+            mdbWavesEffect>Select</button>
+        </div>
+        <div class="col-6">
+          <p>10 Patients selected - Patient 1, Patient 2, Patient 3, Patient 4</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 col-xs-12">
+          <h6 class="dark-grey-text mb-2"><strong class="card-header-text">Request Quantity Details</strong></h6>
+        </div>
+        <div class="col-2" *ngIf="formFields?.required_quantity">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+              maxlength="{{formFields?.required_quantity?.maxLength}}" class="form-control"
+              formControlName="required_quantity" id="required_quantity" mdbInput
+              required="{{formFields?.required_quantity?.required}}">
+            <label for="required_quantity"><span *ngIf="formFields?.required_quantity?.required"
+                class="red-text">*</span>
+              Required Quantity</label>
+          </div>
+        </div>
+        <div class="col-1" *ngIf="formFields?.required_quantity_dropdown">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.required_quantity_dropdown?.required" [options]="basicOptions"
+              formControlName="required_quantity_dropdown"
+              required="{{formFields?.required_quantity_dropdown?.required}}"></mdb-select>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="md-form">
+            <h6 class="mb-0">Start Date</h6>
+            <p><strong>13-05-2018</strong></p>
+          </div>
+        </div>
+        <div class="col-3" *ngIf="formFields?.recurrence">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.recurrence?.required"
+              [options]="recurrenceOptions" formControlName="recurrence"
+              required="{{formFields?.recurrence?.required}}">
+            </mdb-select>
+            <label for="recurrence"><span *ngIf="formFields?.recurrence?.required" class="red-text">*</span>
+              Recurrence</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 col-xs-12">
+          <h6 class="dark-grey-text mb-2"><strong class="card-header-text">Scheduling Details</strong></h6>
+        </div>
+      </div>
+      <div formGroupName="frequency_details">
+        <div formGroupName="daily">
+          <div class="row" *ngIf="productForm?.value?.recurrence === 'day'">
+
+            <div class="col-3 pr-0">
+              <div class="md-form">
+                <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.days?.required"
+                  maxlength="{{formFields?.days?.maxLength}}" class="form-control" formControlName="days" id="days"
+                  mdbInput required="{{formFields?.days?.required}}">
+                <label for="days"><span *ngIf="formFields?.days?.required" class="red-text">*</span>
+                  Repeats every</label>
+              </div>
+            </div>
+            <div class="col-1 pl-0">
+              <div class="md-form">
+                <p><strong>day</strong></p>
+              </div>
+            </div>
+            <div class="col-8">
+              <p class="mb-0">Ends </p>
+              <div>
+                <!-- <div class="form-check form-check-inline">
+                  <input type="radio" class="form-check-input" id="materialInline43" name="dayNeverOnAfter"
+                    formControlName="dayNeverOnAfter" [value]="'never'" mdbInput>
+                  <label class="form-check-label" for="materialInline43">Never</label>
+                </div> -->
+                <div class="form-check form-check-inline">
+                  <input type="radio" class="form-check-input" id="materialInline44" name="dayNeverOnAfter"
+                    formControlName="dayNeverOnAfter" [value]="'on'" mdbInput>
+                  <label class="form-check-label" for="materialInline44">On
+                    <input mdbInput type="text">
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input type="radio" class="form-check-input" id="materialInline45" name="dayNeverOnAfter"
+                    formControlName="dayNeverOnAfter" [value]="'after'" mdbInput>
+                  <label class="form-check-label" for="materialInline45">After
+                    <input mdbInput type="text"> Occurances
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div formGroupName="weekly">
+          <div class="row" *ngIf="productForm?.value?.recurrence === 'week'">
+            <div class="col-3 pr-0">
+              <div class="md-form">
+                <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.days?.required"
+                  maxlength="{{formFields?.days?.maxLength}}" class="form-control" formControlName="days" id="days"
+                  mdbInput required="{{formFields?.days?.required}}">
+                <label for="days"><span *ngIf="formFields?.days?.required" class="red-text">*</span>
+                  Repeats every</label>
+              </div>
+            </div>
+            <div class="col-1 pl-0">
+              <div class="md-form">
+                <p><strong>day</strong></p>
+              </div>
+            </div>
+            <div class="col-8">
+              <p class="mb-0">Repeat on &nbsp;&nbsp;
+                <mdb-checkbox [inline]="true">MON</mdb-checkbox>
+                <mdb-checkbox [inline]="true">TUE</mdb-checkbox>
+                <mdb-checkbox [inline]="true">WED</mdb-checkbox>
+                <mdb-checkbox [inline]="true">THU</mdb-checkbox>
+                <mdb-checkbox [inline]="true">FRI</mdb-checkbox>
+                <mdb-checkbox [inline]="true">SAT</mdb-checkbox>
+                <mdb-checkbox [inline]="true">SUN</mdb-checkbox>
+              </p>
+              <p class="mb-0">Ends </p>
+              <div>
+                <!-- <div class="form-check form-check-inline">
+                  <input type="radio" class="form-check-input" id="materialInline52" name="weeklyNeverOnAfter"
+                    formControlName="weeklyNeverOnAfter" [value]="'never'" mdbInput>
+                  <label class="form-check-label" for="materialInline52">Never</label>
+                </div> -->
+                <div class="form-check form-check-inline">
+                  <input type="radio" class="form-check-input" id="materialInline53" name="weeklyNeverOnAfter"
+                    formControlName="weeklyNeverOnAfter" [value]="'on'" mdbInput>
+                  <label class="form-check-label" for="materialInline53">On
+                    <input mdbInput type="text">
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input type="radio" class="form-check-input" id="materialInline54" name="weeklyNeverOnAfter"
+                    formControlName="weeklyNeverOnAfter" [value]="'after'" mdbInput>
+                  <label class="form-check-label" for="materialInline54">After
+                    <input mdbInput type="text"> Occurances
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div formGroupName="monthly">
+          <div class="row" *ngIf="productForm?.value?.recurrence === 'month'">
+            <div class="col-3 pr-0">
+              <div class="md-form">
+                <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.days?.required"
+                  maxlength="{{formFields?.days?.maxLength}}" class="form-control" formControlName="days" id="days"
+                  mdbInput required="{{formFields?.days?.required}}">
+                <label for="days"><span *ngIf="formFields?.days?.required" class="red-text">*</span>
+                  Repeats every</label>
+              </div>
+            </div>
+            <div class="col-1 pl-0">
+              <div class="md-form">
+                <p><strong>month</strong></p>
+              </div>
+            </div>
+            <div class="col-8">
+              <p class="mb-0">Repeat on <input type="text"> day </p>
+              <p class="mb-0">Ends </p>
+              <div>
+                <!-- <div class="form-check form-check-inline">
+                  <input type="radio" class="form-check-input" id="materialInline49" name="monthlyNeverOnAfter"
+                    formControlName="monthlyNeverOnAfter" [value]="'never'" mdbInput>
+                  <label class="form-check-label" for="materialInline49">Never</label>
+                </div> -->
+                <div class="form-check form-check-inline">
+                  <input type="radio" class="form-check-input" id="materialInline50" name="monthlyNeverOnAfter"
+                    formControlName="monthlyNeverOnAfter" [value]="'on'" mdbInput>
+                  <label class="form-check-label" for="materialInline50">On
+                    <input mdbInput type="text">
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input type="radio" class="form-check-input" id="materialInline51" name="monthlyNeverOnAfter"
+                    formControlName="monthlyNeverOnAfter" [value]="'after'" mdbInput>
+                  <label class="form-check-label" for="materialInline51">After
+                    <input mdbInput type="text"> Occurances
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div formGroupName="yearly">
+          <div class="row" *ngIf="productForm?.value?.recurrence === 'year'">
+            <div class="col-3 pr-0">
+              <div class="md-form">
+                <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.days?.required"
+                  maxlength="{{formFields?.days?.maxLength}}" class="form-control" formControlName="days" id="days"
+                  mdbInput required="{{formFields?.days?.required}}">
+                <label for="days"><span *ngIf="formFields?.days?.required" class="red-text">*</span>
+                  Repeats every</label>
+              </div>
+            </div>
+            <div class="col-1 pl-0">
+              <div class="md-form">
+                <p><strong>Year</strong></p>
+              </div>
+            </div>
+            <div class="col-8">
+              <p class="mb-0">Ends </p>
+              <div>
+                <!-- <div class="form-check form-check-inline">
+                  <input type="radio" class="form-check-input" id="materialInline46" name="yearlyNeverOnAfter"
+                    formControlName="yearlyNeverOnAfter" [value]="'never'" mdbInput>
+                  <label class="form-check-label" for="materialInline46">Never</label>
+                </div> -->
+                <div class="form-check form-check-inline">
+                  <input type="radio" class="form-check-input" id="materialInline47" name="yearlyNeverOnAfter"
+                    formControlName="yearlyNeverOnAfter" [value]="'on'" mdbInput>
+                  <label class="form-check-label" for="materialInline47">On
+                    <input mdbInput type="text">
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input type="radio" class="form-check-input" id="materialInline48" name="yearlyNeverOnAfter"
+                    formControlName="yearlyNeverOnAfter" [value]="'after'" mdbInput>
+                  <label class="form-check-label" for="materialInline48">After
+                    <input mdbInput type="text"> Occurances
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 col-xs-12">
+          <h6 class="dark-grey-text mb-2"><strong class="card-header-text">Quantity Usage Info</strong></h6>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <div class="md-form">
+            <h6 class="mb-0">Allocated Quantity</h6>
+            <p><strong>100 Tablets</strong></p>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="md-form">
+            <h6 class="mb-0">Used Quantity</h6>
+            <p><strong>100 Tablets</strong></p>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="md-form">
+            <h6 class="mb-0">Return Quantity</h6>
+            <p><strong>100 Tablets</strong></p>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="md-form">
+            <h6 class="mb-0">Balance Quantity</h6>
+            <p><strong>100 Tablets</strong></p>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()"
+      *ngIf="heading === 'Add' || heading === 'Edit'" [disabled]="productForm.invalid" mdbWavesEffect>Save</button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+  </div>
+</div>

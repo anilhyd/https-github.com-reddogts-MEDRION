@@ -1,0 +1,128 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">Pregnancy Details</h4>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="pregnancyDetailsForm">
+
+      <div class="row">
+        <div class="col-6">
+          <div class="md-form">
+            <mdb-select  mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.pregnant?.required" [options]="chooseOptionsConstant"
+              formControlName="pregnant" required="{{formFields?.pregnant?.required}}">
+            </mdb-select>
+            <label for="pregnant"><span *ngIf="formFields?.pregnant?.required" class="red-text">*</span>
+              Pregnant?</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <div class="md-form">
+            <mdb-date-picker class="date-picker-right" [inline]="true" name="due_date" [options]="myDatePickerOptions"
+              [label]="'Due Date'" formControlName="due_date"
+              required="{{formFields?.due_date?.required}}">
+            </mdb-date-picker>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.nof_fetus?.required"
+              maxlength="{{formFields?.nof_fetus?.maxLength}}" class="form-control" formControlName="nof_fetus"
+              id="nof_fetus" mdbInput required="{{formFields?.nof_fetus?.required}}"/>
+            <label for="nof_fetus"><span *ngIf="formFields?.nof_fetus?.required" class="red-text">*</span>
+              Number of Fetus</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.weeks_at_exposure?.required"
+              maxlength="{{formFields?.weeks_at_exposure?.maxLength}}" class="form-control" formControlName="weeks_at_exposure"
+              id="weeks_at_exposure" mdbInput required="{{formFields?.weeks_at_exposure?.required}}"/>
+            <label for="weeks_at_exposure"><span *ngIf="formFields?.weeks_at_exposure?.required" class="red-text">*</span>
+              Weeks at Exposure</label>
+          </div>
+        </div>
+        <div class="col-6 mb-3">
+          <h6 class="dark-grey-text"><strong class="card-header-text">Trimester at Exposure</strong></h6>
+          <div>
+            <mdb-checkbox class="mr-5" formControlName="first" [inline]="true">First</mdb-checkbox>
+            <mdb-checkbox class="mr-5" formControlName="second" [inline]="true">Second</mdb-checkbox>
+            <mdb-checkbox class="mr-5" formControlName="third" [inline]="true">Third</mdb-checkbox>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="md-form">
+            <mdb-date-picker class="date-picker-right" [inline]="true" name="delivery_date" [options]="myDatePickerOptions"
+              [label]="'Delivery Date'" formControlName="delivery_date"
+              required="{{formFields?.delivery_date?.required}}">
+            </mdb-date-picker>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="md-form">
+            <mdb-select  mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.delivery_type?.required" [options]="deliveryTypeOptions"
+              formControlName="delivery_type" required="{{formFields?.delivery_type?.required}}">
+            </mdb-select>
+            <label for="delivery_type"><span *ngIf="formFields?.delivery_type?.required" class="red-text">*</span>
+              Delivery Type</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="md-form">
+            <mdb-select  mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.birth_type?.required" [options]="birthTypeOptions"
+              formControlName="birth_type" required="{{formFields?.birth_type?.required}}">
+            </mdb-select>
+            <label for="birth_type"><span *ngIf="formFields?.birth_type?.required" class="red-text">*</span>
+              Birth Type</label>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="md-form">
+            <mdb-select  mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.fetal_outcome?.required" [options]="fetalOutcomeOptions"
+              formControlName="fetal_outcome" required="{{formFields?.fetal_outcome?.required}}">
+            </mdb-select>
+            <label for="fetal_outcome"><span *ngIf="formFields?.fetal_outcome?.required" class="red-text">*</span>
+              Fetal Outcome</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <div class="md-form">
+            <textarea mdbValidate [validateSuccess]="false" [validateError]="formFields?.notes?.required"
+              maxlength="{{formFields?.notes?.maxLength}}" class="form-control full-width" formControlName="notes"
+              id="notes" mdbInput required="{{formFields?.notes?.required}}"></textarea>
+            <label for="notes"><span *ngIf="formFields?.notes?.required" class="red-text">*</span>
+              Notes (100/100)</label>
+          </div>
+        </div>
+      </div>
+      
+      
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()"
+      [disabled]="pregnancyDetailsForm.invalid" mdbWavesEffect>Save</button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+  </div>
+</div>

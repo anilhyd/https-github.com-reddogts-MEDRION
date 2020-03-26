@@ -1,0 +1,65 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">{{heading}}</h4>
+  </div>
+  <p class="modal-second-title">
+    <mdb-icon far icon="lightbulb" class="amber-text" size="lg"></mdb-icon> Include File attachments to the mail
+    correspondence
+  </p>
+  <div class="modal-body">
+    <div class="md-form mb-3">
+      <input mdbInput type="text" id="form1" class="form-control">
+      <label for="form1" class="">Search</label>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div>
+          <p>Select Template</p>
+        </div>
+        <div class="list-group">
+          <a href="javascript:void(0)" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1" style="font-size:15px">Template Name</h5>
+              <small>
+                <mdb-checkbox [default]="true" class="chip-check">&nbsp;</mdb-checkbox>
+              </small>
+            </div>
+            <p class="mb-1" style="font-size:13px">Template Description</p>
+          </a>
+          <a href="javascript:void(0)" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1" style="font-size:15px">Template Name</h5>
+              <small>
+                <mdb-checkbox [default]="true" class="chip-check">&nbsp;</mdb-checkbox>
+              </small>
+            </div>
+            <p class="mb-1" style="font-size:13px">Template Description</p>
+          </a>
+          <a href="javascript:void(0)" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1" style="font-size:15px">Template Name</h5>
+              <small>
+                <mdb-checkbox [default]="true" class="chip-check">&nbsp;</mdb-checkbox>
+              </small>
+            </div>
+            <p class="mb-1" style="font-size:13px">Template Description</p>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()"
+      mdbWavesEffect> Ok
+    </button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+  </div>
+</div>

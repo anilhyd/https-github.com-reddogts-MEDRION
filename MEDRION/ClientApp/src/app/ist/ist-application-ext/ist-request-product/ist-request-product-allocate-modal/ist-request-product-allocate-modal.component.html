@@ -1,0 +1,138 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">{{heading}}</h4>
+  </div>
+  <p class="modal-second-title">
+    <mdb-icon far icon="lightbulb" class="amber-text" size="lg"></mdb-icon> Allows to enter the Allocation details for
+    the request
+  </p>
+  <div class="modal-body">
+    <form [formGroup]="productAllocationForm">
+      <div class="row">
+        <div class="col-4">
+          <h6 class="mb-0">Request ID</h6>
+          <p><strong>REQ-001</strong></p>
+        </div>
+        <div class="col-4">
+          <h6 class="mb-0">Product Name</h6>
+          <p><strong>Product A</strong></p>
+        </div>
+        <div class="col-4">
+          <h6 class="mb-0">Requested Qty</h6>
+          <p><strong>100 Nos</strong></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-2" *ngIf="formFields?.allocated_quantity">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+              maxlength="{{formFields?.allocated_quantity?.maxLength}}" class="form-control"
+              formControlName="allocated_quantity" id="allocated_quantity" mdbInput
+              required="{{formFields?.allocated_quantity?.required}}">
+            <label for="allocated_quantity"><span *ngIf="formFields?.allocated_quantity?.required"
+                class="red-text">*</span>
+              Allocated Qty</label>
+          </div>
+        </div>
+        <div class="col-sm-2" *ngIf="formFields?.allocated_quantity_dropdown">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.allocated_quantity_dropdown?.required" [options]="returnQuantityOptions"
+              formControlName="allocated_quantity_dropdown"
+              required="{{formFields?.allocated_quantity_dropdown?.required}}" id="allocated_quantity_dropdown">
+            </mdb-select>
+            <label for="allocated_quantity_dropdown"><span *ngIf="formFields?.allocated_quantity_dropdown?.required"
+                class="red-text">*</span></label>
+          </div>
+        </div>
+        <div class="col-sm-4" *ngIf="formFields?.date_of_dispatch">
+          <div class="md-form">
+            <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions"
+              formControlName="date_of_dispatch" required="{{formFields?.date_of_dispatch?.required}}" [label]="'Date of Dispatch *'"
+              required="{{formFields?.date_of_dispatch?.required}}">
+            </mdb-date-picker>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-sm-8" *ngIf="formFields?.shipping_service_provider">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+              maxlength="{{formFields?.shipping_service_provider?.maxLength}}" class="form-control"
+              formControlName="shipping_service_provider" id="shipping_service_provider" mdbInput
+              required="{{formFields?.shipping_service_provider?.required}}">
+            <label for="shipping_service_provider"><span *ngIf="formFields?.shipping_service_provider?.required"
+                class="red-text">*</span>
+              Shippment Service Provider</label>
+          </div>
+        </div>
+        <div class="col-sm-4" *ngIf="formFields?.shipping_tracking_id">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+              maxlength="{{formFields?.shipping_tracking_id?.maxLength}}" class="form-control"
+              formControlName="shipping_tracking_id" id="shipping_tracking_id" mdbInput
+              required="{{formFields?.shipping_tracking_id?.required}}">
+            <label for="shipping_tracking_id"><span *ngIf="formFields?.shipping_tracking_id?.required"
+                class="red-text">*</span>
+              Shippment Number</label>
+          </div>
+        </div>
+        <div class="col-sm-4" *ngIf="formFields?.batch_number_code_number">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+              maxlength="{{formFields?.batch_number_code_number?.maxLength}}" class="form-control"
+              formControlName="batch_number_code_number" id="batch_number_code_number" mdbInput
+              required="{{formFields?.batch_number_code_number?.required}}">
+            <label for="batch_number_code_number"><span *ngIf="formFields?.batch_number_code_number?.required"
+                class="red-text">*</span>
+              Batch Number</label>
+          </div>
+        </div>
+        <div class="col-sm-4" *ngIf="formFields?.date_of_manufacture">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+              maxlength="{{formFields?.date_of_manufacture?.maxLength}}" class="form-control"
+              formControlName="date_of_manufacture" id="date_of_manufacture" mdbInput
+              required="{{formFields?.date_of_manufacture?.required}}">
+            <label for="date_of_manufacture"><span *ngIf="formFields?.date_of_manufacture?.required"
+                class="red-text">*</span>
+              Manufacturing Date</label>
+          </div>
+        </div>
+        <div class="col-sm-4" *ngIf="formFields?.date_of_expiry">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+              maxlength="{{formFields?.date_of_expiry?.maxLength}}" class="form-control"
+              formControlName="date_of_expiry" id="date_of_expiry" mdbInput
+              required="{{formFields?.date_of_expiry?.required}}">
+            <label for="date_of_expiry"><span *ngIf="formFields?.date_of_expiry?.required" class="red-text">*</span>
+              Expiry Date</label>
+          </div>
+        </div>
+        <div class="col-sm-12" *ngIf="formFields?.storage_instructions">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+              maxlength="{{formFields?.storage_instructions?.maxLength}}" class="form-control"
+              formControlName="storage_instructions" id="storage_instructions" mdbInput
+              required="{{formFields?.storage_instructions?.required}}">
+            <label for="storage_instructions"><span *ngIf="formFields?.storage_instructions?.required"
+                class="red-text">*</span>
+              Storage Instructions</label>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()"
+      [disabled]="productAllocationForm.invalid" mdbWavesEffect>Save</button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+  </div>
+</div>

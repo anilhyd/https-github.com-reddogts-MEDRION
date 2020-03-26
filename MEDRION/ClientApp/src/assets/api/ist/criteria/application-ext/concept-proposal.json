@@ -1,0 +1,26 @@
+{
+    "formFields": {
+        "objectives":{ "type":"textarea", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "background":{ "type":"textarea", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "hypothesis":{ "type":"textarea", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "study_design":{ "type":"textarea", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "description_of_subject_regulations":{ "type":"textarea", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+        "duration_of_patient_recruitment":{ "type":"number", "required":false, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "in_1":{ "type":"dropdown", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "estimated_start_date":{ "type":"date", "required":false, "maxLength":15, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "estimated_end_date":{"type":"date", "required":false, "maxLength":15, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "length_of_study":{"type":"number", "required":false, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+        "in_2":{"type":"dropdown", "required":false, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "assesment_tools_and_procedures":{"type":"textarea", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "primary_outcomes":{ "type":"textarea", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "secondary_outcomes":{ "type":"textarea", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+    },
+    "operations": [
+        {
+            "name": "Save",
+            "id": "save"
+        }
+    ]
+}

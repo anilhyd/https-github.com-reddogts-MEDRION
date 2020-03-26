@@ -1,0 +1,111 @@
+{
+    "formFields": [
+        {
+            "add_formFields":{
+                "code":{ "type":"text", "required":true, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "name":{ "type":"text", "required":true, "maxLength":100, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "dosage_formulation":{ "type":"dropdown", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "strength":{ "type":"text", "required":false, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "units":{ "type":"dropdown", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "therapeutic_area":{ "type":"dropdown", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "program":{ "type":"dropdown", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "company_drug_code":{ "type":"text", "required":false, "maxLength":100, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "product_code":{ "type":"text", "required":false, "maxLength":100, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+            },
+            "add_product_approval":{        
+                "trade_name":{ "type":"text", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "market_authorization_holder":{ "type":"dropdown", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "approval_type":{ "type":"dropdown", "required":false, "maxLength":20, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "approval_number":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "country_authorizations":{
+                    "type":"formGroup-label",
+                    "required":false,
+                    "formFields":{
+                        "country":{"type":"dropdown","required":false,"maxLength": null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                        "website":{"type":"text","required":false,"maxLength": 100, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                        "contact_number":{"type":"text","required":false,"maxLength": 15, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                        "award_date":{"type":"date","required":false,"maxLength": null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                        "withdrawn_date":{"type":"date","required":false,"maxLength": null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                        "ndc_number":{"type":"text","required":false,"maxLength": 50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                        "manufacturer_site":{"type":"dropdown","required":false,"maxLength": null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                        "description":{"type":"text","required":false,"maxLength": 100, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+                    }
+                }
+            }
+        }
+    ],
+
+    "columnDefs": [
+        {
+            "headerName": "Code",
+            "field": "code",
+            "sort": "asc"            
+        },
+        {
+            "headerName": "Name",
+            "field": "name"
+        },
+        {
+            "headerName": "Therapeutic Area",
+            "field": "therapeutic_area"
+        },
+        {
+            "headerName": "Strength, Units",
+            "field": "strength_units"
+        },
+        {
+            "headerName": "No of Approvals",
+            "field": "no_of_approvals"
+        },
+        {
+            "headerName": "Status",
+            "field": "status"
+        }
+    ],
+    "operations": [        
+        {
+            "name": "Inactive",
+            "id": "inactive"
+        },
+        {
+            "name": "Active",
+            "id": "active"
+        },
+        {
+            "name": "Delete",
+            "id": "delete"
+        },
+        {
+            "name": "Edit",
+            "id": "edit"
+        },
+        {
+            "name": "Add New",
+            "id": "add"
+        }        
+    ],
+    "advanceSearch": 
+        {
+            "fields": [
+                {
+                    "label": "Name",
+                    "field": "name",
+                    "type": "text"
+                },
+                {
+                    "label": "Therapeutic Area",
+                    "field": "product",
+                    "type": "text"
+                },
+                {
+                    "label": "Status",
+                    "field": "product",
+                    "type": "dropdown",
+                    "options":[
+                        {"value":"active", "label":"Active"},
+                        {"value":"inactive", "label":"Inactive"}
+                    ]
+                }
+            ]
+        }
+}

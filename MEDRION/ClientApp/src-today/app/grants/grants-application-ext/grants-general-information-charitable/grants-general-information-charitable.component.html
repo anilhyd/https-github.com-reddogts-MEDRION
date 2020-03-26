@@ -1,0 +1,269 @@
+<form [formGroup]="generalInformationCharitableForm">
+  <div class="row">
+    <div class="col-3">
+      <mdb-breadcrumb customClass="black-text lighten-4 custom-breadcrumb"
+        style="font-size:13px;text-transform:uppercase;">
+        <mdb-breadcrumb-item>General Information (Charitable)
+        </mdb-breadcrumb-item>
+      </mdb-breadcrumb>
+    </div>
+    <div class="col-9">
+      <app-operations-bar [operations]="operations" [enableOperations]="generalInformationCharitableForm.valid?true:false"
+        (callbackOperation)="onCallbackOperation($event)"></app-operations-bar>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.area_of_focus">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.area_of_focus?.required"
+        [options]="AreaOfFocusOptions" formControlName="area_of_focus"
+        required="{{formFields?.area_of_focus?.required}}"></mdb-select>
+        <label for="area_of_focus"><span *ngIf="formFields?.area_of_focus?.required" class="red-text">*</span>
+          Area of Focus</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.organisations_mission_statement">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.organisations_mission_statement?.required"
+        maxlength="{{formFields?.organisations_mission_statement?.maxLength}}" class="form-control" formControlName="organisations_mission_statement"
+        id="organisations_mission_statement" mdbInput required="{{formFields?.organisations_mission_statement?.required}}">
+        <label for="organisations_mission_statement"><span *ngIf="formFields?.organisations_mission_statement?.required" class="red-text">*</span>
+          Organisation's Mission Statement</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.organisations_annual_operating">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.organisations_annual_operating?.required"
+        maxlength="{{formFields?.organisations_annual_operating?.maxLength}}" class="form-control" formControlName="organisations_annual_operating"
+        id="organisations_annual_operating" mdbInput required="{{formFields?.organisations_annual_operating?.required}}">
+        <label for="organisations_annual_operating"><span *ngIf="formFields?.organisations_annual_operating?.required" class="red-text">*</span>
+          Organisation's Annual Operating</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.organisations_board_of_directors">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.organisations_board_of_directors?.required"
+        maxlength="{{formFields?.organisations_board_of_directors?.maxLength}}" class="form-control" formControlName="organisations_board_of_directors"
+        id="organisations_board_of_directors" mdbInput required="{{formFields?.organisations_board_of_directors?.required}}">
+        <label for="organisations_board_of_directors"><span *ngIf="formFields?.organisations_board_of_directors?.required" class="red-text">*</span>
+          List of Organisation's Board of Directors</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.geographic_focus_of_organisation">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.geographic_focus_of_organisation?.required"
+        maxlength="{{formFields?.geographic_focus_of_organisation?.maxLength}}" class="form-control" formControlName="geographic_focus_of_organisation"
+        id="geographic_focus_of_organisation" mdbInput required="{{formFields?.geographic_focus_of_organisation?.required}}">
+        <label for="geographic_focus_of_organisation"><span *ngIf="formFields?.geographic_focus_of_organisation?.required" class="red-text">*</span>
+          Geographic Focus of Organisation</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.requested_program_title">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.requested_program_title?.required"
+        maxlength="{{formFields?.requested_program_title?.maxLength}}" class="form-control" formControlName="requested_program_title"
+        id="requested_program_title" mdbInput required="{{formFields?.requested_program_title?.required}}">
+        <label for="requested_program_title"><span *ngIf="formFields?.requested_program_title?.required" class="red-text">*</span>
+          Requested/Program Title</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.brief_description_of_request">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.brief_description_of_request?.required"
+        maxlength="{{formFields?.brief_description_of_request?.maxLength}}" class="form-control" formControlName="brief_description_of_request"
+        id="brief_description_of_request" mdbInput required="{{formFields?.brief_description_of_request?.required}}">
+        <label for="brief_description_of_request"><span *ngIf="formFields?.brief_description_of_request?.required" class="red-text">*</span>
+          Brief description of request or program</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.goals_and_objectives">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.goals_and_objectives?.required"
+        maxlength="{{formFields?.goals_and_objectives?.maxLength}}" class="form-control" formControlName="goals_and_objectives"
+        id="goals_and_objectives" mdbInput required="{{formFields?.goals_and_objectives?.required}}">
+        <label for="goals_and_objectives"><span *ngIf="formFields?.goals_and_objectives?.required" class="red-text">*</span>
+          Goals and Objectives of the program</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.geographic_focus_of_request">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.geographic_focus_of_request?.required"
+        maxlength="{{formFields?.geographic_focus_of_request?.maxLength}}" class="form-control" formControlName="geographic_focus_of_request"
+        id="geographic_focus_of_request" mdbInput required="{{formFields?.geographic_focus_of_request?.required}}">
+        <label for="geographic_focus_of_request"><span *ngIf="formFields?.geographic_focus_of_request?.required" class="red-text">*</span>
+          Geographic Focus of Request</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-xs-12" *ngIf="formFields?.program_start_date">
+      <div class="md-form">
+        <mdb-date-picker [inline]="true" name="program_start_date" [options]="myDatePickerOptions"
+        [label]="'Program Start Date'" formControlName="program_start_date"
+        required="{{formFields?.program_start_date?.required}}"></mdb-date-picker>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-xs-12" *ngIf="formFields?.program_end_date">
+      <div class="md-form">
+        <mdb-date-picker [inline]="true" name="program_end_date" [options]="myDatePickerOptions"
+        [label]="'Program End Date'" formControlName="program_end_date"
+        required="{{formFields?.program_end_date?.required}}"></mdb-date-picker>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.requested_amount">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.requested_amount?.required"
+        maxlength="{{formFields?.requested_amount?.maxLength}}" class="form-control" formControlName="requested_amount"
+        id="requested_amount" mdbInput required="{{formFields?.requested_amount?.required}}">
+        <label for="requested_amount"><span *ngIf="formFields?.requested_amount?.required" class="red-text">*</span>
+          Requested Amount</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-10 col-xs-12" *ngIf="formFields?.program_fund_be_used_for_patient_assistance">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.program_fund_be_used_for_patient_assistance?.required"
+        [options]="yesNoOption" formControlName="program_fund_be_used_for_patient_assistance"
+        required="{{formFields?.program_fund_be_used_for_patient_assistance?.required}}"></mdb-select>
+        <label for="detailed_purpose"><span *ngIf="formFields?.program_fund_be_used_for_patient_assistance?.required" class="red-text">*</span>
+          Will part of the program fund be used for patient assistance?</label>
+      </div>
+    </div>
+  </div>
+  <h6 class="mt-2 mb-3"><strong>Additional Documentation for the Request</strong></h6>
+  <div class="row mt-2" *ngIf="formFields?.request_proposal">
+    <div class="col-2">
+      <label  class="label-as mt-3">Request/Proposal</label>
+    </div>
+    <div class="col-6">
+      <div class="file-field">
+        <div mdbBtn rounded="true" color="light" size="sm" class="waves-light ml-0" mdbWavesEffect>
+          <span>
+            <mdb-icon fas icon="upload" class="mr-1"></mdb-icon>Upload Document
+          </span>
+          <input type="file" mdbFileSelect>
+        </div>
+        <button type="button" mdbBtn mdbBtn color="link" size="sm" title="Delete"
+          mdbWavesEffect><i class="fas fa-trash-alt"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-2" *ngIf="formFields?.proposed_program_budget">
+    <div class="col-2">
+      <label  class="label-as mt-3">Proposed Program Budget</label>
+    </div>
+    <div class="col-6">
+      <div class="file-field">
+        <div mdbBtn rounded="true" color="light" size="sm" class="waves-light ml-0" mdbWavesEffect>
+          <span>
+            <mdb-icon fas icon="upload" class="mr-1"></mdb-icon>Upload Document
+          </span>
+          <input type="file" mdbFileSelect>
+        </div>
+        <button type="button" mdbBtn mdbBtn color="link" size="sm" title="Delete"
+          mdbWavesEffect><i class="fas fa-trash-alt"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-2 mb-3" *ngIf="formFields?.annual_budget">
+    <div class="col-2">
+      <label  class="label-as mt-3">Annual Budget</label>
+    </div>
+    <div class="col-6">
+      <div class="file-field">
+        <div mdbBtn rounded="true" color="light" size="sm" class="waves-light ml-0" mdbWavesEffect>
+          <span>
+            <mdb-icon fas icon="upload" class="mr-1"></mdb-icon>Upload Document
+          </span>
+          <input type="file" mdbFileSelect>
+        </div>
+        <button type="button" mdbBtn mdbBtn color="link" size="sm" title="Delete"
+          mdbWavesEffect><i class="fas fa-trash-alt"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-xs-12" *ngIf="formFields?.current_irs_letter_of_determination">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.current_irs_letter_of_determination?.required"
+        [options]="yesNoOption" formControlName="current_irs_letter_of_determination"
+        required="{{formFields?.current_irs_letter_of_determination?.required}}"></mdb-select>
+        <label for="current_irs_letter_of_determination"><span *ngIf="formFields?.current_irs_letter_of_determination?.required" class="red-text">*</span>
+          Is the current IRS letter of determination in your profile up to date?</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-xs-12" *ngIf="formFields?.previously_received_funding_from_incyte">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.previously_received_funding_from_incyte?.required"
+        [options]="yesNoOption" formControlName="previously_received_funding_from_incyte"
+        required="{{formFields?.previously_received_funding_from_incyte?.required}}"></mdb-select>
+        <label for="previously_received_funding_from_incyte"><span *ngIf="formFields?.previously_received_funding_from_incyte?.required" class="red-text">*</span>
+          Have you previously received funding from Incyte</label>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-2" *ngIf="formFields?.oig_opinion_letter">
+    <div class="col-2">
+      <label  class="label-as mt-3">OIG Opinion Letter</label>
+    </div>
+    <div class="col-6">
+      <div class="file-field">
+        <div mdbBtn rounded="true" color="light" size="sm" class="waves-light ml-0" mdbWavesEffect>
+          <span>
+            <mdb-icon fas icon="upload" class="mr-1"></mdb-icon>Upload Document
+          </span>
+          <input type="file" mdbFileSelect>
+        </div>
+        <button type="button" mdbBtn mdbBtn color="link" size="sm" title="Delete"
+          mdbWavesEffect><i class="fas fa-trash-alt"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-2 mb-4" *ngIf="formFields?.agenda">
+    <div class="col-2">
+      <label class="label-as mt-3">Agenda</label>
+    </div>
+    <div class="col-6">
+      <div class="file-field">
+        <div mdbBtn rounded="true" color="light" size="sm" class="waves-light ml-0" mdbWavesEffect>
+          <span>
+            <mdb-icon fas icon="upload" class="mr-1"></mdb-icon>Upload Document
+          </span>
+          <input type="file" mdbFileSelect>
+        </div>
+        <button type="button" mdbBtn mdbBtn color="link" size="sm" title="Delete"
+          mdbWavesEffect><i class="fas fa-trash-alt"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

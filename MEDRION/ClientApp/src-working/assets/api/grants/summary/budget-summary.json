@@ -1,0 +1,90 @@
+[
+    {
+      "type": "Management Fees",
+      "subType": "Total # of Activites",
+      "totalFees": 10000,
+      "requestedAmount": 5000,
+      "allocatedAmount": 5000,
+      "currency": "$",
+      "notes": "Sample Notes on Actitivities planned",
+      "allocatedDate": "10-Apr-20",
+      "id": 1
+    },
+    {
+      "type": "Management Fees",
+      "subType": "Enduring Activties",
+      "totalFees": 2000,
+      "requestedAmount": 1000,
+      "allocatedAmount": 500,
+      "currency": "$",
+      "notes": "Sample Notes on Enduring Activities",
+      "allocatedDate": "10-Apr-20",
+      "id": 2
+    },
+    {
+      "type": "Meeting Logistics",
+      "subType": "Meeting Rooms",
+      "totalFees": 7000,
+      "requestedAmount": 3500,
+      "allocatedAmount": 3500,
+      "currency": "$",
+      "notes": "Sample Notes on Meeting Rooms",
+      "allocatedDate": "10-Apr-20",
+      "id": 3
+    },
+    {
+      "type": "Meeting Logistics",
+      "subType": "Equipment",
+      "totalFees": 1000,
+      "requestedAmount": 1000,
+      "allocatedAmount": 1000,
+      "currency": "$",
+      "notes": "Sample Notes on Equipment",
+      "allocatedDate": "10-Apr-20",
+      "id": 4
+    },
+    {
+      "type": "Faculty and Staff Travel",
+      "subType": "Faculty Airfare",
+      "totalFees": 4000,
+      "requestedAmount": 2000,
+      "allocatedAmount": 2000,
+      "currency": "$",
+      "notes": "Sample Notes Faculty Airfare",
+      "allocatedDate": "10-Apr-20",
+      "id": 5
+    },
+    {
+      "type": "Production and shipping",
+      "subType": "Postage",
+      "totalFees": 100,
+      "requestedAmount": 100,
+      "allocatedAmount": 100,
+      "currency": "$",
+      "notes": "Sample Notes on Pastage Charges",
+      "allocatedDate": "10-Apr-20",
+      "id": 6
+    },
+    {
+      "type": "Accreditation Fees",
+      "subType": "Accreditation Fees",
+      "totalFees": 500,
+      "requestedAmount": 500,
+      "allocatedAmount": 500,
+      "currency": "$",
+      "notes": "Fees paid for Accreditation",
+      "allocatedDate": "10-Apr-20",
+      "id": 7
+    },
+    {
+      "type": "Meals",
+      "subType": "Breakfast",
+      "totalFees": 3000,
+      "requestedAmount": 1500,
+      "allocatedAmount": 1500,
+      "currency": "$",
+      "notes": "Sample Notes on Breakfast",
+      "allocatedDate": "10-Apr-20",
+      "id": 8
+    }
+  ]

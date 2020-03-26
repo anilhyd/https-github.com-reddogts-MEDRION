@@ -1,0 +1,192 @@
+{
+    "formFields": {
+        "therapeutic_area": {
+            "type": "dropdown",
+            "required": true,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "delivery_format_type": {
+            "type": "dropdown",
+            "required": true,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "enduring_material":{
+            "type": "formGroup-label",
+            "required": false,
+            "formFields":{
+            "meeting_type":{ 
+                "type":"check", 
+                "required":true,  
+                "validationMessage":"Field is either empty or incorrect"
+            },
+            "opt_in_process": {
+                "type":"radio", 
+                "required":true,  
+                "validationMessage":"Field is either empty or incorrect"
+            },
+            "release_date": {
+                "type": "input",
+                "required": true,
+                "pattern": null,
+                "validationMessage": "Field is either empty or incorrect"
+            },
+            "expiry_date": {
+                "type": "text",
+                "pattern": null,
+                "required": true,
+                "validationMessage": "Field is either empty or incorrect"
+            },
+            "transfer_mode": {
+                "type": "text",
+                "maxLength": 50,
+                "pattern": null,
+                "required": true,
+                "validationMessage": "Field is either empty or incorrect"
+            }
+        }
+        },
+        "live": {   
+            "type": "formGroup-label",
+            "required": false,
+            "formFields":{
+                "faculty_or_speakers": {
+                    "type": "text",
+                    "maxLength": 50,
+                    "pattern": null,
+                    "required": true,
+                    "validationMessage": "Field is either empty or incorrect"
+                },
+                "open_or_closed_meeting": {
+                    "type": "text",
+                    "maxLength": 50,
+                    "pattern": null,
+                    "required": true,
+                    "validationMessage": "Field is either empty or incorrect"
+                },
+                "activity_start_date": {
+                    "type": "input",
+                    "required": true,
+                    "pattern": null,
+                    "validationMessage": "Field is either empty or incorrect"
+                },
+                "activity_end_date": {
+                    "type": "text",
+                    "pattern": null,
+                    "required": true,
+                    "validationMessage": "Field is either empty or incorrect"
+                },
+                "venue": {
+                    "type": "text",
+                    "maxLength": 50,
+                    "pattern": null,
+                    "required": true,
+                    "validationMessage": "Field is either empty or incorrect"
+                },
+                "postal_code": {
+                    "type": "input",
+                    "required": true,
+                    "maxLength": 35,
+                    "pattern": null,
+                    "validationMessage": "Field is either empty or incorrect"
+                },
+                "city": {
+                    "type": "text",
+                    "maxLength": 50,
+                    "pattern": null,
+                    "required": true,
+                    "validationMessage": "Field is either empty or incorrect"
+                },
+                "state": {
+                    "type": "dropdown",
+                    "required": true,
+                    "validationMessage": "Field is either empty or incorrect"
+                },
+                
+                "country": {
+                    "type": "dropdown",
+                    "required": true,
+                    "validationMessage": "Field is either empty or incorrect"
+                }
+            }
+        },
+        "web": {
+            "type" : "formGroup-label",
+            "required": false,
+            "formFields":{
+            "faculty_or_speakers": {
+                "type": "text",
+                "maxLength": 50,
+                "pattern": null,
+                "required": true,
+                "validationMessage": "Field is either empty or incorrect"
+            },
+            "open_or_closed_meeting": {
+                "type": "text",
+                "maxLength": 50,
+                "pattern": null,
+                "required": true,
+                "validationMessage": "Field is either empty or incorrect"
+            },
+            "activity_start_date": {
+                "type": "input",
+                "required": true,
+                "pattern": null,
+                "validationMessage": "Field is either empty or incorrect"
+            },
+            "activity_end_date": {
+                "type": "text",
+                "pattern": null,
+                "required": true,
+                "validationMessage": "Field is either empty or incorrect"
+            },
+            "web_url": {
+                "type": "text",
+                "maxLength": 50,
+                "pattern": null,
+                "required": true,
+                "validationMessage": "Field is either empty or incorrect"
+            }
+        }
+        }
+    },
+    "formOperations": [
+        {
+            "name": "Save",
+            "id": "save"
+        }
+    ],
+    "columnDefs": [
+        {
+            "headerName": "Therapeutic Area",
+            "field": "therapeuticArea",
+            "sort": "asc"
+        },
+        {
+            "headerName": "Delivery Format Type",
+            "field": "DFormatType"
+        },
+        {
+            "headerName": "Meeting Type",
+            "field": "meetingType"
+        },
+        {
+            "headerName": "Period",
+            "field": "period"
+        }
+    ],
+    "operations": [
+        {
+            "name": "Delete",
+            "id": "delete"
+        },
+        {
+            "name": "Edit",
+            "id": "edit"
+        },
+        {
+            "name": "Add New",
+            "id": "add"
+        }
+    ]
+    
+}

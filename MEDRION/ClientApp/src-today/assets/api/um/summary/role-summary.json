@@ -1,0 +1,23 @@
+[
+    { "id": 1, "role_code": "Venkat", "role_name": "srikanth", "dept_parent_name": "pingali", "role_template": "hyderabad" },
+    { "id": 2, "role_code": "Gopi", "role_name": "Krishna", "dept_parent_name": "devarapalli", "role_template": "hyderabad" },
+    { "id": 3, "role_code": "Siva", "role_name": "naga", "dept_parent_name": "chodavarapu", "role_template": "hyderabad" },
+    { "id": 4, "role_code": "Venkat", "role_name": "srikanth", "dept_parent_name": "pingali", "role_template": "hyderabad" },
+    { "id": 5, "role_code": "Gopi", "role_name": "Krishna", "dept_parent_name": "devarapalli", "role_template": "hyderabad" },
+    { "id": 6, "role_code": "Siva", "role_name": "naga", "dept_parent_name": "chodavarapu", "role_template": "hyderabad" },
+    { "id": 7, "role_code": "Venkat", "role_name": "srikanth", "dept_parent_name": "pingali", "role_template": "hyderabad" },
+    { "id": 8, "role_code": "Gopi", "role_name": "Krishna", "dept_parent_name": "devarapalli", "role_template": "hyderabad" },
+    { "id": 9, "role_code": "Siva", "role_name": "naga", "dept_parent_name": "chodavarapu", "role_template": "hyderabad" },
+    { "id": 10, "role_code": "Venkat", "role_name": "srikanth", "dept_parent_name": "pingali", "role_template": "hyderabad" },
+    { "id": 11, "role_code": "Gopi", "role_name": "Krishna", "dept_parent_name": "devarapalli", "role_template": "hyderabad" },
+    { "id": 12, "role_code": "Siva", "role_name": "naga", "dept_parent_name": "chodavarapu", "role_template": "hyderabad" },
+    { "id": 13, "role_code": "Venkat", "role_name": "srikanth", "dept_parent_name": "pingali", "role_template": "hyderabad" },
+    { "id": 14, "role_code": "Gopi", "role_name": "Krishna", "dept_parent_name": "devarapalli", "role_template": "hyderabad" },
+    { "id": 15, "role_code": "Siva", "role_name": "naga", "dept_parent_name": "chodavarapu", "role_template": "hyderabad" },
+    { "id": 16, "role_code": "Venkat", "role_name": "srikanth", "dept_parent_name": "pingali", "role_template": "hyderabad" },
+    { "id": 17, "role_code": "Gopi", "role_name": "Krishna", "dept_parent_name": "devarapalli", "role_template": "hyderabad" },
+    { "id": 18, "role_code": "Siva", "role_name": "naga", "dept_parent_name": "chodavarapu", "role_template": "hyderabad" },
+    { "id": 19, "role_code": "Venkat", "role_name": "srikanth", "dept_parent_name": "pingali", "role_template": "hyderabad" },
+    { "id": 18, "role_code": "Gopi", "role_name": "Krishna", "dept_parent_name": "devarapalli", "role_template": "hyderabad" },
+    { "id": 19, "role_code": "Siva", "role_name": "naga", "dept_parent_name": "chodavarapu", "role_template": "hyderabad" }
+  ]

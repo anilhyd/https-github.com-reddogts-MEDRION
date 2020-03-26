@@ -1,0 +1,120 @@
+{
+    "id":1,
+    "add_details": {
+        "id":1,
+        "request_type": "product",
+        "request_id": "234324",
+        "product_name": "Product 1",
+        "dosage_formulation": "dosage_1",
+        "strength": "strength 1",
+        "units": "8",
+        "required_by": "2018-01-04",
+        "fullfillment_type": "Ship_to_address",
+        "patient_id": "13213",
+        "shipping_address": "Organization 1",
+        "partner_network": "Network 1",
+        "billing_address": "Address 1XXFFEDFD",
+        "required_quantity": 19,
+        "required_quantity_dropdown": "dosage_1",
+        "used_quantity": 15,
+        "used_quantity_dropdown": "dosage_1",
+        "date_of_receipt": "2018-01-04",
+        "recurrence": "week",
+        "frequency_details": [
+            {
+                "daily": {
+                    "every_days": "",
+                    "days": "",
+                    "every_weekday": "",
+                    "start_date_": "",
+                    "no_end_date": "",
+                    "end_after": "",
+                    "occurances": "",
+                    "end_by": "",
+                    "end_date": ""
+                }
+            },
+            {
+                "weekly": {
+                    "recur_every": "",
+                    "weeks_on": "",
+                    "sunday": "",
+                    "monday": "",
+                    "tuesday": "",
+                    "wednesday": "",
+                    "thursday": "",
+                    "friday": "",
+                    "saturday": "",
+                    "no_end_date": "",
+                    "end_after": "",
+                    "occurances": "",
+                    "end_by": "",
+                    "end_date": ""
+                }
+            },
+            {
+                "monthly": {
+                    "day": "",
+                    "of_every": "",
+                    "month": "",
+                    "on": "",
+                    "month_name": "",
+                    "on_the": "",
+                    "week_number_of_month": "",
+                    "day_of_week": "",
+                    "of_every_month": "",
+                    "start_date": "",
+                    "no_end_date": "",
+                    "end_after": "",
+                    "occurances": "",
+                    "end_by": "",
+                    "end_date": ""
+                }
+            },
+            {
+                "yearly": {
+                    "recur_every": "",
+                    "year": "",
+                    "on": "",
+                    "month_name": "",
+                    "day_of_month": "",
+                    "week_number_of_month": "",
+                    "on_the": "",
+                    "no_of_week": "",
+                    "day_of_week": "",
+                    "of_month_name": "",
+                    "start_date": "",
+                    "no_end_date": "",
+                    "end_after": "",
+                    "occurances": "",
+                    "end_by": "",
+                    "end_date": ""
+                }
+            }
+        ]
+    },
+    "allocate_details": {
+        "allocated_quantity": 10,
+        "allocated_quantity_dropdown": "dosage_1",
+        "shipping_tracking_id": "SSDSDC",
+        "shipping_service_provider": "SSDSDFSF",
+        "date_of_dispatch": "2019-01-04",
+        "batch_number_code_number": "EW234234D",
+        "date_of_manufacture": "2019-01-04",
+        "date_of_expiry": "2019-01-04",
+        "storage_instructions": "Instructions"
+    },
+    "return_or_retireve_details": {
+        "return_quantity": 12,
+        "return_quantity_dropdown": "dosage_1",
+        "shipping_tracking_id": "EW234234D",
+        "shipping_service_provider": "EW234234D",
+        "date_of_dispatch": "2019-01-04",
+        "notes": "Lorem ipsum dolor",
+        "date_of_receipt": "2019-01-04"
+    },
+    "update_usage_details": {
+        "date_of_receipt": "2019-01-04",
+        "used_quantity": 12
+    }
+}

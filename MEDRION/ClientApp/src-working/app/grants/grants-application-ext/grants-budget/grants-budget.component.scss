@@ -1,0 +1,13 @@
+.budget-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    .b-list-item {
+        width: 20%;
+        padding: 10px 13px;
+        font-size: 13px;
+        span {
+            display: block;
+        }
+    }
+}

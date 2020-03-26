@@ -1,0 +1,341 @@
+{
+    "formFields": {
+        "prefix": {
+            "type": "dropdown",
+            "required": true,
+            "maxLength": 25,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "first_name": {
+            "type": "text",
+            "required": true,
+            "maxLength": 50,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "middle_name": {
+            "type": "text",
+            "required": false,
+            "maxLength": 50,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "last_name": {
+            "type": "text",
+            "required": true,
+            "maxLength": 50,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "occupation": {
+            "type": "text",
+            "required": false,
+            "maxLength": 10,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "specialization": {
+            "type": "text",
+            "required": false,
+            "maxLength": 10,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "medical_license_number": {
+            "type": "text",
+            "required": true,
+            "maxLength": 10,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "psy_address": {
+            "type": "text",
+            "required": true,
+            "maxLength": 150,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "psy_postal_code": {
+            "type": "text",
+            "required": true,
+            "maxLength": 5,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "psy_city": {
+            "type": "text",
+            "required": true,
+            "maxLength": 50,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "psy_state": {
+            "type": "text",
+            "required": true,
+            "maxLength": 50,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "psy_country": {
+            "type": "text",
+            "required": true,
+            "maxLength": 50,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "preffered_contact_method": {
+            "type": "text",
+            "required": false,
+            "maxLength": 30,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "email_address": {
+            "type": "text",
+            "required": true,
+            "maxLength": 100,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "confirm_email_address": {
+            "type": "text",
+            "required": false,
+            "maxLength": 100,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "phone_number": {
+            "type": "number",
+            "required": true,
+            "maxLength": 15,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "phone_number_ext": {
+            "type": "number",
+            "required": false,
+            "maxLength": 5,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "other_phone_number": {
+            "type": "number",
+            "required": false,
+            "maxLength": 15,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "other_phone_number_ext": {
+            "type": "number",
+            "required": false,
+            "maxLength": 5,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "fax_number": {
+            "type": "number",
+            "required": false,
+            "maxLength": 15,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "fax_numberExt": {
+            "type": "number",
+            "required": false,
+            "maxLength": 5,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "org_name": {
+            "type": "text",
+            "required": false,
+            "maxLength": 150,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "org_website": {
+            "type": "text",
+            "required": true,
+            "maxLength": 100,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "org_address": {
+            "type": "text",
+            "required": true,
+            "maxLength": 200,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "org_postal_code": {
+            "type": "text",
+            "required": true,
+            "maxLength": 20,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "org_city": {
+            "type": "text",
+            "required": true,
+            "maxLength": 100,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "org_state_or_province": {
+            "type": "text",
+            "required": true,
+            "maxLength": 100,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "org_country": {
+            "type": "text",
+            "required": true,
+            "maxLength": 50,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "institution_tax_number": {
+            "type": "number",
+            "required": true,
+            "maxLength": 20,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        }
+    },
+    "formOperations": [
+        {
+            "name": "Save",
+            "id": "save"
+        }
+    ],
+    "columnDefs": [
+        {
+            "headerName": "Full Name",
+            "field": "name",
+            "sort": "asc"
+        },
+        {
+            "headerName": "Medical License Number",
+            "field": "medical_lic_num"
+        },
+        {
+            "headerName": "City",
+            "field": "city"
+        },
+        {
+            "headerName": "State",
+            "field": "state"
+        },
+        {
+            "headerName": "Country",
+            "field": "country",
+            "filter": true
+        },
+        {
+            "headerName": "Organization Name",
+            "field": "org_name"
+        }
+    ],
+    "advanceSearch": 
+        {
+            "fields": [
+                {
+                    "label": "Organization Name",
+                    "field": "org_name",
+                    "type": "text"
+                },
+                {
+                    "label": "Full Name",
+                    "field": "name",
+                    "type": "text"
+                },
+                {
+                    "label": "Medical License Number",
+                    "field": "medical_lic_num",
+                    "type": "text"
+                },
+                {
+                    "label": "City",
+                    "field": "city",
+                    "type": "text"
+                },
+                {
+                    "label": "State",
+                    "field": "state",
+                    "type": "text"
+                },
+                {
+                    "label": "Country",
+                    "field": "country",
+                    "type": "text"
+                }
+            ]
+        },
+        "caseDetails": [
+            {"caseSet" : {
+                "caseHeading": "",
+                "caseData" : [
+                    {
+                        "label": "Full Name",
+                        "value": "name"
+                    },
+                    {
+                        "label": "Medical License Number",
+                        "value": "medical_lic_num"
+                    },
+                    {
+                        "label": "Address",
+                        "value": "address"
+                    },
+                    {
+                        "label": "City - Postal Code",
+                        "value": "city"
+                    },
+                    {
+                        "label": "State, Country",
+                        "value": "state"
+                    }
+                ]
+    
+            }
+        },
+        {"caseSet" : {
+            "caseHeading": "Preffered Contact Method",
+            "caseData" : [
+                {
+                    "label": "Email Address",
+                    "value": "org_email_Addr"
+                },
+                {
+                    "label": "Name of Organization",
+                    "value": "org_name"
+                },
+                {
+                    "label": "Organization Website",
+                    "value": "org_website"
+                },
+                {
+                    "label": "Address",
+                    "value": "org_Addr"
+                },
+                {
+                    "label": "City - Postal Code",
+                    "value": "org_city"
+                },
+                {
+                    "label": "State, Country",
+                    "value": "org_State"
+                },
+                {
+                    "label": "Institution Tax Number",
+                    "value": "insti_tax_num"
+                }
+            ]
+    
+        }
+    }
+    ]
+    
+}

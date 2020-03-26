@@ -1,0 +1,10 @@
+{
+    "id":1, 
+    "organisation_study_center":"Green Hill Medical Center, San Antonio, 78202", 
+    "site_evaluation_type":"Site Evaluation",
+    "assigned_representative":"Robert Steve", 
+    "expected_date_of_site_visit":"19-Mar-2020", 
+    "contact_person_name":"P.Jayson", 
+    "contact_person_designation":"Senior Supervisor", 
+    "notes":"Sample template is attached so please use this sample data."
+}

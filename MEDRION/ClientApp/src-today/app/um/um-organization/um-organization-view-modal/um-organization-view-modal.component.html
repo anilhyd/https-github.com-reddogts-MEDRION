@@ -1,0 +1,290 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">{{heading}} Organization</h4>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="orgForm">
+      <div class="row">
+        <div class="col-3" *ngIf="formFields?.org_code">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.org_code?.required"
+              maxlength="{{formFields?.org_code?.maxLength}}" class="form-control" formControlName="org_code"
+              id="dynmcId" mdbInput required="{{formFields?.org_code?.required}}">
+            <label for="dynmcId"><span *ngIf="formFields?.org_code?.required" class="red-text">*</span>
+              Code</label>
+          </div>
+        </div>
+        <div class="col-6" *ngIf="formFields?.org_name">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.org_name?.required"
+              maxlength="{{formFields?.org_name?.maxLength}}" class="form-control" formControlName="org_name"
+              id="dynmcId1" mdbInput required="{{formFields?.org_name?.required}}">
+            <label for="dynmcId1"><span *ngIf="formFields?.org_name?.required" class="red-text">*</span>
+              Name</label>
+          </div>
+        </div>
+        <div class="col-3" *ngIf="formFields?.org_default_currency">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.org_default_currency?.required" [options]="currencyOptions"
+              formControlName="org_default_currency" required="{{formFields?.org_default_currency?.required}}">
+            </mdb-select>
+            <label for="dynmcId3"><span *ngIf="formFields?.org_default_currency?.required" class="red-text">*</span>
+              Default Currency</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-7" *ngIf="formFields?.org_description">
+          <div class="md-form">
+            <textarea mdbValidate maxlength="{{formFields?.org_description?.maxLength}}" [validateSuccess]="false"
+              [validateError]="formFields?.org_description?.required" formControlName="org_description" id="dynmcId2"
+              type="text" class="md-textarea form-control" mdbInput
+              required="{{formFields?.org_description?.required}}"></textarea>
+            <label for="dynmcId2"><span *ngIf="formFields?.org_description?.required" class="red-text">*</span>
+              Description</label>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="file-field mt-2">
+            <file-upload></file-upload>
+          </div>
+        </div>
+        <div class="col-2">
+          
+        </div>
+      </div>
+
+      <div class="text-left">
+        <h6 class="dark-grey-text ">
+          <strong class="card-header-text">Licensing Information :</strong>
+
+        </h6>
+      </div>
+      
+      <div class="row">
+        <div class="col-2">
+          <div class="md-form">
+              <p style="margin-top:32px;">Module Licenses :</p>
+          </div>
+        </div>
+        <div class="col-4">
+
+          <div class="md-form">
+            
+            <mdb-checkbox *ngIf="formFields?.org_ist" [inline]="true" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.org_ist?.required" formControlName="org_ist"
+              required="{{formFields?.org_ist?.required}}"><span *ngIf="formFields?.org_ist?.required"
+                class="red-text">*</span>IST
+            </mdb-checkbox>
+            <mdb-checkbox *ngIf="formFields?.org_eap" [inline]="true" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.org_eap?.required" formControlName="org_eap"
+              required="{{formFields?.org_eap?.required}}"><span *ngIf="formFields?.org_eap?.required"
+                class="red-text">*</span>EAP
+            </mdb-checkbox>
+            <mdb-checkbox *ngIf="formFields?.org_grants" [inline]="true" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.org_grants?.required" formControlName="org_eap"
+              required="{{formFields?.org_grants?.required}}"><span *ngIf="formFields?.org_grants?.required"
+                class="red-text">*</span>Grants
+            </mdb-checkbox>
+          </div>
+        </div>
+        <div class="col-3" *ngIf="formFields?.org_valid_up_to">
+          <div class="md-form">
+            <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions" [label]="'Valid Upto'"
+              formControlName="org_valid_up_to" required="{{formFields?.org_valid_up_to?.required}}">
+            </mdb-date-picker>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-left">
+        <h6 class="dark-grey-text ">
+          <strong class="card-header-text">Address & Communications Details :</strong>
+
+        </h6>
+      </div>
+      <div class="row">
+        <div class="col-6" *ngIf="formFields?.org_address_1">
+
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.org_address_1?.required" maxlength="{{formFields?.org_address_1?.maxLength}}"
+              class="form-control" formControlName="org_address_1" id="dynmcId4" mdbInput
+              required="{{formFields?.org_address_1?.required}}">
+            <label for="dynmcId4"><span *ngIf="formFields?.org_address_?.required" class="red-text">*</span>
+              <mdb-icon far icon="address-card"></mdb-icon> Address 1</label>
+          </div>
+        </div>
+
+
+        <div class="col-6" *ngIf="formFields?.org_address_2">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.org_address_2?.required" maxlength="{{formFields?.org_address_2?.maxLength}}"
+              class="form-control" formControlName="org_address_2" id="dynmcId5" mdbInput
+              required="{{formFields?.org_address_2?.required}}">
+            <label for="dynmcId5"><span *ngIf="formFields?.org_address_2?.required" class="red-text">*</span>
+              <mdb-icon far icon="address-card"></mdb-icon> Address 2</label>
+          </div>
+        </div>
+        <div class="col-3" *ngIf="formFields?.org_zip_code">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.org_zip_code?.required" maxlength="{{formFields?.org_zip_code?.maxLength}}"
+              class="form-control" formControlName="org_zip_code" id="dynmcId6" mdbInput
+              required="{{formFields?.org_zip_code?.required}}">
+            <label for="dynmcId6"><span *ngIf="formFields?.org_zip_code?.required" class="red-text">*</span>
+              <mdb-icon fas icon="map-marker-alt"></mdb-icon> Zip Code</label>
+          </div>
+        </div>
+        <div class="col-3" *ngIf="formFields?.org_city">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.org_city?.required"
+              maxlength="{{formFields?.org_city?.maxLength}}" class="form-control" formControlName="org_city"
+              id="dynmcId7" mdbInput required="{{formFields?.org_city?.required}}">
+            <label for="dynmcId7"><span *ngIf="formFields?.org_city?.required" class="red-text">*</span>
+              <mdb-icon far icon="building"></mdb-icon> City</label>
+          </div>
+        </div>
+        <div class="col-3" *ngIf="formFields?.org_country">
+          <div class="md-form">
+
+
+
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.org_country?.required"
+              [options]="countryOptions" formControlName="org_country" required="{{formFields?.org_country?.required}}">
+            </mdb-select>
+            <label for="dynmcId"><span *ngIf="formFields?.org_country?.required" class="red-text">*</span>
+             <mdb-icon fas icon="globe-americas"></mdb-icon> Country</label>
+          </div>
+        </div>
+        <div class="col-3" *ngIf="formFields?.org_state">
+          <div class="md-form">
+
+
+
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.org_state?.required"
+              [options]="stateOptions" formControlName="org_state" required="{{formFields?.org_state?.required}}">
+            </mdb-select>
+            <label for="dynmcId"><span *ngIf="formFields?.org_state?.required" class="red-text">*</span>
+              <mdb-icon fas icon="city"></mdb-icon> State</label>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+
+        <div class="col-2" *ngIf="formFields?.org_phone_no">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.org_phone_no?.required" maxlength="{{formFields?.org_phone_no?.maxLength}}"
+              class="form-control" formControlName="org_phone_no" id="dynmcId8" mdbInput
+              required="{{formFields?.org_phone_no?.required}}">
+            <label for="dynmcId8"><span *ngIf="formFields?.org_phone_no?.required" class="red-text">*</span>
+              <mdb-icon fas icon="phone"></mdb-icon> Phone No</label>
+          </div>
+        </div>
+        <div class="col-1 pl-0" *ngIf="formFields?.org_phone_no_ext">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.org_phone_no_ext?.required" maxlength="{{formFields?.org_phone_no_ext?.maxLength}}"
+              class="form-control" formControlName="org_phone_no_ext" id="dynmcId8" mdbInput
+              required="{{formFields?.org_phone_no_ext?.required}}">
+            <label for="dynmcId8"><span *ngIf="formFields?.org_phone_no_ext?.required" class="red-text">*</span>
+              Ext</label>
+          </div>
+        </div>
+        <div class="col-2" *ngIf="formFields?.org_fax_no">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.org_fax_no?.required"
+              maxlength="{{formFields?.org_fax_no?.maxLength}}" class="form-control" formControlName="org_fax_no"
+              id="dynmcId9" mdbInput required="{{formFields?.org_fax_no?.required}}">
+            <label for="dynmcId9"><span *ngIf="formFields?.org_fax_no?.required" class="red-text">*</span><mdb-icon fas icon="fax"></mdb-icon> Fax
+              No</label>
+          </div>
+        </div>
+        <div class="col-1 pl-0" *ngIf="formFields?.org_fax_no_ext">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.org_fax_no_ext?.required"
+              maxlength="{{formFields?.org_fax_no_ext?.maxLength}}" class="form-control" formControlName="org_fax_no_ext"
+              id="dynmcId9" mdbInput required="{{formFields?.org_fax_no_ext?.required}}">
+            <label for="dynmcId9"><span *ngIf="formFields?.org_fax_no_ext?.required" class="red-text">*</span> Ext</label>
+          </div>
+        </div>
+        <div class="col-3" *ngIf="formFields?.org_website">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.org_website?.required"
+              maxlength="{{formFields?.org_website?.maxLength}}" class="form-control" formControlName="org_website"
+              id="dynmcId10" mdbInput required="{{formFields?.org_website?.required}}">
+            <label for="dynmcId10"><span *ngIf="formFields?.org_website?.required" class="red-text">*</span>
+              Website</label>
+          </div>
+        </div>
+        <div class="col-3" *ngIf="formFields?.org_emailId">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.org_emailId?.required"
+              maxlength="{{formFields?.org_emailId?.maxLength}}" class="form-control" formControlName="org_emailId"
+              id="dynmcId11" mdbInput required="{{formFields?.org_emailId?.required}}">
+            <label for="dynmcId11"><span *ngIf="formFields?.org_emailId?.required" class="red-text">*</span><mdb-icon far icon="envelope"></mdb-icon> 
+              eMail ID</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-left">
+        <h6 class="dark-grey-text ">
+          <strong class="card-header-text">Other Information :</strong>
+
+        </h6>
+      </div>
+      <div class="row">
+        <div class="col-8" *ngIf="formFields?.org_title">
+
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.org_title?.required"
+              maxlength="{{formFields?.org_title?.maxLength}}" class="form-control" formControlName="org_title"
+              id="dynmcId12" mdbInput required="{{formFields?.org_title?.required}}">
+            <label for="dynmcId12"><span *ngIf="formFields?.org_title?.required" class="red-text">*</span>
+              Title</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6" *ngIf="formFields?.org_main_header">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.org_main_header?.required"
+              maxlength="{{formFields?.org_main_header?.maxLength}}" class="form-control"
+              formControlName="org_main_header" id="dynmcId13" mdbInput
+              required="{{formFields?.org_main_header?.required}}">
+            <label for="dynmcId13"><span *ngIf="formFields?.org_main_header?.required" class="red-text">*</span>
+              Main Header</label>
+          </div>
+        </div>
+        <div class="col-6" *ngIf="formFields?.org_sub_header">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.org_sub_header?.required"
+              maxlength="{{formFields?.org_sub_header?.maxLength}}" class="form-control"
+              formControlName="org_sub_header" id="dynmcId14" mdbInput
+              required="{{formFields?.org_sub_header?.required}}">
+            <label for="dynmcId14"><span *ngIf="formFields?.org_sub_header?.required" class="red-text">*</span>
+              Sub Header</label>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="save()"
+      *ngIf="heading === 'Add' || heading === 'Edit'" [disabled]="orgForm.invalid" mdbWavesEffect>Save</button>
+      <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+  </div>
+</div>

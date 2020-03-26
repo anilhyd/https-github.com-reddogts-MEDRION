@@ -1,0 +1,108 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">FAQs</h4>
+  </div>
+  <div class="modal-body">
+    <mdb-accordion [multiple]="false">
+      <mdb-accordion-item [collapsed]="false">
+        <mdb-accordion-item-head>What is a "sponsor-investigator"? Isn't Alpha Scientific the sponsor?
+        </mdb-accordion-item-head>
+        <mdb-accordion-item-body>
+          A sponsor-investigator is a single individual or institution/foundation etc. (where permitted) that is
+          responsible for fulfilling the obligations of both a study sponsor and an investigator.
+          <br>
+          The sponsor's role is not related to financial support, which is provided by a funding agency.
+          <br>
+          Roles and responsibilities in the ISR Program:
+          <br>
+          Funding Agency, Alpha Pharma Scientific: Provides financial support/product for the study according to a
+          defined Research Contract, which outlines milestones and specific deliverables
+          Sponsor, Physician/Institution: Oversees the conduct of the study, including document management, data
+          management, data analysis, publication, FDA reporting, etc.
+          Investigator, Physician: Conduts the day-to-day research according to a defined protocol and per specified
+          procedures
+        </mdb-accordion-item-body>
+      </mdb-accordion-item>
+
+      <mdb-accordion-item>
+        <mdb-accordion-item-head>Is the program appropriate for me?</mdb-accordion-item-head>
+        <mdb-accordion-item-body>
+          The program supports unsolicited, investigator-sponsored trials. This means that as the sponsor, you are
+          entirely responsible for protocol design, statistical analysis, study registration, IRB (or local equivalent)
+          approval, reporting of adverse events, and other sponsor responsibilities.
+          <br>
+          You will need a working knowledge of study design and management as well as applicable regulations for
+          conducting research and good clinical practice (GCP) guidelines.
+          <br>
+          You will also need to ensure you have the resources available to conduct the trial (eg, personnel, equipment,
+          time). For more information, visit www.fda.gov.
+        </mdb-accordion-item-body>
+      </mdb-accordion-item>
+
+      <mdb-accordion-item>
+        <mdb-accordion-item-head>Can the Research Committee or other Scientific experts help me develop a protocol,
+          statistical analysis plan, etc?</mdb-accordion-item-head>
+        <mdb-accordion-item-body>
+          No. As part of the legal requirements, investigator-sponsored trials must be ""unsolicited."" Alpha Pharma
+          Scientific is allowed to post generalized areas of interest but cannot participate in study concept generation
+          or protocol development.
+          <br>
+          Once the protocol is developed, the committee may ask questions to clarify the design or may offer general
+          advice if the proposal needs more structure.
+          <br>
+          However, you must maintain your role as the author and owner of the project.
+        </mdb-accordion-item-body>
+      </mdb-accordion-item>
+
+      <mdb-accordion-item>
+        <mdb-accordion-item-head>Who owns the data after the study has closed?</mdb-accordion-item-head>
+        <mdb-accordion-item-body>
+          In most cases, unless otherwise specified, you or your facility will own the data.
+          <br>
+          Can the ISR Program manage a database for my research, run the statistical analysis, or participate in
+          drafting
+          of publications?
+          <br>
+          No. Alpha Pharma Scientific cannot manage the study nor participate in data collection or analysis.
+        </mdb-accordion-item-body>
+      </mdb-accordion-item>
+
+      <mdb-accordion-item>
+        <mdb-accordion-item-head>Can Alpha Pharma Scientific control or prevent me from publishing results?
+        </mdb-accordion-item-head>
+        <mdb-accordion-item-body>
+          No, Alpha Pharma Scientific would not delay or halt publication of results.
+          <br>
+          To protect intellectual property, you will be required to submit a draft prior to submission to a third
+          party
+          so Alpha Pharma Scientific can request reasonable redrafting if proprietary information is revealed.
+        </mdb-accordion-item-body>
+      </mdb-accordion-item>
+
+      <mdb-accordion-item>
+        <mdb-accordion-item-head>What happens if my study is not progressing as originally anticipated?
+        </mdb-accordion-item-head>
+        <mdb-accordion-item-body>
+          If your study falls behind, requiring additional time, additional funding, or protocol changes, you will be
+          asked to describe what has caused the change and what you believe can be done to get the project back on
+          track.
+          <br>
+          The Divisional Research Committees will review the proposed changes and work with you to make a decision on
+          remedial action.
+          <br>
+          Because study progress is documented in the research contract, an amendment is generally required.
+        </mdb-accordion-item-body>
+      </mdb-accordion-item>
+    </mdb-accordion>
+  </div>
+
+
+  <div class="modal-footer">
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">{{heading}} Program</h4>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="programForm">
+      <div class="row">
+        <div class="col-12">
+          <div class="md-form" *ngIf="formFields?.code">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+              maxlength="{{formFields?.code?.maxLength}}" class="form-control" formControlName="code" id="code" mdbInput
+              required="{{formFields?.code?.required}}">
+            <label for="code"><span *ngIf="formFields?.code?.required" class="red-text">*</span>
+              Code</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="md-form" *ngIf="formFields?.name">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+              maxlength="{{formFields?.name?.maxLength}}" class="form-control" formControlName="name" id="name" mdbInput
+              required="{{formFields?.name?.required}}">
+            <label for="name"><span *ngIf="formFields?.name?.required" class="red-text">*</span>
+              Name</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="md-form" *ngIf="formFields?.description">
+            <textarea mdbValidate maxlength="{{formFields?.description?.maxLength}}" [validateSuccess]="false"
+              formControlName="description" id="description" type="text" class="increased md-textarea form-control"
+              mdbInput required="{{formFields?.description?.required}}"></textarea>
+            <label for="description"><span *ngIf="formFields?.description?.required" class="red-text">*</span>
+              Description</label>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="row">
+        <div class="col-12">
+          <div class="md-form">
+            <p style="margin-bottom: 0px;">Supports <span *ngIf="formFields?.fund?.required" class="ml-1">*</span></p>
+            <mdb-checkbox *ngIf="formFields?.products" class="mr-3" [inline]="true" mdbValidate
+              [validateSuccess]="false" [validateError]="formFields?.products?.required" formControlName="products"
+              required="{{formFields?.products?.required}}">Products
+            </mdb-checkbox>
+            <mdb-checkbox *ngIf="formFields?.fund" [inline]="true" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.fund?.required" formControlName="fund"
+              required="{{formFields?.fund?.required}}">Fund
+            </mdb-checkbox>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()"
+      *ngIf="heading === 'Add' || heading === 'Edit'" [disabled]="programForm.invalid" mdbWavesEffect>Save</button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+
+  </div>
+</div>

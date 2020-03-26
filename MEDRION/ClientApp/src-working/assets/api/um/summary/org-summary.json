@@ -1,0 +1,23 @@
+[
+    { "id": 1,  "org_license_valid_upto":"12 dec 2020", "org_active":"Yes", "org_code": "Venkat", "org_name": "srikanth", "org_country": "pingali", "org_no_of_licensed_modules": "hyderabad" },
+    { "id": 2,  "org_license_valid_upto":"12 dec 2020", "org_active":"Yes", "org_code": "Gopi", "org_name": "Krishna", "org_country": "devarapalli", "org_no_of_licensed_modules": "hyderabad" },
+    { "id": 3,  "org_license_valid_upto":"12 dec 2020", "org_active":"Yes", "org_code": "Siva", "org_name": "naga", "org_country": "chodavarapu", "org_no_of_licensed_modules": "hyderabad" },
+    { "id": 4,  "org_license_valid_upto":"12 dec 2020", "org_active":"Yes", "org_code": "Venkat", "org_name": "srikanth", "org_country": "pingali", "org_no_of_licensed_modules": "hyderabad" },
+    { "id": 5,  "org_license_valid_upto":"12 dec 2020", "org_active":"Yes", "org_code": "Gopi", "org_name": "Krishna", "org_country": "devarapalli", "org_no_of_licensed_modules": "hyderabad" },
+    { "id": 6,  "org_license_valid_upto":"12 dec 2020", "org_active":"Yes", "org_code": "Siva", "org_name": "naga", "org_country": "chodavarapu", "org_no_of_licensed_modules": "hyderabad" },
+    { "id": 7,  "org_license_valid_upto":"12 dec 2020", "org_active":"Yes", "org_code": "Venkat", "org_name": "srikanth", "org_country": "pingali", "org_no_of_licensed_modules": "hyderabad" },
+    { "id": 8,  "org_license_valid_upto":"12 dec 2020", "org_active":"Yes", "org_code": "Gopi", "org_name": "Krishna", "org_country": "devarapalli", "org_no_of_licensed_modules": "hyderabad" },
+    { "id": 9,  "org_license_valid_upto":"12 dec 2020", "org_active":"Yes", "org_code": "Siva", "org_name": "naga", "org_country": "chodavarapu", "org_no_of_licensed_modules": "hyderabad" },
+    { "id": 10, "org_license_valid_upto":"12 dec 2020", "org_active":"Yes", "org_code": "Venkat", "org_name": "srikanth", "org_country": "pingali", "org_no_of_licensed_modules": "hyderabad" },
+    { "id": 11, "org_license_valid_upto":"12 dec 2020", "org_active":"Yes", "org_code": "Gopi", "org_name": "Krishna", "org_country": "devarapalli", "org_no_of_licensed_modules": "hyderabad" },
+    { "id": 12, "org_license_valid_upto":"12 dec 2020", "org_active":"Yes", "org_code": "Siva", "org_name": "naga", "org_country": "chodavarapu", "org_no_of_licensed_modules": "hyderabad" },
+    { "id": 13, "org_license_valid_upto":"12 dec 2020", "org_active":"Yes", "org_code": "Venkat", "org_name": "srikanth", "org_country": "pingali", "org_no_of_licensed_modules": "hyderabad" },
+    { "id": 14, "org_license_valid_upto":"12 dec 2020", "org_active":"Yes", "org_code": "Gopi", "org_name": "Krishna", "org_country": "devarapalli", "org_no_of_licensed_modules": "hyderabad" },
+    { "id": 15, "org_license_valid_upto":"12 dec 2020", "org_active":"Yes", "org_code": "Siva", "org_name": "naga", "org_country": "chodavarapu", "org_no_of_licensed_modules": "hyderabad" },
+    { "id": 16, "org_license_valid_upto":"12 dec 2020", "org_active":"Yes", "org_code": "Venkat", "org_name": "srikanth", "org_country": "pingali", "org_no_of_licensed_modules": "hyderabad" },
+    { "id": 17, "org_license_valid_upto":"12 dec 2020", "org_active":"Yes", "org_code": "Gopi", "org_name": "Krishna", "org_country": "devarapalli", "org_no_of_licensed_modules": "hyderabad" },
+    { "id": 18, "org_license_valid_upto":"12 dec 2020", "org_active":"Yes", "org_code": "Siva", "org_name": "naga", "org_country": "chodavarapu", "org_no_of_licensed_modules": "hyderabad" },
+    { "id": 19, "org_license_valid_upto":"12 dec 2020", "org_active":"Yes", "org_code": "Venkat", "org_name": "srikanth", "org_country": "pingali", "org_no_of_licensed_modules": "hyderabad" },
+    { "id": 18, "org_license_valid_upto":"12 dec 2020", "org_active":"Yes", "org_code": "Gopi", "org_name": "Krishna", "org_country": "devarapalli", "org_no_of_licensed_modules": "hyderabad" },
+    { "id": 19, "org_license_valid_upto":"12 dec 2020", "org_active":"Yes", "org_code": "Siva", "org_name": "naga", "org_country": "chodavarapu", "org_no_of_licensed_modules": "hyderabad" }
+  ]

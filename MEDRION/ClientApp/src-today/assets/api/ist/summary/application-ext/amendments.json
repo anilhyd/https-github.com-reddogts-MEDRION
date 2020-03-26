@@ -1,0 +1,34 @@
+[
+    {
+      "type": "New Protocol",
+      "title": "New Protocal is initiated due to lack of response from the patients for the used dosage.",
+      "submitted_date": "20-Mar-2020",
+      "form_section_field_label": "Study Team",
+      "status": "",
+      "id": 1
+    },
+    {
+      "type": "Change In Protocol",
+      "title": "Change is Protocol is Implemented due to minimal response from the set of patients recruited and response to the drug",
+      "submitted_date": "11-Apr-2020",
+      "form_section_field_label": "Study Team",
+      "status": "",
+      "id": 2
+    },
+    {
+      "type": "New Investigator",
+      "title": "A new Co-Investigator is added for the current application",
+      "submitted_date": "22-Jan-2020",
+      "form_section_field_label": "Study Team",
+      "status": "",
+      "id": 3
+    },
+    {
+      "type": "Study Report",
+      "title": "Correction in Study Report Submission for Product Complaint submitted on 05-May-2020",
+      "submitted_date": "23-May-2020",
+      "form_section_field_label": "Study Team",
+      "status": "",
+      "id": 4
+    }
+  ]

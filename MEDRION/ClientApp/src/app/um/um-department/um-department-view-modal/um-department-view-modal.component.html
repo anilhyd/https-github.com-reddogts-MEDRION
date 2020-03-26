@@ -1,0 +1,68 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">{{heading}} Department</h4>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="deptForm">
+      <div class="row">
+        <div class="col-sm-6" *ngIf="formFields?.dept_code">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+              maxlength="{{formFields?.dept_code?.maxLength}}" class="form-control" formControlName="dept_code"
+              id="dynmcId" mdbInput required="{{formFields?.dept_code?.required}}">
+            <label for="dynmcId"><span *ngIf="formFields?.dept_code?.required" class="red-text">*</span>
+              Code</label>
+          </div>
+        </div>
+        <div class="col-sm-6" *ngIf="formFields?.dept_name">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+              maxlength="{{formFields?.dept_name?.maxLength}}" class="form-control" formControlName="dept_name"
+              id="dynmcId1" mdbInput required="{{formFields?.dept_name?.required}}">
+            <label for="dynmcId1"><span *ngIf="formFields?.dept_name?.required" class="red-text">*</span>
+              Name</label>
+          </div>
+        </div>
+        <div class="col-sm-6" *ngIf="formFields?.dept_parent_name">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.dept_parent_name?.required"
+              [options]="departments" formControlName="dept_parent_name"
+              required="{{formFields?.dept_parent_name?.required}}"></mdb-select>
+            <label for="dynmcId2"><span *ngIf="formFields?.dept_parent_name?.required" class="red-text">*</span>Parent
+              Department</label>
+          </div>
+        </div>
+        <div class="col-sm-6" *ngIf="formFields?.dept_incharge">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.dept_incharge?.required"
+              [options]="persons" formControlName="dept_incharge" required="{{formFields?.dept_incharge?.required}}">
+            </mdb-select>
+            <label for="dynmcId3"><span *ngIf="formFields?.dept_incharge?.required"
+                class="red-text">*</span>Incharge</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12" *ngIf="formFields?.dept_description">
+          <div class="md-form">
+            <textarea mdbValidate maxlength="{{formFields?.dept_description?.maxLength}}" [validateSuccess]="false"
+              formControlName="dept_description" id="dynmcId5" type="text" class="md-textarea form-control" mdbInput
+              required="{{formFields?.dept_description?.required}}"></textarea>
+            <label for="dynmcId5"><span *ngIf="formFields?.dept_description?.required" class="red-text">*</span>
+              Description</label>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="save()"
+      *ngIf="heading === 'Add' || heading === 'Edit'" [disabled]="deptForm.invalid" mdbWavesEffect>Save</button>
+      <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+  </div>
+</div>

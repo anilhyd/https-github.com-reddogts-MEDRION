@@ -1,0 +1,37 @@
+[
+    {
+      "type": "Journal",
+      "content": "Abstract",
+      "title": "Distribution of Locoregional Breast Cancer Recurrence in Relation to Postoperative Radiation Fields and Biological Subtypes",
+      "submited_date": "9-Mar-2021",
+      "id": 1
+    },
+    {
+      "type": "Whitepaper",
+      "content": "Manuscript",
+      "title": "Breast Cancer, Secondary Breast Cancers in Childhood Cancer Male Survivors—Characteristics and Risks",
+      "submited_date": "17-Apr-2020",
+      "id": 2
+    },
+    {
+      "type": "Journal",
+      "content": "Poster",
+      "title": "Radiation Dose-Response for Risk of Myocardial Infarction in Breast Cancer Survivors",
+      "submited_date": "20-Jun-2020",
+      "id": 3
+    },
+    {
+      "type": "Journal",
+      "content": "Abstract",
+      "title": "Clinical-Genomic Models of Node-Positive Breast Cancer: Training, Testing, and Validation",
+      "submited_date": "20-Feb-2020",
+      "id": 4
+    },
+    {
+      "type": "Whitepaper",
+      "content": "Manuscript",
+      "title": "Cardiac Function After Radiation Therapy for Breast Cancer",
+      "submited_date": "20-Jan-2021",
+      "id": 5
+    }
+  ]

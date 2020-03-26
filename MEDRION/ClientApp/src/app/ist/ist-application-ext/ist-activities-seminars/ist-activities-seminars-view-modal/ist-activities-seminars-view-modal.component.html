@@ -1,0 +1,233 @@
+<div class="modal-content">
+
+    <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title w-100 text-center" id="myModalLabel">{{heading}} Activities and Seminars</h4>
+    </div>
+
+    <div class="modal-body">
+        <form [formGroup]="activitiesSeminarsForm">
+            <div class="row">
+                <div class="col-md-3 col-sm-3" *ngIf="formFields?.activity_type">
+                    <div class="md-form">
+                        <mdb-select mdbValidate [validateSuccess]="false"
+                            [validateError]="formFields?.activity_type?.required" [options]="typeOptions"
+                            formControlName="activity_type" 
+                            required="{{formFields?.activity_type?.required}}"></mdb-select>
+                        <label for="activity_type"><span *ngIf="formFields?.activity_type?.required"
+                                class="red-text">*</span>
+                            Activity Type</label>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3" *ngIf="formFields?.activity_sub_type">
+                    <div class="md-form">
+                        <mdb-select mdbValidate [validateSuccess]="false"
+                            [validateError]="formFields?.activity_sub_type?.required" [options]="subtypeOptions"
+                            formControlName="activity_sub_type" 
+                            required="{{formFields?.activity_sub_type?.required}}"></mdb-select>
+                        <label for="activity_sub_type"><span *ngIf="formFields?.activity_sub_type?.required"
+                                class="red-text">*</span>
+                            Activity Sub Type</label>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3" *ngIf="formFields?.activity_start_date">
+                    <div class="md-form">
+                        <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions"
+                            [label]="'Start Date'" formControlName="activity_start_date"
+                            required="{{formFields?.activity_start_date?.required}}">
+                        </mdb-date-picker>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3" *ngIf="formFields?.activity_end_date">
+                    <div class="md-form">
+                        <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions"
+                            [label]="'End Date'" formControlName="activity_end_date"
+                            required="{{formFields?.activity_end_date?.required}}">
+                        </mdb-date-picker>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12" *ngIf="formFields?.activity_title">
+                    <div class="md-form">
+                        <input type="text" mdbValidate [validateSuccess]="false"
+                            [validateError]="formFields?.activity_title?.required"
+                            maxlength="{{formFields?.activity_title?.maxLength}}" class="form-control"
+                            formControlName="activity_title" id="dynmcId1" mdbInput
+                            required="{{formFields?.activity_title?.required}}">
+                        <label for="dynmcId1"><span *ngIf="formFields?.activity_title?.required"
+                                class="red-text">*</span>
+                            Title</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12" *ngIf="formFields?.activity_agenda">
+                    <div class="md-form">
+                        <textarea mdbValidate maxlength="{{formFields?.activity_agenda?.maxLength}}"
+                            [validateSuccess]="false" [validateError]="formFields?.activity_agenda?.required"
+                            formControlName="activity_agenda" id="dynmcId2" type="text" class="md-textarea form-control"
+                            mdbInput required="{{formFields?.activity_agenda?.required}}"></textarea>
+                        <label for="dynmcId2"><span *ngIf="formFields?.activity_agenda?.required"
+                                class="red-text">*</span>
+                            Agenda</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12" *ngIf="formFields?.activity_overview">
+                    <div class="md-form">
+                        <textarea mdbValidate maxlength="{{formFields?.activity_overview?.maxLength}}"
+                            [validateSuccess]="false" [validateError]="formFields?.activity_overview?.required"
+                            formControlName="activity_overview" id="dynmcId3" type="text"
+                            class="md-textarea form-control" mdbInput
+                            required="{{formFields?.activity_overview?.required}}"></textarea>
+                        <label for="dynmcId3"><span *ngIf="formFields?.activity_overview?.required"
+                                class="red-text">*</span>
+                            Overview</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12" *ngIf="formFields?.notes">
+                    <div class="md-form">
+                        <textarea mdbValidate maxlength="{{formFields?.notes?.maxLength}}"
+                            [validateSuccess]="formFields?.notes?.required" formControlName="notes" id="dynmcId9"
+                            type="text" class="md-textarea form-control" mdbInput
+                            required="{{formFields?.notes?.required}}"></textarea>
+                        <label for="dynmcId9"><span *ngIf="formFields?.notes?.required" class="red-text">*</span>
+                            <mdb-icon far icon="sticky-note"></mdb-icon> Notes</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="row">
+                        <div class="col-lg-8 col-xs-12">
+                            <h6 class="dark-grey-text mb-2"><strong class="card-header-text">Speakers</strong></h6>
+                        </div>
+                        <div class="col-lg-4 col-xs-12 mb-2">
+                            <button type="button" size="sm" mdbBtn color="light" style="width: 100%;margin: 0px"
+                                mdbWavesEffect>ADD</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        
+                        <div class="col-lg-12 col-xs-12 mb-2">
+                            <div class="alert alert-warning">
+                                <strong style="font-size:14px;">Ezra Cohen</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9">
+                    <div class="row">
+                        <div class="col-lg-12 col-xs-12" *ngIf="formFields?.activty_session_title">
+                            <div class="md-form">
+                                <input type="text" mdbValidate [validateSuccess]="false"
+                                    [validateError]="formFields?.activty_session_title?.required"
+                                    maxlength="{{formFields?.activty_session_title?.maxLength}}" class="form-control"
+                                    formControlName="activty_session_title" id="dynmcId4" mdbInput
+                                    required="{{formFields?.activty_session_title?.required}}">
+                                <label for="dynmcId4"><span *ngIf="formFields?.activty_session_title?.required"
+                                        class="red-text">*</span>
+                                    Activity Session Title</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4 col-xs-12" *ngIf="formFields?.faculty_first_name">
+                            <div class="md-form">
+                                <input type="text" mdbValidate [validateSuccess]="false"
+                                    [validateError]="formFields?.faculty_first_name?.required"
+                                    maxlength="{{formFields?.faculty_first_name?.maxLength}}" class="form-control"
+                                    formControlName="faculty_first_name" id="dynmcId5" mdbInput
+                                    required="{{formFields?.faculty_first_name?.required}}">
+                                <label for="dynmcId5"><span *ngIf="formFields?.faculty_first_name?.required"
+                                        class="red-text">*</span>
+                                    First Name</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-xs-12" *ngIf="formFields?.faculty_last_name">
+                            <div class="md-form">
+                                <input type="text" mdbValidate [validateSuccess]="false"
+                                    [validateError]="formFields?.faculty_last_name?.required"
+                                    maxlength="{{formFields?.faculty_last_name?.maxLength}}" class="form-control"
+                                    formControlName="faculty_last_name" id="dynmcId6" mdbInput
+                                    required="{{formFields?.faculty_last_name?.required}}">
+                                <label for="dynmcId6"><span *ngIf="formFields?.faculty_last_name?.required"
+                                        class="red-text">*</span>
+                                    Last Name</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4 col-xs-12" *ngIf="formFields?.occupation">
+                            <div class="md-form">
+                                <input type="text" mdbValidate [validateSuccess]="false"
+                                    [validateError]="formFields?.occupation?.required"
+                                    maxlength="{{formFields?.occupation?.maxLength}}" class="form-control"
+                                    formControlName="occupation" id="dynmcId7" mdbInput
+                                    required="{{formFields?.occupation?.required}}">
+                                <label for="dynmcId7"><span *ngIf="formFields?.occupation?.required"
+                                        class="red-text">*</span>
+                                    Occupation</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-xs-12" *ngIf="formFields?.qualification">
+                            <div class="md-form">
+                                <input type="text" mdbValidate [validateSuccess]="false"
+                                    [validateError]="formFields?.qualification?.required"
+                                    maxlength="{{formFields?.qualification?.maxLength}}" class="form-control"
+                                    formControlName="qualification" id="dynmcId8" mdbInput
+                                    required="{{formFields?.qualification?.required}}">
+                                <label for="dynmcId8"><span *ngIf="formFields?.qualification?.required"
+                                        class="red-text">*</span>
+                                    Qualification</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- <div  class="col-lg-6 col-md-6" *ngIf="formFields?.occupation">
+                            <div class="md-form">
+                                <mdb-select mdbValidate [validateSuccess]="false"
+                                [validateError]="formFields?.document_type?.required" [options]="documentOptions"
+                                formControlName="document_type"
+                                required="{{formFields?.document_type?.required}}"></mdb-select>
+                                <label for="document_type"><span *ngIf="formFields?.document_type?.required" class="red-text">*</span>
+                                Attachments Classification</label>
+                            </div>
+                        </div> -->
+                        <div class="col-sm-8 col-xs-12" *ngIf="formFields?.qualification">
+                            <div class="file-field mt-2">
+                                <file-upload></file-upload>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="row">
+                        <div class="col-sm-6 col-xs-12">
+                            <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions"
+                            [placeholder]="'Upload Date'" formControlName="upload_date"
+                            required="{{formFields?.upload_date?.required}}">
+                            </mdb-date-picker>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="modal-footer">
+        <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="save()"
+            *ngIf="heading === 'Add' || heading === 'Edit'" [disabled]="activitiesSeminarsForm.invalid"
+            mdbWavesEffect>Save</button>
+            <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="save()"
+            *ngIf="heading === 'Add' || heading === 'Edit'" [disabled]="activitiesSeminarsForm.invalid"
+            mdbWavesEffect>Submit</button>
+        <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+            (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+        
+    </div>
+</div>

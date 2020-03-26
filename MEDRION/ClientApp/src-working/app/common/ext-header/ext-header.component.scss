@@ -1,0 +1,95 @@
+.record-state{
+    height: 40px;
+    width: 240px;
+    bottom: 0px;
+    position: fixed;
+    z-index: 1042;
+    color: #000;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    padding: 10px;
+    font-size: 12px;
+    padding-left: 1vw;
+}
+.nav-full-width{
+    width: 100%;
+    
+    li{
+        p{
+            margin-top: 5px; 
+            margin-bottom: 0px;
+        }
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .psy-name{
+        border-left: 1px dashed rgba(255, 255, 255, 0.15);
+        width: 10%;
+        border-right:1px dashed rgba(255, 255, 255, 0.15);
+    }
+    .study-sponsored{
+        width: 10%;
+        border-right:1px dashed rgba(255, 255, 255, 0.15);
+    }
+    .title{
+        width: 60%;
+        border-right:1px dashed rgba(255, 255, 255, 0.15);
+    }
+    .request-type{
+        width: 10%;
+        border-right:1px dashed rgba(255, 255, 255, 0.15);
+    }   
+    .review{
+        width: 10%;
+        border-left:1px dashed rgba(255, 255, 255, 0.15);
+        height: 65px;
+        .normal-more-review{
+            font-size: 13px;
+            font-weight: 400;
+        }
+    }
+}
+.normal {
+    font-size: 10px;
+    font-weight: 500;
+    margin-top: 8px !important;
+}
+.normal-more {
+    font-size: 13px;
+    font-weight: 400;
+    margin-top: -3px !important;
+}
+.normal-more-review{
+    margin-top:7px !important; 
+    text-transform: uppercase;
+}
+.btn-primary {
+    background-color: #4285f4!important;
+    color: #fff;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #0069d9 !important;
+    border-color: #0062cc;
+}
+
+.check-popover {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 1px;
+    .popover {
+        position: absolute;
+        left: 50%;
+        bottom: 4px;
+        margin-left: -100px;
+    }
+}
+
+.inactive-button {
+    opacity: 0.7;
+    &.activate-button {
+        opacity: 1;
+    }
+}

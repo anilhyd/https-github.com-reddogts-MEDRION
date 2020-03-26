@@ -1,0 +1,140 @@
+{
+    "formFields": {
+        
+        "prefix":{ "type":"dropdown", "required":true, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "first_name":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "middle_name":{ "type":"text", "required":false, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "last_name":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "occupation":{ "type":"text", "required":false, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+        "speciality":{ "type":"text", "required":false, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "medical_license_number":{ "type":"text", "required":false, "maxLength":15, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "address":{ "type":"text", "required":true, "maxLength":150, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "postal_code":{"type":"text", "required":false, "maxLength":10, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "city":{"type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+        "state":{"type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "country":{"type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "preferred_contact_method":{ "type":"text", "required":false, "maxLength":30, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "email_address":{ "type":"text", "required":true, "maxLength":100, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "phone_number":{"type":"number", "required":true, "maxLength":15, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+        "ext_phone_number":{ "type":"number", "required":true, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "other_phone_number":{"type":"number", "required":false, "maxLength":15, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "ext_other_phone_number":{ "type":"number", "required":false, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "fax":{"type":"number", "required":false, "maxLength":15, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "ext_fax":{ "type":"number", "required":false, "maxLength":5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+        "organisation_name":{ "type":"dropdown", "required":true, "maxLength":100, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "user_role":{ "type":"dropdown", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "cv_upload_attachment":{"type":"file", "required":false, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "notes":{"type":"textarea", "required":false, "maxLength":5000, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+    },
+
+
+
+    "columnDefs": [
+        {
+            "headerName": "First Name",
+            "field": "first_name",
+            "sort": "asc"            
+        },
+        {
+            "headerName": "User Role",
+            "field": "user_role"
+        },
+        {
+            "headerName": "Organisation Name",
+            "field": "organisation_name"
+        },
+        {
+            "headerName": "Occupation",
+            "field": "occupation"
+        },
+        {
+            "headerName": "Email ID",
+            "field": "email_address"
+        },
+        {
+            "headerName": "Phone No",
+            "field": "phone_number"
+        }
+    ],
+    "operations": [
+        {
+            "name": "Add New",
+            "id": "add"
+        },
+        {
+            "name": "Edit",
+            "id": "edit"
+        },
+        {
+            "name": "Delete",
+            "id": "delete"
+        }
+    ],
+    "advanceSearch": 
+        {
+            "fields": [
+                {
+                    "label": "First Name",
+                    "field": "first_name",
+                    "type": "text"
+                },
+                {
+                    "label": "Organisation Name",
+                    "field": "organisation_name",
+                    "type": "text"
+                },
+                {
+                    "label": "User Role",
+                    "field": "user_role",
+                    "type": "dropdown",
+                    "options": [{ "value": "PrimaryInvestigator", "label":"Primary Investigator"},{ "value": "LeadInvestigator", "label":"Lead Investigator"},{ "value": "Co-Investigators", "label":"Co-Investigators"},{ "value": "Statastics", "label":"Statastics"},{ "value": "Administrator", "label":"Administrator"},{"value":"Nurses", "label":"Nurses"}]
+                },
+                {
+                    "label": "Occupation",
+                    "field": "occupation",
+                    "type": "text"
+                },
+                {
+                    "label": "Email",
+                    "field": "email",
+                    "type": "text"
+                },
+                {
+                    "label": "Address",
+                    "field": "address",
+                    "type": "text"
+                },
+                {
+                    "label": "Phone Number",
+                    "field": "phone_number",
+                    "type": "text"
+                }
+            ],
+            "filters": [
+                {
+                    "label": "New Applications in last one week",
+                    "filter_key":"unique_key_1",
+                    "criteria": ""
+                },
+                {
+                    "label": "New Applicaitons in last one month",
+                    "filter_key":"unique_key_2",
+                    "criteria": ""
+                },
+                {
+                    "label": "New Applications in last one quarter",
+                    "filter_key":"unique_key_3",
+                    "criteria": ""
+                },
+                {
+                    "label": "New Applications in last one year",
+                    "filter_key":"unique_key_4",
+                    "criteria": ""
+                }
+            ]
+        }
+}

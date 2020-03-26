@@ -1,0 +1,63 @@
+{
+    "formFields":
+        {
+            "code":{ "type":"text", "required":true, "maxLength":20, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+            "name":{ "type":"text", "required":true, "maxLength":100, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+            "description":{ "type":"textarea", "required":false, "maxLength":500, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+            "loi_required":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+        },
+
+    "columnDefs": [
+        {
+            "headerName": "Code",
+            "field": "code",
+            "sort": "asc"            
+        },
+        {
+            "headerName": "Name",
+            "field": "name"
+        },
+        {
+            "headerName": "LOI Required",
+            "field": "loi_required"
+        }
+    ],
+    "operations": [        
+        {
+            "name": "Edit",
+            "id": "edit"
+        },
+        {
+            "name": "Delete",
+            "id": "delete"
+        },
+        {
+            "name": "Active",
+            "id": "active"
+        },
+        {
+            "name": "Inactive",
+            "id": "inactive"
+        },
+        {
+            "name": "Add New",
+            "id": "add"
+        }        
+    ],
+    "advanceSearch": 
+        {
+            "fields": [
+                {
+                    "label": "Code",
+                    "field": "code",
+                    "type": "text"
+                },
+                {
+                    "label": "Name",
+                    "field": "name",
+                    "type": "text"
+                }
+            ]
+
+        }
+}

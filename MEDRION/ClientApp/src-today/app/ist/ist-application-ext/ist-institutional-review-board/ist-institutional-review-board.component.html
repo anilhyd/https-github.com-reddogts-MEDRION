@@ -1,0 +1,185 @@
+<form [formGroup]="institutionalReviewBoardForm">
+  <div class="row">
+    <div class="col-3">
+      <mdb-breadcrumb customClass="black-text lighten-4 custom-breadcrumb"
+        style="font-size:13px;text-transform:uppercase;">
+        <mdb-breadcrumb-item>Institutional Review Board
+        </mdb-breadcrumb-item>
+      </mdb-breadcrumb>
+    </div>
+    <div class="col-9">
+      <app-operations-bar [operations]="operations" [enableOperations]="institutionalReviewBoardForm.valid?true:false"
+        (callbackOperation)="onCallbackOperation($event)"></app-operations-bar>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6" *ngIf="formFields?.name">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.name?.required"
+          maxlength="{{formFields?.name?.maxLength}}" class="form-control" formControlName="name" id="dynmcId1" mdbInput
+          required="{{formFields?.name?.required}}">
+        <label for="dynmcId1"><span *ngIf="formFields?.name?.required" class="red-text">*</span>
+          Name</label>
+      </div>
+    </div>
+    <div class="col-3" *ngIf="formFields?.website">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.website?.required"
+          maxlength="{{formFields?.website?.maxLength}}" class="form-control" formControlName="website" id="dynmcId2"
+          mdbInput required="{{formFields?.website?.required}}">
+        <label for="dynmcId2"><span *ngIf="formFields?.website?.required" class="red-text">*</span>
+          Website</label>
+      </div>
+    </div>
+    <div class="col-3" *ngIf="formFields?.institutional_review_board_type">
+      <div class="md-form">
+        <mdb-select mdbValidate [validateSuccess]="false"
+          [validateError]="formFields?.institutional_review_board_type?.required" [options]="reviewBoardOptions"
+          formControlName="institutional_review_board_type"
+          required="{{formFields?.institutional_review_board_type?.required}}"></mdb-select>
+        <label for="dynmcId8"><span *ngIf="formFields?.institutional_review_board_type?.required"
+            class="red-text">*</span>
+           Board Type</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12 col-xs-12">
+      <h6 class="dark-grey-text"><strong class="card-header-text">Address and Communication Details
+          :</strong></h6>
+    </div>
+    <div class="col-6" *ngIf="formFields?.address">
+      <div class="md-form">
+        <textarea mdbValidate [validateSuccess]="false" [validateError]="formFields?.address?.required"
+          maxlength="{{formFields?.address?.maxLength}}" class="md-textarea form-control" formControlName="address"
+          id="dynmcId3" mdbInput required="{{formFields?.address?.required}}"></textarea>
+        <label for="dynmcId3"><span *ngIf="formFields?.address?.required" class="red-text">*</span>
+          <mdb-icon far icon="address-card"></mdb-icon> Address</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3" *ngIf="formFields?.postal_code">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.postal_code?.required"
+          maxlength="{{formFields?.postal_code?.maxLength}}" class="form-control" formControlName="postal_code"
+          id="dynmcId6" mdbInput required="{{formFields?.postal_code?.required}}">
+        <label for="dynmcId6"><span *ngIf="formFields?.postal_code?.required" class="red-text">*</span>
+          <mdb-icon fas icon="map-marker-alt"></mdb-icon> Postal Code</label>
+      </div>
+    </div>
+    <div class="col-3" *ngIf="formFields?.city">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.city?.required"
+          maxlength="{{formFields?.city?.maxLength}}" class="form-control" formControlName="city" id="dynmcId4" mdbInput
+          required="{{formFields?.city?.required}}">
+        <label for="dynmcId4"><span *ngIf="formFields?.city?.required" class="red-text">*</span>
+          <mdb-icon far icon="building"></mdb-icon> City</label>
+      </div>
+    </div>
+    <div class="col-3" *ngIf="formFields?.state_province">
+      <div class="md-form">
+        <input mdbValidate maxlength="{{formFields?.state_province?.maxLength}}" [validateSuccess]="false"
+          [validateError]="formFields?.state_province?.required" formControlName="state_province" id="dynmcId5"
+          type="text" class="md-textarea form-control" mdbInput required="{{formFields?.state_province?.required}}">
+        <label for="dynmcId5"><span *ngIf="formFields?.state_province?.required" class="red-text">*</span>
+          <mdb-icon fas icon="city"></mdb-icon> State/Province</label>
+      </div>
+    </div>
+    <div class="col-3" *ngIf="formFields?.country">
+      <div class="md-form">
+        <input mdbValidate maxlength="{{formFields?.country?.maxLength}}" [validateSuccess]="false"
+          [validateError]="formFields?.country?.required" formControlName="country" id="dynmcId7" type="text"
+          class="md-textarea form-control" mdbInput required="{{formFields?.country?.required}}">
+        <label for="dynmcId7"><span *ngIf="formFields?.country?.required" class="red-text">*</span>
+         <mdb-icon fas icon="globe-americas"></mdb-icon> Country</label>
+      </div>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-3" *ngIf="formFields?.email_address">
+      <div class="md-form">
+        <input mdbValidate maxlength="{{formFields?.email_address?.maxLength}}" [validateSuccess]="false"
+          [validateError]="formFields?.email_address?.required" formControlName="email_address" id="dynmcId9"
+          type="text" class="md-textarea form-control" mdbInput required="{{formFields?.email_address?.required}}">
+        <label for="dynmcId9"><span *ngIf="formFields?.email_address?.required" class="red-text">*</span>
+          <mdb-icon far icon="envelope"></mdb-icon> Email ID</label>
+      </div>
+    </div>
+    <div class="col-2" *ngIf="formFields?.phone_number">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.phone_number?.required"
+          maxlength="{{formFields?.phone_number?.maxLength}}" class="form-control" formControlName="phone_number"
+          id="dynmcId161" mdbInput required="{{formFields?.phone_number?.required}}">
+        <label for="dynmcId161"><span *ngIf="formFields?.phone_number?.required" class="red-text">*</span>
+          <mdb-icon fas icon="phone"></mdb-icon> Phone Number</label>
+      </div>
+    </div>
+    <div class="col-1" *ngIf="formFields?.ext_phone_number">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false"
+          [validateError]="formFields?.ext_phone_number?.required"
+          maxlength="{{formFields?.ext_phone_number?.maxLength}}" class="form-control"
+          formControlName="ext_phone_number" id="dynmcId162" mdbInput
+          required="{{formFields?.ext_phone_number?.required}}">
+        <label for="dynmcId162"><span *ngIf="formFields?.ext_phone_number?.required" class="red-text">*</span>
+          Ext</label>
+      </div>
+    </div>
+    <div class="col-2" *ngIf="formFields?.other_phone_number">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.notes?.required"
+          maxlength="{{formFields?.other_phone_number?.maxLength}}" class="form-control"
+          formControlName="other_phone_number" id="dynmcId163" mdbInput
+          required="{{formFields?.other_phone_number?.required}}">
+        <label for="dynmcId163"><span *ngIf="formFields?.other_phone_number?.required" class="red-text">*</span>
+          <mdb-icon fas icon="phone"></mdb-icon> Other Phone Number</label>
+      </div>
+    </div>
+    <div class="col-1" *ngIf="formFields?.ext_other_phone_number">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false"
+          [validateError]="formFields?.ext_other_phone_number?.required"
+          maxlength="{{formFields?.ext_other_phone_number?.maxLength}}" class="form-control"
+          formControlName="ext_other_phone_number" id="dynmcId164" mdbInput
+          required="{{formFields?.ext_other_phone_number?.required}}">
+        <label for="dynmcId164"><span *ngIf="formFields?.ext_other_phone_number?.required" class="red-text">*</span>
+          Ext</label>
+      </div>
+    </div>
+    <div class="col-2" *ngIf="formFields?.fax_number">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.fax_number?.required"
+          maxlength="{{formFields?.fax_number?.maxLength}}" class="form-control" formControlName="fax_number"
+          id="dynmcId165" mdbInput required="{{formFields?.fax_number?.required}}">
+        <label for="dynmcId165"><span *ngIf="formFields?.fax_number?.required" class="red-text">*</span>
+         <mdb-icon fas icon="fax"></mdb-icon> Fax</label>
+      </div>
+    </div>
+    <div class="col-1" *ngIf="formFields?.ext_fax_number">
+      <div class="md-form">
+        <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.ext_fax_number?.required"
+          maxlength="{{formFields?.ext_fax_number?.maxLength}}" class="form-control" formControlName="ext_fax_number"
+          id="dynmcId166" mdbInput required="{{formFields?.ext_fax_number?.required}}">
+        <label for="dynmcId166"><span *ngIf="formFields?.ext_fax_number?.required" class="red-text">*</span>
+          Ext</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12 col-xs-12">
+      <h6 class="dark-grey-text mb-2"><strong class="card-header-text">Additional Information
+          :</strong></h6>
+    </div>
+    <div class="col-12" *ngIf="formFields?.notes">
+      <div class="md-form">
+        <textarea mdbValidate [validateSuccess]="false" [validateError]="formFields?.notes?.required"
+          maxlength="{{formFields?.notes?.maxLength}}" class="md-textarea form-control" formControlName="notes"
+          id="dynmcId167" mdbInput required="{{formFields?.notes?.required}}"></textarea>
+        <label for="dynmcId167"><span *ngIf="formFields?.notes?.required" class="red-text">*</span>
+          <mdb-icon far icon="sticky-note"></mdb-icon> Notes</label>
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,138 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">{{heading}} Policy Configurator</h4>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="policyConfiguratorForm">
+      <div class="row">
+        <div class="col-sm-6" *ngIf="formFields?.policy_code">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.policy_code?.required"
+              maxlength="{{formFields?.policy_code?.maxLength}}" class="form-control" formControlName="policy_code"
+              id="policy_code" required="{{formFields?.policy_code?.required}}" mdbInput>
+            <label for="policy_code"><span *ngIf="formFields?.policy_code?.required" class="red-text">*</span>
+              Policy Code</label>
+          </div>
+        </div>
+        <div class="col-sm-6" *ngIf="formFields?.policy_name">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.policy_name?.required"
+              maxlength="{{formFields?.policy_name?.maxLength}}" class="form-control" formControlName="policy_name"
+              id="policy_name" required="{{formFields?.policy_name?.required}}" mdbInput>
+            <label for="policy_name"><span *ngIf="formFields?.policy_name?.required" class="red-text">*</span>
+              Policy Name</label>
+          </div>
+        </div>
+        
+      </div>
+      <div class="row">
+        <div class="col-sm-6" *ngIf="formFields?.module">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.module?.required"
+              [options]="modules" formControlName="module" id="module"
+              required="{{formFields?.module?.required}}">
+            </mdb-select>
+            <label for="module"><span *ngIf="formFields?.module?.required" class="red-text">*</span>
+              Module</label>
+          </div>
+        </div>
+        <div class="col-sm-6" *ngIf="formFields?.sub_module">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.sub_module?.required"
+              [options]="subModules" formControlName="sub_module" id="sub_module"
+              required="{{formFields?.sub_module?.required}}">
+            </mdb-select>
+            <label for="sub_module"><span *ngIf="formFields?.sub_module?.required" class="red-text">*</span>
+              Sub-Module</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12" *ngIf="formFields?.description">
+          <div class="md-form">
+            <textarea mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.description?.required"
+              maxlength="{{formFields?.description?.maxLength}}" class="form-control full-width"
+              formControlName="description" id="description"
+              required="{{formFields?.description?.required}}" mdbInput></textarea>
+            <label for="description"><span *ngIf="formFields?.description?.required"
+                class="red-text">*</span>
+                Description</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-md-auto">
+          <div class="file-field">
+            <div mdbBtn color="light" class="ml-0" size="sm" mdbWavesEffect>
+              <span>
+                <mdb-icon fas icon="upload" class="mr-1"></mdb-icon>Choose file
+              </span>
+              <input type="file" mdbFileSelect (uploadOutput)="onUploadOutput($event)"
+                [uploadInput]="uploadInput">
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="chip mt-1" title="{{item}}" *ngFor="let item of uploadedFiles; index as i">
+            <mdb-icon fas class="mr-1" icon="file-word"></mdb-icon>
+            <span class="crop-text wd-200">{{item}}</span>
+            <i class="close fas fa-times"></i>
+          </div>
+        </div>
+      </div>
+<!-- 
+      <div class="row">
+        <div class="col-sm-12" *ngIf="formFields?.faq">
+          <div class="md-form">
+            <textarea mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.faq?.required"
+              maxlength="{{formFields?.faq?.maxLength}}" class="form-control full-width"
+              formControlName="faq" id="faq"
+              required="{{formFields?.faq?.required}}" mdbInput></textarea>
+            <label for="faq"><span *ngIf="formFields?.faq?.required"
+                class="red-text">*</span>
+                FAQ</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12" *ngIf="formFields?.answer">
+          <div class="md-form">
+            <textarea mdbValidate [validateSuccess]="false" [validateError]="formFields?.code?.required"
+              maxlength="{{formFields?.answer?.maxLength}}" class="form-control full-width" formControlName="code"
+              id="answer" required="{{formFields?.answer?.required}}" mdbInput></textarea>
+            <label for="answer"><span *ngIf="formFields?.answer?.required" class="red-text">*</span>
+              Answer</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 font-14" *ngIf="formFields?.modules_applicability">
+          <label class="d-block">Modules Applicability</label>
+            <mdb-checkbox class="mr-5" [inline]="true">IST</mdb-checkbox>
+
+            <mdb-checkbox class="mr-5" [inline]="true">EAP</mdb-checkbox>
+
+            <mdb-checkbox class="mr-5" [inline]="true">GRANTS</mdb-checkbox>
+        </div>
+      </div> -->
+
+
+
+    </form>
+  </div>
+
+
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" [disabled]="policyConfiguratorForm.invalid" (click)="modalRef.hide()"
+      mdbWavesEffect>Ok</button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+  </div>
+</div>

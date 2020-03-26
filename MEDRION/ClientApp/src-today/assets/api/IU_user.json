@@ -1,0 +1,183 @@
+{
+    "username": "iu",
+    "mailId": "venkat.ieee55@gmail.com",
+    "phone_number": "9703889494",
+    "password":"nopassword",
+    "alias_name":"Internal User",
+    "role": {
+        "role_type": "internal_user",
+        "permissions": [
+            {
+                "name": "Investigator Sponsored Trials",
+                "id": "ist",
+                "icon_type":"fab",
+                "icon": "nimblr",
+                "screens": [
+                    
+                    {
+                        "name": "All Applications",
+                        "id": "applications"
+                    },
+                    {
+                        "name": "My Applications",
+                        "id": "my-applications"
+                    }
+                ]
+            },
+            {
+                "name": "Expanded Access Program",
+                "id": "eap",
+                "icon_type":"fab",
+                "icon": "osi",
+                "screens": [
+                    {
+                        "name": "All Applications",
+                        "id": "applications"
+                    },
+                    {
+                        "name": "My applications",
+                        "id": "my-applications"
+                    }
+                ]
+            },
+            {
+                "name": "Grants Management",
+                "id": "grants",
+                "icon_type":"fab",
+                "icon": "nintendo-switch",
+                "screens": [
+                    
+                    {
+                        "name": "All applications",
+                        "id": "applications"
+                    },
+                    {
+                        "name": "My applications",
+                        "id": "my-applications"
+                    }
+                ]
+            },            
+            {
+                "name": "Administration",
+                "id": "administration",
+                "icon": "sketch",
+                "icon_type":"fab",
+                "screens": [
+                    {
+                        "name": "IST Registrations",
+                        "id": "istRegistrations"
+                    },
+                    {
+                        "name": "EAP Registrations",
+                        "id": "eapRegistrations"
+                    },
+                    {
+                        "name": "Grants Registrations",
+                        "id": "grantsRegistrations"
+                    },                    
+                    {
+                        "name": "Lookups",
+                        "id": "lookups"
+                    },
+                    {
+                        "name": "RFP",
+                        "id": "rfp"
+                    },
+                    {
+                        "name": "Company Representatives",
+                        "id": "company_representatives"
+                    },
+                    {
+                        "name": "Theraupetic Areas",
+                        "id": "theraupetic_area"
+                    },
+                    {
+                        "name": "Products",
+                        "id": "product"
+                    },
+                    {
+                        "name": "Programs",
+                        "id": "program"
+                    },
+                    {
+                        "name": "EAP Type",
+                        "id": "eapType"
+                    },
+                    {
+                        "name": "Document Type",
+                        "id": "document_type"
+                    }, 
+                    {
+                        "name": "Document Attach",
+                        "id": "document_attach"
+                    },                   
+                    
+                    {
+                        "name": "Ccode",
+                        "id": "c_code"
+                    },
+                    {
+                        "name": "Event Master",
+                        "id": "event_summary"
+                    },
+                    {
+                        "name": "FAQ",
+                        "id": "faq"
+                    },
+                    {
+                        "name": "Email Configuration",
+                        "id": "email_configuration"
+                    },
+                    {
+                        "name": "LDAP Configuration",
+                        "id": "ldap_configuration"
+                    },
+                    {
+                        "name": "SAML-SSO Configuration",
+                        "id": "saml_sso_configuration"
+                    },
+                    {
+                        "name": "Instructions",
+                        "id": "instructions"
+                    },
+                    {
+                        "name": "Screen Repository",
+                        "id": "screen_repository"
+                    },
+                    {
+                        "name": "Policy Configurator",
+                        "id": "policy_configurator"
+                    }
+                ]
+            },
+            {
+                "name": "User Management",
+                "id": "um",
+                "icon": "viadeo",
+                "icon_type":"fab",
+                "screens": [
+                    {
+                        "name": "Organization",
+                        "id": "organization"
+                    },
+                    {
+                        "name": "Department",
+                        "id": "department"
+                    },
+                    {
+                        "name": "Role",
+                        "id": "role"
+                    },
+                    {
+                        "name": "User",
+                        "id": "user"
+                    },
+                    {
+                        "name": "Privilege",
+                        "id": "privilege"
+                    }
+                ]
+            }
+        ]
+    }
+}

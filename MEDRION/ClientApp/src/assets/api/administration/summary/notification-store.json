@@ -1,0 +1,26 @@
+[
+    {
+        "group": 1,
+        "message_tags":"Application Submission Successful : Your new application with IST-10022 is submitted successfully",
+        "date_time":"24-Jan-2020 19:00",
+        "status_read_unread":"unread"
+    },
+    {
+        "group": 2,
+        "message_tags":"Product Request Status Change Alert :  The application with <<Application Id >> IST-10002 has a change in the product request status  for the request id: REQ-1009 from Submitted to Approved by John on 15 Jan 2020 10:00",
+        "date_time":"15-Jan-2020 12:00",
+        "status_read_unread":"unread"
+    },
+    {
+        "group": 3,
+        "message_tags":"Product Request Status Change Alert :  The application with <<Application Id >> IST-1002 has a change in the product request status  for the request id: REQ-1008 from Submitted to Approved by John on 7 Jan 2020 10:00",
+        "date_time":"7-Jan-2020 14:00",
+        "status_read_unread":"read"
+    },
+    {
+        "group": 4,
+        "message_tags":"Product Fund Status Change Alert :  The application with <<Application Id >> IST-10001 has a change in the Fund request status  for the request id: REQ-1009 from Submitted to Approved by Mark on 1 Jan 2020 10:00",
+        "date_time":"1-Jan-2020 16:00",
+        "status_read_unread":"read"
+    }
+]

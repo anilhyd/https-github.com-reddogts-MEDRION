@@ -1,0 +1,362 @@
+{
+    "formFields": {
+        "organization_name": {
+            "type": "text",
+            "maxLength": 100,
+            "pattern": null,
+            "required": true,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "organization_description": {
+            "type": "text",
+            "maxLength": 500,
+            "pattern": null,
+            "required": false,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "organization_type": {
+            "type": "dropdown",
+            "required": true,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "tax_id": {
+            "type": "text",
+            "maxLength": 35,
+            "pattern": null,
+            "required": true,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "tax_status": {
+            "type": "dropdown",
+            "required": true,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "signed_form": {
+            "type": "file",
+            "pattern": null,
+            "required": true,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "address": {
+            "type": "text",
+            "maxLength": 200,
+            "pattern": null,
+            "required": true,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "city": {
+            "type": "text",
+            "maxLength": 35,
+            "pattern": null,
+            "required": true,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "state": {
+            "type": "dropdown",
+            "required": true,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "postal_code": {
+            "type": "text",
+            "maxLength": 35,
+            "pattern": null,
+            "required": true,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "country": {
+            "type": "dropdown",
+            "required": true,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "organization_website": {
+            "type": "text",
+            "maxLength": 35,
+            "pattern": null,
+            "required": false,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "is_affiliated": {
+            "type": "checkbox",
+            "required": true,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "if_yes_describe": {
+            "type": "text",
+            "maxLength": 35,
+            "pattern": null,
+            "required": false,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "is_accrediated": {
+            "type": "checkbox",
+            "required": true,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "if_yes_with_whom": {
+            "type": "text",
+            "maxLength": 35,
+            "pattern": null,
+            "required": false,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+
+
+        "prefix": {
+            "type": "dropdown",
+            "required": false,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "first_name": {
+            "type": "text",
+            "maxLength": 35,
+            "pattern": null,
+            "required": false,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "middle_name": {
+            "type": "text",
+            "maxLength": 35,
+            "pattern": null,
+            "required": false,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "last_name": {
+            "type": "text",
+            "maxLength": 35,
+            "pattern": null,
+            "required": true,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "email_address": {
+            "type": "text",
+            "maxLength": 35,
+            "pattern": null,
+            "required": true,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "re_enter_email": {
+            "type": "text",
+            "maxLength": 35,
+            "pattern": null,
+            "required": true,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "password": {
+            "type": "text",
+            "maxLength": 35,
+            "pattern": null,
+            "required": true,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "re_enter_password": {
+            "type": "text",
+            "maxLength": 35,
+            "pattern": null,
+            "required": true,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "phone_number": {
+            "type": "text",
+            "maxLength": 35,
+            "pattern": null,
+            "required": true,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "phone_number_ex": {
+            "type": "text",
+            "maxLength": 5,
+            "pattern": null,
+            "required": false,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "other_phone_number": {
+            "type": "text",
+            "maxLength": 35,
+            "pattern": null,
+            "required": false,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "other_phone_number_ex": {
+            "type": "text",
+            "maxLength": 5,
+            "pattern": null,
+            "required": false,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "fax_number": {
+            "type": "text",
+            "maxLength": 35,
+            "pattern": null,
+            "required": false,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "fax_number_ex": {
+            "type": "text",
+            "maxLength": 5,
+            "pattern": null,
+            "required": false,
+            "validationMessage": "Field is either empty or incorrect"
+        }
+
+    },
+    "formOperations": [
+        {
+            "name": "Save",
+            "id": "save"
+        }
+    ],
+    "columnDefs": [
+        {
+            "headerName": "Organization Name",
+            "field": "org_name",
+            "sort": "asc"
+        },
+        {
+            "headerName": "Org Type",
+            "field": "type"
+        },
+        {
+            "headerName": "Tax Status",
+            "field": "tax_status"
+        },
+        {
+            "headerName": "User Full Name",
+            "field": "user_full_name"
+        },
+        {
+            "headerName": "City",
+            "field": "city"
+        },
+        {
+            "headerName": "State",
+            "field": "state"
+        },
+        {
+            "headerName": "Country",
+            "field": "country"
+        },
+        {
+            "headerName": "Status",
+            "field": "status"
+        }
+    ],
+    "caseDetails": [
+        {"caseSet" : {
+            "caseHeading": "",
+            "caseData" : [
+                {
+                    "label": "Organization Name ",
+                    "value": "org_name"
+                },
+                {
+                    "label": "Organization Type",
+                    "value": "type"
+                },
+                {
+                    "label": "Tax Status",
+                    "value": "tax_Status"
+                },
+                {
+                    "label": "Tax ID",
+                    "value": "tax_id"
+                },
+                {
+                    "label": "Country",
+                    "value": "country"
+                },
+                {
+                    "label": "State",
+                    "value": "state"
+                },
+                {
+                    "label": "City",
+                    "value": "city"
+                },
+                {
+                    "label": "Address",
+                    "value": "address"
+                },
+                {
+                    "label": "First Name",
+                    "value": "fn"
+                },
+                {
+                    "label": "Last Name",
+                    "value": "ln"
+                },
+                {
+                    "label": "Email ID",
+                    "value": "email_id"
+                },
+                {
+                    "label": "Phone Number",
+                    "value": "phone_num"
+                },
+                {
+                    "label": "Other Phone Number",
+                    "value": "other_phone_num"
+                },
+                {
+                    "label": "Fax Number",
+                    "value": "fax_num"
+                },
+                {
+                    "label": "is your Organization Acreediated?",
+                    "value": "is_your_org_acc"
+                },
+                {
+                    "label": "is your Organization with a Govt agency?",
+                    "value": "is_your_org_with_govt_agency"
+                }
+            ]
+
+        }
+    }],
+    "advanceSearch": 
+        {
+            "fields": [
+                {
+                    "label": "Organization Name",
+                    "field": "org_name",
+                    "type": "text"
+                },
+                {
+                    "label": "Organization Type",
+                    "field": "type",
+                    "type": "dropdown"
+                },
+                {
+                    "label": "Tax Status",
+                    "field": "tax_status",
+                    "type": "dropdown"
+                },
+                {
+                    "label": "Tax ID",
+                    "field": "tax_id",
+                    "type": "text"
+                },
+                {
+                    "label": "Country",
+                    "field": "country",
+                    "type": "text"
+                },
+                {
+                    "label": "State",
+                    "field": "state",
+                    "type": "text"
+                },
+                {
+                    "label": "City",
+                    "field": "city",
+                    "type": "text"
+                },
+                {
+                    "label": "User Full Name",
+                    "field": "user_full_name",
+                    "type": "text"
+                }
+            ],
+            "filters": []
+        }
+    
+}

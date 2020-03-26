@@ -1,0 +1,95 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">{{heading}}</h4>
+  </div>
+  <p class="modal-second-title">
+    <mdb-icon far icon="lightbulb" class="amber-text" size="lg"> </mdb-icon> Allows to return the Fund which has been
+    issued and not consumed as part of Fund Request
+  </p>
+  <div class="modal-body">
+    <form [formGroup]="returnOrRetieveForm">
+      <div class="row">
+        <div class="col-4">
+          <h6 class="mb-0">Request ID</h6>
+          <p><strong>REQ-001</strong></p>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-4">
+          <h6 class="mb-0">Allcoated Amount</h6>
+          <p><strong>100 USD</strong></p>
+        </div>
+        <div class="col-4">
+          <h6 class="mb-0">Balance Amount</h6>
+          <p><strong>100 USD</strong></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6" *ngIf="formFields?.refund_amount">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+              maxlength="{{formFields?.refund_amount?.maxLength}}" class="form-control" formControlName="refund_amount"
+              id="refund_amount" mdbInput required="{{formFields?.refund_amount?.required}}">
+            <label for="refund_amount"><span *ngIf="formFields?.refund_amount?.required" class="red-text">*</span>
+              Return Amount (USD)</label>
+          </div>
+        </div>
+        <div class="col-sm-6" *ngIf="formFields?.credit_check_number">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+              maxlength="{{formFields?.credit_check_number?.maxLength}}" class="form-control"
+              formControlName="credit_check_number" id="credit_check_number" mdbInput
+              required="{{formFields?.credit_check_number?.required}}">
+            <label for="credit_check_number"><span *ngIf="formFields?.credit_check_number?.required"
+                class="red-text">*</span>
+              Credit/Cheque Number</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6" *ngIf="formFields?.shipment_number">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+              maxlength="{{formFields?.shipment_number?.maxLength}}" class="form-control"
+              formControlName="shipment_number" id="shipment_number" mdbInput
+              required="{{formFields?.shipment_number?.required}}">
+            <label for="shipment_number"><span *ngIf="formFields?.shipment_number?.required" class="red-text">*</span>
+              Shipment Number</label>
+          </div>
+        </div>
+        <div class="col-sm-6" *ngIf="formFields?.bank_details">
+          <div class="md-form">
+            <h6 class="mb-0">Bank Details</h6>
+            <p><strong>BOA, NJ</strong></p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6" *ngIf="formFields?.transaction_number">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true"
+              maxlength="{{formFields?.transaction_number?.maxLength}}" class="form-control"
+              formControlName="transaction_number" id="transaction_number" mdbInput
+              required="{{formFields?.transaction_number?.required}}">
+            <label for="transaction_number"><span *ngIf="formFields?.transaction_number?.required"
+                class="red-text">*</span>
+              Transaction Number</label>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()"
+      [disabled]="returnOrRetieveForm.invalid" mdbWavesEffect>Save</button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+  </div>
+</div>

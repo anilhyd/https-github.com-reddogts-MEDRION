@@ -1,0 +1,47 @@
+[
+    {
+      "serial_no": 1,
+      "outcome_ass": "Identify the Atttendes Learning Outcomes",
+      "desc_methods": "After attending workshop, attendes will be able to:\n• understand various Pulomonary related diseases and precautions to be taken.\n• Challenges faced by teenage and old people regarding the same.",
+      "planned": "Checked",
+      "implemented": "Checked",
+      "reasons_not_imp": "",
+      "id": 1
+    },
+    {
+      "serial_no": 2,
+      "outcome_ass": "Training Content Mapping",
+      "desc_methods": "Determine practices used to achieve outcomes through Training Content \nmapping",
+      "planned": "Checked",
+      "implemented": "Checked",
+      "reasons_not_imp": "",
+      "id": 2
+    },
+    {
+      "serial_no": 3,
+      "outcome_ass": "Methods of Assessment",
+      "desc_methods": "Indirect Methods:\nSurveys\n• Attendee\n• HCP's \n• Exit interviews\n• Focus groups\n• Training evaluations\nDirect Methods:\n• Rubrics for evaluating:\n• Essays/Papers\n• Exhibits\n• Performances/Presentations\n• Standardized tests",
+      "planned": "Checked",
+      "implemented": "Checked",
+      "reasons_not_imp": "",
+      "id": 3
+    },
+    {
+      "serial_no": 4,
+      "outcome_ass": "Gather Evidence",
+      "desc_methods": "Sample text regarding the Gathered Evidence",
+      "planned": "Checked",
+      "implemented": "Unchecked",
+      "reasons_not_imp": "Sample reason goes here…",
+      "id": 4
+    },
+    {
+      "serial_no": 5,
+      "outcome_ass": "Use Results",
+      "desc_methods": "Sample text regarding the Used Results",
+      "planned": "Checked",
+      "implemented": "Checked",
+      "reasons_not_imp": "",
+      "id": 5
+    }
+  ]

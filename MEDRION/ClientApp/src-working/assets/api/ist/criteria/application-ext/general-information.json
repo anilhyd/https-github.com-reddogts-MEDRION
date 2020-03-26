@@ -1,0 +1,187 @@
+{
+    "formFields": {
+        "title_of_study": {
+            "type": "text",
+            "required": true,
+            "maxLength": 500,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "study_sponsored": {
+            "type": "dropdown",
+            "required": true,
+            "maxLength": 50,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "therapeutic_area": {
+            "type": "dropdown",
+            "required": false,
+            "maxLength": 50,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "product_type": {
+            "type": "dropdown",
+            "required": true,
+            "maxLength": 50,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "study_involves": {
+            "type": "dropdown",
+            "required": false,
+            "maxLength": 50,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "provide_details": {
+            "type": "text",
+            "required": true,
+            "maxLength": 500,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "product": {
+            "type": "dropdown-multi-select",
+            "required": true,
+            "maxLength": 50,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "study_type": {
+            "type": "dropdown",
+            "required": false,
+            "maxLength": 50,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "multi_center_involved": {
+            "type": "dropdown",
+            "required": false,
+            "maxLength": 50,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "duration": {
+            "type": "text",
+            "required": false,
+            "maxLength": 500,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "flex_field1": {
+            "type": "text",
+            "required": false,
+            "maxLength": 500,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "flex_field2": {
+            "type": "dropdown",
+            "required": false,
+            "maxLength": 500,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "flex_field3": {
+            "type": "date",
+            "required": false,
+            "maxLength": 500,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "letter_of_authorization":{
+            "type":"formGroup-label",
+            "required":true,
+            "formFields":{
+                "file_name":{
+                    "type":"file",
+                    "required":true,
+                    "maxLength": 150
+                }, 
+                "notes":{
+                    "type":"text",
+                    "required":true,
+                    "pattern": null,
+                    "maxLength": 2000
+                }
+            }
+        },
+        "fda_form_1571":{
+            "type":"formGroup-label",
+            "required":true,
+            "formFields":{
+                "file_name":{
+                    "type":"file",
+                    "required":true,
+                    "maxLength": 150
+                },
+                "notes":{
+                    "type":"text",
+                    "required":true,
+                    "pattern": null,
+                    "maxLength": 2000
+                }
+            }
+        },
+        "fda_form_1572":{
+            "type":"formGroup-label",
+            "required":true,
+            "formFields":{
+                "file_name":{
+                    "type":"file",
+                    "required":true,
+                    "maxLength": 150
+                },
+                "notes":{
+                    "type":"text",
+                    "required":true,
+                    "pattern": null,
+                    "maxLength": 2000
+                }
+            }
+        },
+        "irb_approval":{
+            "type":"formGroup-label",
+            "required":true,
+            "formFields":{
+                "file_name":{
+                    "type":"file",
+                    "required":true,
+                    "maxLength": 150
+                },
+                "notes":{
+                    "type":"text",
+                    "required":true,
+                    "pattern": null,
+                    "maxLength": 2000
+                }
+            }
+        },
+        "patient_consent_form":{
+            "type":"formGroup-label",
+            "required":true,
+            "formFields":{
+                "file_name":{
+                    "type":"file",
+                    "required":true,
+                    "maxLength": 150
+                },
+                "notes":{
+                    "type":"text",
+                    "required":true,
+                    "pattern": null,
+                    "maxLength": 2000
+                }
+            }
+        }
+        
+    },
+    "formOperations": [
+        {
+            "name": "Save",
+            "id": "save"
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+[
+    { "id": 1, "privilege_module_name": "Venkat", "privilege_feature_name": "srikanth", "privilege_opr_name": "add" },
+    { "id": 2, "privilege_module_name": "Gopi", "privilege_feature_name": "Krishna", "privilege_opr_name": "add" },
+    { "id": 3, "privilege_module_name": "Siva", "privilege_feature_name": "naga", "privilege_opr_name": "add" },
+    { "id": 4, "privilege_module_name": "Venkat", "privilege_feature_name": "srikanth", "privilege_opr_name": "add" },
+    { "id": 5, "privilege_module_name": "Gopi", "privilege_feature_name": "Krishna", "privilege_opr_name": "add" },
+    { "id": 6, "privilege_module_name": "Siva", "privilege_feature_name": "naga", "privilege_opr_name": "add" },
+    { "id": 7, "privilege_module_name": "Venkat", "privilege_feature_name": "srikanth", "privilege_opr_name": "add" },
+    { "id": 8, "privilege_module_name": "Gopi", "privilege_feature_name": "Krishna", "privilege_opr_name": "add" },
+    { "id": 9, "privilege_module_name": "Siva", "privilege_feature_name": "naga", "privilege_opr_name": "add" },
+    { "id": 10, "privilege_module_name": "Venkat", "privilege_feature_name": "srikanth", "privilege_opr_name": "add" },
+    { "id": 11, "privilege_module_name": "Gopi", "privilege_feature_name": "Krishna", "privilege_opr_name": "add" },
+    { "id": 12, "privilege_module_name": "Siva", "privilege_feature_name": "naga", "privilege_opr_name": "add" },
+    { "id": 13, "privilege_module_name": "Venkat", "privilege_feature_name": "srikanth", "privilege_opr_name": "add" },
+    { "id": 14, "privilege_module_name": "Gopi", "privilege_feature_name": "Krishna", "privilege_opr_name": "add" },
+    { "id": 15, "privilege_module_name": "Siva", "privilege_feature_name": "naga", "privilege_opr_name": "add" },
+    { "id": 16, "privilege_module_name": "Venkat", "privilege_feature_name": "srikanth", "privilege_opr_name": "add" },
+    { "id": 17, "privilege_module_name": "Gopi", "privilege_feature_name": "Krishna", "privilege_opr_name": "add" },
+    { "id": 18, "privilege_module_name": "Siva", "privilege_feature_name": "naga", "privilege_opr_name": "add" },
+    { "id": 19, "privilege_module_name": "Venkat", "privilege_feature_name": "srikanth", "privilege_opr_name": "add" },
+    { "id": 18, "privilege_module_name": "Gopi", "privilege_feature_name": "Krishna", "privilege_opr_name": "add" },
+    { "id": 19, "privilege_module_name": "Siva", "privilege_feature_name": "naga", "privilege_opr_name": "add" }
+  ]

@@ -1,0 +1,58 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100" id="myModalLabel">Advance Search</h4>
+  </div>
+  <p class="modal-second-title">
+      <mdb-icon far icon="lightbulb" class="amber-text" size="lg"></mdb-icon> Choose a pre-defined filter (or) fill search criteria for an advanced search
+    </p>
+  <div class="modal-body">
+    <div class="text-left" *ngIf="advanceSearch?.filters?.length">
+      <h6 class="dark-grey-text" style="margin-top:10px !important;">
+        <strong class="card-header-text"><mdb-icon fas icon="filter" class="amber-text"></mdb-icon> Pre-defined Filters</strong>
+      </h6>
+    </div>
+    <div class="row md-form mt-2 mb-4" *ngIf="advanceSearch?.filters?.length">
+      <div class="col-12">
+        <div class="chip" *ngFor="let field of advanceSearch?.filters"
+          [ngClass]="{'yellow lighten-4':field?.filter_key === filter_selected}"
+          (click)="onSelectFilter(field.filter_key, field.criteria)">
+          {{field.label}}
+          <i class="fas fa-times" *ngIf="field?.filter_key === filter_selected" (click)="removeFilter()"></i>
+        </div>
+      </div>
+    </div>
+    <!-- <hr *ngIf="advanceSearch?.filters?.length"> -->
+    <div class="text-left">
+        <h6 class="dark-grey-text" style="margin-top:10px !important;">
+          <strong class="card-header-text"><mdb-icon fas icon="search-plus" class="amber-text"></mdb-icon> Search criteria</strong>
+        </h6>
+      </div>
+    <div class="row">
+      <div class="col-sm-4" *ngFor="let field of advanceSearch?.fields">
+        <div class="md-form form-sm bg-white" *ngIf="field?.type==='text'">
+          <input mdbInput type="text" id="form{{field.label}}" class="form-control form-control-sm">
+          <label for="form{{field.label}}" class="">{{field.label}}</label>
+        </div>
+        <div class="md-form form-sm bg-white" *ngIf="field?.type==='dropdown'">
+          <mdb-select mdbValidate [options]="field?.options || basicOptions"></mdb-select>
+          <label for="form{{field.label}}">
+            {{field.label}}</label>
+        </div>
+        <div class="md-form form-sm bg-white" *ngIf="field?.type==='date'">
+          <mdb-date-picker [inline]="true" name="mydate" [options]="myDatePickerOptions" placeholder="{{field.label}}" >
+          </mdb-date-picker>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" mdbBtn color="light" size="sm" class="relative waves-light" (click)="modalRef.hide()"
+      mdbWavesEffect>Search</button>
+  </div>
+    <button type="button" mdbBtn color="light" size="sm" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+</div>

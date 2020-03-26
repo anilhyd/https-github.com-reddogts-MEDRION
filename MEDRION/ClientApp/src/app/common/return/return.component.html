@@ -1,0 +1,84 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">Return the Application</h4>
+  </div>
+  <p class="modal-second-title">
+    <mdb-icon far icon="lightbulb" class="amber-text" size="lg"></mdb-icon> Allows to Move the request from your end to next person in the workflow after you completing the details.
+  </p>
+  <div class="modal-body">
+
+    <form [formGroup]="routeForm">
+      <div class="row">
+        <div class="col-sm-12 col-xs-12 mb-3">
+          <span>Present Application State:</span> <br><span><strong>Submitted</strong></span>
+        </div>
+        <div class="col-sm-12 col-xs-12">
+          <div class="md-form">
+            <textarea mdbValidate [validateSuccess]="false" [validateError]="true" required="true"
+              formControlName="comments" id="dynmcId1" type="text" class="md-textarea form-control" mdbInput></textarea>
+            <label for="dynmcId1"><span class="red-text">*</span>
+              Comments</label>
+          </div>
+        </div>
+        <div class="col-sm-12 col-xs-12 mb-3">
+          <span>How do you want to move the application?</span>
+        </div>
+        <div class="col-sm-12 col-xs-12">
+          <div class="custom-control custom-radio mb-2">
+            <input type="radio" class="custom-control-input" id="defaultUnchecked1" name="defaultExampleRadios"
+              mdbInput>
+            <label class="custom-control-label" for="defaultUnchecked1">Open Queue</label>
+          </div>
+
+        </div>
+        <div class="col-sm-3 col-xs-2">
+          <div class="custom-control custom-radio mt-2">
+            <input type="radio" class="custom-control-input" id="defaultUnchecked2" name="defaultExampleRadios"
+              mdbInput>
+            <label class="custom-control-label" for="defaultUnchecked2">Specified Person</label>
+          </div>
+          
+        </div>
+        
+        <div class="col-sm-9 col-xs-10">
+          <div class="md-form mt-2">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.activity_sub_type?.required"
+              [options]="stateOptionsSample" formControlName="activity_sub_type"
+              required="{{formFields?.activity_sub_type?.required}}"></mdb-select>
+            </div>
+        </div>
+        <div class="col-sm-12 col-xs-12">
+          <div class="custom-control custom-radio mb-2">
+            <input type="radio" class="custom-control-input" id="defaultUnchecked3" name="defaultExampleRadios"
+              mdbInput>
+            <label class="custom-control-label" for="defaultUnchecked3">Assign to Self</label>
+          </div>
+
+        </div>
+       
+        <div class="col-sm-12 col-xs-12 mt-4">
+          <span>User Name:</span> <br><span><strong>James Johnson</strong></span>
+        </div>
+        <div class="col-sm-12 mt-3">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true" required="true" placeholder="*********"
+              formControlName="confirm_password" id="confirm_password" type="text" class="md-textarea form-control" mdbInput>
+            <label for="confirm_password"><span class="red-text">*</span>
+              Password</label>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" mdbBtn color="light" size="sm" class="relative waves-light" [disabled]="!routeForm.valid"
+      (click)="modalRef.hide()" mdbWavesEffect>Return</button>
+    <button type="button" mdbBtn color="light" size="sm" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+  </div>
+</div>

@@ -1,0 +1,141 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">Add Bank Details</h4>
+  </div>
+  <div class="modal-body">
+     <form [formGroup]="addBankDetailsForm">
+      <div class="row">
+        <div class="col-6" *ngIf="formFields?.account_holder_first_name">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.account_holder_first_name?.required"
+              maxlength="{{formFields?.account_holder_first_name?.maxLength}}" class="form-control" formControlName="account_holder_first_name"
+              id="account_holder_first_name" mdbInput required="{{formFields?.account_holder_first_name?.required}}">
+            <label for="account_holder_first_name"><span *ngIf="formFields?.account_holder_first_name?.required" class="red-text">*</span>
+              Account Holder First Name</label>
+          </div>
+        </div>
+        <div class="col-6" *ngIf="formFields?.account_holder_last_name">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.account_holder_last_name?.required"
+              maxlength="{{formFields?.account_holder_last_name?.maxLength}}" class="form-control" formControlName="account_holder_last_name"
+              id="account_holder_last_name" mdbInput required="{{formFields?.account_holder_last_name?.required}}">
+            <label for="account_holder_last_name"><span *ngIf="formFields?.account_holder_last_name?.required" class="red-text">*</span>
+              Account Holder Last Name</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6" *ngIf="formFields?.bank_name">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.bank_name?.required"
+              maxlength="{{formFields?.bank_name?.maxLength}}" class="form-control" formControlName="bank_name"
+              id="bank_name" mdbInput required="{{formFields?.bank_name?.required}}">
+            <label for="bank_name"><span *ngIf="formFields?.bank_name?.required" class="red-text">*</span>
+              Bank Name</label>
+          </div>
+        </div>
+        <div class="col-6" *ngIf="formFields?.bank_number">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.bank_number?.required"
+              maxlength="{{formFields?.bank_number?.maxLength}}" class="form-control" formControlName="bank_number"
+              id="bank_number" mdbInput required="{{formFields?.bank_number?.required}}">
+            <label for="bank_number"><span *ngIf="formFields?.bank_number?.required" class="red-text">*</span>
+              Bank Number</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6" *ngIf="formFields?.bank_transit_number">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.bank_transit_number?.required"
+              maxlength="{{formFields?.bank_transit_number?.maxLength}}" class="form-control" formControlName="bank_transit_number"
+              id="bank_transit_number" mdbInput required="{{formFields?.bank_transit_number?.required}}">
+            <label for="bank_transit_number"><span *ngIf="formFields?.bank_transit_number?.required" class="red-text">*</span>
+              Bank Transit Number</label>
+          </div>
+        </div>
+        <div class="col-6" *ngIf="formFields?.bank_account_number">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.bank_account_number?.required"
+              maxlength="{{formFields?.bank_account_number?.maxLength}}" class="form-control" formControlName="bank_account_number"
+              id="bank_account_number" mdbInput required="{{formFields?.bank_account_number?.required}}">
+            <label for="bank_account_number"><span *ngIf="formFields?.bank_account_number?.required" class="red-text">*</span>
+              Bank Account Number</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6" *ngIf="formFields?.bank_location">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.bank_location?.required"
+              maxlength="{{formFields?.bank_location?.maxLength}}" class="form-control" formControlName="bank_location"
+              id="bank_location" mdbInput required="{{formFields?.bank_location?.required}}">
+            <label for="bank_location"><span *ngIf="formFields?.bank_location?.required" class="red-text">*</span>
+              Bank Location </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6" *ngIf="formFields?.phone_number">
+          <div class="row">
+            <div class="col-9 pr-0">
+              <div class="md-form">
+                <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.phone_number?.required"
+                  maxlength="{{formFields?.phone_number?.maxLength}}" class="form-control" formControlName="phone_number"
+                  id="phone_number" mdbInput required="{{formFields?.phone_number?.required}}">
+                <label for="phone_number"><span *ngIf="formFields?.phone_number?.required" class="red-text">*</span>
+                  <mdb-icon fas icon="phone"></mdb-icon> Phone Number </label>
+              </div>
+              </div>
+              <div class="col-3" *ngIf="formFields?.phone_number_ext">
+                <div class="md-form">
+                  <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.phone_number_ext?.required"
+                    maxlength="{{formFields?.phone_number_ext?.maxLength}}" class="form-control" formControlName="phone_number_ext"
+                    id="phone_number_ext" mdbInput required="{{formFields?.phone_number_ext?.required}}">
+                  <label for="phone_number_ext"><span *ngIf="formFields?.phone_number_ext?.required" class="red-text">*</span>
+                    <mdb-icon fas icon="fax"></mdb-icon> Ext </label>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6" *ngIf="formFields?.fax_number">
+          <div class="row">
+            <div class="col-9 pr-0">
+              <div class="md-form">
+                <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.fax_number?.required"
+                  maxlength="{{formFields?.fax_number?.maxLength}}" class="form-control" formControlName="fax_number"
+                  id="fax_number" mdbInput required="{{formFields?.fax_number?.required}}">
+                <label for="fax_number"><span *ngIf="formFields?.fax_number?.required" class="red-text">*</span>
+                  Fax Number </label>
+              </div>
+              </div>
+              <div class="col-3" *ngIf="formFields?.fax_number_ext">
+                <div class="md-form">
+                  <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.fax_number_ext?.required"
+                    maxlength="{{formFields?.fax_number_ext?.maxLength}}" class="form-control" formControlName="fax_number_ext"
+                    id="fax_number_ext" mdbInput required="{{formFields?.fax_number_ext?.required}}">
+                  <label for="fax_number_ext"><span *ngIf="formFields?.fax_number_ext?.required" class="red-text">*</span>
+                    Ext </label>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </form> 
+  </div>
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()"
+       [disabled]="addBankDetailsForm.invalid" mdbWavesEffect>Save</button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-3">
+      <mdb-breadcrumb customClass="black-text lighten-4 custom-breadcrumb"
+          style="font-size:13px;text-transform:uppercase;">
+          <mdb-breadcrumb-item>CCode 
+          </mdb-breadcrumb-item>
+      </mdb-breadcrumb>
+  </div>
+  <div class="col-9">
+      <app-operations-bar [operations]="operations" [enableOperations]="selectedRow?true:false"
+          (callbackOperation)="onCallbackOperation($event)"></app-operations-bar>
+  </div> 
+</div>
+<app-client-grid [noView]="true" [columnDefs]="columnDefs" [rowData]="rowData" [advanceSearch]="advanceSearch" (setGridApi)="onSetGridApi($event)" [operations]="operations" [skipCaseDetails]="true"
+(callbackOperation)="onCallbackOperation($event)" (selectionChanged)="onSelectionChanged($event)">
+</app-client-grid>

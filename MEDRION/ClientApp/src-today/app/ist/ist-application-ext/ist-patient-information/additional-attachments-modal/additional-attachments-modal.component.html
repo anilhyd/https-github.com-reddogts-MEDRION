@@ -1,0 +1,74 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">Additional Attachments</h4>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="additionalAttachmentsForm">
+
+      <div class="row">
+        <div class="col-6">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.att_clasification?.required" [options]="documentOptionsConstant"
+              formControlName="att_clasification" required="{{formFields?.att_clasification?.required}}">
+            </mdb-select>
+            <label for="att_clasification"><span *ngIf="formFields?.att_clasification?.required" class="red-text">*</span>
+              Attachment clasification</label>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="file-field mt-2">
+            <file-upload></file-upload>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <div class="md-form">
+            <textarea mdbValidate [validateSuccess]="false" [validateError]="formFields?.notes?.required"
+              maxlength="{{formFields?.notes?.maxLength}}" class="form-control full-width" formControlName="notes"
+              id="notes" mdbInput required="{{formFields?.notes?.required}}"></textarea>
+            <label for="notes"><span *ngIf="formFields?.notes?.required" class="red-text">*</span>
+              Notes</label>
+          </div>
+        </div>
+        <!-- <div class="col-6">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.person?.required"
+              maxlength="{{formFields?.person?.maxLength}}" class="form-control full-width" formControlName="person"
+              id="person" mdbInput required="{{formFields?.person?.required}}"/>
+            <label for="person"><span *ngIf="formFields?.person?.required" class="red-text">*</span>
+              person</label>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="md-form">
+            <mdb-date-picker class="date-picker-right" [inline]="true" name="date" [options]="myDatePickerOptions"
+              [label]="'Date'" formControlName="date"
+              required="{{formFields?.date?.required}}">
+            </mdb-date-picker>
+          </div>
+        </div> -->
+        <div class="col-6">
+          <p class="bold">James Jhonson</p>
+        </div>
+        <div class="col-6">
+          <p class="bold">14-Jan-2020</p>
+        </div>
+      </div>
+      
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()"
+      [disabled]="additionalAttachmentsForm.invalid" mdbWavesEffect>Save</button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+  </div>
+</div>

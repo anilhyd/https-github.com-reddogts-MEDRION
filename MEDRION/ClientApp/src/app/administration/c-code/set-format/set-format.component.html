@@ -1,0 +1,150 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">Set Format</h4>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="setFormatForm">
+      <div class="row">
+        <div class="col-sm-3" *ngIf="formFields?.no_of_parts">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.no_of_parts?.required"
+              [options]="numberOfParts" formControlName="no_of_parts" required="{{formFields?.no_of_parts?.required}}">
+            </mdb-select>
+            <label for="no_of_parts"><span *ngIf="formFields?.no_of_parts?.required" class="red-text">*</span>
+              No of Parts</label>
+          </div>
+        </div>
+        <div class="col-sm-3" *ngIf="formFields?.seperator">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.seperator?.required"
+              [options]="seperator" formControlName="seperator" required="{{formFields?.seperator?.required}}">
+            </mdb-select>
+            <label for="seperator"><span *ngIf="formFields?.seperator?.required" class="red-text">*</span>
+              Seperator</label>
+          </div>
+        </div>
+        <div class="col-sm-4 mt-4">
+          <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+       mdbWavesEffect>Fill Parts Info</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <h5 class="mt-4" style="margin-bottom: -20px;">
+           <strong class="card-header-text">Parts Information</strong>
+          </h5>
+        </div>
+      </div>
+      <div class="mt-3">
+        <h6 class="dark-grey-text  mb-2 mt-5">
+          <strong class="card-header-text">Part 1</strong>
+        </h6>
+        <div class="row" formGroupName="parts_information_one">
+          <div class="col-sm-3" *ngIf="formFields?.parts_information_one?.formFields?.type">
+            <div class="md-form">
+              <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.parts_information_one?.formFields?.type?.required"
+                [options]="partsType" formControlName="type" required="{{formFields?.parts_information_one?.formFields?.type?.required}}">
+              </mdb-select>
+              <label for="type"><span *ngIf="formFields?.parts_information_one?.formFields?.type?.required" class="red-text">*</span>
+                Type</label>
+            </div>
+          </div>
+          <div class="col-sm-3" *ngIf="formFields?.parts_information_one?.formFields?.value">
+            <div class="md-form">
+              <input type="number" mdbValidate [validateSuccess]="false" [validateError]="true"
+                maxlength="{{formFields?.parts_information_one?.formFields?.value?.maxLength}}" class="form-control" formControlName="value"
+                id="parts_information_onevalue" mdbInput required="{{formFields?.parts_information_one?.formFields?.value?.required}}">
+              <label for="parts_information_onevalue"><span *ngIf="formFields?.parts_information_one?.formFields?.value?.required" class="red-text">*</span>
+                Value </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-3">
+        <h6 class="dark-grey-text  mb-2 mt-5">
+          <strong class="card-header-text">Part 2</strong>
+        </h6>
+        <div class="row" formGroupName="parts_information_two">
+          <div class="col-sm-3" *ngIf="formFields?.parts_information_two?.formFields?.type">
+            <div class="md-form">
+              <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.parts_information_two?.formFields?.type?.required"
+                [options]="partsType" formControlName="type" required="{{formFields?.parts_information_two?.formFields?.type?.required}}">
+              </mdb-select>
+              <label for="type"><span *ngIf="formFields?.parts_information_two?.formFields?.type?.required" class="red-text">*</span>
+                Type</label>
+            </div>
+          </div>
+          <div class="col-sm-3" *ngIf="formFields?.parts_information_two?.formFields?.value">
+            <div class="md-form">
+              <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.parts_information_two?.formFields?.value?.required"
+                [options]="valueType" formControlName="value" required="{{formFields?.parts_information_two?.formFields?.value?.required}}">
+              </mdb-select>
+              <label for="type"><span *ngIf="formFields?.parts_information_two?.formFields?.value?.required" class="red-text">*</span>
+                Value</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-3">
+        <h6 class="dark-grey-text  mb-2 mt-5">
+          <strong class="card-header-text">Part 3</strong>
+        </h6>
+        <div class="row" formGroupName="parts_information_three">
+          <div class="col-sm-3" *ngIf="formFields?.parts_information_three?.formFields?.type">
+            <div class="md-form">
+              <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.parts_information_three?.formFields?.type?.required"
+                [options]="partsType" formControlName="type" required="{{formFields?.parts_information_three?.formFields?.type?.required}}">
+              </mdb-select>
+              <label for="type"><span *ngIf="formFields?.parts_information_three?.formFields?.type?.required" class="red-text">*</span>
+                Type</label>
+            </div>
+          </div>
+          <div class="col-sm-2 pr-1" *ngIf="formFields?.parts_information_three?.formFields?.value">
+            <div class="md-form">
+              <input type="number" mdbValidate [validateSuccess]="false" [validateError]="true"
+                maxlength="{{formFields?.parts_information_three?.formFields?.value?.maxLength}}" class="form-control" formControlName="value"
+                id="parts_information_threevalue" mdbInput required="{{formFields?.parts_information_three?.formFields?.value?.required}}">
+              <label for="parts_information_threevalue"><span *ngIf="formFields?.parts_information_three?.formFields?.value?.required" class="red-text">*</span>
+                Value </label>
+            </div>
+          </div>
+          <div class="col-sm-3 pl-1" *ngIf="formFields?.parts_information_three?.formFields?.format">
+            <div class="md-form">
+              <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.parts_information_three?.formFields?.format?.required"
+                [options]="formats" formControlName="format" required="{{formFields?.parts_information_three?.formFields?.format?.required}}">
+              </mdb-select>
+              <label for="format"><span *ngIf="formFields?.parts_information_three?.formFields?.format?.required" class="red-text">*</span>
+                Format (Digits)</label>
+            </div>
+          </div>
+          <div class="col-sm-4" *ngIf="formFields?.parts_information_three?.formFields?.counter_reset_frequency">
+            <div class="md-form">
+              <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.parts_information_three?.formFields?.counter_reset_frequency?.required"
+                [options]="cResetFrenquency" formControlName="counter_reset_frequency" required="{{formFields?.parts_information_three?.formFields?.counter_reset_frequency?.required}}">
+              </mdb-select>
+              <label for="counter_reset_frequency"><span *ngIf="formFields?.parts_information_three?.formFields?.counter_reset_frequency?.required" class="red-text">*</span>
+                Counter Reset Frequency</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-3">
+        <h6 class="dark-grey-text  mb-2 mt-5">
+          <strong class="card-header-text">CCode Style <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+             mdbWavesEffect>Formulate</button></strong>
+        </h6>
+        <p class="h5">PHARMA-12012019-00001</p>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()"
+      *ngIf="heading === 'Add' || heading === 'Edit'" [disabled]="setFormatForm.invalid" mdbWavesEffect>Save</button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>    
+  </div>
+</div>

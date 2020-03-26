@@ -1,0 +1,56 @@
+[
+    {
+      "organisation_study_center": "Green Hill Medical Center, San Antonio, 78202",
+      "site_evaluation_type": "Site Evaluation",
+      "representative": "Robert . Steve",
+      "assigned_date": "11-Mar-2020",
+      "visited_date": "19-Mar-2020",
+      "organisation_study_center__1": "",
+      "id": 1
+    },
+    {
+      "organisation_study_center": "Green Hill Medical Center, San Antonio, 78203",
+      "site_evaluation_type": "Site Initiation",
+      "representative": "Cathy Alberts",
+      "assigned_date": "4-Apr-2020",
+      "visited_date": "8-Apr-2020",
+      "organisation_study_center__1": "",
+      "id": 2
+    },
+    {
+      "organisation_study_center": "Freeman Hospital Center, Universal City, 78148",
+      "site_evaluation_type": "Site Evaluation",
+      "representative": "Cindy Green",
+      "assigned_date": "14-Mar-2020",
+      "visited_date": "24-Mar-2020",
+      "organisation_study_center__1": "",
+      "id": 3
+    },
+    {
+      "organisation_study_center": "Freeman Hospital Center, Universal City, 78149",
+      "site_evaluation_type": "Site Initiation",
+      "representative": "James Peter",
+      "assigned_date": "10-Apr-2020",
+      "visited_date": "22-Apr-2020",
+      "organisation_study_center__1": "",
+      "id": 4
+    },
+    {
+      "organisation_study_center": "Freeman Hospital Center, Universal City, 78150",
+      "site_evaluation_type": "Interim Monitoring report",
+      "representative": "Mary Osteen",
+      "assigned_date": "11-Dec-2020",
+      "visited_date": "27-Dec-2020",
+      "organisation_study_center__1": "",
+      "id": 5
+    },
+    {
+      "organisation_study_center": "Freeman Hospital Center, Houston, 827361",
+      "site_evaluation_type": "Site Closure",
+      "representative": "Henry Roberts",
+      "assigned_date": "2-Apr-2020",
+      "visited_date": "10-Apr-2020",
+      "organisation_study_center__1": "",
+      "id": 6
+    }
+  ]

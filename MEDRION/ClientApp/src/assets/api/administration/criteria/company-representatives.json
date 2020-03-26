@@ -1,0 +1,121 @@
+{
+    "formFields": {
+        
+        "id_number":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "prefix":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "first_name":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "middle_name":{ "type":"text", "required":false, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "last_name":{ "type":"text", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "representative_type":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "region":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "district":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "territory":{ "type":"dropdown", "required":true, "maxLength":null, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+
+        "address_communication":{
+            "type":"formGroup-label",
+            "required":false,
+            "formFields":{
+                "address":{"type":"textarea","required":true,"maxLength": 500, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "postal_Code":{"type":"text","required":true,"maxLength": 10, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "city":{"type":"text","required":true,"maxLength": 25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "state":{"type":"text","required":false,"maxLength": 25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "country":{"type":"text","required":false,"maxLength": 25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "phone_number":{"type":"text","required":true,"maxLength": 15, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "phone_number_ext":{"type":"text","required":false,"maxLength": 5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "other_phone_number":{"type":"text","required":false,"maxLength": 15, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "other_phone_number_ext":{"type":"text","required":false,"maxLength": 5, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+                "email_id":{"type":"text","required":true,"maxLength": 50, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+            }
+        }
+    },
+
+    "columnDefs": [
+        {
+            "headerName": "ID",
+            "field": "id_number",
+            "sort": "asc"            
+        },
+        {
+            "headerName": "Full Name",
+            "field": "full_name"
+        },
+        {
+            "headerName": "Type",
+            "field": "representative_type"
+        },
+        {
+            "headerName": "Areas",
+            "field": "address"
+        },
+        {
+            "headerName": "Phone Number",
+            "field": "phone_number"
+        },
+        {
+            "headerName": "Email ID",
+            "field": "email_id"
+        }
+    ],
+    "operations": [        
+        {
+            "name": "Inactive",
+            "id": "inactive"
+        },
+        {
+            "name": "Active",
+            "id": "active"
+        },
+        {
+            "name": "Delete",
+            "id": "delete"
+        },
+        {
+            "name": "Edit",
+            "id": "edit"
+        },
+        {
+            "name": "Add New",
+            "id": "add"
+        }        
+    ],
+    "advanceSearch": 
+        {
+            "fields": [
+                {
+                    "label": "Full Name",
+                    "field": "full_name",
+                    "type": "text"
+                },
+                {
+                    "label": "Representative Type",
+                    "field": "representative_type",
+                    "type": "dropdown"
+                },
+                {
+                    "label": "Region/District",
+                    "field": "region_district",
+                    "type": "text"
+                },
+                {
+                    "label": "Territory",
+                    "field": "territory",
+                    "type": "text"
+                },
+                {
+                    "label": "City",
+                    "field": "city",
+                    "type": "text"
+                },
+                {
+                    "label": "State",
+                    "field": "state",
+                    "type": "text"
+                },
+                {
+                    "label": "Country",
+                    "field": "country",
+                    "type": "text"
+                }
+            ]
+        }
+}

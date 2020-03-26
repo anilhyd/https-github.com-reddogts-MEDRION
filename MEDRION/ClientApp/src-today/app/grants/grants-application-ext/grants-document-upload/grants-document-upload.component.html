@@ -1,0 +1,265 @@
+<form [formGroup]="docuemntUploadForm">
+  <div class="row">
+    <div class="col-3">
+      <mdb-breadcrumb customClass="black-text lighten-4 custom-breadcrumb"
+        style="font-size:13px;text-transform:uppercase;">
+        <mdb-breadcrumb-item>Document Upload
+        </mdb-breadcrumb-item>
+      </mdb-breadcrumb>
+    </div>
+    <div class="col-9">
+      <app-operations-bar [operations]="operations" [enableOperations]="docuemntUploadForm.valid?true:false"
+        (callbackOperation)="onCallbackOperation($event)"></app-operations-bar>
+    </div>
+  </div>
+  <div class="row mb-5">
+    <div class="col-12">
+      <div class="mx-auto">
+        <div class="md-form" *ngIf="formFields?.profile_upto_date">
+          <p>Is the current W-9/8 in your profile upto date? </p>
+
+          <div class="mt-4">
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" id="materialInline43" name="profile_upto_date"
+                formControlName="profile_upto_date" [value]="'yes'" mdbInput>
+              <label class="form-check-label" for="materialInline43">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" id="materialInline44" name="profile_upto_date"
+                formControlName="profile_upto_date" [value]="'no'" mdbInput>
+              <label class="form-check-label" for="materialInline44">No
+              </label>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mt-2">
+          <div class="row">
+            <div class="col-sm-6" *ngIf="formFields?.detailed_agenda">
+              <mdb-card class="mb-4">
+                <mdb-card-body>
+                  <div formGroupName="detailed_agenda">
+                    <div class="row">
+                      <div class="col-sm-8">
+                        <p class="mb-1"><small>Document Type: <span *ngIf="formFields?.detailed_agenda?.required"
+                              class="ml-1">*</span></small></p>
+                        <h6>Detailed Agenda</h6>
+                      </div>
+                      <div class="col-sm-4 text-right">
+                        <p><small>Date of upload</small> <span class="d-block">03/05/2019</span>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 col-md-auto">
+                        <div class="file-field">
+                          <file-upload></file-upload>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="chip mt-1" title="{{item}}" *ngFor="let item of uploadedFiles; index as i">
+                          <mdb-icon fas class="mr-1" icon="file-excel"></mdb-icon>
+                          <span class="crop-text wd-200">{{item}}</span>
+                          <i class="close fas fa-times"></i>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="md-form">
+                      <textarea mdbValidate maxlength="{{formFields?.detailed_agenda?.formFields?.notes?.maxLength}}"
+                        [validateSuccess]="false" formControlName="notes" id="notes" type="text"
+                        class="md-textarea form-control" mdbInput
+                        required="{{formFields?.detailed_agenda?.formFields?.notes?.required}}"></textarea>
+                      <label for="notes"><span *ngIf="formFields?.detailed_agenda?.formFields?.notes?.required"
+                          class="red-text">*</span>
+                        <mdb-icon far icon="sticky-note"></mdb-icon> Notes</label>
+                    </div>
+                  </div>
+                </mdb-card-body>
+              </mdb-card>
+            </div>
+            <div class="col-sm-6" *ngIf="formFields?.proposed_faculty">
+              <mdb-card class="mb-4">
+                <mdb-card-body>
+                  <div formGroupName="proposed_faculty">
+                    <div class="row">
+                      <div class="col-sm-8">
+                        <p class="mb-1"><small>Document Type: <span *ngIf="formFields?.proposed_faculty?.required"
+                              class="ml-1">*</span></small></p>
+                        <h6>Proposed faculty/speakers</h6>
+                      </div>
+                      <div class="col-sm-4 text-right">
+                        <p><small>Date of upload</small> <span class="d-block">03/05/2019</span>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 col-md-auto">
+                        <div class="file-field">
+                          <file-upload></file-upload>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="chip mt-1" title="{{item}}" *ngFor="let item of uploadedFiles; index as i">
+                          <mdb-icon fas class="mr-1" icon="file-excel"></mdb-icon>
+                          <span class="crop-text wd-200">{{item}}</span>
+                          <i class="close fas fa-times"></i>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="md-form">
+                      <textarea mdbValidate maxlength="{{formFields?.proposed_faculty?.formFields?.notes?.maxLength}}"
+                        [validateSuccess]="false" formControlName="notes" id="notes" type="text"
+                        class="md-textarea form-control" mdbInput
+                        required="{{formFields?.proposed_faculty?.formFields?.notes?.required}}"></textarea>
+                      <label for="notes"><span *ngIf="formFields?.proposed_faculty?.formFields?.notes?.required"
+                          class="red-text">*</span>
+                        <mdb-icon far icon="sticky-note"></mdb-icon> Notes</label>
+                    </div>
+                  </div>
+                </mdb-card-body>
+              </mdb-card>
+            </div>
+
+            <div class="col-sm-6" *ngIf="formFields?.accrediting_certificate">
+              <mdb-card class="mb-4">
+                <mdb-card-body>
+                  <div formGroupName="accrediting_certificate">
+                    <div class="row">
+                      <div class="col-sm-8">
+                        <p class="mb-1"><small>Document Type: <span
+                              *ngIf="formFields?.accrediting_certificate?.required" class="ml-1">*</span></small></p>
+                        <h6>Approved accrediting provide certificate</h6>
+                      </div>
+                      <div class="col-sm-4 text-right">
+                        <p><small>Date of upload</small> <span class="d-block">03/05/2019</span>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 col-md-auto">
+                        <div class="file-field">
+                          <file-upload></file-upload>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="chip mt-1" title="{{item}}" *ngFor="let item of uploadedFiles; index as i">
+                          <mdb-icon fas class="mr-1" icon="file-excel"></mdb-icon>
+                          <span class="crop-text wd-200">{{item}}</span>
+                          <i class="close fas fa-times"></i>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="md-form">
+                      <textarea mdbValidate
+                        maxlength="{{formFields?.accrediting_certificate?.formFields?.notes?.maxLength}}"
+                        [validateSuccess]="false" formControlName="notes" id="notes" type="text"
+                        class="md-textarea form-control" mdbInput
+                        required="{{formFields?.accrediting_certificate?.formFields?.notes?.required}}"></textarea>
+                      <label for="notes"><span *ngIf="formFields?.accrediting_certificate?.formFields?.notes?.required"
+                          class="red-text">*</span>
+                        <mdb-icon far icon="sticky-note"></mdb-icon> Notes</label>
+                    </div>
+                  </div>
+                </mdb-card-body>
+              </mdb-card>
+            </div>
+            <div class="col-sm-6" *ngIf="formFields?.irb_approval">
+              <mdb-card class="mb-4">
+                <mdb-card-body>
+                  <div formGroupName="irb_approval">
+                    <div class="row">
+                      <div class="col-sm-8">
+                        <p class="mb-1"><small>Document Type: <span *ngIf="formFields?.irb_approval?.required"
+                              class="ml-1">*</span></small></p>
+                        <h6>IRB Approval</h6>
+                      </div>
+                      <div class="col-sm-4 text-right">
+                        <p><small>Date of upload</small> <span class="d-block">03/05/2019</span>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 col-md-auto">
+                        <div class="file-field">
+                          <file-upload></file-upload>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="chip mt-1" title="{{item}}" *ngFor="let item of uploadedFiles; index as i">
+                          <mdb-icon fas class="mr-1" icon="file-excel"></mdb-icon>
+                          <span class="crop-text wd-200">{{item}}</span>
+                          <i class="close fas fa-times"></i>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="md-form">
+                      <textarea mdbValidate maxlength="{{formFields?.irb_approval?.formFields?.notes?.maxLength}}"
+                        [validateSuccess]="false" formControlName="notes" id="notes" type="text"
+                        class="md-textarea form-control" mdbInput
+                        required="{{formFields?.irb_approval?.formFields?.notes?.required}}"></textarea>
+                      <label for="notes"><span *ngIf="formFields?.irb_approval?.formFields?.notes?.required"
+                          class="red-text">*</span>
+                        <mdb-icon far icon="sticky-note"></mdb-icon> Notes</label>
+                    </div>
+                  </div>
+                </mdb-card-body>
+              </mdb-card>
+            </div>
+
+            <div class="col-sm-6" *ngIf="formFields?.patient_consent_form">
+              <mdb-card class="mb-4">
+                <mdb-card-body>
+                  <div formGroupName="patient_consent_form">
+                    <div class="row">
+                      <div class="col-sm-8">
+                        <p class="mb-1"><small>Document Type: <span *ngIf="formFields?.patient_consent_form?.required"
+                              class="ml-1">*</span></small></p>
+                        <h6>Patient Consent Form</h6>
+                      </div>
+                      <div class="col-sm-4 text-right">
+                        <p><small>Date of upload</small> <span class="d-block">03/05/2019</span>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 col-md-auto">
+                        <div class="file-field">
+                          <file-upload></file-upload>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="chip mt-1" title="{{item}}" *ngFor="let item of uploadedFiles; index as i">
+                          <mdb-icon fas class="mr-1" icon="file-excel"></mdb-icon>
+                          <span class="crop-text wd-200">{{item}}</span>
+                          <i class="close fas fa-times"></i>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="md-form">
+                      <textarea mdbValidate
+                        maxlength="{{formFields?.patient_consent_form?.formFields?.notes?.maxLength}}"
+                        [validateSuccess]="false" formControlName="notes" id="notes" type="text"
+                        class="md-textarea form-control" mdbInput
+                        required="{{formFields?.patient_consent_form?.formFields?.notes?.required}}"></textarea>
+                      <label for="notes"><span *ngIf="formFields?.patient_consent_form?.formFields?.notes?.required"
+                          class="red-text">*</span>
+                        <mdb-icon far icon="sticky-note"></mdb-icon> Notes</label>
+                    </div>
+                  </div>
+                </mdb-card-body>
+              </mdb-card>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</form>

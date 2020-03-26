@@ -1,0 +1,210 @@
+{
+  "eap":[
+    {
+      "request_id": "P-IST-001",
+      "product_name": "Exemestane",
+      "submitted_Date": "27-Feb-2020",
+      "required_by": "27-Mar-2020",
+      "requested": 1000,
+      "allocated": 1000,
+      "used": 1000,
+      "status": "Closed",
+      "id": 1,
+      "request_type": "Product"
+    },
+    {
+      "request_id": "P-IST-002",
+      "product_name": "Radium-223 dichloride (radium-223)",
+      "submitted_Date": "28-Feb-2020",
+      "required_by": "1-Apr-2020",
+      "requested": 125,
+      "allocated": 125,
+      "used": 125,
+      "status": "Closed",
+      "id": 2,
+      "request_type": "Product"
+    },
+    {
+      "request_id": "P-IST-004",
+      "product_name": "Exemestane",
+      "submitted_Date": "2-Mar-2020",
+      "required_by": "23-Apr-2020",
+      "requested": "1500",
+      "allocated": "1500",
+      "used": "1500",
+      "status": "Closed",
+      "id": 4,
+      "request_type": "Product"
+    },
+    {
+      "request_id": "P-IST-005",
+      "product_name": "Radium-223 dichloride (radium-223)",
+      "submitted_Date": "3-Mar-2020",
+      "required_by": "14-Apr-2020",
+      "requested": "250",
+      "allocated": "250",
+      "used": "250",
+      "status": "Closed",
+      "id": 5,
+      "request_type": "Product"
+    },
+    {
+      "request_id": "P-IST-008",
+      "product_name": "Exemestane",
+      "submitted_Date": "6-Mar-2020",
+      "required_by": "7-May-2020",
+      "requested": "700",
+      "allocated": "700",
+      "used": "500",
+      "status": "Allocated",
+      "id": 8,
+      "request_type": "Product"
+    },
+    {
+      "request_id": "P-IST-009",
+      "product_name": "Radium-223 dichloride (radium-223)",
+      "submitted_Date": "7-Mar-2020",
+      "required_by": "8-May-2020",
+      "requested": "125",
+      "allocated": "125",
+      "used": "100",
+      "status": "Approved",
+      "id": 9,
+      "request_type": "Product"
+    },
+    {
+      "request_id": "P-IST-010",
+      "product_name": "Exemestane",
+      "submitted_Date": "8-Mar-2020",
+      "required_by": "9-May-2020",
+      "requested": "300",
+      "allocated": "300",
+      "used": "300",
+      "status": "Approved",
+      "id": 10,
+      "request_type": "Product"
+    }
+  ],
+  "ist":[
+    {
+      "request_id": "P-IST-001",
+      "product_name": "Exemestane",
+      "submitted_Date": "27-Feb-2020",
+      "required_by": "27-Mar-2020",
+      "requested": 1000,
+      "allocated": 1000,
+      "used": 1000,
+      "status": "Closed",
+      "id": 1,
+      "request_type": "Product"
+    },
+    {
+      "request_id": "P-IST-002",
+      "product_name": "Radium-223 dichloride (radium-223)",
+      "submitted_Date": "28-Feb-2020",
+      "required_by": "1-Apr-2020",
+      "requested": 125,
+      "allocated": 125,
+      "used": 125,
+      "status": "Closed",
+      "id": 2,
+      "request_type": "Product"
+    },
+    {
+      "request_id": "F-IST-003",
+      "product_name": "-",
+      "submitted_Date": "1-Mar-2020",
+      "required_by": "12-Apr-2020",
+      "requested": "$ 18000",
+      "allocated": "$ 18000",
+      "used": "$ 18000",
+      "status": "Closed",
+      "id": 3,
+      "request_type": "Fund"
+    },
+    {
+      "request_id": "P-IST-004",
+      "product_name": "Exemestane",
+      "submitted_Date": "2-Mar-2020",
+      "required_by": "23-Apr-2020",
+      "requested": "1500",
+      "allocated": "1500",
+      "used": "1500",
+      "status": "Closed",
+      "id": 4,
+      "request_type": "Product"
+    },
+    {
+      "request_id": "P-IST-005",
+      "product_name": "Radium-223 dichloride (radium-223)",
+      "submitted_Date": "3-Mar-2020",
+      "required_by": "14-Apr-2020",
+      "requested": "250",
+      "allocated": "250",
+      "used": "250",
+      "status": "Closed",
+      "id": 5,
+      "request_type": "Product"
+    },
+    {
+      "request_id": "F-IST-006",
+      "product_name": "-",
+      "submitted_Date": "4-Mar-2020",
+      "required_by": "5-Apr-2020",
+      "requested": "$ 10000",
+      "allocated": "$ 10000",
+      "used": "$ 5000",
+      "status": "Approved",
+      "id": 6,
+      "request_type": "Fund"
+    },
+    {
+      "request_id": "F-IST-007",
+      "product_name": "-",
+      "submitted_Date": "5-Mar-2020",
+      "required_by": "6-May-2020",
+      "requested": "$ 15000",
+      "allocated": "$ 15000",
+      "used": "$ 12000",
+      "status": "Closed",
+      "id": 7,
+      "request_type": "Fund"
+    },
+    {
+      "request_id": "P-IST-008",
+      "product_name": "Exemestane",
+      "submitted_Date": "6-Mar-2020",
+      "required_by": "7-May-2020",
+      "requested": "700",
+      "allocated": "700",
+      "used": "500",
+      "status": "Allocated",
+      "id": 8,
+      "request_type": "Product"
+    },
+    {
+      "request_id": "P-IST-009",
+      "product_name": "Radium-223 dichloride (radium-223)",
+      "submitted_Date": "7-Mar-2020",
+      "required_by": "8-May-2020",
+      "requested": "125",
+      "allocated": "125",
+      "used": "100",
+      "status": "Approved",
+      "id": 9,
+      "request_type": "Product"
+    },
+    {
+      "request_id": "P-IST-010",
+      "product_name": "Exemestane",
+      "submitted_Date": "8-Mar-2020",
+      "required_by": "9-May-2020",
+      "requested": "300",
+      "allocated": "300",
+      "used": "300",
+      "status": "Approved",
+      "id": 10,
+      "request_type": "Product"
+    }
+  ]
+}

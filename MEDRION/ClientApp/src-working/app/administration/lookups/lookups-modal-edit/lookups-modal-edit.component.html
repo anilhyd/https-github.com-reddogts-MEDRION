@@ -1,0 +1,112 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">{{heading}}</h4>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-sm-6">
+        <p class="mb-0 mt-3">Code</p>
+        <p><strong>IST</strong></p>
+      </div>
+      <div class="col-sm-6">
+        <p class="mb-0 mt-3">Name</p>
+        <p><strong>IST</strong></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <p class="mb-2">Description</p>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-5">
+        <p class="mb-1 mt-2">Supported Values <button size="sm" type="button" mdbBtn color="light" (click)="selectDocuments($event)" mdbWavesEffect>Add Values</button> </p>
+      </div>
+      <div class="col-sm-6 pl-0 mt-3">
+        <mdb-checkbox [checked]="false">Hide inactive Values</mdb-checkbox>
+      </div>
+      <div class="col-sm-6">
+        <div class="chip mt-2 w-100">
+          <mdb-icon fas class="mr-1" icon="file-excel"></mdb-icon>
+          <span class="crop-text wd-200">Value 1</span>
+          <mdb-checkbox [default]="true" class="chip-check check-position">&nbsp;</mdb-checkbox>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="chip mt-2 w-100">
+          <mdb-icon fas class="mr-1" icon="file-excel"></mdb-icon>
+          <span class="crop-text wd-200">Value 1</span>
+          <mdb-checkbox [default]="true" class="chip-check check-position">&nbsp;</mdb-checkbox>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="chip mt-2 w-100">
+          <mdb-icon fas class="mr-1" icon="file-excel"></mdb-icon>
+          <span class="crop-text wd-200">Value 1</span>
+          <mdb-checkbox [default]="true" class="chip-check check-position">&nbsp;</mdb-checkbox>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="chip mt-2 w-100">
+          <mdb-icon fas class="mr-1" icon="file-excel"></mdb-icon>
+          <span class="crop-text wd-200">Value 1</span>
+          <mdb-checkbox [default]="true" class="chip-check check-position">&nbsp;</mdb-checkbox>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="chip mt-2 w-100">
+          <mdb-icon fas class="mr-1" icon="file-excel"></mdb-icon>
+          <span class="crop-text wd-200">Value 1</span>
+          <mdb-checkbox [default]="true" class="chip-check check-position">&nbsp;</mdb-checkbox>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="chip mt-2 w-100">
+          <mdb-icon fas class="mr-1" icon="file-excel"></mdb-icon>
+          <span class="crop-text wd-200">Value 1</span>
+          <mdb-checkbox [default]="true" class="chip-check check-position">&nbsp;</mdb-checkbox>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="chip mt-2 w-100">
+          <mdb-icon fas class="mr-1" icon="file-excel"></mdb-icon>
+          <span class="crop-text wd-200">Value 1</span>
+          <mdb-checkbox [default]="true" class="chip-check check-position">&nbsp;</mdb-checkbox>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="chip mt-2 w-100">
+          <mdb-icon fas class="mr-1" icon="file-excel"></mdb-icon>
+          <span class="crop-text wd-200">Value 1</span>
+          <mdb-checkbox [default]="true" class="chip-check check-position">&nbsp;</mdb-checkbox>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="chip mt-2 w-100">
+          <mdb-icon fas class="mr-1" icon="file-excel"></mdb-icon>
+          <span class="crop-text wd-200">Value 1</span>
+          <mdb-checkbox [default]="true" class="chip-check check-position">&nbsp;</mdb-checkbox>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="chip mt-2 w-100">
+          <mdb-icon fas class="mr-1" icon="file-excel"></mdb-icon>
+          <span class="crop-text wd-200">Value 1</span>
+          <mdb-checkbox [default]="true" class="chip-check check-position">&nbsp;</mdb-checkbox>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()" *ngIf="heading === 'Add' || heading === 'Edit'"
+      mdbWavesEffect>Save</button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+  </div>
+</div>

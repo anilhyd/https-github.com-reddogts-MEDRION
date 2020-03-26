@@ -1,0 +1,157 @@
+{
+    "formFields": {
+        "prefix": {
+            "type": "dropdown",
+            "required": false,
+            "maxLength": false,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "first_name": {
+            "type": "text",
+            "required": true,
+            "maxLength": 35,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "middle_name": {
+            "type": "text",
+            "required": false,
+            "maxLength": 35,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "last_name": {
+            "type": "text",
+            "required": true,
+            "maxLength": 35,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "email_address": {
+            "type": "text",
+            "required": true,
+            "maxLength": 50,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "phone_number": {
+            "type": "text",
+            "required": true,
+            "maxLength": 50,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "phone_number_ext": {
+            "type": "text",
+            "required": true,
+            "maxLength": 50,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "address": {
+            "type": "textarea",
+            "required": true,
+            "maxLength": 100,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "city": {
+            "type": "text",
+            "required": true,
+            "maxLength": 30,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "state": {
+            "type": "dropdown",
+            "required": true,
+            "maxLength": 10,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "postal_code": {
+            "type": "text",
+            "required": true,
+            "maxLength": 30,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "country": {
+            "type": "dropdown",
+            "required": true,
+            "maxLength": 50,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        },
+        "default_cotact": {
+            "type": "checkbox",
+            "required": false,
+            "maxLength": false,
+            "pattern": null,
+            "validationMessage": "Field is either empty or incorrect"
+        }
+    },
+    "formOperations": [
+        {
+            "name": "Save",
+            "id": "save"
+        }
+    ],
+
+    "columnDefs": [
+        {
+            "headerName": "First Name",
+            "field": "first_name"   
+        },
+        {
+            "headerName": "Middle Name",
+            "field": "middle_name"
+        },
+        {
+            "headerName": "Last Name",
+            "field": "last_name"
+        },
+        {
+            "headerName": "E-mail",
+            "field": "email_address"
+        },
+        {
+            "headerName": "Phone Number",
+            "field": "phone_number"
+        },
+        {
+            "headerName": "Default Signee",
+            "field": "default_signee"
+        }
+    ],
+    "operations": [
+        {
+            "name": "Make Default Signee",
+            "id": "make_default"
+        },
+        {
+            "name": "Delete",
+            "id": "delete"
+        },
+        {
+            "name": "Edit",
+            "id": "edit"
+        },
+        {
+            "name": "Add Authorised Signer",
+            "id": "add"
+        }
+    ],
+    "advanceSearch": 
+    {
+        "fields": [
+            {
+                "label": "Name",
+                "field": "simple",
+                "type": "text"
+            }
+        ],
+        "filters": []
+    }
+}

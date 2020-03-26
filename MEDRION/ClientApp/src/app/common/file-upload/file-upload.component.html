@@ -1,0 +1,4 @@
+<div mdbBtn rounded="true" color="light" class="ml-0" size="sm" mdbWavesEffect>
+  <span><mdb-icon fas icon="upload" class="mr-1"></mdb-icon>Choose file</span>
+  <input type="file" mdbFileSelect (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput">
+</div>

@@ -1,0 +1,258 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100 text-center" id="myModalLabel">{{heading}} User</h4>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="userForm">
+      <div class="row">
+        <div class="col-sm-3" *ngIf="formFields?.user_code">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.user_code?.required"
+              maxlength="{{formFields?.user_code?.maxLength}}" class="form-control" formControlName="user_code"
+              id="dynmcId" mdbInput required="{{formFields?.user_code?.required}}">
+            <label for="dynmcId"><span *ngIf="formFields?.user_code?.required" class="red-text">*</span>
+              Code</label>
+          </div>
+        </div>
+        <div class="col-sm-5 pr-0">
+          <div class="md-form" style="margin-bottom: -5px;">
+            <label><span *ngIf="formFields?.user_type?.required" class="red-text">*</span>User belongs to</label>
+          </div>
+          <div class="md-form">
+            <div class="form-check  form-check-inline" *ngIf="formFields?.user_type">
+              <input type="radio" class="form-check-input" id="materialUnchecked2" [value]="false"
+                formControlName="user_type" name="user_type">
+              <label class="form-check-label" for="materialUnchecked2">Internal</label>
+            </div>
+
+            <div class="form-check  form-check-inline" *ngIf="formFields?.user_type">
+              <input type="radio" class="form-check-input" id="materialChecked2" [value]="true"
+                formControlName="user_type" name="user_type">
+              <label class="form-check-label" for="materialChecked2">External</label>
+            </div>
+          </div>
+        </div>
+        
+
+      </div>
+      <div class="row">
+        <div class="col-sm-3" *ngIf="formFields?.user_emailId">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.user_emailId?.required"
+              maxlength="{{formFields?.user_emailId?.maxLength}}" class="form-control" formControlName="user_emailId"
+              id="dynmcId1" mdbInput required="{{formFields?.user_emailId?.required}}">
+            <label for="dynmcId1"><span *ngIf="formFields?.user_emailId?.required" class="red-text">*</span>
+              <mdb-icon far icon="envelope"></mdb-icon> Email ID</label>
+          </div>
+        </div>
+        
+        <div class="col-sm-3" *ngIf="formFields?.user_confirm_emailId">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.user_confirm_emailId?.required"
+              maxlength="{{formFields?.user_confirm_emailId?.maxLength}}" class="form-control"
+              formControlName="user_confirm_emailId" id="dynmcId2" mdbInput
+              required="{{formFields?.user_confirm_emailId?.required}}">
+            <label for="dynmcId2"><span *ngIf="formFields?.user_confirm_emailId?.required" class="red-text">*</span>
+              <mdb-icon far icon="envelope"></mdb-icon> Confirm Email ID</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+
+        <div class="col-sm-1" *ngIf="formFields?.user_title">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.user_title?.required"
+              maxlength="{{formFields?.user_title?.maxLength}}" class="form-control" formControlName="user_title"
+              id="dynmcId4" mdbInput required="{{formFields?.user_title?.required}}">
+            <label for="dynmcId4"><span *ngIf="formFields?.user_title?.required" class="red-text">*</span>
+              Title</label>
+          </div>
+        </div>
+        <div class="col-sm-2" *ngIf="formFields?.user_first_name">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.user_first_name?.required"
+              maxlength="{{formFields?.user_first_name?.maxLength}}" class="form-control"
+              formControlName="user_first_name" id="dynmcId5" mdbInput
+              required="{{formFields?.user_first_name?.required}}">
+            <label for="dynmcId5"><span *ngIf="formFields?.user_first_name?.required" class="red-text">*</span>
+              First Name</label>
+          </div>
+        </div>
+        <div class="col-sm-3" *ngIf="formFields?.user_middle_name">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.user_middle_name?.required"
+              maxlength="{{formFields?.user_middle_name?.maxLength}}" class="form-control"
+              formControlName="user_middle_name" id="dynmcId6" mdbInput
+              required="{{formFields?.user_middle_name?.required}}">
+            <label for="dynmcId6"><span *ngIf="formFields?.user_middle_name?.required" class="red-text">*</span>
+              Middle Name</label>
+          </div>
+        </div>
+        <div class="col-sm-3" *ngIf="formFields?.user_last_name">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.user_last_name?.required"
+              maxlength="{{formFields?.user_last_name?.maxLength}}" class="form-control"
+              formControlName="user_last_name" id="dynmcId7" mdbInput
+              required="{{formFields?.user_last_name?.required}}">
+            <label for="dynmcId7"><span *ngIf="formFields?.user_last_name?.required" class="red-text">*</span>
+              Last Name</label>
+          </div>
+        </div>
+        
+      </div>
+      <div class="row">
+        <div class="col-sm-6" *ngIf="formFields?.user_full_name">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.user_full_name?.required"
+              maxlength="{{formFields?.user_full_name?.maxLength}}" class="form-control" formControlName="user_full_name"
+              id="dynmcId8" mdbInput required="{{formFields?.user_full_name?.required}}">
+            <label for="dynmcId8"><span *ngIf="formFields?.user_full_name?.required" class="red-text">*</span>
+              Full Name</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+      
+        <div class="col-sm-3" *ngIf="formFields?.user_ssn">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.user_ssn?.required"
+              maxlength="{{formFields?.user_ssn?.maxLength}}" class="form-control" formControlName="user_ssn" id="dynmcId3"
+              mdbInput required="{{formFields?.user_ssn?.required}}">
+            <label for="dynmcId3"><span *ngIf="formFields?.user_ssn?.required" class="red-text">*</span>
+              SSN</label>
+          </div>
+        </div>
+        <div class="col-sm-3" *ngIf="formFields?.user_gender">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.user_gender?.required"
+              [options]="genderOptions" formControlName="user_gender" required="{{formFields?.user_gender?.required}}">
+            </mdb-select>
+            <label for="dynmcId"><span *ngIf="formFields?.user_gender?.required" class="red-text">*</span>
+              Gender</label>
+          </div>
+        </div>
+        <div class="col-sm-3" *ngIf="formFields?.user_designation">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="formFields?.user_designation?.required"
+              maxlength="{{formFields?.user_designation?.maxLength}}" class="form-control" formControlName="user_designation"
+              id="dynmcId9" mdbInput required="{{formFields?.user_designation?.required}}">
+            <label for="dynmcId9"><span *ngIf="formFields?.user_designation?.required" class="red-text">*</span>
+              Designation</label>
+          </div>
+        </div>
+      
+      </div>
+      
+      <div class="row">
+        <div class="col-sm-2" *ngIf="formFields?.user_phone_number">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.user_phone_number?.required"
+              maxlength="{{formFields?.user_phone_number?.maxLength}}" class="form-control"
+              formControlName="user_phone_number" id="dynmcId10" mdbInput
+              required="{{formFields?.user_phone_number?.required}}">
+            <label for="dynmcId10"><span *ngIf="formFields?.user_phone_number?.required" class="red-text">*</span>
+              <mdb-icon fas icon="phone"></mdb-icon> Phone Number</label>
+          </div>
+        </div>
+        <div class="col-sm-1" *ngIf="formFields?.user_phone_number_ext">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.user_phone_number_ext?.required"
+              maxlength="{{formFields?.user_phone_number_ext?.maxLength}}" class="form-control"
+              formControlName="user_phone_number_ext" id="dynmcId11" mdbInput
+              required="{{formFields?.user_phone_number_ext?.required}}">
+            <label for="dynmcId11"><span *ngIf="formFields?.user_phone_number_ext?.required" class="red-text">*</span>
+              Ext</label>
+          </div>
+        </div>
+        <div class="col-sm-2" *ngIf="formFields?.user_alternate_phone_number">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.user_alternate_phone_number?.required"
+              maxlength="{{formFields?.user_alternate_phone_number?.maxLength}}" class="form-control"
+              formControlName="user_alternate_phone_number" id="dynmcId12" mdbInput
+              required="{{formFields?.user_alternate_phone_number?.required}}">
+            <label for="dynmcId12"><span *ngIf="formFields?.user_alternate_phone_number?.required"
+                class="red-text">*</span><mdb-icon fas icon="phone"></mdb-icon> Alt Phone No</label>
+          </div>
+        </div>
+        <div class="col-sm-1" *ngIf="formFields?.user_alternate_phone_number_ext">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.user_alternate_phone_number_ext?.required"
+              maxlength="{{formFields?.user_alternate_phone_number_ext?.maxLength}}" class="form-control"
+              formControlName="user_alternate_phone_number_ext" id="dynmcId" mdbInput
+              required="{{formFields?.user_alternate_phone_number_ext?.required}}">
+            <label for="dynmcId"><span *ngIf="formFields?.user_alternate_phone_number_ext?.required"
+                class="red-text">*</span> Ext</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="md-form">
+          <div class="col-sm-12">
+            <h6 class="dark-grey-text mb-2"><strong class="card-header-text">Internal User </strong>
+            </h6>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3" *ngIf="formFields?.user_department">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="formFields?.user_department?.required"
+              [options]="genderOptions" formControlName="user_department"
+              required="{{formFields?.user_department?.required}}"></mdb-select>
+
+            <label for="dynmcId16"><span *ngIf="formFields?.user_department?.required" class="red-text">*</span>
+              Department</label>
+          </div>
+        </div>
+        <div class="col-sm-3" *ngIf="formFields?.user_reporting_manager">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.user_reporting_manager?.required" [options]="genderOptions"
+              formControlName="user_reporting_manager" required="{{formFields?.user_reporting_manager?.required}}">
+            </mdb-select>
+            <label for="dynmcId15"><span *ngIf="formFields?.user_reporting_manager?.required" class="red-text">*</span>
+              Reporting Manager</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="md-form">
+          <div class="col-sm-12">
+            <h6 class="dark-grey-text mb-2"><strong class="card-header-text">External User </strong>
+            </h6>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3" *ngIf="formFields?.user_organization">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false"
+              [validateError]="formFields?.user_organization?.required"
+              maxlength="{{formFields?.user_organization?.maxLength}}" class="form-control"
+              formControlName="user_organization" id="dynmcId14" mdbInput
+              required="{{formFields?.user_organization?.required}}">
+            <label for="dynmcId14"><span *ngIf="formFields?.user_organization?.required" class="red-text">*</span>
+              Organization</label>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="save()"
+      *ngIf="heading === 'Add' || heading === 'Edit'" [disabled]="userForm.invalid" mdbWavesEffect>Save</button>
+      <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+  </div>
+</div>

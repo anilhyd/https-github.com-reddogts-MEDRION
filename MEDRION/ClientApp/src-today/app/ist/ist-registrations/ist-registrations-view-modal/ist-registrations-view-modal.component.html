@@ -1,0 +1,263 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h5 class="modal-title w-100" id="myModalLabel">{{heading}} Registration</h5>
+  </div>
+
+  <div class="modal-body">
+    <form [formGroup]="viewForm">
+      <div class="text-left">
+        <h6 class="dark-grey-text mb-2 mt-1">
+          <strong class="card-header-text">Physician Information</strong>
+        </h6>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-1">
+          <div class="md-form">
+            <mdb-select mdbValidate [validateSuccess]="false" [validateError]="true" [options]="optionsSelect"
+              formControlName="prefix" id="dynmcId">
+            </mdb-select>
+            <label for="dynmcId"><span class="red-text">*</span> Prefix</label>
+          </div>
+
+        </div>
+        <div class="col-sm-2">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true" maxlength="50"
+              class="form-control" formControlName="first_name" id="dynmcId1" mdbInput>
+            <label for="dynmcId1"><span class="red-text">*</span> First Name</label>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="md-form">
+            <input type="text" maxlength="50" class="form-control" formControlName="middle_name" id="dynmcId2" mdbInput>
+            <label for="dynmcId2">Middle Name</label>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true" maxlength="50"
+              class="form-control" formControlName="last_name" id="dynmcId3" mdbInput>
+            <label for="dynmcId3"><span class="red-text">*</span> Last Name</label>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true" maxlength="10"
+              class="form-control" formControlName="medical_license_number" id="dynmcId4" mdbInput>
+            <label for="dynmcId4"><span class="red-text">*</span> Medical License Number</label>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true" 
+              class="form-control" formControlName="occupation" id="occupation" mdbInput>
+            <label for="occupation"> Occupation</label>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true" 
+              class="form-control" formControlName="specialization" id="specialization" mdbInput>
+            <label for="specialization"> Specialization</label>
+          </div>
+        </div>
+      </div>
+      <div class="text-left">
+        <h6 class="dark-grey-text  mb-2 mt-5">
+          <strong class="card-header-text">Address & Communication Details</strong>
+        </h6>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="md-form">
+            <textarea mdbValidate [validateSuccess]="false" [validateError]="true" maxlength="150"
+              formControlName="psy_address" id="dynmcId5" type="text" class="md-textarea form-control"
+              mdbInput></textarea>
+            <label for="dynmcId5"><span class="red-text">*</span> <mdb-icon far icon="address-card"></mdb-icon> Address</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true" maxlength="5"
+              formControlName="psy_postal_code" id="dynmcId6" class="form-control" mdbInput>
+            <label for="dynmcId6"><span class="red-text">*</span> <mdb-icon fas icon="map-marker-alt"></mdb-icon> Postal Code</label>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true" maxlength="50"
+              formControlName="psy_city" id="dynmcId7" class="form-control" mdbInput>
+            <label for="dynmcId7"><span class="red-text">*</span> <mdb-icon far icon="building"></mdb-icon> City</label>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true" maxlength="50"
+              formControlName="psy_state" id="dynmcId8" class="form-control" mdbInput>
+            <label for="dynmcId8"><span class="red-text">*</span> <mdb-icon fas icon="city"></mdb-icon> State</label>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true" maxlength="50"
+              formControlName="psy_country" id="dynmcId9" class="form-control" mdbInput>
+            <label for="dynmcId9"><span class="red-text">*</span><mdb-icon fas icon="globe-americas"></mdb-icon> Country</label>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+
+        <div class="col-sm-3">
+          <div class="md-form">
+            <input type="text" maxlength="30" formControlName="preffered_contact_method" id="dynmcId10"
+              class="form-control" mdbInput>
+            <label for="dynmcId10">Preferred Contact Method</label>
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <div class="md-form">
+            <input type="number" mdbValidate [validateSuccess]="false" [validateError]="true" maxlength="15"
+              formControlName="phone_number" id="dynmcId13" class="form-control" mdbInput>
+            <label for="dynmcId13"><span class="red-text">*</span> <mdb-icon fas icon="phone"></mdb-icon> Phone Number</label>
+          </div>
+        </div>
+        <div class="col-sm-1">
+          <div class="md-form">
+            <input type="number" mdbValidate [validateSuccess]="false" [validateError]="true" maxlength="5"
+              formControlName="phone_number_ext" id="dynmcId14" class="form-control" mdbInput>
+            <label for="dynmcId14"><span class="red-text">*</span> Ext</label>
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <div class="md-form">
+            <input type="number" maxlength="15" formControlName="other_phone_number" id="dynmcId15" class="form-control"
+              mdbInput>
+            <label for="dynmcId15"><mdb-icon fas icon="phone"></mdb-icon> Other Phone No</label>
+          </div>
+        </div>
+        <div class="col-sm-1">
+          <div class="md-form">
+            <input type="number" maxlength="5" formControlName="other_phone_number_ext" id="dynmcId16"
+              class="form-control" mdbInput>
+            <label for="dynmcId16">Ext</label>
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <div class="md-form">
+            <input type="number" maxlength="15" formControlName="fax_number" id="dynmcId17" class="form-control"
+              mdbInput>
+            <label for="dynmcId17">Fax</label>
+          </div>
+        </div>
+        <div class="col-sm-1">
+          <div class="md-form">
+            <input type="number" maxlength="5" formControlName="fax_numberExt" id="dynmcId18" class="form-control"
+              mdbInput>
+            <label for="dynmcId18">Ext</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true" maxlength="100"
+              formControlName="email_address" id="dynmcId11" class="form-control" mdbInput>
+            <label for="dynmcId11"><span class="red-text">*</span> <mdb-icon far icon="envelope"></mdb-icon> Email Address</label>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true" maxlength="100"
+              formControlName="confirm_email_address" id="dynmcId12" class="form-control" mdbInput>
+            <label for="dynmcId12"><mdb-icon far icon="envelope"></mdb-icon> Confirm Email Address</label>
+          </div>
+        </div>
+      </div>
+      <div class="text-left">
+        <h6 class="dark-grey-text  mb-2 mt-5">
+          <strong class="card-header-text">Organisation Information</strong>
+        </h6>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true" maxlength="150"
+              formControlName="org_name" id="dynmcId19" class="form-control" mdbInput>
+            <label for="dynmcId19"><span class="red-text">*</span> Name</label>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true" maxlength="100"
+              formControlName="org_website" id="dynmcId20" class="form-control" mdbInput>
+            <label for="dynmcId20"><span class="red-text">*</span> Website</label>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="md-form">
+            <input type="number" mdbValidate [validateSuccess]="false" [validateError]="true" maxlength="50"
+              formControlName="institution_tax_number" id="dynmcId26" class="form-control" mdbInput>
+            <label for="dynmcId26"><span class="red-text">*</span> Institution Tax Number </label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="md-form">
+            <textarea mdbValidate [validateSuccess]="false" [validateError]="true" maxlength="200"
+              formControlName="org_address" id="dynmcId21" type="text" class="md-textarea form-control"
+              mdbInput></textarea>
+            <label for="dynmcId21"><span class="red-text">*</span> <mdb-icon far icon="address-card"></mdb-icon> Address</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true" maxlength="20"
+              formControlName="org_postal_code" id="dynmcId22" class="form-control" mdbInput>
+            <label for="dynmcId22"><span class="red-text">*</span> <mdb-icon fas icon="map-marker-alt"></mdb-icon> Postal Code</label>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true" maxlength="100"
+              formControlName="org_city" id="dynmcId23" class="form-control" mdbInput>
+            <label for="dynmcId23"><span class="red-text">*</span> <mdb-icon far icon="building"></mdb-icon> City</label>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true" maxlength="100"
+              formControlName="org_state_or_province" id="dynmcId24" class="form-control" mdbInput>
+            <label for="dynmcId24"><span class="red-text">*</span> <mdb-icon fas icon="city"></mdb-icon> State/Province</label>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="md-form">
+            <input type="text" mdbValidate [validateSuccess]="false" [validateError]="true" maxlength="50"
+              formControlName="org_country" id="dynmcId25" class="form-control" mdbInput>
+            <label for="dynmcId25"><span class="red-text">*</span><mdb-icon fas icon="globe-americas"></mdb-icon> Country</label>
+          </div>
+        </div>
+
+      </div>
+    </form>
+  </div>
+
+  <div class="modal-footer">
+    <button type="submit" size="sm" mdbBtn color="light" class="relative waves-light" (click)="modalRef.hide()"
+       *ngIf="heading === 'Add' || heading === 'Edit' || heading === 'Create'" mdbWavesEffect>Complete Registration</button>
+    <button type="button" size="sm" mdbBtn color="light" class="waves-light" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Cancel</button>
+    
+  </div>
+</div>

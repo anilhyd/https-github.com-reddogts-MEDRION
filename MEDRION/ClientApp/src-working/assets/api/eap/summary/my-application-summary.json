@@ -1,0 +1,98 @@
+[
+    {
+      "app_id": "EAP - USA-NY-2019-001",
+      "eap_type": "Individual Patient IND",
+      "physician_name": "Darwin Gamble Roberts",
+      "product_name": "Alemtuzumab",
+      "submitted_on": "2-Nov-2019",
+      "last_updated_date": "20-Jan-2020",
+      "status": "Approved",
+      "assigned_to": "Rebecca Hall",
+      "irb_name": "Salus IRB",
+      "id": 1
+    },
+    {
+      "app_id": "EAP - USA-TX-2019-002",
+      "eap_type": "Emergency Use Individual Patient IND",
+      "physician_name": "Jamison James Camarena",
+      "product_name": "Ivosidenib",
+      "submitted_on": "12-Apr-2019",
+      "last_updated_date": "12-Feb-2020",
+      "status": "Assigned",
+      "assigned_to": "Alan Foster",
+      "irb_name": "Texas Applied Biomedical Services (TABS)",
+      "id": 2
+    },
+    {
+      "app_id": "EAP - USA-FL-2019-6374",
+      "eap_type": "Intermediate-Size Population IND",
+      "physician_name": "Stella Olive Conner",
+      "product_name": "Midostaurin",
+      "submitted_on": "5-Sep-2019",
+      "last_updated_date": "5-Mar-2020",
+      "status": "Closed",
+      "assigned_to": "Patricia Morris",
+      "irb_name": "Pearl IRB",
+      "id": 3
+    },
+    {
+      "app_id": "EAP - USA-TX-2019-7464",
+      "eap_type": "Treatment IND",
+      "physician_name": "Eva Mary Martin",
+      "product_name": "Thioguanine",
+      "submitted_on": "20-Dec-2019",
+      "last_updated_date": "31-Jan-2020",
+      "status": "RFI",
+      "assigned_to": "Shirley Martin",
+      "irb_name": "Texas Applied Biomedical Services (TABS)",
+      "id": 4
+    },
+    {
+      "app_id": "EAP - USA-NY-2019-9331",
+      "eap_type": "Individual Patient Protocol",
+      "physician_name": "Brendan Nelia Patao",
+      "product_name": "Venetoclax",
+      "submitted_on": "25-Jan-2020",
+      "last_updated_date": "20-Feb-2020",
+      "status": "Approved",
+      "assigned_to": "Mark Rodriguez",
+      "irb_name": "Heartland IRB, FKA Quintiles IRB",
+      "id": 5
+    },
+    {
+      "app_id": "EAP - USA-FL-2019-1223",
+      "eap_type": "Emergency Use Individual Patient Protocol",
+      "physician_name": "Francina Wedeking Williams",
+      "product_name": "Mitoxantrone Hydrochloride",
+      "submitted_on": "31-Jan-2020",
+      "last_updated_date": "5-Jan-2020",
+      "status": "On-Hold",
+      "assigned_to": "Johnny Kelly",
+      "irb_name": "Independent Investigational Review Board Inc.",
+      "id": 6
+    },
+    {
+      "app_id": "EAP - USA-NY-2019-1122",
+      "eap_type": "Intermediate-Size Population Protocol",
+      "physician_name": "Evelyne Heckard Hemingway",
+      "product_name": "Idarubicin Hydrochloride",
+      "submitted_on": "4-Feb-2020",
+      "last_updated_date": "12-Mar-2020",
+      "status": "Submitted",
+      "assigned_to": "Teresa Butler",
+      "irb_name": "Biomedical Research Alliance of New York (BRANY) IRB",
+      "id": 7
+    },
+    {
+      "app_id": "EAP - USA-NY-2019-1999",
+      "eap_type": "Treatment Protocol",
+      "physician_name": "Florene Burkle Parker",
+      "product_name": "Gilteritinib Fumarate",
+      "submitted_on": "23-Mar-2020",
+      "last_updated_date": "27-Apr-2020",
+      "status": "Rejected",
+      "assigned_to": "Linda Lopez",
+      "irb_name": "Biomedical Research Alliance of New York (BRANY) IRB",
+      "id": 8
+    }
+  ]

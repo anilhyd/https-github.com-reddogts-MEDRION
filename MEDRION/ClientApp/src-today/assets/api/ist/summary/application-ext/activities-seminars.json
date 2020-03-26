@@ -1,0 +1,26 @@
+[
+    {
+      "id": 1,
+      "activity_type": "Seminar",
+      "activity_title": "Seminar on advantages and risks involved in using of Radium -223",
+      "activity_start_date": "27-Mar-2020",
+      "activity_end_date": "28-Mar-2020",
+      "submitted_on": "29-Mar-2020"
+    },
+    {
+      "id": 2,
+      "activity_type": "Webinar",
+      "activity_title": "HCP Webinar Series - Helping your young breast cancer patients manage fear and anxiety",
+      "activity_start_date": "14-Feb-2020",
+      "activity_end_date": "14-Feb-2020",
+      "submitted_on": "16-Feb-2020"
+    },
+    {
+      "id": 3,
+      "activity_type": "Awareness",
+      "activity_title": "Patient Awareness Program on Using exemestane 25 mg and radium 223",
+      "activity_start_date": "28-Feb-2020",
+      "activity_end_date": "28-Feb-2020",
+      "submitted_on": "1-Mar-2020"
+    }
+  ]

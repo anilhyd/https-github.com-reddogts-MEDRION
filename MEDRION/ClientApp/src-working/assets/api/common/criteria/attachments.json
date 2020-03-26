@@ -1,0 +1,69 @@
+{
+    "formFields": {
+        
+        "document_type":{ "type":"dropdown", "required":true, "maxLength":25, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "date_by":{ "type":"date", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "comments":{ "type":"textarea", "required":false, "maxLength":500, "pattern":null, "validationMessage":"Field is either empty or incorrect"},
+        "attachments":{ "type":"file", "required":true, "maxLength":50, "pattern":null, "validationMessage":"Field is either empty or incorrect"}
+    },
+
+    "columnDefs": [
+        {
+            "headerName": "Attachment Type",
+            "field": "document_type",
+            "sort": "asc"            
+        },
+        {
+            "headerName": "Uploaded On",
+            "field": "date_by"
+        },
+        {
+            "headerName": "Uploaded By",
+            "field": "upload_by"
+        },
+        {
+            "headerName": "Comments",
+            "field": "comments"
+        }
+    ],
+    "operations": [        
+        {
+            "name": "Delete",
+            "id": "delete"
+        },
+        {
+            "name": "Edit",
+            "id": "edit"
+        },
+        {
+            "name": "Add New",
+            "id": "add"
+        }      
+        
+    ],
+    "advanceSearch": 
+        {
+            "fields": [
+                {
+                    "label": "Attachment Type",
+                    "field": "title",
+                    "type": "text"
+                },
+                {
+                    "label": "Uploaded By",
+                    "field": "org",
+                    "type": "text"
+                },
+                {
+                    "label": "Uploaded From",
+                    "field": "city",
+                    "type": "date"
+                },
+                {
+                    "label": "Uploaded To",
+                    "field": "city",
+                    "type": "date"
+                }
+            ]
+        }
+}
