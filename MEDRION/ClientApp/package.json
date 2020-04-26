@@ -29,7 +29,7 @@
     "core-js": "^2.5.4",
     "easy-pie-chart": "^2.1.7",
     "hammerjs": "^2.0.8",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.13",
     "mdbootstrap": "^4.12.0",
     "rxjs": "~6.4.0",
     "rxjs-compat": "^6.4.0",
